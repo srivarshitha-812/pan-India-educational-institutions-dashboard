@@ -40,6 +40,17 @@ class DashboardApp {
   }
 
   setupEventListeners() {
+    // Mobile Navigation Toggle & Backdrop
+    document.getElementById('mobile-menu-toggle')?.addEventListener('click', () => this.toggleMobileSidebar());
+    document.getElementById('sidebar-backdrop')?.addEventListener('click', () => this.toggleMobileSidebar(false));
+    document.getElementById('sidebar-close-btn')?.addEventListener('click', () => this.toggleMobileSidebar(false));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) {
+        this.toggleMobileSidebar(false);
+      }
+    });
+
     // Nav Items
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
@@ -183,6 +194,9 @@ class DashboardApp {
   switchView(viewName) {
     this.activeView = viewName;
 
+    // Automatically close mobile sidebar when switching views on mobile/tablet
+    this.toggleMobileSidebar(false);
+
     // Update nav active
     document.querySelectorAll('.nav-item').forEach(item => {
       item.classList.toggle('active', item.getAttribute('data-view') === viewName);
@@ -210,6 +224,21 @@ class DashboardApp {
     document.getElementById('page-title').textContent = cur.title;
     document.getElementById('header-meta').textContent = cur.meta;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleMobileSidebar(forceState) {
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    if (!sidebar) return;
+    const shouldOpen = forceState !== undefined ? forceState : !sidebar.classList.contains('open');
+    sidebar.classList.toggle('open', shouldOpen);
+    if (backdrop) backdrop.classList.toggle('open', shouldOpen);
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      toggleBtn.classList.toggle('active', shouldOpen);
+    }
+    document.body.classList.toggle('sidebar-drawer-open', shouldOpen);
   }
 
   /* --------------------------------------------------------------------------

@@ -19,11 +19,17 @@
 </head>
 <body>
 
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
   <div class="app-container">
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <div class="brand-badge">National Census Platform</div>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+          <div class="brand-badge">National Census Platform</div>
+          <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close navigation" title="Close navigation">&times;</button>
+        </div>
         <h1 class="brand-title">
           <span>🏛️</span> Pan-India Institutes
         </h1>
@@ -81,8 +87,15 @@
       <!-- Top Header -->
       <header class="top-header">
         <div class="header-left">
-          <h2 class="header-title" id="page-title">Executive Dashboard</h2>
-          <span class="header-meta" id="header-meta">National Institution Datasets & Cleaned Census Lists</span>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" title="Open navigation menu">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+          <div class="header-title-block">
+            <h2 class="header-title" id="page-title">Executive Dashboard</h2>
+            <span class="header-meta" id="header-meta">National Institution Datasets & Cleaned Census Lists</span>
+          </div>
         </div>
         <div class="header-right">
           <div class="global-search-bar">
@@ -90,7 +103,7 @@
             <input type="text" id="quick-search-input" placeholder="Search institution, state, code..." autocomplete="off">
           </div>
           <button class="header-refresh-btn" id="btn-refresh" title="Reload datasets and recompute statistics">
-            <span>🔄</span> Refresh Data
+            <span>🔄</span> <span class="refresh-btn-text">Refresh Data</span>
           </button>
         </div>
       </header>
@@ -466,7 +479,7 @@
             </table>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div class="quality-criteria-grid">
             <div class="chart-card" style="border-left: 4px solid var(--color-success);">
               <h4 style="font-family: var(--font-heading); color: var(--color-success); margin-bottom: 6px;">PASS Criteria</h4>
               <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
@@ -507,7 +520,7 @@
               <h4 style="font-family: var(--font-heading); color: #f87171; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                 <span class="priority-badge high">HIGH PRIORITY</span> Datasets Needing Strategic Review
               </h4>
-              <div id="priority-high-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+              <div id="priority-high-container" class="priority-cards-grid">
                 <!-- Dynamically populated -->
               </div>
             </div>
@@ -517,7 +530,7 @@
               <h4 style="font-family: var(--font-heading); color: #fbbf24; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                 <span class="priority-badge medium">MEDIUM PRIORITY</span> Datasets with Minor Issues
               </h4>
-              <div id="priority-medium-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+              <div id="priority-medium-container" class="priority-cards-grid">
                 <!-- Dynamically populated -->
               </div>
             </div>
@@ -527,7 +540,7 @@
               <h4 style="font-family: var(--font-heading); color: #34d399; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                 <span class="priority-badge low">LOW PRIORITY</span> Clean & Fully Certified Datasets
               </h4>
-              <div id="priority-low-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+              <div id="priority-low-container" class="priority-cards-grid">
                 <!-- Dynamically populated -->
               </div>
             </div>
@@ -567,7 +580,9 @@
 
           <div class="table-wrapper">
             <div class="table-filters-bar">
-              <input type="text" class="filter-input" id="search-view-input" placeholder="Type institution name, state, district, or official ID..." style="width: 450px;">
+              <div class="search-input-wrapper">
+                <input type="text" class="filter-input search-view-input" id="search-view-input" placeholder="Type institution name, state, district, or official ID...">
+              </div>
               <span style="font-size: 0.82rem; color: var(--text-secondary);" id="search-results-count">Type at least 2 characters</span>
             </div>
 
@@ -612,7 +627,7 @@
           </div>
 
           <!-- Dictionary Metrics Summary -->
-          <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+          <div class="kpi-grid dict-kpi-grid">
             <div class="kpi-card info">
               <div class="kpi-header">
                 <span class="kpi-title">Total Documented Fields</span>
