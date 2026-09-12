@@ -296,8 +296,10 @@ body.sidebar-drawer-open {
   height: 100dvh;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior-x: none;  /* prevents horizontal drift on Android */
+  touch-action: pan-y;          /* allows vertical scroll only on touch */
   position: relative;
-  scroll-padding-top: 56px; /* prevents sticky header from covering scrolled-to content */
+  scroll-padding-top: 56px;
 }
 
 /* Mobile Menu Toggle Button */
@@ -1355,10 +1357,11 @@ body.sidebar-drawer-open {
 }
 
 /* --------------------------------------------------------------------------
-   Mobile & Small Tablet Viewports (max-width: 768px)
+   Mobile & Small Tablet Viewports (max-width: 900px)
+   Now targets most tablets and all phones reliably
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  /* Single-row compact header on mobile — eliminates 2-row overlap on first KPI card */
+@media (max-width: 900px) {
+  /* Single-row compact header on mobile */
   .top-header {
     padding: 0 14px;
     flex-direction: row;
@@ -1366,6 +1369,7 @@ body.sidebar-drawer-open {
     height: 56px;
     min-height: 56px;
     gap: 12px;
+    overflow: hidden;  /* clip anything that overflows the 56px height */
   }
 
   .header-left {
@@ -1383,16 +1387,17 @@ body.sidebar-drawer-open {
   }
 
   .header-meta {
-    display: none;
+    display: none !important;
   }
 
-  /* Hide search bar from header on mobile — use sidebar Global Search instead */
+  /* Hide entire search area from header — use sidebar Global Search instead */
   .header-right {
     flex-shrink: 0;
   }
 
   .global-search-bar {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
   }
 
   .header-refresh-btn {
@@ -1406,11 +1411,11 @@ body.sidebar-drawer-open {
   }
 
   .header-refresh-btn .refresh-btn-text {
-    display: none;
+    display: none !important;
   }
 
   .views-container {
-    padding: 16px 12px;
+    padding: 16px 14px;  /* slightly more left padding to prevent left-edge clipping */
   }
 
   /* Notice Banner */

@@ -239,6 +239,11 @@ class DashboardApp {
       toggleBtn.classList.toggle('active', shouldOpen);
     }
     document.body.classList.toggle('sidebar-drawer-open', shouldOpen);
+    // Reset horizontal scroll drift on Android Chrome after sidebar animation
+    if (!shouldOpen) {
+      const mainContent = document.querySelector('.main-content');
+      if (mainContent) mainContent.scrollLeft = 0;
+    }
   }
 
   /* --------------------------------------------------------------------------
