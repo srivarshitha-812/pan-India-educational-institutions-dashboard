@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0516",
+    "name": "BANARAS HINDU UNIVERSITY (BHU)",
+    "level": "Institutes of National Importance",
+    "type": "Central University / INI",
+    "district": "VARANASI",
+    "address": "Ajagara, Varanasi",
+    "pincode": "221005",
+    "yearEstablished": 1916,
+    "website": "https://www.bhu.ac.in",
+    "approvalAuthority": "Act of Parliament / UGC"
+  },
+  {
+    "aisheCode": "U-0509",
+    "name": "ALIGARH MUSLIM UNIVERSITY (AMU)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "ALIGARH",
+    "address": "Aligarh, Uttar Pradesh",
+    "pincode": "202002",
+    "yearEstablished": 1920,
+    "website": "https://www.amu.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0517",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY KANPUR (IIT KANPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KANPUR NAGAR",
+    "address": "Kalyanpur, Kanpur",
+    "pincode": "208016",
+    "yearEstablished": 1959,
+    "website": "https://www.iitk.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-32100",
+    "name": "KING GEORGE'S MEDICAL UNIVERSITY (KGMU LUCKNOW)",
+    "level": "Medical institutions",
+    "type": "State Medical University / Hospital",
+    "district": "LUCKNOW",
+    "address": "Shah Mina Road, Chowk, Lucknow",
+    "pincode": "226003",
+    "yearEstablished": 1911,
+    "nmcId": "NMC-UP-MED-001",
+    "website": "https://www.kgmu.org",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0530",
+    "name": "DR. RAM MANOHAR LOHIYA NATIONAL LAW UNIVERSITY (RMLNLU LUCKNOW)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "LUCKNOW",
+    "address": "Sec- D1, LDA Colony, Kanpur Road Scheme, Lucknow",
+    "pincode": "226012",
+    "yearEstablished": 2005,
+    "otherRegulatorId": "BCI-UP-LAW-001",
+    "website": "https://www.rmlnlu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

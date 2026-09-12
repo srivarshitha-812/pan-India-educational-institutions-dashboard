@@ -1,0 +1,51 @@
+[
+  {
+    "aisheCode": "U-0196",
+    "name": "UNIVERSITY OF KASHMIR",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "SRINAGAR",
+    "address": "Hazratbal, Srinagar",
+    "pincode": "190006",
+    "yearEstablished": 1948,
+    "website": "https://kashmiruniversity.net",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0195",
+    "name": "UNIVERSITY OF JAMMU",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "JAMMU",
+    "address": "Gujarbasti, Jammu",
+    "pincode": "180006",
+    "yearEstablished": 1969,
+    "website": "https://www.jammuuniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0198",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY SRINAGAR",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "SRINAGAR",
+    "address": "Hazratbal, Srinagar",
+    "pincode": "190006",
+    "yearEstablished": 1960,
+    "website": "https://nitsri.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-20100",
+    "name": "GOVERNMENT MEDICAL COLLEGE SRINAGAR",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "SRINAGAR",
+    "address": "Karan Nagar, Srinagar",
+    "pincode": "190010",
+    "yearEstablished": 1959,
+    "nmcId": "NMC-JK-MED-001",
+    "website": "https://gmcs.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

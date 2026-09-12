@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0368",
+    "name": "UTKAL UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "KHORDHA",
+    "address": "Vani Vihar, Bhubaneswar",
+    "pincode": "751004",
+    "yearEstablished": 1943,
+    "website": "https://utkaluniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0363",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY BHUBANESWAR (IIT BHUBANESWAR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KHORDHA",
+    "address": "Argul, Jatni, Khordha",
+    "pincode": "752050",
+    "yearEstablished": 2008,
+    "website": "https://www.iitbbs.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0366",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY ROURKELA (NIT ROURKELA)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "SUNDARGARH",
+    "address": "Sector 1, Rourkela",
+    "pincode": "769008",
+    "yearEstablished": 1961,
+    "website": "https://www.nitrkl.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-25800",
+    "name": "SCB MEDICAL COLLEGE CUTTACK",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "CUTTACK",
+    "address": "Mangalabag, Cuttack",
+    "pincode": "753007",
+    "yearEstablished": 1944,
+    "nmcId": "NMC-OR-MED-001",
+    "website": "http://scbmch.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0370",
+    "name": "NATIONAL LAW UNIVERSITY ODISHA (NLUO)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "CUTTACK",
+    "address": "Kathajodi Campus, CDA Sector 13, Cuttack",
+    "pincode": "753015",
+    "yearEstablished": 2008,
+    "otherRegulatorId": "BCI-OR-LAW-001",
+    "website": "https://www.nluo.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

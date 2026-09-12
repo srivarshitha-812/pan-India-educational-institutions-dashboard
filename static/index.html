@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pan-India Educational Institutions — Executive Review Dashboard</title>
+  <meta name="description" content="Executive review dashboard for Pan-India Educational Institutions census, analyzing source datasets, final cleaned institute lists, data quality, and pending sectors.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-badge">National Census Platform</div>
+        <h1 class="brand-title">
+          <span>🏛️</span> Pan-India Institutes
+        </h1>
+        <div class="brand-subtitle">Executive Review Dashboard</div>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item active" data-view="dashboard" id="nav-dashboard">
+          <span class="nav-icon">📊</span>
+          <span>Executive Overview</span>
+        </li>
+        <li class="nav-item" data-view="sources" id="nav-sources">
+          <span class="nav-icon">📁</span>
+          <span>Source Datasets</span>
+          <span class="nav-badge" id="badge-source-count">10</span>
+        </li>
+        <li class="nav-item" data-view="final" id="nav-final">
+          <span class="nav-icon">✅</span>
+          <span>Final Institute Lists</span>
+          <span class="nav-badge" id="badge-final-count">6</span>
+        </li>
+        <li class="nav-item" data-view="dictionary" id="nav-dictionary">
+          <span class="nav-icon">📚</span>
+          <span>Data Dictionary</span>
+          <span class="nav-badge success" id="badge-dictionary-count">97</span>
+        </li>
+        <li class="nav-item" data-view="states" id="nav-states">
+          <span class="nav-icon">🗺️</span>
+          <span>State / UT Explorer</span>
+        </li>
+        <li class="nav-item" data-view="quality" id="nav-quality">
+          <span class="nav-icon">🛡️</span>
+          <span>Data Quality Audit</span>
+        </li>
+        <li class="nav-item" data-view="priority" id="nav-priority">
+          <span class="nav-icon">🎯</span>
+          <span>Review Priority</span>
+          <span class="nav-badge" id="badge-priority-count">HIGH</span>
+        </li>
+        <li class="nav-item" data-view="pending" id="nav-pending">
+          <span class="nav-icon">⏳</span>
+          <span>Pending Datasets</span>
+          <span class="nav-badge" id="badge-pending-count">7</span>
+        </li>
+        <li class="nav-item" data-view="search" id="nav-search">
+          <span class="nav-icon">🔍</span>
+          <span>Global Search</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <h2 class="header-title" id="page-title">Executive Dashboard</h2>
+          <span class="header-meta" id="header-meta">National Institution Datasets & Cleaned Census Lists</span>
+        </div>
+        <div class="header-right">
+          <div class="global-search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="quick-search-input" placeholder="Search institution, state, code..." autocomplete="off">
+          </div>
+          <button class="header-refresh-btn" id="btn-refresh" title="Reload datasets and recompute statistics">
+            <span>🔄</span> Refresh Data
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Views Container -->
+      <div class="views-container">
+        
+        <!-- ===================================================================
+             VIEW 1: EXECUTIVE DASHBOARD
+             =================================================================== -->
+        <section class="tab-view active" id="view-dashboard">
+          
+          <!-- KPI Cards Grid -->
+          <div class="kpi-grid" id="kpi-grid">
+            
+            <div class="kpi-card info">
+              <div class="kpi-header">
+                <span class="kpi-title">Datasets Collected</span>
+                <span class="kpi-icon">📁</span>
+              </div>
+              <div class="kpi-value" id="kpi-datasets-collected">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge info">Regulatory Sources</span>
+                <span>Official government portals</span>
+              </div>
+            </div>
+
+            <div class="kpi-card success">
+              <div class="kpi-header">
+                <span class="kpi-title">Final Institute Lists</span>
+                <span class="kpi-icon">✅</span>
+              </div>
+              <div class="kpi-value" id="kpi-final-lists">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge success">Cleaned & Deduplicated</span>
+                <span>Institution-level entities</span>
+              </div>
+            </div>
+
+            <div class="kpi-card warning">
+              <div class="kpi-header">
+                <span class="kpi-title">Total Records (Sources)</span>
+                <span class="kpi-icon">📚</span>
+              </div>
+              <div class="kpi-value" id="kpi-source-records">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge warning">Raw Records</span>
+                <span>May contain cross-source overlap</span>
+              </div>
+            </div>
+
+            <div class="kpi-card purple">
+              <div class="kpi-header">
+                <span class="kpi-title">Records Across Final Lists</span>
+                <span class="kpi-icon">🏛️</span>
+              </div>
+              <div class="kpi-value" id="kpi-final-records">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge info">Higher Ed Roster</span>
+                <span>Cleaned colleges & universities</span>
+              </div>
+            </div>
+
+            <div class="kpi-card success">
+              <div class="kpi-header">
+                <span class="kpi-title">States/UTs Covered</span>
+                <span class="kpi-icon">🗺️</span>
+              </div>
+              <div class="kpi-value" id="kpi-states-covered">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge success" id="kpi-states-badge">100% Target</span>
+                <span>Out of 36 States & UTs</span>
+              </div>
+            </div>
+
+            <div class="kpi-card warning">
+              <div class="kpi-header">
+                <span class="kpi-title">Pending Datasets</span>
+                <span class="kpi-icon">⏳</span>
+              </div>
+              <div class="kpi-value" id="kpi-pending-datasets">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge warning">In Progress</span>
+                <span>AISHE, AICTE, NCTE, PCI, etc.</span>
+              </div>
+            </div>
+
+            <div class="kpi-card danger">
+              <div class="kpi-header">
+                <span class="kpi-title">Requiring Review</span>
+                <span class="kpi-icon">🎯</span>
+              </div>
+              <div class="kpi-value" id="kpi-review-required">--</div>
+              <div class="kpi-footer">
+                <span class="kpi-badge danger">High Priority</span>
+                <span>UDISE names, large datasets</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Charts -->
+          <div class="charts-grid">
+            <div class="chart-card">
+              <div class="chart-header">
+                <div>
+                  <h3 class="chart-title">Institutions by Category (Final Lists)</h3>
+                  <div class="chart-subtitle">Cleaned & deduplicated higher education institutions</div>
+                </div>
+              </div>
+              <div class="chart-body">
+                <canvas id="categoryChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <div>
+                  <h3 class="chart-title">Top 10 States/UTs by Institution Count</h3>
+                  <div class="chart-subtitle">Distribution across higher education final lists</div>
+                </div>
+              </div>
+              <div class="chart-body">
+                <canvas id="statesChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation / Review Banner -->
+          <div class="table-wrapper" style="padding: 24px; background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(17, 24, 39, 0.9));">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-bottom: 4px;">Recommended Review Flow</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  Begin by reviewing the <strong>Final Institute Lists</strong> (6 cleaned datasets, 7,336 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Pending Datasets Roadmap</strong>.
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="window.dashboardApp.switchView('final')">Explore Final Lists →</button>
+                <button class="btn btn-outline" onclick="window.dashboardApp.switchView('states')">Open State Explorer</button>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ===================================================================
+             VIEW 2: SOURCE DATASETS
+             =================================================================== -->
+        <section class="tab-view" id="view-sources">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>📁</span> Source Datasets (Raw & Regulatory Registers)</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Official datasets collected directly from government portals, research exports, and statutory registers. Click any row for deep data quality analysis.
+              </p>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <div class="table-filters-bar">
+              <div class="filter-group">
+                <span class="filter-label">Filter Category:</span>
+                <select class="filter-select" id="source-cat-filter">
+                  <option value="All">All Categories</option>
+                  <option value="School Education">School Education</option>
+                  <option value="Higher Education (Universities)">Universities</option>
+                  <option value="Medical Education">Medical</option>
+                  <option value="Nursing Education">Nursing</option>
+                  <option value="Architecture">Architecture</option>
+                  <option value="Rehabilitation & Special Education">Rehabilitation</option>
+                  <option value="Ayurveda & Unani Medicine">Ayurveda & Unani</option>
+                  <option value="State Census (All Levels)">State Census</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <input type="text" class="filter-input" id="source-search-filter" placeholder="Filter by source or file name..." style="width: 250px;">
+              </div>
+            </div>
+
+            <table class="data-table" id="sources-table">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Category</th>
+                  <th>Record Count</th>
+                  <th>States / UTs</th>
+                  <th>Districts</th>
+                  <th>Academic Year</th>
+                  <th>Source Authority</th>
+                  <th>Official ID</th>
+                  <th>Quality Status</th>
+                  <th>Priority</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="sources-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 3: FINAL INSTITUTE LISTS
+             =================================================================== -->
+        <section class="tab-view" id="view-final">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>✅</span> Final Institute Lists (Cleaned & Deduplicated)</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Deduplicated, institution-level files prepared from collected sources. These represent the canonical foundation for the national census.
+              </p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #a5b4fc; background: rgba(99, 102, 241, 0.1); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(99, 102, 241, 0.25);">
+              Source: Final Institute Lists/
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="final-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>File Name</th>
+                  <th>Institutions</th>
+                  <th>States / UTs</th>
+                  <th>Districts</th>
+                  <th>Academic Year</th>
+                  <th>Official ID</th>
+                  <th>Duplicate IDs</th>
+                  <th>Missing Fields</th>
+                  <th>Quality Status</th>
+                  <th>Review</th>
+                </tr>
+              </thead>
+              <tbody id="final-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Explanatory note -->
+          <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Distinction between Source Datasets & Final Institute Lists:</strong><br>
+            A <em>Source Dataset</em> contains raw program-level or board-level entries (e.g., 5,108 nursing programmes or 11,585 medical courses).<br>
+            A <em>Final Institute List</em> has been algorithmically parsed, deduplicated, and unified so that each row represents a single physical institution with its respective regulatory codes and addresses.
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 4: STATE / UT EXPLORER
+             =================================================================== -->
+        <section class="tab-view" id="view-states">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>🗺️</span> State / UT Geographic Explorer</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Select any of India's 28 States or 8 Union Territories to inspect institution counts, sector breakdowns, district distributions, and rosters.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-explorer-layout">
+            <!-- State List Panel -->
+            <div class="state-selector-panel">
+              <input type="text" class="state-search-box" id="state-search" placeholder="Search State or UT...">
+              <div class="state-list-scroll" id="state-list-scroll">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- State Details Pane -->
+            <div class="state-details-panel" id="state-details-panel">
+              <div class="state-header-banner">
+                <div>
+                  <div class="state-name-lg" id="selected-state-name">Select a State</div>
+                  <div class="state-meta-badges">
+                    <span class="kpi-badge success" id="selected-state-total">-- Institutions</span>
+                    <span class="kpi-badge info" id="selected-state-dist-count">-- Districts</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Breakdown Chips -->
+              <div class="chart-card">
+                <h4 style="font-family: var(--font-heading); font-size: 0.95rem; color: #fff; margin-bottom: 8px;">Available Sectors</h4>
+                <div class="category-breakdown-chips" id="state-category-chips">
+                  <!-- Dynamically populated -->
+                </div>
+                <div style="margin-top: 14px;">
+                  <h4 style="font-family: var(--font-heading); font-size: 0.9rem; color: #f87171; margin-bottom: 6px;">Remaining Sector Gaps in this State:</h4>
+                  <div class="category-breakdown-chips" id="state-missing-chips">
+                    <!-- Dynamically populated -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Top Districts Table -->
+              <div class="table-wrapper">
+                <div class="table-filters-bar">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Top Districts Distribution</span>
+                </div>
+                <div style="padding: 16px; max-height: 200px; overflow-y: auto;">
+                  <div id="state-districts-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; font-size: 0.82rem;">
+                    <!-- Dynamically populated -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Institution Roster for Selected State -->
+              <div class="table-wrapper">
+                <div class="table-filters-bar">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Institutions Roster in State</span>
+                  <div class="filter-group">
+                    <input type="text" class="filter-input" id="state-inst-search" placeholder="Search by name or ID..." style="width: 200px;">
+                  </div>
+                </div>
+                <div style="max-height: 320px; overflow-y: auto;">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Institution Name</th>
+                        <th>Category</th>
+                        <th>District</th>
+                        <th>Official ID</th>
+                        <th>Dataset</th>
+                      </tr>
+                    </thead>
+                    <tbody id="state-institutions-body">
+                      <!-- Dynamically populated -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 5: DATA QUALITY AUDIT
+             =================================================================== -->
+        <section class="tab-view" id="view-quality">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>🛡️</span> Data Quality & Integrity Scorecard</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Automated validation metrics covering null values, duplicate checks, official ID integrity, and geographic completeness.
+              </p>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="quality-table">
+              <thead>
+                <tr>
+                  <th>Dataset / List</th>
+                  <th>Total Rows</th>
+                  <th>Unique Records</th>
+                  <th>Duplicate IDs</th>
+                  <th>Missing Names</th>
+                  <th>Missing State</th>
+                  <th>Missing District</th>
+                  <th>Missing Address</th>
+                  <th>Missing PIN</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="quality-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div class="chart-card" style="border-left: 4px solid var(--color-success);">
+              <h4 style="font-family: var(--font-heading); color: var(--color-success); margin-bottom: 6px;">PASS Criteria</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+                100% Institution Names present, valid Official Regulator IDs, 0 duplicate keys, and complete State mapping.
+              </p>
+            </div>
+            <div class="chart-card" style="border-left: 4px solid var(--color-warning);">
+              <h4 style="font-family: var(--font-heading); color: var(--color-warning); margin-bottom: 6px;">WARNING Criteria</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+                Minor missing attributes such as PIN codes or addresses in older institutions, or partial state tagging (e.g. overseas institutes).
+              </p>
+            </div>
+            <div class="chart-card" style="border-left: 4px solid var(--color-danger);">
+              <h4 style="font-family: var(--font-heading); color: var(--color-danger); margin-bottom: 6px;">NEEDS REVIEW Criteria</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+                Large volume datasets with withheld names/codes in research export (e.g., UDISE+ DSP pseudocodes requiring KYS track mapping).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 6: REVIEW PRIORITY
+             =================================================================== -->
+        <section class="tab-view" id="view-priority">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>🎯</span> Review Priority Queue</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Datasets ranked by attention requirement based on volume, missing identifiers, and verification status.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <!-- High Priority -->
+            <div>
+              <h4 style="font-family: var(--font-heading); color: #f87171; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span class="priority-badge high">HIGH PRIORITY</span> Datasets Needing Strategic Review
+              </h4>
+              <div id="priority-high-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Medium Priority -->
+            <div>
+              <h4 style="font-family: var(--font-heading); color: #fbbf24; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span class="priority-badge medium">MEDIUM PRIORITY</span> Datasets with Minor Issues
+              </h4>
+              <div id="priority-medium-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Low Priority -->
+            <div>
+              <h4 style="font-family: var(--font-heading); color: #34d399; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span class="priority-badge low">LOW PRIORITY</span> Clean & Fully Certified Datasets
+              </h4>
+              <div id="priority-low-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 7: PENDING DATASETS
+             =================================================================== -->
+        <section class="tab-view" id="view-pending">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>⏳</span> Pending Regulatory Sectors & Collection Tracker</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Status of remaining national regulatory datasets required for complete Pan-India higher education coverage.
+              </p>
+            </div>
+          </div>
+
+          <div class="pending-grid" id="pending-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 8: GLOBAL SEARCH
+             =================================================================== -->
+        <section class="tab-view" id="view-search">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title"><span>🔍</span> Global Search Across Final Institute Lists</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                Search across all 7,336 final institutions by name, official ID, state, district, or PIN code.
+              </p>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <div class="table-filters-bar">
+              <input type="text" class="filter-input" id="search-view-input" placeholder="Type institution name, state, district, or official ID..." style="width: 450px;">
+              <span style="font-size: 0.82rem; color: var(--text-secondary);" id="search-results-count">Type at least 2 characters</span>
+            </div>
+
+            <table class="data-table" id="search-table">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Institution Name</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Official ID</th>
+                  <th>PIN Code</th>
+                </tr>
+              </thead>
+              <tbody id="search-table-body">
+                <tr>
+                  <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 32px;">
+                    Enter a search term above to explore institutions across all final lists.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 9: DATA DICTIONARY & SCHEMA SPECIFICATION
+             =================================================================== -->
+        <section class="tab-view" id="view-dictionary">
+          <div class="section-header-row">
+            <div>
+              <h3 class="section-title">Data Dictionary & Regulatory Schema Documentation</h3>
+              <p class="section-subtitle">
+                Official regulatory lineage, field definitions, data types, allowed values, and methodological notes derived from actual datasets.
+              </p>
+            </div>
+            <div class="action-btn-group">
+              <a href="/api/dictionary/download" download="DATA_DICTIONARY.xlsx" class="btn btn-primary" id="btn-download-dict-xlsx">
+                <span>📥</span> Export DATA_DICTIONARY.xlsx
+              </a>
+            </div>
+          </div>
+
+          <!-- Dictionary Metrics Summary -->
+          <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+            <div class="kpi-card info">
+              <div class="kpi-header">
+                <span class="kpi-title">Total Documented Fields</span>
+                <span class="kpi-icon">📚</span>
+              </div>
+              <div class="kpi-value" id="dict-kpi-total">97</div>
+              <div class="kpi-footer">Across 11 regulatory sectors</div>
+            </div>
+            <div class="kpi-card success">
+              <div class="kpi-header">
+                <span class="kpi-title">Source Fields</span>
+                <span class="kpi-icon">🏛️</span>
+              </div>
+              <div class="kpi-value" id="dict-kpi-source">62</div>
+              <div class="kpi-footer">Official portal extractions</div>
+            </div>
+            <div class="kpi-card info">
+              <div class="kpi-header">
+                <span class="kpi-title">Derived Fields</span>
+                <span class="kpi-icon">🔄</span>
+              </div>
+              <div class="kpi-value" id="dict-kpi-derived">25</div>
+              <div class="kpi-footer">Decoded from DCF codebooks</div>
+            </div>
+            <div class="kpi-card warning">
+              <div class="kpi-header">
+                <span class="kpi-title">Calculated / Audit</span>
+                <span class="kpi-icon">⚙️</span>
+              </div>
+              <div class="kpi-value" id="dict-kpi-calculated">10</div>
+              <div class="kpi-footer">Engine deduplication & metrics</div>
+            </div>
+          </div>
+
+          <!-- Dictionary Filters Bar -->
+          <div class="table-container">
+            <div class="table-filters-bar" style="flex-wrap: wrap; gap: 12px; align-items: center;">
+              <div class="filter-group" style="flex: 1; min-width: 250px;">
+                <span class="filter-label">Search:</span>
+                <input type="text" class="filter-input" id="dict-search-input" placeholder="Search field name, description, allowed values, notes..." style="width: 100%;">
+              </div>
+              <div class="filter-group" style="min-width: 260px;">
+                <span class="filter-label">Dataset:</span>
+                <select class="filter-select" id="dict-dataset-filter" style="width: 100%;">
+                  <option value="All">All Datasets (97 Fields)</option>
+                </select>
+              </div>
+              <div class="filter-group" style="min-width: 220px;">
+                <span class="filter-label">Field Classification:</span>
+                <select class="filter-select" id="dict-class-filter" style="width: 100%;">
+                  <option value="All">All Classifications</option>
+                  <option value="SOURCE FIELD">SOURCE FIELD</option>
+                  <option value="DERIVED FIELD">DERIVED FIELD</option>
+                  <option value="DASHBOARD-CALCULATED FIELD">DASHBOARD-CALCULATED FIELD</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-meta-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.4);">
+              <span id="dict-results-count" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Showing 97 fields</span>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Definitions verified against official specifications</span>
+            </div>
+
+            <div class="table-wrapper" style="max-height: 600px; overflow-y: auto;">
+              <table class="data-table" id="dictionary-table">
+                <thead>
+                  <tr>
+                    <th style="min-width: 170px;">Dataset</th>
+                    <th style="min-width: 160px;">Field Name</th>
+                    <th style="min-width: 140px;">Classification</th>
+                    <th style="min-width: 110px;">Data Type</th>
+                    <th style="min-width: 80px;">Required?</th>
+                    <th style="min-width: 220px;">Description / Meaning</th>
+                    <th style="min-width: 180px;">Allowed Values / Codes</th>
+                    <th style="min-width: 140px;">Example Value</th>
+                    <th style="min-width: 180px;">Methodological Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="dictionary-table-body">
+                  <tr>
+                    <td colspan="9" style="text-align: center; color: var(--text-muted); padding: 32px;">
+                      Loading Data Dictionary definitions...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 1: FINAL LIST RECORD EXPLORER MODAL (Server-Side Paginated)
+       ======================================================================= -->
+  <div class="modal-overlay" id="record-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modal-list-title">Final Institute List Explorer</h3>
+          <span style="font-size: 0.78rem; color: var(--text-secondary);" id="modal-list-subtitle">Server-Side Paginated Grid</span>
+        </div>
+        <button class="modal-close-btn" onclick="window.dashboardApp.closeModal('record-modal')">&times;</button>
+      </div>
+
+      <div class="table-filters-bar" style="background: #1e293b;">
+        <div class="filter-group">
+          <span class="filter-label">State:</span>
+          <select class="filter-select" id="modal-state-filter">
+            <option value="All">All States</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Search:</span>
+          <input type="text" class="filter-input" id="modal-search-input" placeholder="Filter records...">
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Page Size:</span>
+          <select class="filter-select" id="modal-page-size">
+            <option value="25">25 per page</option>
+            <option value="50" selected>50 per page</option>
+            <option value="100">100 per page</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-body" style="padding: 0; flex: 1; overflow-y: auto;">
+        <table class="data-table" id="modal-records-table">
+          <thead id="modal-records-thead">
+            <!-- Dynamic Columns -->
+          </thead>
+          <tbody id="modal-records-tbody">
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination-bar">
+        <span id="modal-pagination-info">Showing records 1 - 50 of 404</span>
+        <div class="pagination-controls">
+          <button class="btn btn-outline btn-sm" id="btn-modal-prev">Previous</button>
+          <span id="modal-page-num" style="font-weight: 600; padding: 0 8px;">Page 1</span>
+          <button class="btn btn-outline btn-sm" id="btn-modal-next">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2: DATASET QUALITY INSPECTOR MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-container" style="max-width: 800px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="detail-modal-title">Dataset Quality Inspector</h3>
+          <span style="font-size: 0.78rem; color: var(--text-secondary);" id="detail-modal-subtitle">Official Regulatory Register</span>
+        </div>
+        <button class="modal-close-btn" onclick="window.dashboardApp.closeModal('detail-modal')">&times;</button>
+      </div>
+      <div class="modal-body" id="detail-modal-body">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 3: PENDING STATUS UPDATE MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="pending-modal">
+    <div class="modal-container" style="max-width: 550px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Update Pending Sector Status</h3>
+        <button class="modal-close-btn" onclick="window.dashboardApp.closeModal('pending-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="pending-edit-id">
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Sector</label>
+          <div id="pending-edit-sector" style="font-weight: 700; color: #fff;">--</div>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Collection Status</label>
+          <select class="filter-select" id="pending-edit-status" style="width: 100%;">
+            <option value="NOT STARTED">NOT STARTED</option>
+            <option value="IN PROGRESS">IN PROGRESS</option>
+            <option value="COLLECTED">COLLECTED</option>
+            <option value="VALIDATED">VALIDATED</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Notes / Progress Remarks</label>
+          <textarea id="pending-edit-notes" class="filter-input" style="width: 100%; height: 80px; resize: vertical;"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn btn-outline" onclick="window.dashboardApp.closeModal('pending-modal')">Cancel</button>
+          <button class="btn btn-primary" id="btn-save-pending">Save Updates</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

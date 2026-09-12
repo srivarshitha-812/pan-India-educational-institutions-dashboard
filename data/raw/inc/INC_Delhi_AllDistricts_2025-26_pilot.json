@@ -1,0 +1,100 @@
+{
+  "pilot_state": "Delhi",
+  "pilot_district": "Central Delhi",
+  "academic_year": "2025-2026",
+  "portal_url": "https://online.indiannursingcouncil.org/Reports/YearlyReportByState.aspx",
+  "run_timestamp": "2026-09-11T10:43:37.228371",
+  "all_districts_query": {
+    "programme_rows": 71,
+    "unique_institutions": 36,
+    "pages_scraped": 3,
+    "sector_breakdown": {
+      "Government": 14,
+      "Private": 22
+    },
+    "district_breakdown": {
+      "Central Delhi": 4,
+      "South West Delhi": 6,
+      "North West Delhi": 3,
+      "South Delhi": 7,
+      "North Delhi": 5,
+      "New Delhi": 1,
+      "East Delhi": 2,
+      "North East Delhi": 1,
+      "West Delhi": 3,
+      "South East Delhi": 3,
+      "Shahdara": 1
+    },
+    "export_result": {
+      "export_tested": true,
+      "export_success": false,
+      "export_format": null,
+      "export_file": null,
+      "export_error": "Excel option not found"
+    }
+  },
+  "single_district_query": {
+    "district": "Central Delhi",
+    "programme_rows": 11,
+    "unique_institutions": 4,
+    "pages_scraped": 1
+  },
+  "all_available_districts": [
+    {
+      "value": "--Select--",
+      "label": "--Select--"
+    },
+    {
+      "value": "8",
+      "label": "Central Delhi"
+    },
+    {
+      "value": "11",
+      "label": "East Delhi"
+    },
+    {
+      "value": "1",
+      "label": "New Delhi"
+    },
+    {
+      "value": "2",
+      "label": "North Delhi"
+    },
+    {
+      "value": "9",
+      "label": "North East Delhi"
+    },
+    {
+      "value": "3",
+      "label": "North West Delhi"
+    },
+    {
+      "value": "10",
+      "label": "Shahdara"
+    },
+    {
+      "value": "6",
+      "label": "South Delhi"
+    },
+    {
+      "value": "7",
+      "label": "South East Delhi"
+    },
+    {
+      "value": "5",
+      "label": "South West Delhi"
+    },
+    {
+      "value": "4",
+      "label": "West Delhi"
+    }
+  ],
+  "validation": {
+    "all_districts_superset": true,
+    "subset_confirmed": true,
+    "no_duplicates": true,
+    "sl_monotonic": false,
+    "passed": 3,
+    "total": 4
+  }
+}

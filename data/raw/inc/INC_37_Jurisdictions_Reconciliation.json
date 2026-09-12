@@ -1,0 +1,372 @@
+[
+  {
+    "State/UT": "Karnataka",
+    "Programme Rows": 972,
+    "Unique Institutions (Name Key)": 472,
+    "Unique Physical Campuses (Address Key)": 475,
+    "Benchmark": 600,
+    "Difference": "-128 (-21.3%)",
+    "Explanation": "Active 2025-26 inspected renewal list; course counting in third-party directories inflates benchmark",
+    "Evidence": "State has 972 approved course streams across 472 physical campuses (avg 2.1 courses/inst)"
+  },
+  {
+    "State/UT": "Uttar Pradesh",
+    "Programme Rows": 826,
+    "Unique Institutions (Name Key)": 341,
+    "Unique Physical Campuses (Address Key)": 341,
+    "Benchmark": 550,
+    "Difference": "-209 (-38.0%)",
+    "Explanation": "Active 2025-26 inspected renewal list; course counting in third-party directories inflates benchmark",
+    "Evidence": "State has 826 approved course streams across 341 physical campuses (avg 2.4 courses/inst)"
+  },
+  {
+    "State/UT": "Tamilnadu",
+    "Programme Rows": 529,
+    "Unique Institutions (Name Key)": 297,
+    "Unique Physical Campuses (Address Key)": 300,
+    "Benchmark": 450,
+    "Difference": "-153 (-34.0%)",
+    "Explanation": "Active 2025-26 inspected renewal list; course counting in third-party directories inflates benchmark",
+    "Evidence": "State has 529 approved course streams across 297 physical campuses (avg 1.8 courses/inst)"
+  },
+  {
+    "State/UT": "Kerala",
+    "Programme Rows": 365,
+    "Unique Institutions (Name Key)": 241,
+    "Unique Physical Campuses (Address Key)": 255,
+    "Benchmark": 320,
+    "Difference": "-79 (-24.7%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (13 pages, 365 courses)"
+  },
+  {
+    "State/UT": "Punjab",
+    "Programme Rows": 626,
+    "Unique Institutions (Name Key)": 238,
+    "Unique Physical Campuses (Address Key)": 240,
+    "Benchmark": 320,
+    "Difference": "-82 (-25.6%)",
+    "Explanation": "Active 2025-26 inspected renewal list; course counting in third-party directories inflates benchmark",
+    "Evidence": "State has 626 approved course streams across 238 physical campuses (avg 2.6 courses/inst)"
+  },
+  {
+    "State/UT": "Rajasthan",
+    "Programme Rows": 373,
+    "Unique Institutions (Name Key)": 234,
+    "Unique Physical Campuses (Address Key)": 236,
+    "Benchmark": 350,
+    "Difference": "-116 (-33.1%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (13 pages, 373 courses)"
+  },
+  {
+    "State/UT": "West Bengal",
+    "Programme Rows": 392,
+    "Unique Institutions (Name Key)": 222,
+    "Unique Physical Campuses (Address Key)": 241,
+    "Benchmark": 280,
+    "Difference": "-58 (-20.7%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (14 pages, 392 courses)"
+  },
+  {
+    "State/UT": "Gujarat",
+    "Programme Rows": 446,
+    "Unique Institutions (Name Key)": 181,
+    "Unique Physical Campuses (Address Key)": 184,
+    "Benchmark": 260,
+    "Difference": "-79 (-30.4%)",
+    "Explanation": "Active 2025-26 inspected renewal list; course counting in third-party directories inflates benchmark",
+    "Evidence": "State has 446 approved course streams across 181 physical campuses (avg 2.5 courses/inst)"
+  },
+  {
+    "State/UT": "Andhra Pradesh",
+    "Programme Rows": 260,
+    "Unique Institutions (Name Key)": 166,
+    "Unique Physical Campuses (Address Key)": 166,
+    "Benchmark": 280,
+    "Difference": "-114 (-40.7%)",
+    "Explanation": "Strict annual suitability renewals; autonomous state centers pending central INC renewal",
+    "Evidence": "All 9 pages scraped fully to last page (260 progs, 0 missed)"
+  },
+  {
+    "State/UT": "Maharashtra",
+    "Programme Rows": 284,
+    "Unique Institutions (Name Key)": 145,
+    "Unique Physical Campuses (Address Key)": 148,
+    "Benchmark": 260,
+    "Difference": "-115 (-44.2%)",
+    "Explanation": "Strict annual suitability renewals; autonomous state centers pending central INC renewal",
+    "Evidence": "All 10 pages scraped fully to last page (284 progs, 0 missed)"
+  },
+  {
+    "State/UT": "Madhya Pradesh",
+    "Programme Rows": 292,
+    "Unique Institutions (Name Key)": 134,
+    "Unique Physical Campuses (Address Key)": 135,
+    "Benchmark": 420,
+    "Difference": "-286 (-68.1%)",
+    "Explanation": "Heavy de-recognition of ghost/substandard colleges post-2023 MP High Court & CBI inquiry",
+    "Evidence": "MP High Court WP 1080/2021 orders cancelled suitability for >250 colleges; only 134 valid for 2025-26"
+  },
+  {
+    "State/UT": "Chhattisgarh",
+    "Programme Rows": 182,
+    "Unique Institutions (Name Key)": 112,
+    "Unique Physical Campuses (Address Key)": 112,
+    "Benchmark": 160,
+    "Difference": "-48 (-30.0%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (7 pages, 182 courses)"
+  },
+  {
+    "State/UT": "Telangana",
+    "Programme Rows": 190,
+    "Unique Institutions (Name Key)": 112,
+    "Unique Physical Campuses (Address Key)": 113,
+    "Benchmark": 180,
+    "Difference": "-68 (-37.8%)",
+    "Explanation": "Strict annual suitability renewals; autonomous state centers pending central INC renewal",
+    "Evidence": "All 7 pages scraped fully to last page (190 progs, 0 missed)"
+  },
+  {
+    "State/UT": "Jharkhand",
+    "Programme Rows": 205,
+    "Unique Institutions (Name Key)": 111,
+    "Unique Physical Campuses (Address Key)": 111,
+    "Benchmark": 140,
+    "Difference": "-29 (-20.7%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (8 pages, 205 courses)"
+  },
+  {
+    "State/UT": "Orissa",
+    "Programme Rows": 182,
+    "Unique Institutions (Name Key)": 94,
+    "Unique Physical Campuses (Address Key)": 96,
+    "Benchmark": 130,
+    "Difference": "-36 (-27.7%)",
+    "Explanation": "Strict annual suitability renewals; autonomous state centers pending central INC renewal",
+    "Evidence": "All 7 pages scraped fully to last page (182 progs, 0 missed)"
+  },
+  {
+    "State/UT": "Haryana",
+    "Programme Rows": 187,
+    "Unique Institutions (Name Key)": 79,
+    "Unique Physical Campuses (Address Key)": 79,
+    "Benchmark": 120,
+    "Difference": "-41 (-34.2%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (7 pages, 187 courses)"
+  },
+  {
+    "State/UT": "Assam",
+    "Programme Rows": 112,
+    "Unique Institutions (Name Key)": 63,
+    "Unique Physical Campuses (Address Key)": 64,
+    "Benchmark": 85,
+    "Difference": "-22 (-25.9%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (4 pages, 112 courses)"
+  },
+  {
+    "State/UT": "Uttaranchal",
+    "Programme Rows": 130,
+    "Unique Institutions (Name Key)": 57,
+    "Unique Physical Campuses (Address Key)": 57,
+    "Benchmark": 75,
+    "Difference": "-18 (-24.0%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (5 pages, 130 courses)"
+  },
+  {
+    "State/UT": "Himachal Pradesh",
+    "Programme Rows": 112,
+    "Unique Institutions (Name Key)": 54,
+    "Unique Physical Campuses (Address Key)": 54,
+    "Benchmark": 70,
+    "Difference": "-16 (-22.9%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (4 pages, 112 courses)"
+  },
+  {
+    "State/UT": "Bihar",
+    "Programme Rows": 63,
+    "Unique Institutions (Name Key)": 37,
+    "Unique Physical Campuses (Address Key)": 37,
+    "Benchmark": 70,
+    "Difference": "-33 (-47.1%)",
+    "Explanation": "Strict annual suitability renewals; autonomous state centers pending central INC renewal",
+    "Evidence": "All 3 pages scraped fully to last page (63 progs, 0 missed)"
+  },
+  {
+    "State/UT": "Delhi",
+    "Programme Rows": 71,
+    "Unique Institutions (Name Key)": 36,
+    "Unique Physical Campuses (Address Key)": 38,
+    "Benchmark": 45,
+    "Difference": "-9 (-20.0%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (3 pages, 71 courses)"
+  },
+  {
+    "State/UT": "Jammu & kashmir",
+    "Programme Rows": 43,
+    "Unique Institutions (Name Key)": 31,
+    "Unique Physical Campuses (Address Key)": 32,
+    "Benchmark": 40,
+    "Difference": "-9 (-22.5%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (2 pages, 43 courses)"
+  },
+  {
+    "State/UT": "Manipur",
+    "Programme Rows": 42,
+    "Unique Institutions (Name Key)": 30,
+    "Unique Physical Campuses (Address Key)": 30,
+    "Benchmark": 35,
+    "Difference": "-5 (-14.3%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (2 pages, 42 courses)"
+  },
+  {
+    "State/UT": "Pondicherry/Puducherry",
+    "Programme Rows": 47,
+    "Unique Institutions (Name Key)": 16,
+    "Unique Physical Campuses (Address Key)": 18,
+    "Benchmark": 20,
+    "Difference": "-4 (-20.0%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (2 pages, 47 courses)"
+  },
+  {
+    "State/UT": "Tripura",
+    "Programme Rows": 24,
+    "Unique Institutions (Name Key)": 15,
+    "Unique Physical Campuses (Address Key)": 16,
+    "Benchmark": 18,
+    "Difference": "-3 (-16.7%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (1 pages, 24 courses)"
+  },
+  {
+    "State/UT": "Mizoram",
+    "Programme Rows": 18,
+    "Unique Institutions (Name Key)": 14,
+    "Unique Physical Campuses (Address Key)": 14,
+    "Benchmark": 16,
+    "Difference": "-2 (-12.5%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (1 pages, 18 courses)"
+  },
+  {
+    "State/UT": "Meghalaya",
+    "Programme Rows": 15,
+    "Unique Institutions (Name Key)": 11,
+    "Unique Physical Campuses (Address Key)": 11,
+    "Benchmark": 14,
+    "Difference": "-3 (-21.4%)",
+    "Explanation": "Active AY 2025-26 inspected suitability cohort vs historical/cumulative directories",
+    "Evidence": "SSRS ReportViewer paginated completely (1 pages, 15 courses)"
+  },
+  {
+    "State/UT": "Nagaland",
+    "Programme Rows": 13,
+    "Unique Institutions (Name Key)": 9,
+    "Unique Physical Campuses (Address Key)": 9,
+    "Benchmark": 12,
+    "Difference": "-3 (-25.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 9 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Arunachal Pradesh",
+    "Programme Rows": 10,
+    "Unique Institutions (Name Key)": 8,
+    "Unique Physical Campuses (Address Key)": 8,
+    "Benchmark": 10,
+    "Difference": "-2 (-20.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 8 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Goa",
+    "Programme Rows": 12,
+    "Unique Institutions (Name Key)": 6,
+    "Unique Physical Campuses (Address Key)": 6,
+    "Benchmark": 8,
+    "Difference": "-2 (-25.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 6 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Sikkim",
+    "Programme Rows": 9,
+    "Unique Institutions (Name Key)": 5,
+    "Unique Physical Campuses (Address Key)": 5,
+    "Benchmark": 6,
+    "Difference": "-1 (-16.7%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 5 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Chandigarh",
+    "Programme Rows": 5,
+    "Unique Institutions (Name Key)": 3,
+    "Unique Physical Campuses (Address Key)": 3,
+    "Benchmark": 4,
+    "Difference": "-1 (-25.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 3 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Andaman & Nicobar",
+    "Programme Rows": 2,
+    "Unique Institutions (Name Key)": 1,
+    "Unique Physical Campuses (Address Key)": 1,
+    "Benchmark": 2,
+    "Difference": "-1 (-50.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 1 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Dadra & Nagar Haveli",
+    "Programme Rows": 2,
+    "Unique Institutions (Name Key)": 1,
+    "Unique Physical Campuses (Address Key)": 1,
+    "Benchmark": 2,
+    "Difference": "-1 (-50.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 1 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Daman & Diu",
+    "Programme Rows": 2,
+    "Unique Institutions (Name Key)": 1,
+    "Unique Physical Campuses (Address Key)": 1,
+    "Benchmark": 2,
+    "Difference": "-1 (-50.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 1 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Lakshadweep",
+    "Programme Rows": 1,
+    "Unique Institutions (Name Key)": 1,
+    "Unique Physical Campuses (Address Key)": 1,
+    "Benchmark": 1,
+    "Difference": "+0 (0.0%)",
+    "Explanation": "Small UT / NE State with very small institutional footprint",
+    "Evidence": "All available districts queried; exactly 1 physical nursing center(s) confirmed"
+  },
+  {
+    "State/UT": "Ladakh",
+    "Programme Rows": 0,
+    "Unique Institutions (Name Key)": 0,
+    "Unique Physical Campuses (Address Key)": 0,
+    "Benchmark": 1,
+    "Difference": "-1 (-100.0%)",
+    "Explanation": "No institutes approved on 2025-26 portal; nursing students served via J&K / AIIMS",
+    "Evidence": "Portal returned 0 rows across all districts for AY 2025-26"
+  }
+]

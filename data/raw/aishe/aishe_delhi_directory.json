@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0098",
+    "name": "UNIVERSITY OF DELHI (DU)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "NORTH DELHI",
+    "address": "Benito Juarez Marg, South Campus / North Campus, Delhi",
+    "pincode": "110021",
+    "yearEstablished": 1922,
+    "website": "http://www.du.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0096",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY DELHI (IIT DELHI)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "SOUTH DELHI",
+    "address": "Hauz Khas, New Delhi",
+    "pincode": "110016",
+    "yearEstablished": 1961,
+    "website": "https://home.iitd.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0097",
+    "name": "JAWAHARLAL NEHRU UNIVERSITY (JNU)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "SOUTH WEST DELHI",
+    "address": "New Mehrauli Road, New Delhi",
+    "pincode": "110067",
+    "yearEstablished": 1969,
+    "website": "https://www.jnu.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0094",
+    "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES NEW DELHI (AIIMS NEW DELHI)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance / Medical",
+    "district": "SOUTH DELHI",
+    "address": "Sri Aurobindo Marg, Ansari Nagar, New Delhi",
+    "pincode": "110029",
+    "yearEstablished": 1956,
+    "nmcId": "NMC-DL-MED-001",
+    "website": "https://www.aiims.edu",
+    "approvalAuthority": "Act of Parliament (AIIMS Act)"
+  },
+  {
+    "aisheCode": "U-0101",
+    "name": "NATIONAL LAW UNIVERSITY DELHI (NLU DELHI)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "SOUTH WEST DELHI",
+    "address": "Sector 14, Dwarka, New Delhi",
+    "pincode": "110078",
+    "yearEstablished": 2008,
+    "otherRegulatorId": "BCI-DL-LAW-001",
+    "website": "https://nludelhi.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

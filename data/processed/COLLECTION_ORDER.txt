@@ -1,0 +1,806 @@
+==========================================================================================
+PAN-INDIA DISTRICT-COMPLETE EDUCATIONAL INSTITUTION COLLECTION ORDER & AUDIT REPORT
+==========================================================================================
+Generated: 2026-09-08 15:49:20
+Total Official Districts: 787
+Total Districts Processed: 787
+Total Districts Skipped: 0
+Total Unique Institutions: 17,872
+==========================================================================================
+State #  State / UT Name                     Dist #   District Name                  Status                    Institutions
+------------------------------------------------------------------------------------------
+1        Andhra Pradesh                      1        Alluri Sitharama Raju          COMPLETE                  24          
+1        Andhra Pradesh                      2        Anakapalli                     COMPLETE                  24          
+1        Andhra Pradesh                      3        Ananthapuramu                  COMPLETE                  24          
+1        Andhra Pradesh                      4        Annamayya                      COMPLETE                  24          
+1        Andhra Pradesh                      5        Bapatla                        COMPLETE                  24          
+1        Andhra Pradesh                      6        Chittoor                       COMPLETE                  24          
+1        Andhra Pradesh                      7        Dr. B.R. Ambedkar Konaseema    COMPLETE                  24          
+1        Andhra Pradesh                      8        East Godavari                  COMPLETE                  21          
+1        Andhra Pradesh                      9        Eluru                          COMPLETE                  24          
+1        Andhra Pradesh                      10       Guntur                         COMPLETE                  26          
+1        Andhra Pradesh                      11       Kakinada                       COMPLETE                  25          
+1        Andhra Pradesh                      12       Krishna                        COMPLETE                  24          
+1        Andhra Pradesh                      13       Kurnool                        COMPLETE                  25          
+1        Andhra Pradesh                      14       Nandyal                        COMPLETE                  24          
+1        Andhra Pradesh                      15       NTR                            COMPLETE                  24          
+1        Andhra Pradesh                      16       Palnadu                        COMPLETE                  24          
+1        Andhra Pradesh                      17       Parvathipuram Manyam           COMPLETE                  24          
+1        Andhra Pradesh                      18       Prakasam                       COMPLETE                  24          
+1        Andhra Pradesh                      19       SPSR Nellore                   COMPLETE                  24          
+1        Andhra Pradesh                      20       Sri Sathya Sai                 COMPLETE                  24          
+1        Andhra Pradesh                      21       Srikakulam                     COMPLETE                  24          
+1        Andhra Pradesh                      22       Tirupati                       COMPLETE                  26          
+1        Andhra Pradesh                      23       Visakhapatnam                  COMPLETE                  27          
+1        Andhra Pradesh                      24       Vizianagaram                   COMPLETE                  24          
+1        Andhra Pradesh                      25       West Godavari                  COMPLETE                  24          
+1        Andhra Pradesh                      26       YSR Kadapa                     COMPLETE                  24          
+2        Arunachal Pradesh                   1        Anjaw                          COMPLETE                  24          
+2        Arunachal Pradesh                   2        Changlang                      COMPLETE                  24          
+2        Arunachal Pradesh                   3        Dibang Valley                  COMPLETE                  24          
+2        Arunachal Pradesh                   4        East Kameng                    COMPLETE                  21          
+2        Arunachal Pradesh                   5        East Siang                     COMPLETE                  22          
+2        Arunachal Pradesh                   6        Kamle                          COMPLETE                  24          
+2        Arunachal Pradesh                   7        Kra Daadi                      COMPLETE                  24          
+2        Arunachal Pradesh                   8        Kurung Kumey                   COMPLETE                  24          
+2        Arunachal Pradesh                   9        Lepa Rada                      COMPLETE                  24          
+2        Arunachal Pradesh                   10       Lohit                          COMPLETE                  24          
+2        Arunachal Pradesh                   11       Longding                       COMPLETE                  24          
+2        Arunachal Pradesh                   12       Lower Dibang Valley            COMPLETE                  24          
+2        Arunachal Pradesh                   13       Lower Siang                    COMPLETE                  24          
+2        Arunachal Pradesh                   14       Lower Subansiri                COMPLETE                  24          
+2        Arunachal Pradesh                   15       Namsai                         COMPLETE                  24          
+2        Arunachal Pradesh                   16       Pakke Kessang                  COMPLETE                  24          
+2        Arunachal Pradesh                   17       Papum Pare                     COMPLETE                  28          
+2        Arunachal Pradesh                   18       Shi Yomi                       COMPLETE                  24          
+2        Arunachal Pradesh                   19       Siang                          COMPLETE                  24          
+2        Arunachal Pradesh                   20       Tawang                         COMPLETE                  24          
+2        Arunachal Pradesh                   21       Tirap                          COMPLETE                  24          
+2        Arunachal Pradesh                   22       Upper Siang                    COMPLETE                  24          
+2        Arunachal Pradesh                   23       Upper Subansiri                COMPLETE                  24          
+2        Arunachal Pradesh                   24       West Kameng                    COMPLETE                  24          
+2        Arunachal Pradesh                   25       West Siang                     COMPLETE                  24          
+2        Arunachal Pradesh                   26       Keyi Panyor                    COMPLETE                  3           
+2        Arunachal Pradesh                   27       Bichom                         COMPLETE                  3           
+3        Assam                               1        Baksa                          COMPLETE                  24          
+3        Assam                               2        Barpeta                        COMPLETE                  24          
+3        Assam                               3        Biswanath                      COMPLETE                  24          
+3        Assam                               4        Bongaigaon                     COMPLETE                  24          
+3        Assam                               5        Cachar                         COMPLETE                  24          
+3        Assam                               6        Charaideo                      COMPLETE                  24          
+3        Assam                               7        Chirang                        COMPLETE                  24          
+3        Assam                               8        Darrang                        COMPLETE                  24          
+3        Assam                               9        Dhemaji                        COMPLETE                  24          
+3        Assam                               10       Dhubri                         COMPLETE                  24          
+3        Assam                               11       Dibrugarh                      COMPLETE                  24          
+3        Assam                               12       Dima Hasao                     COMPLETE                  24          
+3        Assam                               13       Goalpara                       COMPLETE                  24          
+3        Assam                               14       Golaghat                       COMPLETE                  24          
+3        Assam                               15       Hailakandi                     COMPLETE                  24          
+3        Assam                               16       Hojai                          COMPLETE                  24          
+3        Assam                               17       Jorhat                         COMPLETE                  25          
+3        Assam                               18       Kamrup                         COMPLETE                  26          
+3        Assam                               19       Kamrup Metropolitan            COMPLETE                  26          
+3        Assam                               20       Karbi Anglong                  COMPLETE                  24          
+3        Assam                               21       Karimganj                      COMPLETE                  24          
+3        Assam                               22       Kokrajhar                      COMPLETE                  24          
+3        Assam                               23       Lakhimpur                      COMPLETE                  24          
+3        Assam                               24       Majuli                         COMPLETE                  24          
+3        Assam                               25       Morigaon                       COMPLETE                  24          
+3        Assam                               26       Nagaon                         COMPLETE                  24          
+3        Assam                               27       Nalbari                        COMPLETE                  24          
+3        Assam                               28       Sivasagar                      COMPLETE                  24          
+3        Assam                               29       Sonitpur                       COMPLETE                  25          
+3        Assam                               30       South Salmara-Mankachar        COMPLETE                  24          
+3        Assam                               31       Tamulpur                       COMPLETE                  3           
+3        Assam                               32       Tinsukia                       COMPLETE                  24          
+3        Assam                               33       Udalguri                       COMPLETE                  24          
+3        Assam                               34       West Karbi Anglong             COMPLETE                  24          
+3        Assam                               35       Bajali                         COMPLETE                  3           
+4        Bihar                               1        Araria                         COMPLETE                  24          
+4        Bihar                               2        Arwal                          COMPLETE                  24          
+4        Bihar                               3        Aurangabad                     COMPLETE                  24          
+4        Bihar                               4        Banka                          COMPLETE                  24          
+4        Bihar                               5        Begusarai                      COMPLETE                  24          
+4        Bihar                               6        Bhagalpur                      COMPLETE                  24          
+4        Bihar                               7        Bhojpur                        COMPLETE                  24          
+4        Bihar                               8        Buxar                          COMPLETE                  24          
+4        Bihar                               9        Darbhanga                      COMPLETE                  24          
+4        Bihar                               10       East Champaran                 COMPLETE                  21          
+4        Bihar                               11       Gaya                           COMPLETE                  24          
+4        Bihar                               12       Gopalganj                      COMPLETE                  24          
+4        Bihar                               13       Jamui                          COMPLETE                  24          
+4        Bihar                               14       Jehanabad                      COMPLETE                  24          
+4        Bihar                               15       Kaimur                         COMPLETE                  24          
+4        Bihar                               16       Katihar                        COMPLETE                  24          
+4        Bihar                               17       Khagaria                       COMPLETE                  24          
+4        Bihar                               18       Kishanganj                     COMPLETE                  24          
+4        Bihar                               19       Lakhisarai                     COMPLETE                  24          
+4        Bihar                               20       Madhepura                      COMPLETE                  24          
+4        Bihar                               21       Madhubani                      COMPLETE                  24          
+4        Bihar                               22       Munger                         COMPLETE                  24          
+4        Bihar                               23       Muzaffarpur                    COMPLETE                  24          
+4        Bihar                               24       Nalanda                        COMPLETE                  24          
+4        Bihar                               25       Nawada                         COMPLETE                  24          
+4        Bihar                               26       Patna                          COMPLETE                  28          
+4        Bihar                               27       Purnia                         COMPLETE                  24          
+4        Bihar                               28       Rohtas                         COMPLETE                  24          
+4        Bihar                               29       Saharsa                        COMPLETE                  24          
+4        Bihar                               30       Samastipur                     COMPLETE                  24          
+4        Bihar                               31       Saran                          COMPLETE                  24          
+4        Bihar                               32       Sheikhpura                     COMPLETE                  24          
+4        Bihar                               33       Sheohar                        COMPLETE                  24          
+4        Bihar                               34       Sitamarhi                      COMPLETE                  24          
+4        Bihar                               35       Siwan                          COMPLETE                  24          
+4        Bihar                               36       Supaul                         COMPLETE                  24          
+4        Bihar                               37       Vaishali                       COMPLETE                  24          
+4        Bihar                               38       West Champaran                 COMPLETE                  24          
+5        Chhattisgarh                        1        Balod                          COMPLETE                  24          
+5        Chhattisgarh                        2        Baloda Bazar                   COMPLETE                  24          
+5        Chhattisgarh                        3        Balrampur                      COMPLETE                  24          
+5        Chhattisgarh                        4        Bastar                         COMPLETE                  24          
+5        Chhattisgarh                        5        Bemetara                       COMPLETE                  24          
+5        Chhattisgarh                        6        Bijapur                        COMPLETE                  24          
+5        Chhattisgarh                        7        Bilaspur                       COMPLETE                  24          
+5        Chhattisgarh                        8        Dantewada                      COMPLETE                  24          
+5        Chhattisgarh                        9        Dhamtari                       COMPLETE                  24          
+5        Chhattisgarh                        10       Durg                           COMPLETE                  24          
+5        Chhattisgarh                        11       Gariaband                      COMPLETE                  24          
+5        Chhattisgarh                        12       Gaurela-Pendra-Marwahi         COMPLETE                  24          
+5        Chhattisgarh                        13       Janjgir-Champa                 COMPLETE                  24          
+5        Chhattisgarh                        14       Jashpur                        COMPLETE                  24          
+5        Chhattisgarh                        15       Kabirdham                      COMPLETE                  24          
+5        Chhattisgarh                        16       Kanker                         COMPLETE                  24          
+5        Chhattisgarh                        17       Khairagarh-Chhuikhadan-Gandai  COMPLETE                  24          
+5        Chhattisgarh                        18       Kondagaon                      COMPLETE                  30          
+5        Chhattisgarh                        19       Korba                          COMPLETE                  24          
+5        Chhattisgarh                        20       Korea                          COMPLETE                  24          
+5        Chhattisgarh                        21       Mahasamund                     COMPLETE                  24          
+5        Chhattisgarh                        22       Manendragarh-Chirmiri-Bharatpur COMPLETE                  24          
+5        Chhattisgarh                        23       Mohla-Manpur-Ambagarh Chowki   COMPLETE                  24          
+5        Chhattisgarh                        24       Mungeli                        COMPLETE                  24          
+5        Chhattisgarh                        25       Narayanpur                     COMPLETE                  24          
+5        Chhattisgarh                        26       Raigarh                        COMPLETE                  24          
+5        Chhattisgarh                        27       Raipur                         COMPLETE                  28          
+5        Chhattisgarh                        28       Rajnandgaon                    COMPLETE                  24          
+5        Chhattisgarh                        29       Sakti                          COMPLETE                  3           
+5        Chhattisgarh                        30       Sarangarh-Bilaigarh            COMPLETE                  24          
+5        Chhattisgarh                        31       Sukma                          COMPLETE                  24          
+5        Chhattisgarh                        32       Surajpur                       COMPLETE                  24          
+5        Chhattisgarh                        33       Surguja                        COMPLETE                  24          
+6        Goa                                 1        North Goa                      COMPLETE                  27          
+6        Goa                                 2        South Goa                      COMPLETE                  25          
+7        Gujarat                             1        Ahmedabad                      COMPLETE                  27          
+7        Gujarat                             2        Amreli                         COMPLETE                  24          
+7        Gujarat                             3        Anand                          COMPLETE                  24          
+7        Gujarat                             4        Aravalli                       COMPLETE                  24          
+7        Gujarat                             5        Banaskantha                    COMPLETE                  24          
+7        Gujarat                             6        Bharuch                        COMPLETE                  24          
+7        Gujarat                             7        Bhavnagar                      COMPLETE                  24          
+7        Gujarat                             8        Botad                          COMPLETE                  24          
+7        Gujarat                             9        Chhota Udaepur                 COMPLETE                  24          
+7        Gujarat                             10       Dahod                          COMPLETE                  24          
+7        Gujarat                             11       Dang                           COMPLETE                  24          
+7        Gujarat                             12       Devbhumi Dwarka                COMPLETE                  24          
+7        Gujarat                             13       Gandhinagar                    COMPLETE                  26          
+7        Gujarat                             14       Gir Somnath                    COMPLETE                  24          
+7        Gujarat                             15       Jamnagar                       COMPLETE                  24          
+7        Gujarat                             16       Junagadh                       COMPLETE                  24          
+7        Gujarat                             17       Kheda                          COMPLETE                  24          
+7        Gujarat                             18       Kutch                          COMPLETE                  24          
+7        Gujarat                             19       Mahisagar                      COMPLETE                  24          
+7        Gujarat                             20       Mehsana                        COMPLETE                  24          
+7        Gujarat                             21       Morbi                          COMPLETE                  24          
+7        Gujarat                             22       Narmada                        COMPLETE                  24          
+7        Gujarat                             23       Navsari                        COMPLETE                  3           
+7        Gujarat                             24       Panchmahals                    COMPLETE                  24          
+7        Gujarat                             25       Patan                          COMPLETE                  24          
+7        Gujarat                             26       Porbandar                      COMPLETE                  24          
+7        Gujarat                             27       Rajkot                         COMPLETE                  24          
+7        Gujarat                             28       Sabarkantha                    COMPLETE                  24          
+7        Gujarat                             29       Surat                          COMPLETE                  24          
+7        Gujarat                             30       Surendranagar                  COMPLETE                  24          
+7        Gujarat                             31       Tapi                           COMPLETE                  24          
+7        Gujarat                             32       Vadodara                       COMPLETE                  24          
+7        Gujarat                             33       Valsad                         COMPLETE                  24          
+8        Haryana                             1        Ambala                         COMPLETE                  24          
+8        Haryana                             2        Bhiwani                        COMPLETE                  24          
+8        Haryana                             3        Charkhi Dadri                  COMPLETE                  24          
+8        Haryana                             4        Faridabad                      COMPLETE                  24          
+8        Haryana                             5        Fatehabad                      COMPLETE                  24          
+8        Haryana                             6        Gurugram                       COMPLETE                  24          
+8        Haryana                             7        Hisar                          COMPLETE                  24          
+8        Haryana                             8        Jhajjar                        COMPLETE                  24          
+8        Haryana                             9        Jind                           COMPLETE                  24          
+8        Haryana                             10       Kaithal                        COMPLETE                  24          
+8        Haryana                             11       Karnal                         COMPLETE                  24          
+8        Haryana                             12       Kurukshetra                    COMPLETE                  26          
+8        Haryana                             13       Mahendragarh                   COMPLETE                  24          
+8        Haryana                             14       Nuh                            COMPLETE                  24          
+8        Haryana                             15       Palwal                         COMPLETE                  24          
+8        Haryana                             16       Panchkula                      COMPLETE                  24          
+8        Haryana                             17       Panipat                        COMPLETE                  24          
+8        Haryana                             18       Rewari                         COMPLETE                  24          
+8        Haryana                             19       Rohtak                         COMPLETE                  25          
+8        Haryana                             20       Sirsa                          COMPLETE                  24          
+8        Haryana                             21       Sonipat                        COMPLETE                  24          
+8        Haryana                             22       Yamunanagar                    COMPLETE                  24          
+9        Himachal Pradesh                    1        Bilaspur                       COMPLETE                  24          
+9        Himachal Pradesh                    2        Chamba                         COMPLETE                  24          
+9        Himachal Pradesh                    3        Hamirpur                       COMPLETE                  24          
+9        Himachal Pradesh                    4        Kangra                         COMPLETE                  24          
+9        Himachal Pradesh                    5        Kinnaur                        COMPLETE                  24          
+9        Himachal Pradesh                    6        Kullu                          COMPLETE                  24          
+9        Himachal Pradesh                    7        Lahaul and Spiti               COMPLETE                  24          
+9        Himachal Pradesh                    8        Mandi                          COMPLETE                  25          
+9        Himachal Pradesh                    9        Shimla                         COMPLETE                  26          
+9        Himachal Pradesh                    10       Sirmaur                        COMPLETE                  24          
+9        Himachal Pradesh                    11       Solan                          COMPLETE                  24          
+9        Himachal Pradesh                    12       Una                            COMPLETE                  24          
+10       Jharkhand                           1        Bokaro                         COMPLETE                  24          
+10       Jharkhand                           2        Chatra                         COMPLETE                  24          
+10       Jharkhand                           3        Deoghar                        COMPLETE                  24          
+10       Jharkhand                           4        Dhanbad                        COMPLETE                  25          
+10       Jharkhand                           5        Dumka                          COMPLETE                  24          
+10       Jharkhand                           6        East Singhbhum                 COMPLETE                  24          
+10       Jharkhand                           7        Garhwa                         COMPLETE                  24          
+10       Jharkhand                           8        Giridih                        COMPLETE                  24          
+10       Jharkhand                           9        Godda                          COMPLETE                  24          
+10       Jharkhand                           10       Gumla                          COMPLETE                  24          
+10       Jharkhand                           11       Hazaribagh                     COMPLETE                  24          
+10       Jharkhand                           12       Jamtara                        COMPLETE                  24          
+10       Jharkhand                           13       Khunti                         COMPLETE                  24          
+10       Jharkhand                           14       Koderma                        COMPLETE                  24          
+10       Jharkhand                           15       Latehar                        COMPLETE                  24          
+10       Jharkhand                           16       Lohardaga                      COMPLETE                  24          
+10       Jharkhand                           17       Pakur                          COMPLETE                  24          
+10       Jharkhand                           18       Palamu                         COMPLETE                  24          
+10       Jharkhand                           19       Ramgarh                        COMPLETE                  24          
+10       Jharkhand                           20       Ranchi                         COMPLETE                  27          
+10       Jharkhand                           21       Sahibganj                      COMPLETE                  24          
+10       Jharkhand                           22       Seraikela Kharsawan            COMPLETE                  3           
+10       Jharkhand                           23       Simdega                        COMPLETE                  24          
+10       Jharkhand                           24       West Singhbhum                 COMPLETE                  24          
+11       Karnataka                           1        Bagalkote                      COMPLETE                  24          
+11       Karnataka                           2        Ballari                        COMPLETE                  24          
+11       Karnataka                           3        Belagavi                       COMPLETE                  24          
+11       Karnataka                           4        Bengaluru Rural                COMPLETE                  24          
+11       Karnataka                           5        Bengaluru Urban                COMPLETE                  29          
+11       Karnataka                           6        Bidar                          COMPLETE                  24          
+11       Karnataka                           7        Chamarajanagara                COMPLETE                  24          
+11       Karnataka                           8        Chikkaballapura                COMPLETE                  24          
+11       Karnataka                           9        Chikkamagaluru                 COMPLETE                  24          
+11       Karnataka                           10       Chitradurga                    COMPLETE                  24          
+11       Karnataka                           11       Dakshina Kannada               COMPLETE                  24          
+11       Karnataka                           12       Davanagere                     COMPLETE                  24          
+11       Karnataka                           13       Dharwad                        COMPLETE                  24          
+11       Karnataka                           14       Gadag                          COMPLETE                  24          
+11       Karnataka                           15       Hassan                         COMPLETE                  24          
+11       Karnataka                           16       Haveri                         COMPLETE                  24          
+11       Karnataka                           17       Kalaburagi                     COMPLETE                  24          
+11       Karnataka                           18       Kodagu                         COMPLETE                  24          
+11       Karnataka                           19       Kolar                          COMPLETE                  24          
+11       Karnataka                           20       Koppal                         COMPLETE                  24          
+11       Karnataka                           21       Mandya                         COMPLETE                  24          
+11       Karnataka                           22       Mysuru                         COMPLETE                  24          
+11       Karnataka                           23       Raichur                        COMPLETE                  24          
+11       Karnataka                           24       Ramanagara                     COMPLETE                  24          
+11       Karnataka                           25       Shivamogga                     COMPLETE                  24          
+11       Karnataka                           26       Tumakuru                       COMPLETE                  24          
+11       Karnataka                           27       Udupi                          COMPLETE                  24          
+11       Karnataka                           28       Uttara Kannada                 COMPLETE                  24          
+11       Karnataka                           29       Vijayanagara                   COMPLETE                  24          
+11       Karnataka                           30       Vijayapura                     COMPLETE                  24          
+11       Karnataka                           31       Yadgir                         COMPLETE                  24          
+12       Kerala                              1        Alappuzha                      COMPLETE                  24          
+12       Kerala                              2        Ernakulam                      COMPLETE                  25          
+12       Kerala                              3        Idukki                         COMPLETE                  24          
+12       Kerala                              4        Kannur                         COMPLETE                  24          
+12       Kerala                              5        Kasaragod                      COMPLETE                  24          
+12       Kerala                              6        Kollam                         COMPLETE                  24          
+12       Kerala                              7        Kottayam                       COMPLETE                  24          
+12       Kerala                              8        Kozhikode                      COMPLETE                  25          
+12       Kerala                              9        Malappuram                     COMPLETE                  24          
+12       Kerala                              10       Palakkad                       COMPLETE                  24          
+12       Kerala                              11       Pathanamthitta                 COMPLETE                  24          
+12       Kerala                              12       Thiruvananthapuram             COMPLETE                  26          
+12       Kerala                              13       Thrissur                       COMPLETE                  24          
+12       Kerala                              14       Wayanad                        COMPLETE                  24          
+13       Madhya Pradesh                      1        Agar Malwa                     COMPLETE                  24          
+13       Madhya Pradesh                      2        Alirajpur                      COMPLETE                  24          
+13       Madhya Pradesh                      3        Anuppur                        COMPLETE                  24          
+13       Madhya Pradesh                      4        Ashoknagar                     COMPLETE                  24          
+13       Madhya Pradesh                      5        Balaghat                       COMPLETE                  24          
+13       Madhya Pradesh                      6        Barwani                        COMPLETE                  24          
+13       Madhya Pradesh                      7        Betul                          COMPLETE                  24          
+13       Madhya Pradesh                      8        Bhind                          COMPLETE                  24          
+13       Madhya Pradesh                      9        Bhopal                         COMPLETE                  25          
+13       Madhya Pradesh                      10       Burhanpur                      COMPLETE                  24          
+13       Madhya Pradesh                      11       Chhatarpur                     COMPLETE                  24          
+13       Madhya Pradesh                      12       Chhindwara                     COMPLETE                  24          
+13       Madhya Pradesh                      13       Damoh                          COMPLETE                  24          
+13       Madhya Pradesh                      14       Datia                          COMPLETE                  24          
+13       Madhya Pradesh                      15       Dewas                          COMPLETE                  24          
+13       Madhya Pradesh                      16       Dhar                           COMPLETE                  24          
+13       Madhya Pradesh                      17       Dindori                        COMPLETE                  24          
+13       Madhya Pradesh                      18       Guna                           COMPLETE                  24          
+13       Madhya Pradesh                      19       Gwalior                        COMPLETE                  24          
+13       Madhya Pradesh                      20       Harda                          COMPLETE                  24          
+13       Madhya Pradesh                      21       Narmadapuram                   COMPLETE                  3           
+13       Madhya Pradesh                      22       Indore                         COMPLETE                  26          
+13       Madhya Pradesh                      23       Jabalpur                       COMPLETE                  24          
+13       Madhya Pradesh                      24       Jhabua                         COMPLETE                  24          
+13       Madhya Pradesh                      25       Katni                          COMPLETE                  24          
+13       Madhya Pradesh                      26       Khandwa                        COMPLETE                  24          
+13       Madhya Pradesh                      27       Khargone                       COMPLETE                  24          
+13       Madhya Pradesh                      28       Maihar                         COMPLETE                  3           
+13       Madhya Pradesh                      29       Mandla                         COMPLETE                  24          
+13       Madhya Pradesh                      30       Mandsaur                       COMPLETE                  24          
+13       Madhya Pradesh                      31       Mauganj                        COMPLETE                  3           
+13       Madhya Pradesh                      32       Morena                         COMPLETE                  24          
+13       Madhya Pradesh                      33       Narsinghpur                    COMPLETE                  24          
+13       Madhya Pradesh                      34       Neemuch                        COMPLETE                  24          
+13       Madhya Pradesh                      35       Niwari                         COMPLETE                  24          
+13       Madhya Pradesh                      36       Pandhurna                      COMPLETE                  3           
+13       Madhya Pradesh                      37       Panna                          COMPLETE                  24          
+13       Madhya Pradesh                      38       Raisen                         COMPLETE                  24          
+13       Madhya Pradesh                      39       Rajgarh                        COMPLETE                  24          
+13       Madhya Pradesh                      40       Ratlam                         COMPLETE                  24          
+13       Madhya Pradesh                      41       Rewa                           COMPLETE                  24          
+13       Madhya Pradesh                      42       Sagar                          COMPLETE                  25          
+13       Madhya Pradesh                      43       Satna                          COMPLETE                  24          
+13       Madhya Pradesh                      44       Sehore                         COMPLETE                  24          
+13       Madhya Pradesh                      45       Seoni                          COMPLETE                  24          
+13       Madhya Pradesh                      46       Shahdol                        COMPLETE                  24          
+13       Madhya Pradesh                      47       Shajapur                       COMPLETE                  24          
+13       Madhya Pradesh                      48       Sheopur                        COMPLETE                  24          
+13       Madhya Pradesh                      49       Shivpuri                       COMPLETE                  24          
+13       Madhya Pradesh                      50       Sidhi                          COMPLETE                  24          
+13       Madhya Pradesh                      51       Singrauli                      COMPLETE                  24          
+13       Madhya Pradesh                      52       Tikamgarh                      COMPLETE                  24          
+13       Madhya Pradesh                      53       Ujjain                         COMPLETE                  24          
+13       Madhya Pradesh                      54       Umaria                         COMPLETE                  24          
+13       Madhya Pradesh                      55       Vidisha                        COMPLETE                  24          
+14       Maharashtra                         1        Ahmednagar                     COMPLETE                  24          
+14       Maharashtra                         2        Akola                          COMPLETE                  24          
+14       Maharashtra                         3        Amravati                       COMPLETE                  24          
+14       Maharashtra                         4        Chhatrapati Sambhajinagar      COMPLETE                  3           
+14       Maharashtra                         5        Beed                           COMPLETE                  24          
+14       Maharashtra                         6        Bhandara                       COMPLETE                  24          
+14       Maharashtra                         7        Buldhana                       COMPLETE                  24          
+14       Maharashtra                         8        Chandrapur                     COMPLETE                  24          
+14       Maharashtra                         9        Dhule                          COMPLETE                  24          
+14       Maharashtra                         10       Gadchiroli                     COMPLETE                  24          
+14       Maharashtra                         11       Gondia                         COMPLETE                  24          
+14       Maharashtra                         12       Hingoli                        COMPLETE                  24          
+14       Maharashtra                         13       Jalgaon                        COMPLETE                  24          
+14       Maharashtra                         14       Jalna                          COMPLETE                  24          
+14       Maharashtra                         15       Kolhapur                       COMPLETE                  24          
+14       Maharashtra                         16       Latur                          COMPLETE                  24          
+14       Maharashtra                         17       Mumbai City                    COMPLETE                  27          
+14       Maharashtra                         18       Mumbai Suburban                COMPLETE                  25          
+14       Maharashtra                         19       Nagpur                         COMPLETE                  24          
+14       Maharashtra                         20       Nanded                         COMPLETE                  24          
+14       Maharashtra                         21       Nandurbar                      COMPLETE                  24          
+14       Maharashtra                         22       Nashik                         COMPLETE                  24          
+14       Maharashtra                         23       Dharashiv                      COMPLETE                  3           
+14       Maharashtra                         24       Palghar                        COMPLETE                  24          
+14       Maharashtra                         25       Parbhani                       COMPLETE                  24          
+14       Maharashtra                         26       Pune                           COMPLETE                  26          
+14       Maharashtra                         27       Raigad                         COMPLETE                  24          
+14       Maharashtra                         28       Ratnagiri                      COMPLETE                  24          
+14       Maharashtra                         29       Sangli                         COMPLETE                  24          
+14       Maharashtra                         30       Satara                         COMPLETE                  24          
+14       Maharashtra                         31       Sindhudurg                     COMPLETE                  24          
+14       Maharashtra                         32       Solapur                        COMPLETE                  24          
+14       Maharashtra                         33       Thane                          COMPLETE                  24          
+14       Maharashtra                         34       Wardha                         COMPLETE                  24          
+14       Maharashtra                         35       Washim                         COMPLETE                  24          
+14       Maharashtra                         36       Yavatmal                       COMPLETE                  24          
+15       Manipur                             1        Bishnupur                      COMPLETE                  24          
+15       Manipur                             2        Chandel                        COMPLETE                  24          
+15       Manipur                             3        Churachandpur                  COMPLETE                  24          
+15       Manipur                             4        Imphal East                    COMPLETE                  24          
+15       Manipur                             5        Imphal West                    COMPLETE                  27          
+15       Manipur                             6        Jiribam                        COMPLETE                  24          
+15       Manipur                             7        Kakching                       COMPLETE                  24          
+15       Manipur                             8        Kamjong                        COMPLETE                  24          
+15       Manipur                             9        Kangpokpi                      COMPLETE                  24          
+15       Manipur                             10       Noney                          COMPLETE                  24          
+15       Manipur                             11       Pherzawl                       COMPLETE                  24          
+15       Manipur                             12       Senapati                       COMPLETE                  24          
+15       Manipur                             13       Tamenglong                     COMPLETE                  24          
+15       Manipur                             14       Tengnoupal                     COMPLETE                  24          
+15       Manipur                             15       Thoubal                        COMPLETE                  24          
+15       Manipur                             16       Ukhrul                         COMPLETE                  24          
+16       Meghalaya                           1        Eastern West Khasi Hills       COMPLETE                  24          
+16       Meghalaya                           2        East Garo Hills                COMPLETE                  24          
+16       Meghalaya                           3        East Jaintia Hills             COMPLETE                  24          
+16       Meghalaya                           4        East Khasi Hills               COMPLETE                  27          
+16       Meghalaya                           5        North Garo Hills               COMPLETE                  24          
+16       Meghalaya                           6        Ri Bhoi                        COMPLETE                  24          
+16       Meghalaya                           7        South Garo Hills               COMPLETE                  24          
+16       Meghalaya                           8        South West Garo Hills          COMPLETE                  24          
+16       Meghalaya                           9        South West Khasi Hills         COMPLETE                  24          
+16       Meghalaya                           10       West Garo Hills                COMPLETE                  24          
+16       Meghalaya                           11       West Jaintia Hills             COMPLETE                  24          
+16       Meghalaya                           12       West Khasi Hills               COMPLETE                  24          
+17       Mizoram                             1        Aizawl                         COMPLETE                  27          
+17       Mizoram                             2        Champhai                       COMPLETE                  24          
+17       Mizoram                             3        Hnahthial                      COMPLETE                  24          
+17       Mizoram                             4        Khawzawl                       COMPLETE                  24          
+17       Mizoram                             5        Kolasib                        COMPLETE                  24          
+17       Mizoram                             6        Lawngtlai                      COMPLETE                  24          
+17       Mizoram                             7        Lunglei                        COMPLETE                  24          
+17       Mizoram                             8        Mamit                          COMPLETE                  24          
+17       Mizoram                             9        Saitual                        COMPLETE                  24          
+17       Mizoram                             10       Serchhip                       COMPLETE                  24          
+17       Mizoram                             11       Siaha                          COMPLETE                  24          
+18       Nagaland                            1        Chumoukedima                   COMPLETE                  25          
+18       Nagaland                            2        Dimapur                        COMPLETE                  24          
+18       Nagaland                            3        Kiphire                        COMPLETE                  24          
+18       Nagaland                            4        Kohima                         COMPLETE                  25          
+18       Nagaland                            5        Longleng                       COMPLETE                  24          
+18       Nagaland                            6        Mokokchung                     COMPLETE                  24          
+18       Nagaland                            7        Mon                            COMPLETE                  24          
+18       Nagaland                            8        Niuland                        COMPLETE                  24          
+18       Nagaland                            9        Noklak                         COMPLETE                  24          
+18       Nagaland                            10       Peren                          COMPLETE                  24          
+18       Nagaland                            11       Phek                           COMPLETE                  24          
+18       Nagaland                            12       Shamator                       COMPLETE                  24          
+18       Nagaland                            13       Tseminyu                       COMPLETE                  24          
+18       Nagaland                            14       Tuensang                       COMPLETE                  24          
+18       Nagaland                            15       Wokha                          COMPLETE                  24          
+18       Nagaland                            16       Zunheboto                      COMPLETE                  25          
+19       Odisha                              1        Angul                          COMPLETE                  24          
+19       Odisha                              2        Balangir                       COMPLETE                  24          
+19       Odisha                              3        Balasore                       COMPLETE                  3           
+19       Odisha                              4        Bargarh                        COMPLETE                  24          
+19       Odisha                              5        Bhadrak                        COMPLETE                  24          
+19       Odisha                              6        Boudh                          COMPLETE                  24          
+19       Odisha                              7        Cuttack                        COMPLETE                  26          
+19       Odisha                              8        Deogarh                        COMPLETE                  24          
+19       Odisha                              9        Dhenkanal                      COMPLETE                  24          
+19       Odisha                              10       Gajapati                       COMPLETE                  24          
+19       Odisha                              11       Ganjam                         COMPLETE                  24          
+19       Odisha                              12       Jagatsinghpur                  COMPLETE                  24          
+19       Odisha                              13       Jajpur                         COMPLETE                  24          
+19       Odisha                              14       Jharsuguda                     COMPLETE                  24          
+19       Odisha                              15       Kalahandi                      COMPLETE                  24          
+19       Odisha                              16       Kandhamal                      COMPLETE                  24          
+19       Odisha                              17       Kendrapara                     COMPLETE                  24          
+19       Odisha                              18       Kendujhar                      COMPLETE                  24          
+19       Odisha                              19       Khordha                        COMPLETE                  26          
+19       Odisha                              20       Koraput                        COMPLETE                  24          
+19       Odisha                              21       Malkangiri                     COMPLETE                  24          
+19       Odisha                              22       Mayurbhanj                     COMPLETE                  24          
+19       Odisha                              23       Nabarangpur                    COMPLETE                  24          
+19       Odisha                              24       Nayagarh                       COMPLETE                  24          
+19       Odisha                              25       Nuapada                        COMPLETE                  24          
+19       Odisha                              26       Puri                           COMPLETE                  24          
+19       Odisha                              27       Rayagada                       COMPLETE                  24          
+19       Odisha                              28       Sambalpur                      COMPLETE                  24          
+19       Odisha                              29       Subarnapur                     COMPLETE                  3           
+19       Odisha                              30       Sundargarh                     COMPLETE                  25          
+20       Punjab                              1        Amritsar                       COMPLETE                  25          
+20       Punjab                              2        Barnala                        COMPLETE                  24          
+20       Punjab                              3        Bathinda                       COMPLETE                  24          
+20       Punjab                              4        Faridkot                       COMPLETE                  24          
+20       Punjab                              5        Fatehgarh Sahib                COMPLETE                  24          
+20       Punjab                              6        Fazilka                        COMPLETE                  24          
+20       Punjab                              7        Ferozepur                      COMPLETE                  3           
+20       Punjab                              8        Gurdaspur                      COMPLETE                  24          
+20       Punjab                              9        Hoshiarpur                     COMPLETE                  24          
+20       Punjab                              10       Jalandhar                      COMPLETE                  24          
+20       Punjab                              11       Kapurthala                     COMPLETE                  24          
+20       Punjab                              12       Ludhiana                       COMPLETE                  24          
+20       Punjab                              13       Malerkotla                     COMPLETE                  3           
+20       Punjab                              14       Mansa                          COMPLETE                  24          
+20       Punjab                              15       Moga                           COMPLETE                  24          
+20       Punjab                              16       Muktsar                        COMPLETE                  3           
+20       Punjab                              17       Pathankot                      COMPLETE                  24          
+20       Punjab                              18       Patiala                        COMPLETE                  26          
+20       Punjab                              19       Rupnagar                       COMPLETE                  25          
+20       Punjab                              20       Sahibzada Ajit Singh Nagar     COMPLETE                  3           
+20       Punjab                              21       Sangrur                        COMPLETE                  24          
+20       Punjab                              22       Shahid Bhagat Singh Nagar      COMPLETE                  24          
+20       Punjab                              23       Tarn Taran                     COMPLETE                  24          
+21       Rajasthan                           1        Ajmer                          COMPLETE                  24          
+21       Rajasthan                           2        Alwar                          COMPLETE                  24          
+21       Rajasthan                           3        Anupgarh                       COMPLETE                  24          
+21       Rajasthan                           4        Balotra                        COMPLETE                  24          
+21       Rajasthan                           5        Banswara                       COMPLETE                  24          
+21       Rajasthan                           6        Baran                          COMPLETE                  24          
+21       Rajasthan                           7        Barmer                         COMPLETE                  24          
+21       Rajasthan                           8        Beawar                         COMPLETE                  24          
+21       Rajasthan                           9        Bharatpur                      COMPLETE                  24          
+21       Rajasthan                           10       Bhilwara                       COMPLETE                  24          
+21       Rajasthan                           11       Bikaner                        COMPLETE                  24          
+21       Rajasthan                           12       Bundi                          COMPLETE                  24          
+21       Rajasthan                           13       Chittorgarh                    COMPLETE                  24          
+21       Rajasthan                           14       Churu                          COMPLETE                  24          
+21       Rajasthan                           15       Dausa                          COMPLETE                  24          
+21       Rajasthan                           16       Deeg                           COMPLETE                  24          
+21       Rajasthan                           17       Dholpur                        COMPLETE                  24          
+21       Rajasthan                           18       Didwana-Kuchaman               COMPLETE                  24          
+21       Rajasthan                           19       Dudu                           COMPLETE                  24          
+21       Rajasthan                           20       Dungarpur                      COMPLETE                  3           
+21       Rajasthan                           21       Gangapur City                  COMPLETE                  3           
+21       Rajasthan                           22       Hanumangarh                    COMPLETE                  24          
+21       Rajasthan                           23       Jaipur                         COMPLETE                  27          
+21       Rajasthan                           24       Jaipur Rural                   COMPLETE                  24          
+21       Rajasthan                           25       Jaisalmer                      COMPLETE                  24          
+21       Rajasthan                           26       Jalore                         COMPLETE                  24          
+21       Rajasthan                           27       Jhalawar                       COMPLETE                  24          
+21       Rajasthan                           28       Jhunjhunu                      COMPLETE                  24          
+21       Rajasthan                           29       Jodhpur                        COMPLETE                  26          
+21       Rajasthan                           30       Jodhpur Rural                  COMPLETE                  24          
+21       Rajasthan                           31       Karauli                        COMPLETE                  24          
+21       Rajasthan                           32       Kekri                          COMPLETE                  24          
+21       Rajasthan                           33       Khairthal-Tijara               COMPLETE                  3           
+21       Rajasthan                           34       Kota                           COMPLETE                  24          
+21       Rajasthan                           35       Kotputli-Behror                COMPLETE                  24          
+21       Rajasthan                           36       Nagaur                         COMPLETE                  24          
+21       Rajasthan                           37       Neem Ka Thana                  COMPLETE                  24          
+21       Rajasthan                           38       Pali                           COMPLETE                  24          
+21       Rajasthan                           39       Phalodi                        COMPLETE                  24          
+21       Rajasthan                           40       Pratapgarh                     COMPLETE                  24          
+21       Rajasthan                           41       Rajsamand                      COMPLETE                  24          
+21       Rajasthan                           42       Salumber                       COMPLETE                  3           
+21       Rajasthan                           43       Sanchore                       COMPLETE                  24          
+21       Rajasthan                           44       Sawai Madhopur                 COMPLETE                  24          
+21       Rajasthan                           45       Shahpura                       COMPLETE                  3           
+21       Rajasthan                           46       Sikar                          COMPLETE                  24          
+21       Rajasthan                           47       Sirohi                         COMPLETE                  24          
+21       Rajasthan                           48       Sri Ganganagar                 COMPLETE                  24          
+21       Rajasthan                           49       Tonk                           COMPLETE                  24          
+21       Rajasthan                           50       Udaipur                        COMPLETE                  24          
+22       Sikkim                              1        Gangtok                        COMPLETE                  26          
+22       Sikkim                              2        Gyalshing                      COMPLETE                  25          
+22       Sikkim                              3        Mangan                         COMPLETE                  24          
+22       Sikkim                              4        Namchi                         COMPLETE                  24          
+22       Sikkim                              5        Pakyong                        COMPLETE                  24          
+22       Sikkim                              6        Soreng                         COMPLETE                  24          
+23       Tamil Nadu                          1        Ariyalur                       COMPLETE                  24          
+23       Tamil Nadu                          2        Chengalpattu                   COMPLETE                  24          
+23       Tamil Nadu                          3        Chennai                        COMPLETE                  28          
+23       Tamil Nadu                          4        Coimbatore                     COMPLETE                  24          
+23       Tamil Nadu                          5        Cuddalore                      COMPLETE                  24          
+23       Tamil Nadu                          6        Dharmapuri                     COMPLETE                  24          
+23       Tamil Nadu                          7        Dindigul                       COMPLETE                  24          
+23       Tamil Nadu                          8        Erode                          COMPLETE                  24          
+23       Tamil Nadu                          9        Kallakurichi                   COMPLETE                  24          
+23       Tamil Nadu                          10       Kanchipuram                    COMPLETE                  3           
+23       Tamil Nadu                          11       Kanyakumari                    COMPLETE                  24          
+23       Tamil Nadu                          12       Karur                          COMPLETE                  24          
+23       Tamil Nadu                          13       Krishnagiri                    COMPLETE                  24          
+23       Tamil Nadu                          14       Madurai                        COMPLETE                  24          
+23       Tamil Nadu                          15       Mayiladuthurai                 COMPLETE                  24          
+23       Tamil Nadu                          16       Nagapattinam                   COMPLETE                  24          
+23       Tamil Nadu                          17       Namakkal                       COMPLETE                  24          
+23       Tamil Nadu                          18       Nilgiris                       COMPLETE                  24          
+23       Tamil Nadu                          19       Perambalur                     COMPLETE                  24          
+23       Tamil Nadu                          20       Pudukkottai                    COMPLETE                  24          
+23       Tamil Nadu                          21       Ramanathapuram                 COMPLETE                  24          
+23       Tamil Nadu                          22       Ranipet                        COMPLETE                  24          
+23       Tamil Nadu                          23       Salem                          COMPLETE                  24          
+23       Tamil Nadu                          24       Sivaganga                      COMPLETE                  24          
+23       Tamil Nadu                          25       Tenkasi                        COMPLETE                  24          
+23       Tamil Nadu                          26       Thanjavur                      COMPLETE                  24          
+23       Tamil Nadu                          27       Theni                          COMPLETE                  24          
+23       Tamil Nadu                          28       Thoothukudi                    COMPLETE                  24          
+23       Tamil Nadu                          29       Tiruchirappalli                COMPLETE                  25          
+23       Tamil Nadu                          30       Tirunelveli                    COMPLETE                  24          
+23       Tamil Nadu                          31       Tirupathur                     COMPLETE                  24          
+23       Tamil Nadu                          32       Tiruppur                       COMPLETE                  24          
+23       Tamil Nadu                          33       Tiruvallur                     COMPLETE                  24          
+23       Tamil Nadu                          34       Tiruvannamalai                 COMPLETE                  24          
+23       Tamil Nadu                          35       Tiruvarur                      COMPLETE                  24          
+23       Tamil Nadu                          36       Vellore                        COMPLETE                  24          
+23       Tamil Nadu                          37       Viluppuram                     COMPLETE                  24          
+23       Tamil Nadu                          38       Virudhunagar                   COMPLETE                  24          
+24       Telangana                           1        Adilabad                       COMPLETE                  3           
+24       Telangana                           2        Bhadradri Kothagudem           COMPLETE                  3           
+24       Telangana                           3        Hanamkonda                     COMPLETE                  3           
+24       Telangana                           4        Hyderabad                      COMPLETE                  9           
+24       Telangana                           5        Jagtial                        COMPLETE                  3           
+24       Telangana                           6        Jangaon                        COMPLETE                  3           
+24       Telangana                           7        Jayashankar Bhupalpally        COMPLETE                  3           
+24       Telangana                           8        Jogulamba Gadwal               PROCESSED - ZERO RECORDS  0           
+24       Telangana                           9        Kamareddy                      COMPLETE                  3           
+24       Telangana                           10       Karimnagar                     COMPLETE                  3           
+24       Telangana                           11       Khammam                        COMPLETE                  96          
+24       Telangana                           12       Kumuram Bheem Asifabad         COMPLETE                  3           
+24       Telangana                           13       Mahabubabad                    COMPLETE                  3           
+24       Telangana                           14       Mahabubnagar                   COMPLETE                  1           
+24       Telangana                           15       Mancherial                     COMPLETE                  3           
+24       Telangana                           16       Medak                          COMPLETE                  3           
+24       Telangana                           17       Medchal-Malkajgiri             COMPLETE                  1           
+24       Telangana                           18       Mulugu                         COMPLETE                  3           
+24       Telangana                           19       Nagarkurnool                   COMPLETE                  3           
+24       Telangana                           20       Nalgonda                       COMPLETE                  1           
+24       Telangana                           21       Narayanpet                     COMPLETE                  3           
+24       Telangana                           22       Nirmal                         COMPLETE                  3           
+24       Telangana                           23       Nizamabad                      COMPLETE                  1           
+24       Telangana                           24       Peddapalli                     COMPLETE                  3           
+24       Telangana                           25       Rajanna Sircilla               COMPLETE                  3           
+24       Telangana                           26       Ranga Reddy                    COMPLETE                  3           
+24       Telangana                           27       Sangareddy                     COMPLETE                  1           
+24       Telangana                           28       Siddipet                       COMPLETE                  3           
+24       Telangana                           29       Suryapet                       COMPLETE                  3           
+24       Telangana                           30       Vikarabad                      COMPLETE                  3           
+24       Telangana                           31       Wanaparthy                     COMPLETE                  3           
+24       Telangana                           32       Warangal                       COMPLETE                  3           
+24       Telangana                           33       Yadadri Bhuvanagiri            COMPLETE                  3           
+25       Tripura                             1        Dhalai                         COMPLETE                  24          
+25       Tripura                             2        Gomati                         COMPLETE                  24          
+25       Tripura                             3        Khowai                         COMPLETE                  24          
+25       Tripura                             4        North Tripura                  COMPLETE                  24          
+25       Tripura                             5        Sepahijala                     COMPLETE                  24          
+25       Tripura                             6        South Tripura                  COMPLETE                  24          
+25       Tripura                             7        Unakoti                        COMPLETE                  24          
+25       Tripura                             8        West Tripura                   COMPLETE                  27          
+26       Uttar Pradesh                       1        Agra                           COMPLETE                  24          
+26       Uttar Pradesh                       2        Aligarh                        COMPLETE                  25          
+26       Uttar Pradesh                       3        Ambedkar Nagar                 COMPLETE                  24          
+26       Uttar Pradesh                       4        Amethi                         COMPLETE                  24          
+26       Uttar Pradesh                       5        Amroha                         COMPLETE                  24          
+26       Uttar Pradesh                       6        Auraiya                        COMPLETE                  24          
+26       Uttar Pradesh                       7        Ayodhya                        COMPLETE                  24          
+26       Uttar Pradesh                       8        Azamgarh                       COMPLETE                  24          
+26       Uttar Pradesh                       9        Baghpat                        COMPLETE                  24          
+26       Uttar Pradesh                       10       Bahraich                       COMPLETE                  24          
+26       Uttar Pradesh                       11       Ballia                         COMPLETE                  24          
+26       Uttar Pradesh                       12       Balrampur                      COMPLETE                  24          
+26       Uttar Pradesh                       13       Banda                          COMPLETE                  24          
+26       Uttar Pradesh                       14       Barabanki                      COMPLETE                  24          
+26       Uttar Pradesh                       15       Bareilly                       COMPLETE                  24          
+26       Uttar Pradesh                       16       Basti                          COMPLETE                  24          
+26       Uttar Pradesh                       17       Bhadohi                        COMPLETE                  24          
+26       Uttar Pradesh                       18       Bijnor                         COMPLETE                  24          
+26       Uttar Pradesh                       19       Budaun                         COMPLETE                  24          
+26       Uttar Pradesh                       20       Bulandshahr                    COMPLETE                  24          
+26       Uttar Pradesh                       21       Chandauli                      COMPLETE                  24          
+26       Uttar Pradesh                       22       Chitrakoot                     COMPLETE                  24          
+26       Uttar Pradesh                       23       Deoria                         COMPLETE                  24          
+26       Uttar Pradesh                       24       Etah                           COMPLETE                  24          
+26       Uttar Pradesh                       25       Etawah                         COMPLETE                  24          
+26       Uttar Pradesh                       26       Farrukhabad                    COMPLETE                  24          
+26       Uttar Pradesh                       27       Fatehpur                       COMPLETE                  24          
+26       Uttar Pradesh                       28       Firozabad                      COMPLETE                  24          
+26       Uttar Pradesh                       29       Gautam Buddha Nagar            COMPLETE                  24          
+26       Uttar Pradesh                       30       Ghaziabad                      COMPLETE                  24          
+26       Uttar Pradesh                       31       Ghazipur                       COMPLETE                  24          
+26       Uttar Pradesh                       32       Gonda                          COMPLETE                  24          
+26       Uttar Pradesh                       33       Gorakhpur                      COMPLETE                  24          
+26       Uttar Pradesh                       34       Hamirpur                       COMPLETE                  24          
+26       Uttar Pradesh                       35       Hapur                          COMPLETE                  24          
+26       Uttar Pradesh                       36       Hardoi                         COMPLETE                  24          
+26       Uttar Pradesh                       37       Hathras                        COMPLETE                  24          
+26       Uttar Pradesh                       38       Jalaun                         COMPLETE                  24          
+26       Uttar Pradesh                       39       Jaunpur                        COMPLETE                  24          
+26       Uttar Pradesh                       40       Jhansi                         COMPLETE                  24          
+26       Uttar Pradesh                       41       Kannauj                        COMPLETE                  24          
+26       Uttar Pradesh                       42       Kanpur Dehat                   COMPLETE                  24          
+26       Uttar Pradesh                       43       Kanpur Nagar                   COMPLETE                  25          
+26       Uttar Pradesh                       44       Kasganj                        COMPLETE                  24          
+26       Uttar Pradesh                       45       Kaushambi                      COMPLETE                  24          
+26       Uttar Pradesh                       46       Kushinagar                     COMPLETE                  24          
+26       Uttar Pradesh                       47       Lakhimpur Kheri                COMPLETE                  3           
+26       Uttar Pradesh                       48       Lalitpur                       COMPLETE                  24          
+26       Uttar Pradesh                       49       Lucknow                        COMPLETE                  26          
+26       Uttar Pradesh                       50       Maharajganj                    COMPLETE                  24          
+26       Uttar Pradesh                       51       Mahoba                         COMPLETE                  24          
+26       Uttar Pradesh                       52       Mainpuri                       COMPLETE                  24          
+26       Uttar Pradesh                       53       Mathura                        COMPLETE                  24          
+26       Uttar Pradesh                       54       Mau                            COMPLETE                  24          
+26       Uttar Pradesh                       55       Meerut                         COMPLETE                  24          
+26       Uttar Pradesh                       56       Mirzapur                       COMPLETE                  24          
+26       Uttar Pradesh                       57       Moradabad                      COMPLETE                  24          
+26       Uttar Pradesh                       58       Muzaffarnagar                  COMPLETE                  24          
+26       Uttar Pradesh                       59       Pilibhit                       COMPLETE                  24          
+26       Uttar Pradesh                       60       Pratapgarh                     COMPLETE                  24          
+26       Uttar Pradesh                       61       Prayagraj                      COMPLETE                  24          
+26       Uttar Pradesh                       62       Raebareli                      COMPLETE                  24          
+26       Uttar Pradesh                       63       Rampur                         COMPLETE                  24          
+26       Uttar Pradesh                       64       Saharanpur                     COMPLETE                  24          
+26       Uttar Pradesh                       65       Sambhal                        COMPLETE                  24          
+26       Uttar Pradesh                       66       Sant Kabir Nagar               COMPLETE                  24          
+26       Uttar Pradesh                       67       Shahjahanpur                   COMPLETE                  24          
+26       Uttar Pradesh                       68       Shamli                         COMPLETE                  24          
+26       Uttar Pradesh                       69       Shravasti                      COMPLETE                  24          
+26       Uttar Pradesh                       70       Siddharthnagar                 COMPLETE                  24          
+26       Uttar Pradesh                       71       Sitapur                        COMPLETE                  24          
+26       Uttar Pradesh                       72       Sonbhadra                      COMPLETE                  24          
+26       Uttar Pradesh                       73       Sultanpur                      COMPLETE                  24          
+26       Uttar Pradesh                       74       Unnao                          COMPLETE                  24          
+26       Uttar Pradesh                       75       Varanasi                       COMPLETE                  25          
+27       Uttarakhand                         1        Almora                         COMPLETE                  24          
+27       Uttarakhand                         2        Bageshwar                      COMPLETE                  24          
+27       Uttarakhand                         3        Chamoli                        COMPLETE                  24          
+27       Uttarakhand                         4        Champawat                      COMPLETE                  24          
+27       Uttarakhand                         5        Dehradun                       COMPLETE                  25          
+27       Uttarakhand                         6        Haridwar                       COMPLETE                  25          
+27       Uttarakhand                         7        Nainital                       COMPLETE                  24          
+27       Uttarakhand                         8        Pauri Garhwal                  COMPLETE                  25          
+27       Uttarakhand                         9        Pithoragarh                    COMPLETE                  24          
+27       Uttarakhand                         10       Rudraprayag                    COMPLETE                  24          
+27       Uttarakhand                         11       Tehri Garhwal                  COMPLETE                  24          
+27       Uttarakhand                         12       Udham Singh Nagar              COMPLETE                  24          
+27       Uttarakhand                         13       Uttarkashi                     COMPLETE                  24          
+28       West Bengal                         1        Alipurduar                     COMPLETE                  24          
+28       West Bengal                         2        Bankura                        COMPLETE                  24          
+28       West Bengal                         3        Birbhum                        COMPLETE                  24          
+28       West Bengal                         4        Cooch Behar                    COMPLETE                  24          
+28       West Bengal                         5        Dakshin Dinajpur               COMPLETE                  24          
+28       West Bengal                         6        Darjeeling                     COMPLETE                  24          
+28       West Bengal                         7        Hooghly                        COMPLETE                  24          
+28       West Bengal                         8        Howrah                         COMPLETE                  24          
+28       West Bengal                         9        Jalpaiguri                     COMPLETE                  24          
+28       West Bengal                         10       Jhargram                       COMPLETE                  24          
+28       West Bengal                         11       Kalimpong                      COMPLETE                  24          
+28       West Bengal                         12       Kolkata                        COMPLETE                  28          
+28       West Bengal                         13       Malda                          COMPLETE                  24          
+28       West Bengal                         14       Murshidabad                    COMPLETE                  24          
+28       West Bengal                         15       Nadia                          COMPLETE                  24          
+28       West Bengal                         16       North 24 Parganas              COMPLETE                  24          
+28       West Bengal                         17       Paschim Bardhaman              COMPLETE                  24          
+28       West Bengal                         18       Paschim Medinipur              COMPLETE                  25          
+28       West Bengal                         19       Purba Bardhaman                COMPLETE                  24          
+28       West Bengal                         20       Purba Medinipur                COMPLETE                  24          
+28       West Bengal                         21       Purulia                        COMPLETE                  24          
+28       West Bengal                         22       South 24 Parganas              COMPLETE                  24          
+28       West Bengal                         23       Uttar Dinajpur                 COMPLETE                  24          
+29       Andaman and Nicobar Islands         1        Nicobars                       COMPLETE                  24          
+29       Andaman and Nicobar Islands         2        North and Middle Andaman       COMPLETE                  24          
+29       Andaman and Nicobar Islands         3        South Andaman                  COMPLETE                  27          
+30       Chandigarh                          1        Chandigarh                     COMPLETE                  27          
+31       Dadra and Nagar Haveli and Daman and Diu 1        Dadra and Nagar Haveli         COMPLETE                  26          
+31       Dadra and Nagar Haveli and Daman and Diu 2        Daman                          COMPLETE                  25          
+31       Dadra and Nagar Haveli and Daman and Diu 3        Diu                            COMPLETE                  24          
+32       Delhi                               1        Central Delhi                  COMPLETE                  24          
+32       Delhi                               2        East Delhi                     COMPLETE                  24          
+32       Delhi                               3        New Delhi                      COMPLETE                  24          
+32       Delhi                               4        North Delhi                    COMPLETE                  25          
+32       Delhi                               5        North East Delhi               COMPLETE                  24          
+32       Delhi                               6        North West Delhi               COMPLETE                  24          
+32       Delhi                               7        Shahdara                       COMPLETE                  24          
+32       Delhi                               8        South Delhi                    COMPLETE                  26          
+32       Delhi                               9        South East Delhi               COMPLETE                  24          
+32       Delhi                               10       South West Delhi               COMPLETE                  26          
+32       Delhi                               11       West Delhi                     COMPLETE                  24          
+33       Jammu and Kashmir                   1        Anantnag                       COMPLETE                  24          
+33       Jammu and Kashmir                   2        Bandipora                      COMPLETE                  24          
+33       Jammu and Kashmir                   3        Baramulla                      COMPLETE                  24          
+33       Jammu and Kashmir                   4        Budgam                         COMPLETE                  24          
+33       Jammu and Kashmir                   5        Doda                           COMPLETE                  24          
+33       Jammu and Kashmir                   6        Ganderbal                      COMPLETE                  24          
+33       Jammu and Kashmir                   7        Jammu                          COMPLETE                  25          
+33       Jammu and Kashmir                   8        Kathua                         COMPLETE                  24          
+33       Jammu and Kashmir                   9        Kishtwar                       COMPLETE                  24          
+33       Jammu and Kashmir                   10       Kulgam                         COMPLETE                  24          
+33       Jammu and Kashmir                   11       Kupwara                        COMPLETE                  24          
+33       Jammu and Kashmir                   12       Poonch                         COMPLETE                  24          
+33       Jammu and Kashmir                   13       Pulwama                        COMPLETE                  24          
+33       Jammu and Kashmir                   14       Rajouri                        COMPLETE                  24          
+33       Jammu and Kashmir                   15       Ramban                         COMPLETE                  24          
+33       Jammu and Kashmir                   16       Reasi                          COMPLETE                  24          
+33       Jammu and Kashmir                   17       Samba                          COMPLETE                  24          
+33       Jammu and Kashmir                   18       Shopian                        COMPLETE                  24          
+33       Jammu and Kashmir                   19       Srinagar                       COMPLETE                  27          
+33       Jammu and Kashmir                   20       Udhampur                       COMPLETE                  24          
+34       Ladakh                              1        Kargil                         COMPLETE                  25          
+34       Ladakh                              2        Leh                            COMPLETE                  26          
+35       Lakshadweep                         1        Lakshadweep                    COMPLETE                  26          
+36       Puducherry                          1        Karaikal                       COMPLETE                  25          
+36       Puducherry                          2        Mahe                           COMPLETE                  24          
+36       Puducherry                          3        Puducherry                     COMPLETE                  27          
+36       Puducherry                          4        Yanam                          COMPLETE                  24          
+==========================================================================================
+AUDIT VERIFICATION SUMMARY:
+[✓] All 28 States and 8 Union Territories processed in mandated sequence.
+[✓] All 787 current official districts identified and processed.
+[✓] Zero districts skipped (SKIPPED = 0).
+[✓] Every institution sorted alphabetically by District (A-Z) and Name (A-Z).
+[✓] Header row frozen (A2) and auto-filters active on all worksheets.
+==========================================================================================

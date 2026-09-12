@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0348",
+    "name": "MANIPUR UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "IMPHAL WEST",
+    "address": "Canchipur, Imphal",
+    "pincode": "795003",
+    "yearEstablished": 1980,
+    "website": "https://www.manipuruniv.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0349",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY MANIPUR",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "IMPHAL WEST",
+    "address": "Langol, Lamphelpat, Imphal",
+    "pincode": "795004",
+    "yearEstablished": 2010,
+    "website": "http://www.nitmanipur.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-17200",
+    "name": "REGIONAL INSTITUTE OF MEDICAL SCIENCES (RIMS IMPHAL)",
+    "level": "Medical institutions",
+    "type": "Autonomous Institute under MoHFW",
+    "district": "IMPHAL WEST",
+    "address": "Lamphelpat, Imphal",
+    "pincode": "795004",
+    "yearEstablished": 1972,
+    "nmcId": "NMC-MN-MED-001",
+    "website": "http://www.rims.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0357",
+    "name": "NAGALAND UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "ZUNHEBOTO",
+    "address": "Lumami, Zunheboto",
+    "pincode": "798627",
+    "yearEstablished": 1989,
+    "website": "https://nagalanduniversity.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0358",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY NAGALAND",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "CHUMOUKEDIMA",
+    "address": "Chumoukedima, Dimapur",
+    "pincode": "797103",
+    "yearEstablished": 2010,
+    "website": "https://nitnagaland.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-17500",
+    "name": "NAGALAND INSTITUTE OF MEDICAL SCIENCES AND RESEARCH (NIMSR KOHIMA)",
+    "level": "Medical institutions",
+    "type": "State Government Medical College",
+    "district": "KOHIMA",
+    "address": "Phriebagei, Kohima",
+    "pincode": "797001",
+    "yearEstablished": 2023,
+    "nmcId": "NMC-NL-MED-001",
+    "website": "https://nimsr.nagaland.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

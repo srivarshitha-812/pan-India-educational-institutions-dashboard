@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0205",
+    "name": "RANCHI UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "RANCHI",
+    "address": "Shaheed Chowk, Ranchi",
+    "pincode": "834001",
+    "yearEstablished": 1960,
+    "website": "https://www.ranchiuniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0208",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES) DHANBAD",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "DHANBAD",
+    "address": "Police Line, Sardar Patel Nagar, Dhanbad",
+    "pincode": "826004",
+    "yearEstablished": 1926,
+    "website": "https://www.iitism.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-20900",
+    "name": "RAJENDRA INSTITUTE OF MEDICAL SCIENCES (RIMS RANCHI)",
+    "level": "Medical institutions",
+    "type": "Autonomous Government Medical Institute",
+    "district": "RANCHI",
+    "address": "Bariatu, Ranchi",
+    "pincode": "834009",
+    "yearEstablished": 1960,
+    "nmcId": "NMC-JH-MED-001",
+    "website": "http://www.rimsranchi.org",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-20930",
+    "name": "NATIONAL UNIVERSITY OF STUDY AND RESEARCH IN LAW (NUSRL RANCHI)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "RANCHI",
+    "address": "Nagri, Bukru, Kanke, Ranchi",
+    "pincode": "834006",
+    "yearEstablished": 2010,
+    "otherRegulatorId": "BCI-JH-LAW-001",
+    "website": "https://www.nusrlranchi.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

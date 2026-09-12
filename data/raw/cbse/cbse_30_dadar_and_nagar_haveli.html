@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option selected="selected" value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option value="12">MANIPUR</option>
+<option value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>23</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjiWHEC5AMRoHiSOjQm1OIPNCS7w3H1wSxrtJrPXyUYeGczLm_ilKVor52H4cCc1Y3GQg3elBFs3-9lbAxE9wPRXnRVP5gONGPaDlsZs7JEgblZFfBMqqlYL5UIxa9zY1VU" /><input type="hidden" name="__ncforminfo" value="apYAP9Y69J--3-KYuXBK6uhW9lnYr-BkXPESMQ5uys5QMuUmMmCgEMQb2Wf2m52qxI3YjIw1369hESoMWqm8IDO1EATEE50qtNZ70oeGeUGX_h-LV_HNTDVeEgaDjDmOCIcOubeZE1p4FQAegi2s9ECM9oJa2DCupcusolZmbKBhEz1JILVmLY2yY2flChbMJiJI4IV-knemW_LCmzRMv52ObRbH6P853hZPnw-ueSLA5Wa4B5mUPBlPaAcgWbZ-Je_jL3WYeplasPs64_7gecrTq03qxyOSjfdtBo8xDsm56Kg9qSat3Q0ixXqL6gqeH4kdR2Xd00ZHOjOU-Q25jrVq5KnYps7jvxZPDe1DOjtl1gXYCIcEjDEUPGns6htXgfDiTsw7Dxsw-wMyV2Qb-pZYZyGMIrqUY0C2o0UjHGjn5BqceYr9RlE0234AI8YKbH7D6La0z0lI678tMHim0Q=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3000001<br />
+                                            <b>Sch. Code:</b>34952
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA SAYLI SILVASSA <br /> <b>Head/Principal Name: </b>MRIKANK PRASAD MISHRA</td>
+                                        <td>
+                                            <b>Address : </b>KENDRIYA VIDYALAYA SAYLI SILVASSA, OPPOSITE NAMO MEDICAL COLLEGE, SAYLI<br />
+                                            <b>Website : </b>https://silvassa.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3000001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020051<br />
+                                            <b>Sch. Code:</b>32120
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL SHELTI <br /> <b>Head/Principal Name: </b>RAKESH KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>GOVT. HIGHER SECONDARY SCHOOL DAPADA, GOVT. HIGHER SECONDARY SCHOOL DAPADA<br />
+                                            <b>Website : </b>https://emrsshelti.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020052<br />
+                                            <b>Sch. Code:</b>32130
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT HIGHER SECONDARY SCHOOL KHANVEL (GM/EM) <br /> <b>Head/Principal Name: </b>HASMUKHBHAI LAXMANBHAI PATEL</td>
+                                        <td>
+                                            <b>Address : </b>SURVEY NO. 169/2, DUDHANI ROAD, KHANVEL, BIRSA MUNDA SCHOOL BUILDING, CAMPUS, THIRD FLOOR<br />
+                                            <b>Website : </b>https://ghsskem.org.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020052">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020053<br />
+                                            <b>Sch. Code:</b>32132
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. HIGHER SECONDARY SCHOOL, NAROLI (GM AND EM) <br /> <b>Head/Principal Name: </b>FULJIBHAI K PATEL</td>
+                                        <td>
+                                            <b>Address : </b>AT. POST.  NAROLI , VIA- BHILAD  , NAROLI<br />
+                                            <b>Website : </b>https://dnh.gov.in/govt-higher-secondary-school-naroli-gm-em
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020053">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020054<br />
+                                            <b>Sch. Code:</b>32136
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT HIGHER SECONDARY SCHOOL (HINDI MEDIUM) <br /> <b>Head/Principal Name: </b>ANJANABEN NATVARSINH SOLANKI</td>
+                                        <td>
+                                            <b>Address : </b>TOKARKHADA, NEAR BSNL TELEPHONE EXCHANGE, SILVASSA<br />
+                                            <b>Website : </b>https://ghssthindi.org.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020054">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020055<br />
+                                            <b>Sch. Code:</b>32140
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT HIGHER SECONDARY SCHOOL RAKHOLI, ENGLISH MEDIUM <br /> <b>Head/Principal Name: </b>AYYANCHIRA MADHAVAN SHAIJA </td>
+                                        <td>
+                                            <b>Address : </b>SCHOOL FALIYA, KHANVEL ROAD, RAKHOLI<br />
+                                            <b>Website : </b>www,ghssrakholiem.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020055">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020056<br />
+                                            <b>Sch. Code:</b>32141
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. HIGHER SECONDARY SCHOOL, DADRA <br /> <b>Head/Principal Name: </b>ISHWARCHANDRA V PANDEY</td>
+                                        <td>
+                                            <b>Address : </b>NAVA KUVA FALIYA,, DEMNI ROAD,, DADRA<br />
+                                            <b>Website : </b>https://www.ghssdadra.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020056">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020057<br />
+                                            <b>Sch. Code:</b>32142
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. HIGHER SECONDARY SCHOOL, ENGLISH MEDIUM <br /> <b>Head/Principal Name: </b>MANISHA P DARU</td>
+                                        <td>
+                                            <b>Address : </b>TOKARKHADA SCHOOL CAMPUS, BEHIND TELEPHONE EXCHANGE, SILVASSA<br />
+                                            <b>Website : </b>https://www.ghsssilvassaem.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020057">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020058<br />
+                                            <b>Sch. Code:</b>32145
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> PRIMARY ENGLISH MEDIUM SCHOOL DUDHANI <br /> <b>Head/Principal Name: </b>Lakshmi R Nair</td>
+                                        <td>
+                                            <b>Address : </b>GOVT SCHOOL CAMPUS , CHOKIPADA, DUDHANI<br />
+                                            <b>Website : </b>https://sites.google.com/view/cpsdudhani/home
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020058">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3020059<br />
+                                            <b>Sch. Code:</b>32146
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> CPS GALONDA (ENGLISH MEDIUM) <br /> <b>Head/Principal Name: </b>Karenina Jesus</td>
+                                        <td>
+                                            <b>Address : </b>RAUTPADA, GALONDA U.T. OF D.N.H, RAUTPADA, GALONDA U.T. OF D.N.H, RAUTPADA, GALONDA U.T. OF D.N.H<br />
+                                            <b>Website : </b>https://sites.google.com/view/hscgalonda/home
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3020059">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030001<br />
+                                            <b>Sch. Code:</b>31951
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> LIONS ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>PAREKH NIRALI SURESH</td>
+                                        <td>
+                                            <b>Address : </b>SAYLI ROAD SILVASSA DADAR &amp; NAGAR HAVELI<br />
+                                            <b>Website : </b>www.lionsenglishschool.edu.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030002<br />
+                                            <b>Sch. Code:</b>31955
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BAPS SWAMINARAYAN VIDYAMANDIR <br /> <b>Head/Principal Name: </b>VEENA JAYACHANDRAN NAIR</td>
+                                        <td>
+                                            <b>Address : </b>SWAMINARAYAN CULTURAL COMPLEX, VILLAGE ATHAL, NAROLI ROAD,<br />
+                                            <b>Website : </b>https://svmsilvassa.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030003<br />
+                                            <b>Sch. Code:</b>31952
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NEW ERA ENGLISH MEDIUM SCHOOL <br /> <b>Head/Principal Name: </b>KIRTI S SHUKLA</td>
+                                        <td>
+                                            <b>Address : </b>PARMAR STREET, MORIFALIA,VILLAGE NAROLI,U.T OF D&amp;N.H<br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030004<br />
+                                            <b>Sch. Code:</b>31953
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JIWRAJKA INTERNATIONAL SCHOOL <br /> <b>Head/Principal Name: </b>Smriti Singh</td>
+                                        <td>
+                                            <b>Address : </b>491/1/P, BHOYAPADA, NEAR ALOK CITY,&#xD;&#xA;SAYLI<br />
+                                            <b>Website : </b>www.jiwrajkainternationalschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030005<br />
+                                            <b>Sch. Code:</b>31954
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SHIVPRAKASH MEMORIAL SCHOOL <br /> <b>Head/Principal Name: </b>Dr .PRAMILA S UPDHAYAY</td>
+                                        <td>
+                                            <b>Address : </b>SURVEY NO. 263, UMARKUI ROAD, ATHOLA, SILVASSA, DISTT &amp; STATE DADAR AND NAGAR HAVELI-396230<br />
+                                            <b>Website : </b>www.shivprakashschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030006<br />
+                                            <b>Sch. Code:</b>31956
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST. XAVIERS SCHOOL, SILVASSA <br /> <b>Head/Principal Name: </b>RONALD EZAK D SOUZA</td>
+                                        <td>
+                                            <b>Address : </b>BHURKUD FALIA, TOKARKHADA<br />
+                                            <b>Website : </b>http://stxavierssilvassa.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030007<br />
+                                            <b>Sch. Code:</b>31957
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MOUNT LITERA ZEE SCHOOL <br /> <b>Head/Principal Name: </b>Santhi. V</td>
+                                        <td>
+                                            <b>Address : </b>LATE SMT MANJULABA BALWANTSINHJI CHAUHAN EDUCATIONAL CAMPUS, ,PRUTHVIRAJ CHAUHAN MARG, HAVELI FALIYA, NAROLI( U.T.OF DADRA &amp; NAGAR HAVELI)<br />
+                                            <b>Website : </b>http://www.zeeschoolsilvassa.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>18</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030008<br />
+                                            <b>Sch. Code:</b>31958
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> OUR LADY OF HELP ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>Tricia Assunta Teles Pereira Nunes</td>
+                                        <td>
+                                            <b>Address : </b>OUR LADY OF HELP ENGLISH SCHOOL, CLAUDIO NUNES AREA, SAMARVARNI.<br />
+                                            <b>Website : </b>www.ourladyofhelp.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>19</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030009<br />
+                                            <b>Sch. Code:</b>31959
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ADVAITA GURUKUL <br /> <b>Head/Principal Name: </b>RAJESHWARY NAIR</td>
+                                        <td>
+                                            <b>Address : </b>NEAR RAMCO INDUSTRIES;&#xD;&#xA;SILI PHATAK;&#xD;&#xA;PO: SILI;&#xD;&#xA;SILVASSA;&#xD;&#xA;UNION TERRITORY OF DADRA AND NAGAR HAVELI&#xD;&#xA;<br />
+                                            <b>Website : </b>www.advaitagurukul.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>20</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030050<br />
+                                            <b>Sch. Code:</b>31028
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ANAND INTERNATIONAL PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Sunija George</td>
+                                        <td>
+                                            <b>Address : </b>SURVEY NO. 23/1, 23/2, NEAR RAM MANDIR, DADRA<br />
+                                            <b>Website : </b>www.aips.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030050">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>21</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030101<br />
+                                            <b>Sch. Code:</b>31328
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> OMKAR VIDYAMANDIR <br /> <b>Head/Principal Name: </b>Sulochana Rameshchandra Solanki</td>
+                                        <td>
+                                            <b>Address : </b>BESIDE RAJPUT SAMAJ NI VADI, HAVELI FALIYA, NAROLI, U.T. OF DNH &amp; DD<br />
+                                            <b>Website : </b>https://www.ovmnaroli.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030101">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>22</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3030102<br />
+                                            <b>Sch. Code:</b>31602
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> NETAJI SUBHASH CHANDRA BOSE MILITARY ACADEMY <br /> <b>Head/Principal Name: </b>Capt GAJENDRA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>DIST. SILAVASSA, AT. MOTA RANDHA, AT. MOTA RANDHA<br />
+                                            <b>Website : </b>https://vbgnma.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3030102">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>23</td>
+                                        <td>
+                                            <b>Aff. No. :</b>3040001<br />
+                                            <b>Sch. Code:</b>34951
+                                            </td>
+                                        <td><b>State : </b>DADAR &amp; NAGAR HAVELI<br /><b>District : </b>DADRA AND NAGAR HAVELI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>MANOJ KUMAR JOSHI</td>
+                                        <td>
+                                            <b>Address : </b>SILI DIST &amp; POST SILI DADRA &amp; NAGAR HAVELI<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/DADRAANDNAGARHAVELI
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/3040001">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjiWHEC5AMRoHiSOjQm1OIPNCS7w3H1wSxrtJrPXyUYeGczLm_ilKVor52H4cCc1Y3GQg3elBFs3-9lbAxE9wPRXnRVP5gONGPaDlsZs7JEgblZFfBMqqlYL5UIxa9zY1VU" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__OxUUc6FxdL3_zWH9VwBCF-HAR6XXgPZpfQQBs259ClZZyyIA4HmStV7Q3dSzy74H"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025403294;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

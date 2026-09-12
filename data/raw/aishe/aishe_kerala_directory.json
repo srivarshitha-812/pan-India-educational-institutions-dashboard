@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0255",
+    "name": "UNIVERSITY OF KERALA",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "THIRUVANANTHAPURAM",
+    "address": "Senate House Campus, Palayam, Thiruvananthapuram",
+    "pincode": "695034",
+    "yearEstablished": 1937,
+    "website": "https://www.keralauniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0257",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY CALICUT (NIT CALICUT)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KOZHIKODE",
+    "address": "NIT Campus P.O, Kozhikode",
+    "pincode": "673601",
+    "yearEstablished": 1961,
+    "website": "https://www.nitc.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-23400",
+    "name": "GOVERNMENT MEDICAL COLLEGE THIRUVANANTHAPURAM",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "THIRUVANANTHAPURAM",
+    "address": "Medical College P.O., Thiruvananthapuram",
+    "pincode": "695011",
+    "yearEstablished": 1951,
+    "nmcId": "NMC-KL-MED-001",
+    "website": "http://www.tmc.kerala.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0259",
+    "name": "NATIONAL UNIVERSITY OF ADVANCED LEGAL STUDIES (NUALS KOCHI)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "ERNAKULAM",
+    "address": "NUALS Campus, HMT Colony P.O., Kalamassery, Kochi",
+    "pincode": "683503",
+    "yearEstablished": 2005,
+    "otherRegulatorId": "BCI-KL-LAW-001",
+    "website": "https://www.nuals.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

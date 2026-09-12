@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0402",
+    "name": "UNIVERSITY OF RAJASTHAN",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "JAIPUR",
+    "address": "JLN Marg, Jaipur",
+    "pincode": "302004",
+    "yearEstablished": 1947,
+    "website": "https://www.uniraj.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0391",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY JODHPUR (IIT JODHPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "JODHPUR",
+    "address": "NH 62, Nagaur Road, Karwar, Jodhpur",
+    "pincode": "342037",
+    "yearEstablished": 2008,
+    "website": "https://iitj.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0395",
+    "name": "MALAVIYA NATIONAL INSTITUTE OF TECHNOLOGY JAIPUR (MNIT JAIPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "JAIPUR",
+    "address": "JLN Marg, Malviya Nagar, Jaipur",
+    "pincode": "302017",
+    "yearEstablished": 1963,
+    "website": "http://www.mnit.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-31200",
+    "name": "SMS MEDICAL COLLEGE JAIPUR",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "JAIPUR",
+    "address": "JLN Marg, Ashok Nagar, Jaipur",
+    "pincode": "302004",
+    "yearEstablished": 1947,
+    "nmcId": "NMC-RJ-MED-001",
+    "website": "http://medicaleducation.rajasthan.gov.in/smsjaipur",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0396",
+    "name": "NATIONAL LAW UNIVERSITY JODHPUR (NLU JODHPUR)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "JODHPUR",
+    "address": "NH-65, Nagaur Road, Mandore, Jodhpur",
+    "pincode": "342304",
+    "yearEstablished": 1999,
+    "otherRegulatorId": "BCI-RJ-LAW-001",
+    "website": "http://www.nlujodhpur.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

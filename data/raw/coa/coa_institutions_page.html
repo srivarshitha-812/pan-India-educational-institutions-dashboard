@@ -1,0 +1,833 @@
+
+
+
+
+
+
+
+
+<style>
+  .complaint {
+  
+	float: right !important;
+    text-transform: uppercase  !important;
+    width: auto !important;
+    background: #ccc !important;
+    padding: 7px !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+  
+  
+  } 
+
+	
+</style>
+
+
+
+<!DOCTYPE html>
+<html>
+		<head>
+		<!-- SSl Certifiace Reactivate dated on 03 July 2023 -->
+		<meta name="_globalsign-domain-verification" content="mCtVI4itAYVBFLe3AwEpJtzkKchSU8hSZcGZQFxwFZ" />
+		<!-- SSl Certifiace Reactivate dated on 03 July 2023 -->
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Council of Architecture</title>
+		<link rel="stylesheet" href="new_css/bootstrap.min.css">
+		<link rel="stylesheet" href="new_css/owl.carousel.min.css">
+		<link rel="stylesheet" href="new_css/font-awesome.css">
+		<link rel="stylesheet" href="new_css/style.css">
+		<link rel="stylesheet" href="stylecss.css" media="screen" />
+		
+
+		<script src="js/jqueryui/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="js/accessibility.inc.js"></script>  
+			<script src="new_js/jquery.bpopup.min.js"></script>	
+		<script>
+	$( document ).ready(function() {
+		$('#popup_this').bPopup();
+	});
+	</script>
+		<!--<script src="new_js/jquery-3.3.1.min.js"></script>-->
+		<script src="new_js/bootstrap.js"></script>
+		<script src="new_js/owl.carousel.js"></script>
+		<script src="new_js/jquery.easy-ticker.min.js"></script>
+		<script src="new_js/custom.js"></script>
+		<link title="" media="all" href="js/jqueryui/jquery-ui.css" type="text/css" rel="stylesheet" />
+		
+		<script src="js/jqueryui/jquery-ui.js" type="text/javascript"></script>
+	<!--	<link rel="stylesheet" href="accessibilitycss.php" media="screen" />-->
+		
+		
+	</head>   
+	<div id="loginbox" title="Login to COA"></div>
+	<script>
+			function reloadthispage(){}                
+			</script>	<script type="text/javascript">
+		function flogin(LogReq, PubID, ReqFor) {
+						
+			if (LogReq == undefined) {
+				LogReq = 1;
+			}
+			
+			if (PubID == undefined) {
+				PubID = '';
+			}
+			if (ReqFor == undefined) {
+				PubID = '';
+			}
+			
+			var dialog;
+			dialog = $("#loginbox").dialog({
+				autoOpen: true,
+				width: 875,
+				height: 1500,
+				title: 'Login to COA',
+				modal: true,
+				resizable: true,
+				autoResize: true,
+				show: 'puff',
+				hide: 'explode',
+				buttons: {
+					/*Register_School: function() 
+						{
+						dialog.dialog( "close" );
+						window.location = 'app/online_registration.php';
+						},
+						Register_Architect: function() 
+						{
+						dialog.dialog( "close" );
+						window.location = 'app/arch_registration.php';
+						},
+						Sign_Up: function() 
+						{
+						dialog.dialog( "close" );
+						window.location = 'guest_user_registration1.php';
+					},*/
+					Close: function() {
+						dialog.dialog("close");
+						$('#loginbox').html('');
+						reloadthispage();
+					}
+				},
+				close: function() {
+					dialog.dialog("close");
+					$('#loginbox').html('');
+					reloadthispage();
+				},
+				open: function() {
+					$('#loginbox').load('app/flogin.php', {
+						'logType': LogReq,
+						'pub_id': PubID,
+						'req_for': ReqFor
+					});
+				}
+			});
+			$("span.ui-button-text").each(function(i) {
+				text = $(this).text();
+				$(this).text(text.replace("_", " "));
+			});
+			
+		}
+		console.log('LiveUsers:' + 474);
+	</script>
+	<script>
+		function fontIncrease() {
+			curSize = parseInt( jQuery( 'body' ).css( 'font-size' ) ) + 1;
+			if ( curSize > 20 ) {
+				return false;
+			}
+			jQuery( 'body' ).css( 'font-size', curSize );
+		}
+		function fontNormal() {
+			jQuery( 'body' ).css( 'font-size', 14);
+		}
+		function fontDecrease() {
+			curSize = parseInt( jQuery( 'body' ).css( 'font-size' ) ) - 1;
+			if ( curSize < 10 ) {
+				return false;
+			}
+			jQuery( 'body' ).css( 'font-size', curSize );
+		}          
+	</script>
+	<body class="">
+		<header>
+			<div class="headerfixed">
+				<div class="top-header">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-3">
+								<ul>
+									<li><a href="index1.php?layout=&lang=1&level=0&linkid=33&lid=34">Help</a></li>					
+									<!-- <li><a href="index1.php?lang=1&level=0&linkid=5&lid=6">FAQ,s</a></li> -->
+									<!-- <li><a href="frequently_asked_question.php">FAQs</a></li> -->
+									<li><a href="index1.php?lang=1&level=0&linkid=28&lid=29">Contact Us</a></li>
+									<li class="nobdr"><a href="sitemap.php?lang=1&level=0&linkid=30&lid=31">Sitemap</a></li>
+								</ul>
+							</div>
+							<div class="col-12 col-sm-12 col-md-12 col-lg-9 top-right-nav pr-0">
+								<ul>
+									<li><a href="#maincontent">Skip to Main Content</a></li>
+									<li><a href="index1.php?lang=1&level=0&linkid=16&lid=17">Screen Reader</a></li>
+									<li class="nobdr text-size"><a href="#" onclick="fontDecrease()" >A<sub>-</sub></a><a href="#" onclick="fontNormal()">A</a> <a href="#" onclick="fontIncrease()">A<sup>+</sup></a></li>
+									<!--	<li class="theme"><span class="wt"></span><span class="blak"></span></li>-->
+									<div class="theamcolor_icon"><a href="javascript:setColor('0')" title="Default Schemes"><img src="images/blue_box.png" width="9" height="9" /></a></div> 
+									<div class="theamcolor_icon"><a href="javascript:setColor('1')" title="Yellow on Black"><img src="images/yellow_box.png" width="9" height="9" /></a></div>
+								    <div class="theamcolor_icon"><a href="javascript:setColor('2')" title="Fuchsia on Black"><img src="images/pink_box.png" width="9" height="9" /></a></div>
+									<li class="nobdr register">
+										<a href="javascript:void(0);" onclick="flogin();"><img src="new_images/login.png" alt="Login" title="Login"/><strong><big><big><big>Login</big></big></big></strong></a>&nbsp;
+										<div class="login-dropdown"></div>
+									</li>
+									<li><a href="frequently_asked_question.php" style="color: blue;">&nbsp; | &nbsp; FAQs</a></li>
+									<li class="nobdr register">
+										<a href="cart_detail.php?lang=1&EncHid=" > &nbsp; | &nbsp;  View Cart</a>&nbsp;
+										<div class="login-dropdown"></div>
+									</li>
+									
+										<li class="nobdr register">
+																				<!--	<a href="app/online_registration.php?lang=1" title="New Institution SignUp"> &nbsp; | &nbsp;  New Institution SignUp</a>-->
+																				
+									
+										<div class="login-dropdown"></div>
+									</li>
+									
+									
+									
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form name="colForm1" id="colForm1" action="" method="post">
+					<input type="hidden" id="csVal" name="contrastscheme" value="">
+				</form>
+				
+				
+				
+				<div class="main-menu-sec">
+					<div class="container-fluid">
+						<div class="row justify-content-between align-items-center">
+							
+							<nav class="navbar navbar-expand-md">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-5 logo-sec">
+									<a href="index.php" class="navbar-brand">
+										<img src="new_images/emblm.png" alt="emblem" class="img_emb">
+										<p>Council of Architecture<span>Ministry of Education, Government of India</span></p>
+										<img src="new_images/logo-coa.png" alt="logo" class="logo" style="margin-left:0px!important;">
+									</a>
+								</div>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="col-12 col-sm-12 col-md-12 col-lg-7 main-menu-right-sec">
+									<div class="collapse navbar-collapse" id="collapsibleNavbar">
+										<!-- Links -->
+										<ul class="navbar-nav">
+											<li class="nav-item">
+												<a class="nav-link" href="index.php"><img src="new_images/home.png" alt=" Home" title=" Home" /></a>
+											</li>
+											
+											
+											<li class='nav-item dropdown'>														<a class="nav-link" title="About Us&nbsp;" href='index1.php?lang=1&amp;level=0&amp;linkid=3&amp;lid=4'>
+															About Us														</a>
+														<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" title="Office Bearers&nbsp;"  href='home_present_vice_presidents.php?lang=1&amp;level=1&amp;sublinkid=999&amp;lid=789'>
+							Office Bearers						</a>
+						</li><li>						<a class="dropdown-item" title="Council Members&nbsp;"  href='member_list.php?lang=1&amp;level=1&amp;sublinkid=919&amp;lid=253'>
+							Council Members						</a>
+						</li><li>						<a class="dropdown-item" title="Statutory Committees&nbsp;"  href='statutory_committees.php?lang=1&amp;level=1&amp;sublinkid=995&amp;lid=781'>
+							Statutory Committees						</a>
+						</li><li>						<a class="dropdown-item" title="Other Committees&nbsp;"  href='Other_Committees.php?lang=1&amp;level=1&amp;sublinkid=998&amp;lid=779'>
+							Other Committees						</a>
+						</li><li>						<a class="dropdown-item" title="Sub Committees&nbsp;"  href='other_sub_committees.php?lang=1&amp;level=1&amp;sublinkid=996&amp;lid=813'>
+							Sub Committees						</a>
+						</li><li>						<a class="dropdown-item" title="Who's Who&nbsp;"  href='who_is_who.php?lang=1&amp;level=1&amp;sublinkid=997&amp;lid=780'>
+							Who's Who						</a>
+						</li>			</ul>
+			</li><li class='nav-item dropdown'>														<a class="nav-link" title="E-Services&nbsp;" href='index1.php?lang=1&amp;level=0&amp;linkid=168&amp;lid=746'>
+															E-Services														</a>
+														<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" title="Mobile/Email Updation by Architects&nbsp;"  href='update_arch_comm_mobile.php?lang=1&amp;level=1&amp;sublinkid=1508&amp;lid=1388'>
+							Mobile/Email Updation by Architects						</a>
+						</li><li>						<a class="dropdown-item" title="Registration As an Architect&nbsp;" href='index1.php?layout=&amp;lang=1&amp;level=1&amp;sublinkid=926&amp;lid=814'>
+							Registration As an Architect						</a>
+						</li><li>						<a class="dropdown-item" title="Email Updation by Architects&nbsp;"  href='update_arch_communication_email.php?lang=1&amp;level=1&amp;sublinkid=1099&amp;lid=972'>
+							Email Updation by Architects						</a>
+						</li><li>						<a class="dropdown-item" title="Renewal  of  Registration&nbsp;" href='index1.php?layout=&amp;lang=1&amp;level=1&amp;sublinkid=927&amp;lid=747'>
+							Renewal  of  Registration						</a>
+						</li><li>						<a class="dropdown-item" title="Online Directory Of Architects&nbsp;"  href='search_arch.php?lang=1&amp;level=1&amp;sublinkid=925&amp;lid=289'>
+							Online Directory Of Architects						</a>
+						</li><li>						<a class="dropdown-item" title="Architectural Institutions &nbsp;"  href='architectural_institutions.php?lang=1&amp;level=1&amp;sublinkid=924&amp;lid=793'>
+							Architectural Institutions 						</a>
+						</li><li>						<a class="dropdown-item" title="Tutorial Videos&nbsp;"  href='tutorials.php?lang=1&amp;level=1&amp;sublinkid=1097&amp;lid=969'>
+							Tutorial Videos						</a>
+						</li><li>						<a class="dropdown-item" href="showlink.php?layout=&amp;lang=1&level=1&sublinkid=1201&lid=1072" title="Foreign Qualification" target="_blank">
+							Foreign Qualification						</a>
+						</li><li>						<a class="dropdown-item" href="showlink.php?layout=&amp;lang=1&level=1&sublinkid=1465&lid=1353" title="PGETA 2024 Score Verification" target="_blank">
+							PGETA 2024 Score Verification						</a>
+						</li><li>						<a class="dropdown-item" href="showlink.php?layout=&amp;lang=1&level=1&sublinkid=1470&lid=1358" title="Download CoA Mobile App" target="_blank">
+							Download CoA Mobile App						</a>
+						</li>			</ul>
+			</li><li class='nav-item dropdown'>														<a class="nav-link" title="Forms&nbsp;" href='index1.php?lang=1&amp;level=0&amp;linkid=4&amp;lid=5'>
+															Forms Download 														</a>
+														<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=1463" title="EDS Application Form&nbsp;" target="_blank">
+							EDS Application Form						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=1439" title="Application Form for Issuance of New Format Certificate&nbsp;" target="_blank">
+							Application Form for Issuance of New Format Certificate						</a>
+						</li><li>						<a class="dropdown-item" title="Forms for Registered Architects&nbsp;" href='index1.php?layout=&amp;lang=1&amp;level=1&amp;sublinkid=175&amp;lid=193'>
+							Forms for Registered Architects						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=188" title="Form for Change of Name&nbsp;" target="_blank">
+							Form for Change of Name						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=189" title="Form for Extension of Validity of Renewal&nbsp;" target="_blank">
+							Form for Extension of Validity of Renewal						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=190" title="Application/Specimen Affidavit for Duplicate Certificate&nbsp;" target="_blank">
+							Application/Specimen Affidavit for Duplicate Certificate						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=191" title="Application/Specimen Affidavit for Change of Name&nbsp;" target="_blank">
+							Application/Specimen Affidavit for Change of Name						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=192" title="Forms for Payment of Renewal Fee&nbsp;" target="_blank">
+							Forms for Payment of Renewal Fee						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=315" title="Application form for issuance of Duplicate Certificate of Registration&nbsp;" target="_blank">
+							Application form for issuance of Duplicate Certificate of Registration						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=878" title="Application form for NCARB Certification,Credential Verification&nbsp;" target="_blank">
+							Application form for NCARB Certification,Credential Verification						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=879" title="Application form for removal of name from the register&nbsp;" target="_blank">
+							Application form for removal of name from the register						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=880" title="Form for Signature & Photo Verification&nbsp;" target="_blank">
+							Form for Signature & Photo Verification						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=1389" title="Application for Issuance of Digital New Certificate of Registration&nbsp;" target="_blank">
+							Application for Issuance of Digital New Certificate of Registration						</a>
+						</li>			</ul>
+			</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=309" title="Complaint Form XIV, Complaint against Architect  &nbsp;" target="_blank">
+							Complaint Form XIV, Complaint against Architect  						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=423" title="Forms for  Architectural Institutions &nbsp;" target="_blank">
+							Forms for  Architectural Institutions 						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=905" title="Application Form for Foreign Architectural Qualification&nbsp;" target="_blank">
+							Application Form for Foreign Architectural Qualification						</a>
+						</li><li>						<a class="dropdown-item" title="Forms related to Election in COA&nbsp;" href='index1.php?layout=&amp;lang=1&amp;level=1&amp;sublinkid=152&amp;lid=165'>
+							Forms related to Election in COA						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=166" title="Form I : Nomination Paper&nbsp;" target="_blank">
+							Form I : Nomination Paper						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=167" title="Form II : Voting Paper&nbsp;" target="_blank">
+							Form II : Voting Paper						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=168" title="Form III : Declaration Paper&nbsp;" target="_blank">
+							Form III : Declaration Paper						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=169" title="Form IV : Letter of Intimation&nbsp;" target="_blank">
+							Form IV : Letter of Intimation						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=171" title="Form V : Result of Counting&nbsp;" target="_blank">
+							Form V : Result of Counting						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=172" title="Form VI : Certificate of Election&nbsp;" target="_blank">
+							Form VI : Certificate of Election						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=173" title="Form VII : Election of President / Vice-President&nbsp;" target="_blank">
+							Form VII : Election of President / Vice-President						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=174" title="Form VIII : Election of President / Vice-President&nbsp;" target="_blank">
+							Form VIII : Election of President / Vice-President						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=170" title="Form IX : Election of Member of the Executive Committee of the Council&nbsp;" target="_blank">
+							Form IX : Election of Member of the Executive Committee of the Council						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=175" title="Form X : Election of Member of the Executive Committee of the Council&nbsp;" target="_blank">
+							Form X : Election of Member of the Executive Committee of the Council						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=176" title="Information regarding Application form for Registration as an Architect&nbsp;" target="_blank">
+							Information regarding Application form for Registration as an Architect						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=177" title="Form XII : Certificate of Registration&nbsp;" target="_blank">
+							Form XII : Certificate of Registration						</a>
+						</li><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=179" title="Form XIV : Form of Complaint&nbsp;" target="_blank">
+							Form XIV : Form of Complaint						</a>
+						</li>			</ul>
+			</li><li>						<a class="dropdown-item" title="Forms for TA/ Honorarium&nbsp;" href='index1.php?layout=&amp;lang=1&amp;level=1&amp;sublinkid=141&amp;lid=154'>
+							Forms for TA/ Honorarium						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" href="showfile.php?layout=&amp;lang=1&lid=164" title="TA, DA & Hon. Form for Inspection (For Experts)&nbsp;" target="_blank">
+							TA, DA & Hon. Form for Inspection (For Experts)						</a>
+						</li>			</ul>
+			</li>			</ul>
+			</li><li class='nav-item dropdown'>														<a class="nav-link" title="Helpdesk&nbsp;" href='index1.php?lang=1&amp;level=0&amp;linkid=220&amp;lid=1105'>
+															Helpdesk														</a>
+														<ul class="dropdown-menu" aria-labelledby="navbardrop2"><li>						<a class="dropdown-item" title="Raise Ticket&nbsp;"  href='https://ecoa.in/samarthaya/public/requestQuery?lang=1&amp;level=1&amp;sublinkid=1317&amp;lid=1189'>
+							Raise Ticket						</a>
+						</li><li>						<a class="dropdown-item" title="Check Ticket Response&nbsp;"  href='https://ecoa.in/samarthaya/public/checkresponseQuery?lang=1&amp;level=1&amp;sublinkid=1318&amp;lid=1191'>
+							Check Ticket Response						</a>
+						</li>			</ul>
+			</li>											<li><a class="nav-link" title="Defaulters List" href="https://coa.gov.in/default_arch.php" target="_blank">Defaulters List</a></li>
+											<li><a class="nav-link" title="Photo Gallery" href="https://coa.kwikpic.in" target="_blank">Photo Gallery</a></li>
+										</ul>
+										
+										<div class="search_bg">
+											<form class="search_mainbox" action="searchresult.php" method="post" name="srForm" id="srForm">
+												<input class="search_pannel" type="text" value="" placeholder="Search" size="19" name="key" id="key" onfocus="txt_focus_u();" onblur="txt_focus_out_u()" / style="width:145px;">
+												<input class="search_button" type="image" src="images/search_button.png" value="Submit" tabindex="40" id="submit1" name="submit1" onclick="return chkSearch()" />
+											</form>
+										</div>
+									</div>
+									
+								</div>
+							</nav>
+							<!-- Mobile view menu end -->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+			<!-- <div style="background: #e07507;"><marquee style="color:#fff;font-size:18px;">Architects may now use 'Email updation by Architects' available in E-Services to update their emails and reset username & password to access online services.</marquee></div> -->
+	<!--<div style="background: #e07507;"><marquee style="color:#fff;font-size:18px;"><a href="https://ecoa.in/academic/public/" target="_blank" style="color:white;">For New Academic Link. Click Here....</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<a href="https://insurance.kmdastur.com/architect" target="_blank" style="color:white;">Click Here for Exclusively Designed Insurance Policies for Architects....</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp For Renewal Related Queries, Pls whatsapp <a href="https://api.whatsapp.com/send?phone=917042939122&amp;text=I have a Query.Kindly,Help." target="_blank" class=""><img border="0" alt="whatsapp" src="https://coa.gov.in/images/whatsapp.png" width="20px;" height="20px;"></a><a href="https://api.whatsapp.com/send?phone=917042939122&amp;text=I have a Query.Kindly,Help." target="_blank" class=""> Click Here </a>Contact Timings : Mon - Fri 10 AM to 6PM</marquee>
+	</div>-->
+	<div style="background: #e07507; display: flex; justify-content: space-between;">
+	    <!-- Non-scrolling part -->
+	    <div style="flex: 1; color: white; font-size: 18px; padding: 10px;">
+	        Renewal Related Queries, Pls whatsapp 
+	        <a href="https://api.whatsapp.com/send?phone=917042939122&amp;text=I have a Query.Kindly,Help." target="_blank" style="color:white; display: inline-flex; align-items: center;">
+	             
+	            <img border="0" alt="whatsapp" src="https://coa.gov.in/images/whatsapp.png" width="20px;" height="20px;" style="margin-left: 8px; vertical-align: middle;">
+	        </a>
+	        Contact Timings : Mon - Fri 10 AM to 6PM
+	    </div>
+	    
+	    <!-- Scrolling part -->
+	    <div style="flex: 1;">
+	        <marquee style="color:#fff; font-size:18px;">
+	        	Super Top-Up Health Policy Now Live – ₹10L to ₹1Cr cover. Instant Policy. Tax Benefits under Sec 80D. Visit "Welfare Schemes for Architects" of our Website. &nbsp&nbsp
+	            <a href="https://ecoa.in/academic/public/" target="_blank" style="color:white;">For New Academic Link. Click Here....</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	            <a href="https://insurance.kmdastur.com/architect" target="_blank" style="color:white;">Click Here for Exclusively Designed Insurance Policies for Architects....</a>
+	        </marquee>
+	    </div>
+   </div>
+
+
+<div id="maincontent"></div><div class="inner-banner-sec">
+	<div class="container">
+		<div class="row">
+			<div class="story-breadcrumb">
+				<h4><span>
+					Architectural Institutions
+				</span></h4>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="new_web.php">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">
+						Architectural Institutions
+						</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>	
+</div>  
+<div class="factstory-area pt-5 pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-xl-3"> 
+	<div class="right-menu">
+		<div class="menucontainer">
+			<!--<h4>OTHER LINKS</h4>-->
+			<ul class="pb-5">
+				<!--<li >
+					<a href="enrolment_report.php" target="_blank">Enrolment Report of B.Arch. Course(2022-2023)</a>
+				</li>-->
+				<li >
+					<a href="https://coa.gov.in/images/coa_approval_process_handbook_2026_2027.pdf" target="_blank">Approval Process Handbook 2026-2027</a>
+				</li>
+				<li >
+					<a href="https://coa.gov.in/images/coa_approval_process_handbook_2025_2026.pdf" target="_blank">Approval Process Handbook 2025-2026</a>
+				</li>
+				
+				<li >
+					<a href="https://coa.gov.in/images/coa_approval_process_handbook_2024_2025.pdf" target="_blank">Approval Process Handbook 2024-2025</a>
+				</li>
+                
+
+
+				<li>
+						<a href="https://ecoa.in/academic/public/Approved-Institution-UG-2026" target="_blank">List of Approved Institutions 2026-27(UG)
+						</a>
+				</li>
+
+				<li>
+						<a href="https://ecoa.in/academic/public/Apporved-Institution-UG-2025" target="_blank">List of Approved Institutions 2025-26(UG)
+						</a>
+				</li>	
+				<li>
+						<a href="https://ecoa.in/academic/public/ApporvedInstitutionUgList" target="_blank">List of Approved Institutions 2024-25(UG)
+						</a>
+				</li>
+				<li>
+						<a href="https://ecoa.in/academic/public/Approved-Institution-PG-2026" target="_blank">List of Approved Institutions 2026-27(PG)</a>
+				</li>
+				<li>
+						<a href="https://ecoa.in/academic/public/Apporved-Institution-PG-2025" target="_blank">List of Approved Institutions 2025-26(PG)</a>
+				</li>				
+				<li>
+						<a href="https://ecoa.in/academic/public/ApporvedInstitutionPgList" target="_blank">List of Approved Institutions 2024-25(PG)</a>
+				</li>
+				<li>
+						<a href="https://coa.gov.in/images/list_of_approved_diploma_institution_2026_27.pdf" target="_blank">List of Approved Diploma Institution 2026-27
+						</a>
+				</li>
+
+				<li>
+						<a href="https://coa.gov.in/images/list_of_existing_b_arch_institutions_for_diploma_2026_27.pdf" target="_blank">List of Exiting B.Arch. Institutions for Diploma 2026-27
+						</a>
+				</li>
+				<li>
+						<a href="https://ecoa.in/academic/public/Approved-Institution-Diploma-2025" target="_blank">List of Approved Institutions 2025-26(Diploma)</a>
+				</li>
+				
+				<li>
+						<a href="https://ecoa.in/academic/public/Approved-Institution-Barch-Diploma-2025" target="_blank">List of Approved Institutions 2025-26(Existing B.Arch. Institutions for Diploma)
+				</li>
+				<li>
+						<a href="https://ecoa.in/academic/public/ApporvedInstitutionDiplomaList" target="_blank">List of Approved Institutions 2024-25(Diploma)</a>
+				</li>
+				<li>
+						<a href="https://ecoa.in/academic/public/ApporvedInstitutionBarcDiplomaList" target="_blank">List of Approved Institutions 2024-25(Existing B.Arch. Institutions for Diploma)</a>
+				</li>
+				<li>
+					<a href="https://www.coa.gov.in/showfile.php?lang=1&level=1&sublinkid=1247&lid=1121" target="_blank">Approval Process Handbook - 2023-2024 </a>
+				</li>
+				<li >
+					<a href="https://www.coa.gov.in/showfile.php?lang=1&level=1&sublinkid=1275&lid=1148" target="_blank">Approval Process for the Academic Session 2023-2024</a>
+				</li>
+				<!-- <li >
+					<a href="https://www.coa.gov.in/showfile.php?lang=1&level=1&sublinkid=1070&lid=942" target="_blank">Approval Process Handbook - 2022-2023 </a>
+				</li> -->
+				
+							
+			    
+				<li>
+						<a href="https://ecoa.in/academic/public/institution-approval" target="_blank">List of Approved Institutions 2023-24(UG)
+						</a>
+				</li>
+				
+				<li>
+						<a href="https://ecoa.in/academic/public/institution-approval-pg" target="_blank">List of Approved Institutions 2023-24(PG)</a>
+				</li>
+				
+				<li>
+						<a href="List of Approved Institutions for Diploma Course -2023-2024.pdf" target="_blank">List of Approved Institutions 2023-24(Diploma)</a>
+				</li>
+				
+				<li>
+						<a href="List of existing B.Arch.Institutions for Diploma Course from 2023-2024.pdf" target="_blank">List of Approved Institutions 2023-24(Existing B.Arch. Institutions for Diploma)</a>
+				</li>				
+				<li>
+						<a href="https://coa.gov.in/images/closure_institution.pdf" target="_blank">List of Closed Institutions</a>
+				</li>
+				<!--<li>
+						<a href="https://coa.gov.in/images/enrolment_report_2022-2023.pdf" target="_blank">Intake & Enrolment Report of Schools for B.Arch(2022-23)</a>
+				</li>--> 
+			    <!-- <li>
+						<a href="enrolment_report.php" target="_blank">Intake & Enrolment Report of Schools for B.Arch(2022-23)</a>
+				</li>  -->
+				<li >
+						<a href="institutionStatus.php">List of Approved Institutions 2022-23</a>
+				</li>
+				
+				<li >
+					<a href="javascript:void(0);" onclick="flogin();">Apply for Student Enrolment</a>
+				</li>
+				<li >
+					<a href="javascript:void(0);" onclick="flogin();">Apply for Extension of Approval</a>
+				</li>
+				<li >
+					<a href="javascript:void(0);" onclick="flogin();">Apply for additional intake</a>
+				</li>
+				<li >
+					<a href="javascript:void(0);" onclick="flogin();">Apply for new course</a>
+				</li>
+				<li ><a  href="javascript:void(0);" onclick="flogin();"> Purchase Publication  </a></li>
+					<li >
+					<a href="https://stureg.nata-app.online/verifyScore" target="_blank">Verify NATA Score</a>
+				</li>
+				
+				
+				
+			</ul>
+		</div>
+	</div>
+</div>			<div class="col-12 col-sm-12 col-md-12 col-xl-9">
+				<script type="text/javascript" src="app/admin/scripts/clientChk/js-config.js"></script>
+				<div id="maincont">
+					<!--<h1>Members</h1>-->
+					<div id="lastup_pannel">
+						<div class="print_icon" style="height: 24px;"> </div>
+						<div id="lastup_text">Last Updated On: 10-09-2026</div>
+						<div class="backbutton_innar back-button"><a class="backbutton" title="Back" href="Javascript:history.go(-1)">Back</a></div>
+					</div>
+					<div id="cmscontent">
+					<p>Under the provisions of the Architects Act, 1972 the Council of Architecture is required to prescribe the Minimum Standards of Architectural Education for imparting architectural education and also to  monitor the compliance of the same by the approved Architectural Institutions all over the country for award of recognized qualifications under the Act.</p>
+					<p>There are about 362 institutions in India, which are imparting  Architectural education leading to recognized qualifications. The standards of Education being imparted in these institutions (constituent colleges/departments of universities, deemed universities, affiliated colleges/schools, IITs, NITs and autonomous institutions) is governed by Council of Architecture (Minimum Standards of Architectural Education) Regulations, 2020, which set forth the requirement of eligibility for admission, course duration, standards of staff & accommodation, course content, examination etc. These standards as provided in the said Regulations are required to be maintained by the institutions.</p>
+					<p>The Council oversees the maintenance of the standards periodically by way of conducting inspections through Committees of Experts. The Council is required to keep the Central Government informed of the standards being maintained by the institutions and is empowered to make recommendations to the Government of India with regard to recognition and de-recognition of a qualification.</p>
+				
+						<!--<div class="online-dir-wrapper">
+						<div class="dir-inner">             
+							<div class="buttonarchitect" ><a href="institutionStatus.php">List of approved Institutions </a></div>                
+							<div class="buttonarchitect" ><a href="javascript:void(0);" onclick="flogin();">Apply for Student Enrolment</a></div>      
+							<div class="buttonarchitect" ><a href="javascript:void(0);" onclick="flogin();">Apply for Extension of Approval</a></div>                
+							<div class="buttonarchitect" ><a href="javascript:void(0);" onclick="flogin();">Apply for additional intake</a></div>   
+							<div class="buttonarchitect" ><a href="javascript:void(0);" onclick="flogin();">Apply for new course</a></div>   
+							<div class="buttonarchitect" ><a  href="javascript:void(0);" onclick="flogin();"> Purchase Publication  </a></div>   
+						</div>             
+							</div>   -->
+						</div>
+					</div>
+					<div class="topbutton_innar"><a class="backbutton" title="Top" href="#Top">Top</a></div>				
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>  
+	<div class="footer-bottom-sec" >
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-8 copyright-sec">
+					<div class="footer-nav-sec">
+						<ul>									<li>  <a title="Website Policies" href='index1.php?lang=1&amp;level=0&amp;linkid=38&amp;lid=40' >Website Policies</a></li>
+									                        
+									<li><a  href="frequently_asked_question.php" title="FAQs" target="_blank">FAQs</a></li>
+																		<li>  <a title="Terms & Conditions" href='index1.php?lang=1&amp;level=0&amp;linkid=36&amp;lid=37' >Terms & Conditions</a></li>
+																		<li>  <a title="Feedback" href='feedback.php?lang=1&amp;level=0&amp;linkid=19&amp;lid=20' >Feedback</a></li>
+																		<li>  <a title="Sitemap" href='sitemap.php?lang=1&amp;level=0&amp;linkid=30&amp;lid=31' >Sitemap</a></li>
+																		<li>  <a title="ARCHIVES" href='index1.php?lang=1&amp;level=0&amp;linkid=57&amp;lid=339' >ARCHIVES</a></li>
+																		<li>  <a title="Contact Us" href='index1.php?lang=1&amp;level=0&amp;linkid=28&amp;lid=29' >Contact Us</a></li>
+									</ul>						
+					</div>
+					<p>Copyright &copy; 2026 Council of Architecture. All Rights Reserved.</p>
+				</div>
+								<div class="col-12 col-sm-12 col-md-12 col-lg-4 visitor-sec">
+					<div class="mb-3"></div>
+					<div>Visitors: <span class="mr-3">18008054</span>Last Updated on: <span>10/09/2026</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main_webbot" id="bot" style="display: none;">
+        <iframe id="chatbot-iframe" src="about:blank" allow="geolocation; microphone; camera; midi; encrypted-media;" style="height: 100%; width: 100%;"></iframe>
+
+        <div class="bot-close-button" id="botCloseBtn">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+    </div>
+
+     
+     <!-- <div class="bot-start-button" id="botStart">
+        <div class="bot-start-message" id="botStartMessage" style="display: none;">
+            <p id="botIconMessage"></p>            
+            <span class="material-symbols-outlined bot-start-message-close" id="btnMessageClose">
+                close
+            </span>
+        </div>
+        <img class="bot-start-icon" id="botStartIcon" src="" style="display: none;" alt="bot-icon" />
+    </div> 
+     
+
+    <script src="https://admin.chataccel.com/assets/start.js" data-params="wbcoacom01,COA"></script> -->
+
+<!--Chatbot Dated 28.08.2024-->
+
+    <link rel="stylesheet" crossorigin href="/public/react-module/assets/index-D46XjDYu.css">
+	<script type="module" crossorigin src="/public/react-module/assets/index-BCTtbDp3.js"></script>
+
+	<div id="root"></div>
+	<div id="react-root"></div>
+	<script src="/public/react-module/index.html"></script>
+
+</footer>
+<ul class="social-list">
+<!-- <li><a href="https://www.facebook.com/coa.gov.in"><i class="fa fa-facebook"></i></a></li> -->
+<!-- Updated facebook link Amit Rathaur dated on (26 Feb 2024)-->
+<li><a href="https://www.facebook.com/COAsocialofficial"><i class="fa fa-facebook"></i></a></li> 
+<li><a href="https://twitter.com/CouncilofArchi1"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://youtube.com/channel/UCs13U4MpRzTPTP5czCPFJxw"><i class="fa fa-youtube"></i></a></li>
+<li><a href="https://www.instagram.com/council_of_architecture_india/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+<!-- <iframe src="https://www.chatbase.co/chatbot-iframe/jbgdML_OkGF3h97dy0Q60" width="100%" height="700" frameborder="0"></iframe> -->
+<!--<script>
+  window.chatbaseConfig = {
+    chatbotId: "jbgdML_OkGF3h97dy0Q60",
+  }
+</script>
+<script src="https://www.chatbase.co/embed.min.js" id="jbgdML_OkGF3h97dy0Q60" defer></script> -->
+<!-- <script> window.embeddedChatbotConfig = {chatbotId: "18oFUlGQ8ncjJGRRFGkDg", domain: "www.chatbase.co"}</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="18oFUlGQ8ncjJGRRFGkDg" domain="www.chatbase.co"defer></script> -->
+<!-- <script> window.embeddedChatbotConfig = {chatbotId: "jbgdML_OkGF3h97dy0Q60",domain: "www.chatbase.co"}</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="jbgdML_OkGF3h97dy0Q60" domain="www.chatbase.co" defer></script> -->
+<!-- footer logo section -->
+
+<!--
+
+<script src="new_js/jquery-3.3.1.min.js"></script>
+<script src="new_js/bootstrap.js"></script>
+<script src="new_js/owl.carousel.js"></script>
+<script src="new_js/jquery.easy-ticker.min.js"></script>
+<script src="new_js/custom.js"></script>
+-->
+
+
+<script>
+	$(window).scroll(function() {
+	if ($(this).scrollTop() > 1){  
+	$('.headerfixed').addClass("sticky");
+	}
+	else{
+	$('.headerfixed').removeClass("sticky");
+	}
+	});
+	$(document).ready(function(){
+	
+	$( ".login-dropdown" ).click(function() {
+	$( this ).toggleClass("highlight");
+	});
+	
+	});
+	
+	
+</script>
+
+<script>
+	
+	
+	jQuery(document).ready(function() {
+		
+		var owl = jQuery('.topblogCarousel');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			margin: 0,
+			autoplay: true,
+			autoplayTimeout: 2000, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 4
+				}
+			}
+		});
+		
+		var owl = jQuery('.notification-slider');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			margin: 15,
+			autoplay: true,
+			autoplayTimeout: 2000, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 4
+				}
+			}
+		});
+		var owl = jQuery('.circular-slider');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			margin: 15,
+			autoplay: true,
+			autoplayTimeout: 2000, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 4
+				}
+			}
+		});
+		var owl = jQuery('.judgement-slider');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			margin: 15,
+			autoplay: true,
+			autoplayTimeout: 2000, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 4
+				}
+			}
+		});
+		var owl = jQuery('.recentevent-slider');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			margin: 15,
+			autoplay: true,
+			autoplayTimeout: 2000, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 4
+				}
+			}
+		});
+		var owl = jQuery('.newsupdate-slider');
+		owl.owlCarousel({
+			items: 3,
+			loop: true,
+			margin: 30,
+			autoplay: true,
+			autoplayTimeout: 2500, 
+			autoplayHoverPause: true,
+			nav:true,
+			responsive: {
+				0: {
+					items: 1 
+				},
+				600: {
+					items: 2
+				},
+				1199: { 
+					items: 3
+				}
+			}
+		});
+		
+	});  
+	
+	$(document).ready(function() {
+   $('.loginCls').attr('onclick', 'flogin();');
+});
+</script>
+
+</body></html>
+
+  
+	
+		

@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0182",
+    "name": "HIMACHAL PRADESH UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "SHIMLA",
+    "address": "Summer Hill, Shimla",
+    "pincode": "171005",
+    "yearEstablished": 1970,
+    "website": "http://www.hpuniv.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0185",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY MANDI (IIT MANDI)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "MANDI",
+    "address": "Kamand, Mandi",
+    "pincode": "175005",
+    "yearEstablished": 2009,
+    "website": "https://www.iitmandi.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-26300",
+    "name": "INDIRA GANDHI MEDICAL COLLEGE SHIMLA (IGMC)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "SHIMLA",
+    "address": "Circular Road, Lakkar Bazar, Shimla",
+    "pincode": "171001",
+    "yearEstablished": 1966,
+    "nmcId": "NMC-HP-MED-001",
+    "website": "http://www.igmcshimla.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

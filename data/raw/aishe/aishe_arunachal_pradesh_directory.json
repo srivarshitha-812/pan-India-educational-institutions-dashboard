@@ -1,0 +1,68 @@
+[
+  {
+    "aisheCode": "U-0044",
+    "name": "RAJIV GANDHI UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "PAPUM PARE",
+    "address": "Rono Hills, Doimukh, Itanagar",
+    "pincode": "791112",
+    "yearEstablished": 1984,
+    "website": "https://rgu.ac.in",
+    "email": "registrar@rgu.ac.in",
+    "phone": "0360-2277253",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0045",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY ARUNACHAL PRADESH",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "PAPUM PARE",
+    "address": "Jote, Papum Pare",
+    "pincode": "791113",
+    "yearEstablished": 2010,
+    "website": "https://www.nitap.ac.in",
+    "email": "registrar@nitap.ac.in",
+    "phone": "0360-2284988",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "U-0046",
+    "name": "NORTH EASTERN REGIONAL INSTITUTE OF SCIENCE AND TECHNOLOGY (NERIST)",
+    "level": "Standalone higher-education institutions",
+    "type": "Deemed to be University",
+    "district": "PAPUM PARE",
+    "address": "Nirjuli, Itanagar",
+    "pincode": "791109",
+    "yearEstablished": 1984,
+    "aicteId": "1-NERIST-01",
+    "website": "https://nerist.ac.in",
+    "approvalAuthority": "UGC, AICTE"
+  },
+  {
+    "aisheCode": "C-16850",
+    "name": "TOMO RIBA INSTITUTE OF HEALTH AND MEDICAL SCIENCES (TRIHMS)",
+    "level": "Medical institutions",
+    "type": "State Government Medical College",
+    "district": "PAPUM PARE",
+    "address": "Naharlagun, Itanagar",
+    "pincode": "791110",
+    "yearEstablished": 2017,
+    "nmcId": "NMC-AR-MED-001",
+    "website": "https://trihms.arunachal.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-16880",
+    "name": "JAWAHARLAL NEHRU COLLEGE PASIGHAT",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "EAST SIANG",
+    "address": "Pasighat, East Siang",
+    "pincode": "791102",
+    "yearEstablished": 1964,
+    "website": "https://jncpasighat.edu.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B), Rajiv Gandhi University"
+  }
+]

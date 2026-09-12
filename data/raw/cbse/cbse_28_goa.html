@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option selected="selected" value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option value="12">MANIPUR</option>
+<option value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>17</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjidhyYWxrmlT8m2N07qpC0K2T1mVhlhptc1DKhETcaVdE1-R0TQymSGQvxDQNsUCOwS5qT6Ifs8pYzLuBWD5QYvSLudTgXPCRr49NtT97xYvOUptFuvTaij4s8RrUb3B38" /><input type="hidden" name="__ncforminfo" value="3SheEAFIQ-scJ_DyH2ZkstQB2eEgwKB5JAoVPxwMGqjYY4CuJ9KuRFOncIbxXppVQWbXDvgI-8Pr2vM4RTf4S99F6xW9RCBIrjr99t6ff-ABvbE3J1juvrSzescivskebHZPHSPi-y4DC_enc3hEC1odtT1eS6tvRCf4oLWsgqAKhrx3l6vxBvzSu2diTcV3BB-JFpDWCe4hN8oXlMsAQLbzeNhzMBypr5LZ80Ks7MMjDo-IWFwYlMEjsW5aIeNPlaykrpJ7Gz-xJ1U-vsBlZrLH8_4fWjtGGH35wk8fk6l4K9uALoW400eBQiwUQXLhkUXl4umHUeQzrJGCMqBhGO2TN5L3LBZa8SvL-v5Vh-9cRKg0pS3SCmXOfp9Wdb4Um8EI4zStm3q-AI9R5t-qqKEEIOodZX-1-HsxIF9eutzfQfnVJKPUqMk8FSCYgWe0hMC8x_3o94g9q4AG74Gnnw=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2800001<br />
+                                            <b>Sch. Code:</b>34801
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA NO.1 <br /> <b>Head/Principal Name: </b>MAHESH GOURA</td>
+                                        <td>
+                                            <b>Address : </b>MANGOOR HILLS VASCO-DA-GAMA GOA<br />
+                                            <b>Website : </b>https://no1vascodagama.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2800001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2800002<br />
+                                            <b>Sch. Code:</b>34802
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>S.B. NIKUM</td>
+                                        <td>
+                                            <b>Address : </b>INS MANDOVI NAVAL BASE VEREM  GOA GOA<br />
+                                            <b>Website : </b>https://insmandovi.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2800002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2800003<br />
+                                            <b>Sch. Code:</b>34803
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>BIDHAN CHANDRA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>BAMBOLIM CAMP PANAJI  GOA<br />
+                                            <b>Website : </b>https://bambolim.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2800003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2800004<br />
+                                            <b>Sch. Code:</b>34805
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>SANGEETA GUTAIN</td>
+                                        <td>
+                                            <b>Address : </b>PONDA GOA 403 401<br />
+                                            <b>Website : </b>https://ponda.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2800004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2800005<br />
+                                            <b>Sch. Code:</b>34806
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA NO.2 <br /> <b>Head/Principal Name: </b>NARENDRA SINGH RATHORE</td>
+                                        <td>
+                                            <b>Address : </b>AIRPORT ROAD, SHANTI NAGAR VASCO-DA-GAMA GOA<br />
+                                            <b>Website : </b>https://no2vascodagama.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2800005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830002<br />
+                                            <b>Sch. Code:</b>31801
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> THE KINGS SCHOOL <br /> <b>Head/Principal Name: </b>TANUJA VINAYAK NAIK DESSAI</td>
+                                        <td>
+                                            <b>Address : </b>854, MUGALLI SAO JOSE DE AREAL, MARGAO, SALCETTE GOA<br />
+                                            <b>Website : </b>www.thekingschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830003<br />
+                                            <b>Sch. Code:</b>31803
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> VIDYA VIKAS ACADEMY <br /> <b>Head/Principal Name: </b>Joble Bijoy</td>
+                                        <td>
+                                            <b>Address : </b>VVM CAMPUS, G.R. KARE ROAD, TANSOR - COMBA<br />
+                                            <b>Website : </b>www.vidyavikasacademy.edu.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830004<br />
+                                            <b>Sch. Code:</b>31802
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SUNSHINE WLDWIDE SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>ANIL KUMAR KASHYAP</td>
+                                        <td>
+                                            <b>Address : </b>20/1-B, BAINGUINIM, OFF NH4A BYPASS KADAMBA ROAD, OLD GOA, TISWADI, GOA(NTH)<br />
+                                            <b>Website : </b>www.sunshineworldwideschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830005<br />
+                                            <b>Sch. Code:</b>31806
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GREEN MEADOWS SCHOOL <br /> <b>Head/Principal Name: </b>KIRANJEET SODHI</td>
+                                        <td>
+                                            <b>Address : </b>165/166, ARRIAS VADDO, NAGOA, BARDEZ, GOA<br />
+                                            <b>Website : </b>http://www.greenmeadowsschool.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830006<br />
+                                            <b>Sch. Code:</b>31805
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MOUNT LITERA ZEE SCHOOL <br /> <b>Head/Principal Name: </b>Laveena Rajput</td>
+                                        <td>
+                                            <b>Address : </b>BEHIND BITS PILANI, NH 17 BYPASS, ZUARINAGAR, VASCO, GOA<br />
+                                            <b>Website : </b>www.mlzsgoa.edu.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830007<br />
+                                            <b>Sch. Code:</b>31804
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> BHARATIYA VIDYA BHAVANS NARAYAN BANDEKAR SCHOOL <br /> <b>Head/Principal Name: </b>Bhakti Harish Seedani</td>
+                                        <td>
+                                            <b>Address : </b>GOA HOUSING BOARD COLONY, UPASNAGAR, ZUARINAGAR, MURMUGOA<br />
+                                            <b>Website : </b>www.bhavansnbs.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830008<br />
+                                            <b>Sch. Code:</b>31808
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> FR. AGNEL CENTRAL SCHOOL <br /> <b>Head/Principal Name: </b>Jacob Shally V</td>
+                                        <td>
+                                            <b>Address : </b>KANTIA BHATT,&#xD;&#xA;PILAR GOA.<br />
+                                            <b>Website : </b>www.fragnelcentralschool.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830009<br />
+                                            <b>Sch. Code:</b>31807
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BLOOMZ INTERNATIONAL SCHOOL <br /> <b>Head/Principal Name: </b>ANJU ANAND</td>
+                                        <td>
+                                            <b>Address : </b>BAIDA,NUVEM,SALCETE,SOUTH GOA -403604&#xD;&#xA;SOUTH GOA GOA ,GOA (SOUTH) , 403604<br />
+                                            <b>Website : </b>http://bloomzinternationalschool.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2830059<br />
+                                            <b>Sch. Code:</b>31325
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> PODAR INTERNATIONAL SCHOOL <br /> <b>Head/Principal Name: </b>Shilpa Stanley Hirekoppa</td>
+                                        <td>
+                                            <b>Address : </b>PLOT - III, 13/1-C, VILLAGE - BAINGUIUIM, KADAMBA PLATEAU, PANELIUM, TAL - TISWADI, PANJIM, OLD GOA<br />
+                                            <b>Website : </b>https://www.podareducation.org/school/panelim
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2830059">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2840001<br />
+                                            <b>Sch. Code:</b>34804
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>BENNY VARGHESE</td>
+                                        <td>
+                                            <b>Address : </b>CANACONA SOUTH GOA GOA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/SOUTHGOA/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2840001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2840002<br />
+                                            <b>Sch. Code:</b>34807
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA NORTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>V RAMAKRISHNAIAH</td>
+                                        <td>
+                                            <b>Address : </b>VALPOI NORTH GOA GOA<br />
+                                            <b>Website : </b>https://www.navodaya.gov.in/nvs/nvs-school/NORTHGO
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2840002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2880001<br />
+                                            <b>Sch. Code:</b>34808
+                                            </td>
+                                        <td><b>State : </b>GOA<br /><b>District : </b>GOA SOUTH</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NAVY CHILDREN SCHOOL <br /> <b>Head/Principal Name: </b>ANUPAMA MEHRA</td>
+                                        <td>
+                                            <b>Address : </b>AIRPORT ROAD NOFRA-I DABOLIM GOA<br />
+                                            <b>Website : </b>www.ncsgoa.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2880001">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjidhyYWxrmlT8m2N07qpC0K2T1mVhlhptc1DKhETcaVdE1-R0TQymSGQvxDQNsUCOwS5qT6Ifs8pYzLuBWD5QYvSLudTgXPCRr49NtT97xYvOUptFuvTaij4s8RrUb3B38" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__OxUUc6FxdL38gLp3i_eQ4bHUFmGSxw_9tDfKSB8SCfm2O05TKmWkrANklQs7gGqt"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025421413;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "ncteId": "SRCAPP-2002-0491",
+    "name": "ST. LAWRENCE COLLEGE OF EDUCATION",
+    "management": "Private Unaided",
+    "district": "KHAMMAM",
+    "address": "Buranpuram, Khammam",
+    "pincode": "507001",
+    "university": "Kakatiya University",
+    "programme": "Bachelor of Education (B.Ed)",
+    "intake": 100,
+    "orderNo": "F.SRC/NCTE/AP/B.Ed/2002/4119",
+    "status": "Recognised by NCTE (Active)",
+    "website": "https://stlawrencebed.org"
+  },
+  {
+    "ncteId": "SRCAPP-2005-0812",
+    "name": "KHAMMAM COLLEGE OF EDUCATION",
+    "management": "Private Unaided",
+    "district": "KHAMMAM",
+    "address": "Pakabanda Bazar, Khammam",
+    "pincode": "507001",
+    "university": "Kakatiya University",
+    "programme": "Bachelor of Education (B.Ed)",
+    "intake": 100,
+    "orderNo": "F.SRC/NCTE/AP/B.Ed/2005/7821",
+    "status": "Recognised by NCTE (Active)",
+    "website": "https://khammambed.edu.in"
+  },
+  {
+    "ncteId": "SRCAPP-1999-0112",
+    "name": "GOVERNMENT INSTITUTE OF ADVANCED STUDY IN EDUCATION (IASE) HYDERABAD",
+    "management": "State Government",
+    "district": "HYDERABAD",
+    "address": "Masab Tank, Hyderabad",
+    "pincode": "500028",
+    "university": "Osmania University",
+    "programme": "M.Ed & B.Ed",
+    "intake": 150,
+    "orderNo": "F.SRC/NCTE/TS/IASE/1999/1029",
+    "status": "Recognised by NCTE (Active)",
+    "website": "https://iasehyderabad.ac.in"
+  },
+  {
+    "ncteId": "SRCAPP-2010-0988",
+    "name": "SRI VENKATESHWARA COLLEGE OF EDUCATION (DE-RECOGNISED SAMPLE)",
+    "management": "Private Unaided",
+    "district": "KHAMMAM",
+    "address": "Sathupalli Road, Khammam",
+    "pincode": "507003",
+    "university": "Kakatiya University",
+    "programme": "Diploma in Elementary Education (D.El.Ed)",
+    "intake": 50,
+    "orderNo": "F.SRC/NCTE/WITHDRAWAL/2019/8821",
+    "status": "DE-RECOGNISED / Recognition Withdrawn by NCTE (Gazette 2019)",
+    "website": ""
+  }
+]

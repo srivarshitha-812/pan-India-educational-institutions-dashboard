@@ -1,0 +1,574 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+	<title>Filter Approved inst</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+ <style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+.button {
+  display: inline-block;
+border-radius: 4px;
+background-color: #93c;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 20px;
+padding: 14px;
+width: 110px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+</style>
+ <link rel="stylesheet" type="text/css" href="css3/example-styles.css">
+    <link rel="stylesheet" type="text/css" href="css3/demo-styles.css">
+    <link rel="stylesheet" type="text/css" href="vendor1/select2/select2.min.css">
+    <script type="text/javascript" src="js3/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="js3/jquery.multi-select.js"></script>
+    	<link rel="icon" type="image/png" href="images1/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts1/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor1/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor1/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css1/util.css">
+	<link rel="stylesheet" type="text/css" href="css1/main.css">
+            
+<!--===============================================================================================-->
+</head>
+<body>
+    
+  	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						 Filter Institution List /  फ़िल्टर संस्था सूची
+					</span>
+                                    
+                                    <div id ="optionregistration" >
+                                    <p style="font-weight: bold;font-size: 19px;">  List According to : </p>
+                                    <p style="margin-top: 10px;font-size: 15px;">  सूची के अनुसार: </p> 
+                                   <input type="radio" name="JTP" id="state" value="state" style="width: 18px;margin-top: 5px;"> State Wise / राज्य वार <br>
+                                      <input type="radio" name="JTP" id="program" value="program" style="width: 18px;"> Program Wise / कार्यक्रम के अनुसार <br>
+                                       <input type="radio" name="JTP" id="intake" value="intake" style="width: 18px;">State and Program wise / राज्य और कार्यक्रम के अनुसार
+                                      <br>
+                                       <input type="radio" name="JTP" id="inst" value="inst" style="width: 18px;"> Institute Wise / संस्थान वार
+                                      <br>
+                                       <input type="radio" name="JTP" id="current" value="date" style="width: 18px;"> Complete Report
+                                      <br>
+      
+                                    <button class="login100-form-btn" type="button" style="margin-top: 16px;" onclick="  if (document.getElementById('state').checked==true){  myFunction2()} if (document.getElementById('program').checked==true){  myFunction2()}  if (document.getElementById('intake').checked==true){  myFunction2()} if (document.getElementById('inst').checked==true){  myFunction2()}  if (document.getElementById('current').checked==true){  window.location.href = 'instapproval.jsp?'}">
+                                     Submit
+                                     </button>
+                                </div>  
+        
+                   <div id="formContent" style="display: none;margin-top: 18px;">
+    
+<p style="font-weight: bold;font-size: 19px;">  State Wise / राज्य वार </p>
+<!-- Login Form -->
+  <form method="post" name="form_main"   >
+     
+        
+
+    </form>
+                                                                                    
+   <form method="post" name="form_main"   action="instapproval_statewise.jsp?">
+       <label for="html"><b>Select State / राज्य चुनें </b></label><br><br>
+     
+                                                                                    
+                                                                                    <select  id="statewise" name="statewise" required>
+                                                                                        
+                                                                                        
+                                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                                                        
+                                                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                                                        
+                                                                                        <option value="Assam">Assam</option>
+                                                                                        
+                                                                                        <option value="Bihar">Bihar</option>
+                                                                                        
+                                                                                        <option value="Chandigarh">Chandigarh</option>
+                                                                                        
+                                                                                        <option value="Chattisgarh">Chattisgarh</option>
+                                                                                        
+                                                                                        <option value="Delhi">Delhi</option>
+                                                                                        
+                                                                                        <option value="Goa">Goa</option>
+                                                                                        
+                                                                                        <option value="Gujarat">Gujarat</option>
+                                                                                        
+                                                                                        <option value="Haryana">Haryana</option>
+                                                                                        
+                                                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                                                        
+                                                                                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                                                                        
+                                                                                        <option value="Jharkhand">Jharkhand</option>
+                                                                                        
+                                                                                        <option value="Karnataka">Karnataka</option>
+                                                                                        
+                                                                                        <option value="Kerala">Kerala</option>
+                                                                                        
+                                                                                        <option value="Ladakh">Ladakh</option>
+                                                                                        
+                                                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                                                        
+                                                                                        <option value="Maharashtra">Maharashtra</option>
+                                                                                        
+                                                                                        <option value="Mizoram">Mizoram</option>
+                                                                                        
+                                                                                        <option value="Manipur">Manipur</option>
+                                                                                        
+                                                                                        <option value="Meghalaya">Meghalaya</option>
+                                                                                        
+                                                                                        <option value="Orissa">Orissa</option>
+                                                                                        
+                                                                                        <option value="PUDUCHERRY">PUDUCHERRY</option>
+                                                                                        
+                                                                                        <option value="Punjab">Punjab</option>
+                                                                                        
+                                                                                        <option value="Rajasthan">Rajasthan</option>
+                                                                                        
+                                                                                        <option value="Sikkim">Sikkim</option>
+                                                                                        
+                                                                                        <option value="TAMIL NADU">TAMIL NADU</option>
+                                                                                        
+                                                                                        <option value="Telangana">Telangana</option>
+                                                                                        
+                                                                                        <option value="Tripura">Tripura</option>
+                                                                                        
+                                                                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                                                        
+                                                                                        <option value="Uttarakhand">Uttarakhand</option>
+                                                                                        
+                                                                                        <option value="West Bengal">West Bengal</option>
+                                                                                        
+                                                                                        <option value="ODISHA">ODISHA</option>
+                                                                                        
+                                                                                        <option value=" Andhra Pradesh"> Andhra Pradesh</option>
+                                                                                        
+                                                                                        <option value="CHHATTISGARH">CHHATTISGARH</option>
+                                                                                        
+                                                                                    </select>
+                                                                                    <br><br><br>
+        
+      <input class="login100-form-btn"  type="submit" class="fadeIn fourth" value="Submit">
+    </form>                                                                                 
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+  </div>
+                                    
+         <div id="formContent1" style="display: none;margin-top: 18px;padding: 27px;">
+    
+<p style="font-weight: bold;font-size: 19px;">  Program Wise / कार्यक्रम के अनुसार </p>
+    <!-- Login Form -->
+    <form method="post" name="form_main"   action="instapproval_prog.jsp?">
+        <label for="html"><b>Select Course / कोर्स चुनें </b></label><br><br>
+     
+                                                                                    
+                                                                                    <select  id ="programwise" name="programwise" required>
+                                                                                       
+                                                                                        
+                                                                                        <option value="ADCGC">Advance Diploma in Child Guidance and Counselling</option>
+                                                                                        
+                                                                                        <option value="B.A./B.Com./B.Sc.B.Ed.Spl.Ed.">Bachelor of Art/Bachelor of Commerce/Bachelor of Science Bachelor of Education Special Education</option>
+                                                                                        
+                                                                                        <option value="B.A.S.L.P.">Bachelor in Audiology and Speech-Language Pathology– Semester System</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(ASD)">B.Ed. Special Education (Autism Spectrum Disorder)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(Db)">B.Ed.Special Education (Deafblind) (on pilot basis)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(HI)">B.Ed. Special Education (Hearing Impairment)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(ID)">B.Ed. Special Education (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(LD)">B.Ed. Special Education (Learning Disability)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(MD)">B.Ed. Special Education (Multiple Disabilities)  </option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(MR)">B.Ed. Special Education (Mental Retardation)</option>
+                                                                                        
+                                                                                        <option value="B.Ed.Spl.Ed.(VI)">B.Ed.Special Education (Visual Impairment)</option>
+                                                                                        
+                                                                                        <option value="B.P.O.">Bachelor in Prosthetics and Orthotics</option>
+                                                                                        
+                                                                                        <option value="B.R.Sc.">Bachelor in Rehabilitation Science</option>
+                                                                                        
+                                                                                        <option value="B.Sc.(Spl.Ed.&.Reh.)">B.Sc. (Special Education and Rehabilitation)</option>
+                                                                                        
+                                                                                        <option value="B.Sc.Cl.Psy.(Hons)">B.Sc. Clinical Psychology (Hons.) </option>
+                                                                                        
+                                                                                        <option value="C.C.C.G.">Certificate Course in Care Giving</option>
+                                                                                        
+                                                                                        <option value="C.C.R.T.">Certificate Course in Rehabilitation Therapy</option>
+                                                                                        
+                                                                                        <option value="C.C.R.T.">Certificate Course in Rehabilitation Therapy</option>
+                                                                                        
+                                                                                        <option value="C.P.O.">Certificate Course in Prosthetics & Orthotic</option>
+                                                                                        
+                                                                                        <option value="CBID">Community Based Inclusive Development Programme</option>
+                                                                                        
+                                                                                        <option value="D.C.B.R.">Diploma in Community Based Rehabilitation</option>
+                                                                                        
+                                                                                        <option value="D.E.C.S.E.(HI)">Diploma in Early Childhood Special Education (Hearing Impairment).</option>
+                                                                                        
+                                                                                        <option value="D.E.C.S.E.(HI)">Diploma in Early Childhood Special Education (Hearing Impairment).</option>
+                                                                                        
+                                                                                        <option value="D.E.C.S.E.(ID)">Diploma in Early Childhood Special Education (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(ASD)">D.Ed. Special Education (Autism Spectrum Disorders)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(CP)">D.Ed. Special Education (Cerebral Palsy)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(DB)">Diploma in Education Special Education ( Deaf Blind)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(Db)">D.Ed.Special Education (Deafblind)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(HI)">D.Ed. in Special Education (Hearing Impairment)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(ID)">D.Ed. Special Education (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(IDD)">D.Ed. in Special Education (Intellectual and Developmental Disabilities)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(MD)">D.Ed. Special Education (Multiple Disabilities)</option>
+                                                                                        
+                                                                                        <option value="D.Ed.Spl.Ed.(VI)">D.Ed. in Special Education (Visual Impairment)</option>
+                                                                                        
+                                                                                        <option value="D.H.A.R.E.M.T.">Diploma in Hearing Aid Repair and Ear Mould Technology</option>
+                                                                                        
+                                                                                        <option value="D.H.L.S.">Diploma in Hearing Language and Speech</option>
+                                                                                        
+                                                                                        <option value="D.I.S.L.I.">DIPLOMA IN INDIAN SIGN LANGUAGE INTERPRETING (LEVEL A,B & C)</option>
+                                                                                        
+                                                                                        <option value="D.I.S.L.I.">Diploma in Indian Sign Language Interpretation</option>
+                                                                                        
+                                                                                        <option value="D.P.O.">Diploma in Prosthetics and Orthotics</option>
+                                                                                        
+                                                                                        <option value="D.R.T.">Diploma in Rehabilitation Therapy</option>
+                                                                                        
+                                                                                        <option value="D.T.I.S.L">Diploma in Teaching Indian Singn Language</option>
+                                                                                        
+                                                                                        <option value="D.V.R.(ID)">Diploma in Vocational Rehabilitation (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="DCE(VI)">Diploma in Computer Education (Visual Impairment)</option>
+                                                                                        
+                                                                                        <option value="Integrated B.Ed.-M.Ed.Spl.Ed. (ID)">Integrated Bachelor of Education-Master of Education-Special Education (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="Integrated B.Ed.-M.Ed.Spl.Ed.(SLD)">Integrated Bachelor of Education-Master of Education Special Education (Specific Learning Disability )</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ASD)-FS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ASD))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ASD)-MS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ASD))-Middle Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ASD)-PS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ASD))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ASD)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ASD))-Secondary Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (HI)-FS ">Integrated Special and Inclusive Teacher Education Programme (ISITEP (HI))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (HI)-MS ">Integrated Special and Inclusive Teacher Education Programme (ISITEP (HI))-Middle Stage </option>
+                                                                                        
+                                                                                        <option value="ISITEP (HI)-PS ">Integrated Special and Inclusive Teacher Education Programme (ISITEP (HI))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (HI)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (HI))-Secondary Stage </option>
+                                                                                        
+                                                                                        <option value="ISITEP (ID)-FS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ID))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ID)-MS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ID))-Middle Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ID)-PS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ID))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (ID)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (ID))-Secondary Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (LD)-FS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (LD))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (LD)-MS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (LD))-Middle Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (LD)-PS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (LD))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (LD)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (LD))-Secondary Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (MD)-FS">ntegrated Special and Inclusive Teacher Education Programme (ISITEP (MD))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (MD)-MS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (MD))-Middle Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (MD)-PS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (MD))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (MD)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (MD))-Secondary Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (VI)-FS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (VI))-Foundational Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (VI)-MS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (VI))-Middle Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (VI)-PS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (VI))-Preparatory Stage</option>
+                                                                                        
+                                                                                        <option value="ISITEP (VI)-SS">Integrated Special and Inclusive Teacher Education Programme (ISITEP (VI))-Secondary Stage</option>
+                                                                                        
+                                                                                        <option value="M.A. (SWDS)">M.A. Social Work in Disability Studies and Action</option>
+                                                                                        
+                                                                                        <option value="M.A. Cl.Psy.">M.A. Clinical Psychology </option>
+                                                                                        
+                                                                                        <option value="M.A.S.L.P">Master in Audiology and Speech-Language Pathology</option>
+                                                                                        
+                                                                                        <option value="M.D.R.A.">Master in Disability Rehabilitation Administration</option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(ASD)">M.Ed. Special Education (Autism Spectrum Disorder) (on pilot basis)</option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(HI)">M.Ed. Special Education (Hearing Impairment)</option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(ID)">M.Ed. Special Education (Intellectual Disability)</option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(LD)">M.Ed. Special Education (Learning Disability)</option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(MD)">M.Ed. Special Education (Multiple Disabilities)  (on pilot basis)  </option>
+                                                                                        
+                                                                                        <option value="M.Ed.Spl.Ed.(VI)">M.Ed. Special Education (Visual Impairment)</option>
+                                                                                        
+                                                                                        <option value="M.P.O.">Master in Prosthetics & Orthotics</option>
+                                                                                        
+                                                                                        <option value="M.Phil.(Cl.Psy.)">M.Phil (Clinical Psychology)</option>
+                                                                                        
+                                                                                        <option value="M.Phil.(Rehab.Psy)">M.Phil (Rehabilitation Psychology)</option>
+                                                                                        
+                                                                                        <option value="M.R.Sc.">Master in Rehabilitation Science </option>
+                                                                                        
+                                                                                        <option value="M.Sc.(Aud.)">M.Sc. in Audiology </option>
+                                                                                        
+                                                                                        <option value="M.Sc.(Psycho-Social Rehab)">M.Sc. (Psycho-Social  Rehabilitation )</option>
+                                                                                        
+                                                                                        <option value="M.Sc.(S.L.P.)">M.Sc. in Speech Language Pathology</option>
+                                                                                        
+                                                                                        <option value="P.D. (Cl.Psy)">Professional Diploma in Clinical Psychology</option>
+                                                                                        
+                                                                                        <option value="P.G.D.C.B.R.">Post Graduate Diploma in Community Based Rehabilitation</option>
+                                                                                        
+                                                                                        <option value="P.G.D.D.R.M.">Post-Graduate Diploma in Disability Rehabilitation and Management</option>
+                                                                                        
+                                                                                        <option value="P.G.D.D.T.(MD:P&N)">P.G. Dipl. in Developmental Therapy (Mult. Dis.:Physical and Neuro.)</option>
+                                                                                        
+                                                                                        <option value="P.G.D.E.I.">P.G. Diploma in Early Intervention</option>
+                                                                                        
+                                                                                        <option value="P.G.D.R.P.">P.G. Diploma in Rehabilitation Psychology</option>
+                                                                                        
+                                                                                        <option value="P.G.D.R.P.">P.G DIPLOMA IN REHABILITATION PSYCHOLOGY-2018</option>
+                                                                                        
+                                                                                        <option value="PGDAVT">Post Graduate Diploma Course in Auditory Verbal Therapy </option>
+                                                                                        
+                                                                                        <option value="Psy.D (Cl.Psy)">Psy.D in Clinical Psychology</option>
+                                                                                        
+                                                                                    </select>
+                                                                                    <br><br><br>
+        
+      <input class="login100-form-btn"  type="submit" class="fadeIn fourth" value="Submit">
+    </form>
+
+                   </div>
+    
+         <div id="formContent2" style="display: none;margin-top: 18px;padding: 27px;">
+    
+<p style="font-weight: bold;font-size: 19px;">  State and Program wise / राज्य और कार्यक्रम के अनुसार </p>
+    <!-- Login Form -->
+    <form method="post" name="form_main"   action="instapproval_prog_state.jsp?">
+<label for="html"><b>Select State / राज्य चुनें </b></label><br><br>
+     
+                                                                                    
+                                                                                    <select  id="statewises" name="statewises" required>
+                                                                                        
+                                                                                        
+                                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                                                        
+                                                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                                                        
+                                                                                        <option value="Assam">Assam</option>
+                                                                                        
+                                                                                        <option value="Bihar">Bihar</option>
+                                                                                        
+                                                                                        <option value="Chandigarh">Chandigarh</option>
+                                                                                        
+                                                                                        <option value="Chattisgarh">Chattisgarh</option>
+                                                                                        
+                                                                                        <option value="Delhi">Delhi</option>
+                                                                                        
+                                                                                        <option value="Goa">Goa</option>
+                                                                                        
+                                                                                        <option value="Gujarat">Gujarat</option>
+                                                                                        
+                                                                                        <option value="Haryana">Haryana</option>
+                                                                                        
+                                                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                                                        
+                                                                                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                                                                        
+                                                                                        <option value="Jharkhand">Jharkhand</option>
+                                                                                        
+                                                                                        <option value="Karnataka">Karnataka</option>
+                                                                                        
+                                                                                        <option value="Kerala">Kerala</option>
+                                                                                        
+                                                                                        <option value="Ladakh">Ladakh</option>
+                                                                                        
+                                                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                                                        
+                                                                                        <option value="Maharashtra">Maharashtra</option>
+                                                                                        
+                                                                                        <option value="Mizoram">Mizoram</option>
+                                                                                        
+                                                                                        <option value="Manipur">Manipur</option>
+                                                                                        
+                                                                                        <option value="Meghalaya">Meghalaya</option>
+                                                                                        
+                                                                                        <option value="Orissa">Orissa</option>
+                                                                                        
+                                                                                        <option value="PUDUCHERRY">PUDUCHERRY</option>
+                                                                                        
+                                                                                        <option value="Punjab">Punjab</option>
+                                                                                        
+                                                                                        <option value="Rajasthan">Rajasthan</option>
+                                                                                        
+                                                                                        <option value="Sikkim">Sikkim</option>
+                                   

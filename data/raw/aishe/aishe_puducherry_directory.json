@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0373",
+    "name": "PONDICHERRY UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "PUDUCHERRY",
+    "address": "R.V. Nagar, Kalapet, Puducherry",
+    "pincode": "605014",
+    "yearEstablished": 1985,
+    "website": "https://www.pondiuni.edu.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0372",
+    "name": "JAWAHARLAL INSTITUTE OF POSTGRADUATE MEDICAL EDUCATION & RESEARCH (JIPMER)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance / Medical",
+    "district": "PUDUCHERRY",
+    "address": "Dhanvantari Nagar, Gorimedu, Puducherry",
+    "pincode": "605006",
+    "yearEstablished": 1823,
+    "nmcId": "NMC-PY-MED-001",
+    "website": "https://jipmer.edu.in",
+    "approvalAuthority": "Act of Parliament (JIPMER Act)"
+  },
+  {
+    "aisheCode": "U-0374",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY PUDUCHERRY (NIT PUDUCHERRY)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KARAIKAL",
+    "address": "Thiruvettakudy, Karaikal",
+    "pincode": "609609",
+    "yearEstablished": 2010,
+    "website": "http://www.nitpy.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-29600",
+    "name": "DR. AMBEDKAR GOVERNMENT LAW COLLEGE PUDUCHERRY",
+    "level": "Law institutions",
+    "type": "Government Law College",
+    "district": "PUDUCHERRY",
+    "address": "Kalapet, Puducherry",
+    "pincode": "605014",
+    "yearEstablished": 1972,
+    "otherRegulatorId": "BCI-PY-LAW-001",
+    "website": "https://aglc.py.gov.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

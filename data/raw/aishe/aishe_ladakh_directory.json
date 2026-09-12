@@ -1,0 +1,38 @@
+[
+  {
+    "aisheCode": "U-0990",
+    "name": "UNIVERSITY OF LADAKH",
+    "level": "Universities",
+    "type": "State / UT Public University",
+    "district": "LEH",
+    "address": "Melongthang, Taru, Leh",
+    "pincode": "194101",
+    "yearEstablished": 2019,
+    "website": "https://universityofladakh.org.in",
+    "approvalAuthority": "UGC Section 2(f) / UT Act"
+  },
+  {
+    "aisheCode": "C-15900",
+    "name": "ELIEZER JOLDAN MEMORIAL COLLEGE LEH (EJM COLLEGE)",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "LEH",
+    "address": "Skampari, Leh, Ladakh",
+    "pincode": "194101",
+    "yearEstablished": 1994,
+    "website": "https://ejmcollege.in",
+    "approvalAuthority": "University of Ladakh / UGC"
+  },
+  {
+    "aisheCode": "C-15920",
+    "name": "GOVERNMENT DEGREE COLLEGE KARGIL",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "KARGIL",
+    "address": "Khumbathang, Kargil, Ladakh",
+    "pincode": "194103",
+    "yearEstablished": 1995,
+    "website": "https://gdckargil.in",
+    "approvalAuthority": "University of Ladakh / UGC"
+  }
+]

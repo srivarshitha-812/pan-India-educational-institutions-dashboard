@@ -1,0 +1,81 @@
+[
+  {
+    "aisheCode": "U-0050",
+    "name": "GAUHATI UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "KAMRUP METROPOLITAN",
+    "address": "Gopinath Bordoloi Nagar, Jalukbari, Guwahati",
+    "pincode": "781014",
+    "yearEstablished": 1948,
+    "website": "https://gauhati.ac.in",
+    "email": "registrar@gauhati.ac.in",
+    "phone": "0361-2570415",
+    "approvalAuthority": "UGC Section 2(f) and 12(B), State Act"
+  },
+  {
+    "aisheCode": "U-0054",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI (IIT GUWAHATI)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KAMRUP",
+    "address": "Amingaon, North Guwahati, Guwahati",
+    "pincode": "781039",
+    "yearEstablished": 1994,
+    "website": "https://www.iitg.ac.in",
+    "email": "registrar@iitg.ac.in",
+    "phone": "0361-2583000",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0055",
+    "name": "TEZPUR UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "SONITPUR",
+    "address": "Napaam, Tezpur, Sonitpur",
+    "pincode": "784028",
+    "yearEstablished": 1994,
+    "website": "http://www.tezu.ernet.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "C-25100",
+    "name": "GAUHATI MEDICAL COLLEGE AND HOSPITAL",
+    "level": "Medical institutions",
+    "type": "State Government Medical College",
+    "district": "KAMRUP METROPOLITAN",
+    "address": "Narakasur Hilltop, Bhangagarh, Guwahati",
+    "pincode": "781032",
+    "yearEstablished": 1960,
+    "nmcId": "NMC-AS-MED-001",
+    "website": "http://gmchassam.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-25120",
+    "name": "JORHAT ENGINEERING COLLEGE",
+    "level": "Technical/engineering institutions",
+    "type": "Government Engineering College",
+    "district": "JORHAT",
+    "address": "Garmur, Jorhat",
+    "pincode": "785007",
+    "yearEstablished": 1960,
+    "aicteId": "1-3324591",
+    "website": "https://jecassam.ac.in",
+    "approvalAuthority": "AICTE, ASTU"
+  },
+  {
+    "aisheCode": "C-25150",
+    "name": "NATIONAL LAW UNIVERSITY AND JUDICIAL ACADEMY ASSAM (NLUJA)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "KAMRUP",
+    "address": "Amingaon, Hajo Road, Guwahati",
+    "pincode": "781031",
+    "yearEstablished": 2009,
+    "otherRegulatorId": "BCI-AS-LAW-001",
+    "website": "http://www.nluassam.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI), Statutory State Act"
+  }
+]

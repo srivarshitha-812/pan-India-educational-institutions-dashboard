@@ -1,0 +1,114 @@
+[
+  {
+    "aicteId": "1-3324501234",
+    "name": "SWARNA BHARATHI INSTITUTE OF SCIENCE AND TECHNOLOGY (SBIT)",
+    "type": "Engineering & Technology",
+    "management": "Private Unaided",
+    "district": "KHAMMAM",
+    "address": "Arempula, Sri Shivani Nagar, Khammam",
+    "pincode": "507002",
+    "affiliation": "JNTUH",
+    "academicYear": "2023-24",
+    "website": "https://www.sbit.ac.in",
+    "programmes": [
+      {
+        "name": "B.Tech Computer Science and Engineering",
+        "level": "UG",
+        "intake": 180
+      },
+      {
+        "name": "B.Tech Electronics and Communication Engineering",
+        "level": "UG",
+        "intake": 120
+      },
+      {
+        "name": "B.Tech Electrical and Electronics Engineering",
+        "level": "UG",
+        "intake": 60
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "level": "UG",
+        "intake": 60
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "level": "UG",
+        "intake": 60
+      },
+      {
+        "name": "Master of Business Administration (MBA)",
+        "level": "PG",
+        "intake": 120
+      }
+    ]
+  },
+  {
+    "aicteId": "1-1099234511",
+    "name": "GOVERNMENT POLYTECHNIC KHAMMAM",
+    "type": "Diploma Technical",
+    "management": "State Government",
+    "district": "KHAMMAM",
+    "address": "Near Railway Station, Khanapuram Haveli, Khammam",
+    "pincode": "507002",
+    "affiliation": "State Board of Technical Education and Training (SBTET)",
+    "academicYear": "2023-24",
+    "website": "https://polytechnicts.cgg.gov.in/khammam.edu",
+    "programmes": [
+      {
+        "name": "Diploma in Civil Engineering",
+        "level": "Diploma",
+        "intake": 60
+      },
+      {
+        "name": "Diploma in Mechanical Engineering",
+        "level": "Diploma",
+        "intake": 60
+      },
+      {
+        "name": "Diploma in Electrical & Electronics Engineering",
+        "level": "Diploma",
+        "intake": 60
+      },
+      {
+        "name": "Diploma in Electronics & Communication Engineering",
+        "level": "Diploma",
+        "intake": 60
+      },
+      {
+        "name": "Diploma in Computer Engineering",
+        "level": "Diploma",
+        "intake": 60
+      }
+    ]
+  },
+  {
+    "aicteId": "1-4029482110",
+    "name": "JNTUH UNIVERSITY COLLEGE OF ENGINEERING HYDERABAD",
+    "type": "University Department / Constituent",
+    "management": "State Government",
+    "district": "HYDERABAD",
+    "address": "Kukatpally, Hyderabad",
+    "pincode": "500085",
+    "affiliation": "JNTUH",
+    "academicYear": "2023-24",
+    "website": "https://jntuhceh.ac.in",
+    "programmes": [
+      {
+        "name": "B.Tech Computer Science and Engineering",
+        "level": "UG",
+        "intake": 60
+      },
+      {
+        "name": "B.Tech ECE",
+        "level": "UG",
+        "intake": 60
+      },
+      {
+        "name": "M.Tech Cyber Security",
+        "level": "PG",
+        "intake": 25
+      }
+    ]
+  }
+]

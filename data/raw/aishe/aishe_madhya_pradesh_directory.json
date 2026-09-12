@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0275",
+    "name": "DR. HARISINGH GOUR VISHWAVIDYALAYA (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "SAGAR",
+    "address": "Sagar, Madhya Pradesh",
+    "pincode": "470003",
+    "yearEstablished": 1946,
+    "website": "http://www.dhsgsu.edu.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0274",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY INDORE (IIT INDORE)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "INDORE",
+    "address": "Khandwa Road, Simrol, Indore",
+    "pincode": "453552",
+    "yearEstablished": 2009,
+    "website": "https://www.iiti.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-28400",
+    "name": "MAHATMA GANDHI MEMORIAL MEDICAL COLLEGE (MGM INDORE)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "INDORE",
+    "address": "A.B. Road, Indore",
+    "pincode": "452001",
+    "yearEstablished": 1948,
+    "nmcId": "NMC-MP-MED-001",
+    "website": "http://www.mgmmcindore.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0277",
+    "name": "NATIONAL LAW INSTITUTE UNIVERSITY BHOPAL (NLIU)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "BHOPAL",
+    "address": "Kerwa Dam Road, Bhopal",
+    "pincode": "462044",
+    "yearEstablished": 1997,
+    "otherRegulatorId": "BCI-MP-LAW-001",
+    "website": "https://nliu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

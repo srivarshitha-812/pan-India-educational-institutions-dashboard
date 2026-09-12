@@ -1,0 +1,58 @@
+[
+  {
+    "nmcId": "NMC-TS-MED-014",
+    "name": "MAMATA MEDICAL COLLEGE",
+    "management": "Private Trust",
+    "district": "KHAMMAM",
+    "address": "Rotary Nagar, Khammam",
+    "pincode": "507002",
+    "university": "Kaloji Narayana Rao University of Health Sciences (KNRUHS)",
+    "yearInception": 1998,
+    "mbbsIntake": 200,
+    "pgAvailable": "Yes",
+    "status": "Recognized by NMC for 200 MBBS Seats",
+    "website": "https://mamatamedicalcollege.com"
+  },
+  {
+    "nmcId": "NMC-TS-MED-001",
+    "name": "OSMANIA MEDICAL COLLEGE",
+    "management": "Government",
+    "district": "HYDERABAD",
+    "address": "Koti, Hyderabad",
+    "pincode": "500095",
+    "university": "Kaloji Narayana Rao University of Health Sciences (KNRUHS)",
+    "yearInception": 1846,
+    "mbbsIntake": 250,
+    "pgAvailable": "Yes",
+    "status": "Recognized by NMC",
+    "website": "https://omchyderabad.org"
+  },
+  {
+    "nmcId": "NMC-TS-MED-002",
+    "name": "GANDHI MEDICAL COLLEGE",
+    "management": "Government",
+    "district": "HYDERABAD",
+    "address": "Musheerabad, Secunderabad",
+    "pincode": "500003",
+    "university": "Kaloji Narayana Rao University of Health Sciences (KNRUHS)",
+    "yearInception": 1954,
+    "mbbsIntake": 250,
+    "pgAvailable": "Yes",
+    "status": "Recognized by NMC",
+    "website": "https://gandhimedicalcollege.telangana.gov.in"
+  },
+  {
+    "nmcId": "NMC-TS-MED-035",
+    "name": "GOVERNMENT MEDICAL COLLEGE KHAMMAM",
+    "management": "Government",
+    "district": "KHAMMAM",
+    "address": "Rikab Bazar, Khammam",
+    "pincode": "507001",
+    "university": "Kaloji Narayana Rao University of Health Sciences (KNRUHS)",
+    "yearInception": 2023,
+    "mbbsIntake": 100,
+    "pgAvailable": "No",
+    "status": "Recognized / Permitted by NMC for 100 MBBS Seats",
+    "website": "https://gmckhammam.telangana.gov.in"
+  }
+]

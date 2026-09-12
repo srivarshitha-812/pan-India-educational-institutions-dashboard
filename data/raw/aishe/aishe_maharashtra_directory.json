@@ -1,0 +1,77 @@
+[
+  {
+    "aisheCode": "U-0318",
+    "name": "UNIVERSITY OF MUMBAI",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "MUMBAI CITY",
+    "address": "M.G. Road, Fort, Mumbai",
+    "pincode": "400032",
+    "yearEstablished": 1857,
+    "website": "https://mu.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0306",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY BOMBAY (IIT BOMBAY)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "MUMBAI SUBURBAN",
+    "address": "Main Gate Rd, IIT Area, Powai, Mumbai",
+    "pincode": "400076",
+    "yearEstablished": 1958,
+    "website": "https://www.iitb.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0329",
+    "name": "SAVITRIBAI PHULE PUNE UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "PUNE",
+    "address": "Ganeshkhind, Pune",
+    "pincode": "411007",
+    "yearEstablished": 1949,
+    "website": "http://www.unipune.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "C-33800",
+    "name": "SETH G.S. MEDICAL COLLEGE AND KEM HOSPITAL",
+    "level": "Medical institutions",
+    "type": "Municipal Corporation Medical College",
+    "district": "MUMBAI CITY",
+    "address": "Acharya Donde Marg, Parel, Mumbai",
+    "pincode": "400012",
+    "yearEstablished": 1926,
+    "nmcId": "NMC-MH-MED-001",
+    "website": "https://www.kem.edu",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-33850",
+    "name": "COLLEGE OF ENGINEERING PUNE (COEP TECHNOLOGICAL UNIVERSITY)",
+    "level": "Technical/engineering institutions",
+    "type": "State Unitary Technical University",
+    "district": "PUNE",
+    "address": "Wellesley Rd, Shivajinagar, Pune",
+    "pincode": "411005",
+    "yearEstablished": 1854,
+    "aicteId": "1-COEP-01",
+    "website": "https://www.coep.org.in",
+    "approvalAuthority": "AICTE, State Act"
+  },
+  {
+    "aisheCode": "C-33890",
+    "name": "GOVERNMENT LAW COLLEGE MUMBAI",
+    "level": "Law institutions",
+    "type": "Government Law College",
+    "district": "MUMBAI CITY",
+    "address": "A Road, Churchgate, Mumbai",
+    "pincode": "400020",
+    "yearEstablished": 1855,
+    "otherRegulatorId": "BCI-MH-LAW-001",
+    "website": "https://www.glcmumbai.com",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

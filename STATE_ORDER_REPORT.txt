@@ -1,0 +1,59 @@
+===========================================================================
+PAN-INDIA EDUCATIONAL INSTITUTIONS COLLECTION ORDER & AUDIT REPORT
+===========================================================================
+Generated: 2026-09-08 14:39:52
+Total States Processed: 28
+Total Union Territories Processed: 8
+Total States + UTs: 36
+Master Workbook: PAN_INDIA_EDUCATIONAL_INSTITUTIONS.xlsx
+===========================================================================
+Order  State / UT Name                            Type     Sheet Name (<=31 chars)      Status    
+---------------------------------------------------------------------------
+1      Andhra Pradesh                             State    Andhra Pradesh               COMPLETED 
+2      Arunachal Pradesh                          State    Arunachal Pradesh            COMPLETED 
+3      Assam                                      State    Assam                        COMPLETED 
+4      Bihar                                      State    Bihar                        COMPLETED 
+5      Chhattisgarh                               State    Chhattisgarh                 COMPLETED 
+6      Goa                                        State    Goa                          COMPLETED 
+7      Gujarat                                    State    Gujarat                      COMPLETED 
+8      Haryana                                    State    Haryana                      COMPLETED 
+9      Himachal Pradesh                           State    Himachal Pradesh             COMPLETED 
+10     Jharkhand                                  State    Jharkhand                    COMPLETED 
+11     Karnataka                                  State    Karnataka                    COMPLETED 
+12     Kerala                                     State    Kerala                       COMPLETED 
+13     Madhya Pradesh                             State    Madhya Pradesh               COMPLETED 
+14     Maharashtra                                State    Maharashtra                  COMPLETED 
+15     Manipur                                    State    Manipur                      COMPLETED 
+16     Meghalaya                                  State    Meghalaya                    COMPLETED 
+17     Mizoram                                    State    Mizoram                      COMPLETED 
+18     Nagaland                                   State    Nagaland                     COMPLETED 
+19     Odisha                                     State    Odisha                       COMPLETED 
+20     Punjab                                     State    Punjab                       COMPLETED 
+21     Rajasthan                                  State    Rajasthan                    COMPLETED 
+22     Sikkim                                     State    Sikkim                       COMPLETED 
+23     Tamil Nadu                                 State    Tamil Nadu                   COMPLETED 
+24     Telangana                                  State    Telangana                    COMPLETED 
+25     Tripura                                    State    Tripura                      COMPLETED 
+26     Uttar Pradesh                              State    Uttar Pradesh                COMPLETED 
+27     Uttarakhand                                State    Uttarakhand                  COMPLETED 
+28     West Bengal                                State    West Bengal                  COMPLETED 
+29     Andaman and Nicobar Islands                UT       Andaman & Nicobar Islands    COMPLETED 
+30     Chandigarh                                 UT       Chandigarh                   COMPLETED 
+31     Dadra and Nagar Haveli and Daman and Diu   UT       DNH_DD                       COMPLETED 
+32     Delhi                                      UT       Delhi                        COMPLETED 
+33     Jammu and Kashmir                          UT       Jammu and Kashmir            COMPLETED 
+34     Ladakh                                     UT       Ladakh                       COMPLETED 
+35     Lakshadweep                                UT       Lakshadweep                  COMPLETED 
+36     Puducherry                                 UT       Puducherry                   COMPLETED 
+===========================================================================
+
+SHEET NAME ABBREVIATION MAPPING (< 31 CHARACTERS LIMIT):
+1. Dadra and Nagar Haveli and Daman and Diu -> 'DNH_DD'
+2. Andaman and Nicobar Islands -> 'Andaman & Nicobar Islands'
+
+AUDITABILITY & DATA COMPLETENESS:
+- Exact 36 sheets created corresponding to all 28 States and 8 Union Territories.
+- Telangana sheet preserved in full fidelity.
+- Every institution row maintains complete provenance (Source Database, Source URL,
+  Recognition Authority, Approval Authority, Official IDs, Verification Status).
+===========================================================================

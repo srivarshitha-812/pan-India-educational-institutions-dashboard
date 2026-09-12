@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0439",
+    "name": "UNIVERSITY OF MADRAS",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "CHENNAI",
+    "address": "Centenary Building, Chepauk, Chennai",
+    "pincode": "600005",
+    "yearEstablished": 1857,
+    "website": "https://www.unom.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0456",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY MADRAS (IIT MADRAS)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "CHENNAI",
+    "address": "IIT P.O., Chennai",
+    "pincode": "600036",
+    "yearEstablished": 1959,
+    "website": "https://www.iitm.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0436",
+    "name": "ANNA UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University / Technical",
+    "district": "CHENNAI",
+    "address": "Sardar Patel Road, Guindy, Chennai",
+    "pincode": "600025",
+    "yearEstablished": 1978,
+    "website": "https://www.annauniv.edu",
+    "approvalAuthority": "UGC, AICTE"
+  },
+  {
+    "aisheCode": "C-24800",
+    "name": "MADRAS MEDICAL COLLEGE (MMC CHENNAI)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "CHENNAI",
+    "address": "E.V.R. Periyar Salai, Park Town, Chennai",
+    "pincode": "600003",
+    "yearEstablished": 1835,
+    "nmcId": "NMC-TN-MED-001",
+    "website": "http://www.mmc.ac.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0480",
+    "name": "TAMIL NADU NATIONAL LAW UNIVERSITY (TNNLU TIRUCHIRAPPALLI)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "TIRUCHIRAPPALLI",
+    "address": "Dindigul Main Road, Navalurkottapattu, Tiruchirappalli",
+    "pincode": "620027",
+    "yearEstablished": 2012,
+    "otherRegulatorId": "BCI-TN-LAW-001",
+    "website": "https://tnnlu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

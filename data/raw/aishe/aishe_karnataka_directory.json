@@ -1,0 +1,65 @@
+[
+  {
+    "aisheCode": "U-0220",
+    "name": "INDIAN INSTITUTE OF SCIENCE (IISC BANGALORE)",
+    "level": "Institutes of National Importance",
+    "type": "Deemed to be University / Institute of National Importance",
+    "district": "BENGALURU URBAN",
+    "address": "CV Raman Rd, Bengaluru",
+    "pincode": "560012",
+    "yearEstablished": 1909,
+    "website": "https://iisc.ac.in",
+    "approvalAuthority": "UGC / Act of Parliament"
+  },
+  {
+    "aisheCode": "U-0215",
+    "name": "BANGALORE UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "BENGALURU URBAN",
+    "address": "Jnana Bharathi Campus, Bengaluru",
+    "pincode": "560056",
+    "yearEstablished": 1964,
+    "website": "https://bangaloreuniversity.karnataka.gov.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0238",
+    "name": "NATIONAL LAW SCHOOL OF INDIA UNIVERSITY (NLSIU BANGALORE)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "BENGALURU URBAN",
+    "address": "Gnana Bharathi Main Rd, Opp. NAAC, Nagarbhavi, Bengaluru",
+    "pincode": "560072",
+    "yearEstablished": 1987,
+    "otherRegulatorId": "BCI-KA-LAW-001",
+    "website": "https://www.nls.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI), Statutory State Act"
+  },
+  {
+    "aisheCode": "C-21500",
+    "name": "BANGALORE MEDICAL COLLEGE AND RESEARCH INSTITUTE (BMCRI)",
+    "level": "Medical institutions",
+    "type": "Autonomous Government Medical College",
+    "district": "BENGALURU URBAN",
+    "address": "Fort, K.R. Road, Bengaluru",
+    "pincode": "560002",
+    "yearEstablished": 1955,
+    "nmcId": "NMC-KA-MED-001",
+    "website": "https://bmcri.karnataka.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-21530",
+    "name": "R.V. COLLEGE OF ENGINEERING (RVCE)",
+    "level": "Technical/engineering institutions",
+    "type": "Autonomous Engineering College",
+    "district": "BENGALURU URBAN",
+    "address": "Mysore Road, RV Vidyaniketan Post, Bengaluru",
+    "pincode": "560059",
+    "yearEstablished": 1963,
+    "aicteId": "1-RVCE-01",
+    "website": "https://rvce.edu.in",
+    "approvalAuthority": "AICTE, VTU"
+  }
+]

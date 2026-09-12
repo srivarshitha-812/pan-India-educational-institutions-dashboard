@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option selected="selected" value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option value="12">MANIPUR</option>
+<option value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>127</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjhsVHghwYOXZSybDAcSSW0wCLKsxFZo3zT62TfwWFXnSclX8EOyv_JGMs7tMVjrNS8SoUsbdSIKx5uxz-hEqLbZOwK4mAiU3UtWZqMIf4Kr2IVvMYhLKkkNeqlG-ZsVj4M" /><input type="hidden" name="__ncforminfo" value="orkL7YPZ1zEMnlLkeIAKqr4JbojboyFGY1xwDsNfwTEBDATSSLz0LoMpdsqWX7fTRxOWm14bJT3eNipsbF7y-BULT0TfP4b2GFTd0xN94daqjgYs4NpXFaJtfL2ctqHEo9uGjoa8DnKohRVQujM-drjdNfRHMgfmNgelNHEmZiNs8Kxi8jvIRZ2J5E2IRNuULTYZ_VvhoJRdTGk0WElJdDxvTlD_qvoSfr1iq61V1KEa0LQje4LbGDmg59_zXAM7uPVk75m69eeMM-MDbbpRUWVfUJ4QjKhUH3sFYSCdOE3I2O-7VWkIJtDYi4IRF4xUphPSUj3uBpa3nOPCkj8fVEl4fq12ILPKE5F_WHy5gd38h3Dd0UyHi66QvBVICYpXGZ637pxSab-8ebhmWKmoyV6LNKDvLz-uTsKI0Ry-TldC3-kzp-4d0ySq1ukpiSRsY9QxyuLi4MxkMPnw6z85ow=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2500001<br />
+                                            <b>Sch. Code:</b>59251
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA NO.I <br /> <b>Head/Principal Name: </b>Sukhvinder Kumar</td>
+                                        <td>
+                                            <b>Address : </b>NEAR ABERDEEN BAZAR PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://no1portblair.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2500001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2500002<br />
+                                            <b>Sch. Code:</b>59254
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA NO.2 <br /> <b>Head/Principal Name: </b>VISHAL YADAV</td>
+                                        <td>
+                                            <b>Address : </b>RAKSHA VIHAR MINNIE BAY PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://no2portblair.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2500002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520001<br />
+                                            <b>Sch. Code:</b>58002
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT BOYS SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>L SUKU RAJAN</td>
+                                        <td>
+                                            <b>Address : </b>MIDDLE POINT PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520002<br />
+                                            <b>Sch. Code:</b>58015
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT GIRLS SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>ARCHANA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>PT BLAIR A &amp; N ISLANDS 744104<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520003<br />
+                                            <b>Sch. Code:</b>58004
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT RABINDRA BANGLA VIDYALAYA <br /> <b>Head/Principal Name: </b>MUKUNDA BAROI</td>
+                                        <td>
+                                            <b>Address : </b>PT BLAIR A &amp; N ISLANDS 744101<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/#
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520004<br />
+                                            <b>Sch. Code:</b>58003
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT MODEL SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>Sangeeta Chand</td>
+                                        <td>
+                                            <b>Address : </b>P.O. ABERDEEN BAZAAR PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520005<br />
+                                            <b>Sch. Code:</b>58011
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL (HINDI MEDIUM) <br /> <b>Head/Principal Name: </b>MUKUNDA BAROI</td>
+                                        <td>
+                                            <b>Address : </b>HADDO POST PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520006<br />
+                                            <b>Sch. Code:</b>58010
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL (TELUGU MEDIUM) <br /> <b>Head/Principal Name: </b>K SUNDARA RAO</td>
+                                        <td>
+                                            <b>Address : </b>HADDO POST PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520008<br />
+                                            <b>Sch. Code:</b>58023
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR  SEC SCHOOL <br /> <b>Head/Principal Name: </b>PRAKASH HOWLADAR</td>
+                                        <td>
+                                            <b>Address : </b>MAYABUNDER NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520009<br />
+                                            <b>Sch. Code:</b>58028
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR. SEC SCHOOL <br /> <b>Head/Principal Name: </b>SULEKHA</td>
+                                        <td>
+                                            <b>Address : </b>WIMBERLYGUNJ P.O SOUTH  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gssswimberlygunj.edu.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520010<br />
+                                            <b>Sch. Code:</b>58055
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>BALBIR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>LAXMIPUR NTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520010">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520011<br />
+                                            <b>Sch. Code:</b>58036
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVT SENIOR SECONDARY SCHOOL HAVELOCK SOUTH ANDAMAN <br /> <b>Head/Principal Name: </b>IREENA</td>
+                                        <td>
+                                            <b>Address : </b>HAVELOCK P O HAVELOCK-3 SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520011">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520012<br />
+                                            <b>Sch. Code:</b>58019
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>C PUSHPAVALLI</td>
+                                        <td>
+                                            <b>Address : </b>DIGLIPUR NTH   ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://www.gsssdiglipur.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520012">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520013<br />
+                                            <b>Sch. Code:</b>58026
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVERNMENT SENIOR SECONDARY SCHOOL, RANGAT <br /> <b>Head/Principal Name: </b>RAM PRASAD MANDAL</td>
+                                        <td>
+                                            <b>Address : </b>RANGAT MIDDLE ANDAMAN MIDDLE  ANDAMAN<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520013">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520014<br />
+                                            <b>Sch. Code:</b>58018
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVERNMENT SENIOR SECONDARY SCHOOL SWADESH NAGAR <br /> <b>Head/Principal Name: </b>SALEEM KERKETTA</td>
+                                        <td>
+                                            <b>Address : </b>SWADESH NAGAR P.O. MIDDLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520014">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520015<br />
+                                            <b>Sch. Code:</b>58032
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>HYSIN</td>
+                                        <td>
+                                            <b>Address : </b>KADAMTALA VILLAGE &amp; P O MIDDLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://gssskadamtala14.wixsite.com/gsss-kadamtala
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520015">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520016<br />
+                                            <b>Sch. Code:</b>58031
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>V BINDU</td>
+                                        <td>
+                                            <b>Address : </b>BAKULTALA P O BAKULTALA MIDDLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://gsssbakultala010.wixsite.com/website-2
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520016">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>18</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520017<br />
+                                            <b>Sch. Code:</b>58024
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR  SEC SCHOOL <br /> <b>Head/Principal Name: </b> MANORANJAN MANDAL</td>
+                                        <td>
+                                            <b>Address : </b>KALIGHAT P.O NTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520017">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>19</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520018<br />
+                                            <b>Sch. Code:</b>58034
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>K K SHEELA</td>
+                                        <td>
+                                            <b>Address : </b>ORALKATCHA BARATANG ISLAND MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://gsssoralkatcha.wordpress.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520018">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>20</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520019<br />
+                                            <b>Sch. Code:</b>58040
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>SWAPAN PAIK</td>
+                                        <td>
+                                            <b>Address : </b>SAWAI CAR-NICOBAR A &amp; N ISLANDS <br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520019">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>21</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520020<br />
+                                            <b>Sch. Code:</b>58030
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVT SR SEC SCHOOL RAMKRISHNAPUR LITTLE ANDAMAN <br /> <b>Head/Principal Name: </b>DARLEY SAMUEL</td>
+                                        <td>
+                                            <b>Address : </b>RAMKRISHNAPUR  POST VIA HUTBAY LITTLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520020">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>22</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520021<br />
+                                            <b>Sch. Code:</b>58037
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>JACOB</td>
+                                        <td>
+                                            <b>Address : </b>LAPATHY CAR-NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520021">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>23</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520022<br />
+                                            <b>Sch. Code:</b>58041
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GSSS CAMPBELL BAY <br /> <b>Head/Principal Name: </b>MADAN PAL SINGH</td>
+                                        <td>
+                                            <b>Address : </b>CAMPBELL BAY GREAT NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520022">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>24</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520023<br />
+                                            <b>Sch. Code:</b>58013
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>RAM PRAVESH</td>
+                                        <td>
+                                            <b>Address : </b>SCHOOL LINE   JUNGLIGHAT P.O PT BLAIR SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520023">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>25</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520024<br />
+                                            <b>Sch. Code:</b>58014
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>DWIPA BISWAS</td>
+                                        <td>
+                                            <b>Address : </b>PT MOUT  P.O CHOULDARI SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520024">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>26</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520025<br />
+                                            <b>Sch. Code:</b>58016
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>GOPAL CHANDRA DAS</td>
+                                        <td>
+                                            <b>Address : </b>BAMBOOFLAT P.O SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gsssbambooflat.co.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520025">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>27</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520026<br />
+                                            <b>Sch. Code:</b>58022
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>DEEPA NAIR</td>
+                                        <td>
+                                            <b>Address : </b>LONG ISLAND POST MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520026">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>28</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520027<br />
+                                            <b>Sch. Code:</b>58017
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>BIMAL KUMAR MISTRY</td>
+                                        <td>
+                                            <b>Address : </b>GOVINDAPUR P O NIMBUDERA VIA-BETAPUR MIDDLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520027">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>29</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520028<br />
+                                            <b>Sch. Code:</b>58029
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVERNMENT MODEL SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>Prabhash Roy</td>
+                                        <td>
+                                            <b>Address : </b>HUT_BAY P.O LITTLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520028">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>30</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520029<br />
+                                            <b>Sch. Code:</b>58044
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>GOPAL CHANDRA DAS</td>
+                                        <td>
+                                            <b>Address : </b>KAPANGA  KATCHAL ISLANDS NICOBAR DISTRICT A &amp; N ISLANDS <br />
+                                            <b>Website : </b>gssskapanga7447@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520029">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>31</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520030<br />
+                                            <b>Sch. Code:</b>58025
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>K. Anna Thurai</td>
+                                        <td>
+                                            <b>Address : </b>PAHALGAON P O TOGAPUR VIA MAYABUNDER MIDDLE  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520030">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>32</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520031<br />
+                                            <b>Sch. Code:</b>58021
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT  SR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>BALBIR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>SWARAJGRAM POST   DIGLIPUR NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520031">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>33</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520032<br />
+                                            <b>Sch. Code:</b>58020
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT  SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>ASHOK KUMAR BAROI</td>
+                                        <td>
+                                            <b>Address : </b>SHIBPUR  AERIAL BAY P.O NTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gssshibpur.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520032">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>34</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520033<br />
+                                            <b>Sch. Code:</b>58001
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>JOB</td>
+                                        <td>
+                                            <b>Address : </b>RANGA CHANG   BIMLITON P.O VIA JUNGLIGHAT SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gsssrangachang.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520033">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>35</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520034<br />
+                                            <b>Sch. Code:</b>58012
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT MODEL SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>Joselyn Samuel</td>
+                                        <td>
+                                            <b>Address : </b>FERRARGUNJ  P.O.BEACHDERA SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://www.facebook.com/mferrargunj.fg
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520034">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>36</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520035<br />
+                                            <b>Sch. Code:</b>58027
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>BIKASH SADHU KHAN</td>
+                                        <td>
+                                            <b>Address : </b>MANNARGHAT   WIMBERLYGUNJ P.O SOUTH  ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520035">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>37</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520036<br />
+                                            <b>Sch. Code:</b>58043
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>MOLLY LILY</td>
+                                        <td>
+                                            <b>Address : </b>CHAMPIN NANCOWRIE P.O. A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520036">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>38</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520037<br />
+                                            <b>Sch. Code:</b>58038
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>EVERLYN</td>
+                                        <td>
+                                            <b>Address : </b>MALACCA CAR-NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>58038@cbseshiksha.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520037">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>39</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520038<br />
+                                            <b>Sch. Code:</b>58008
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>DEEPA NAIR</td>
+                                        <td>
+                                            <b>Address : </b>MANGLUTAN P.O:- HUMPHREY GUNJ SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gsssmanglutan.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520038">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>40</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520039<br />
+                                            <b>Sch. Code:</b>58006
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>JYOTHI</td>
+                                        <td>
+                                            <b>Address : </b>GARACHARAMA SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>http://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520039">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>41</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520040<br />
+                                            <b>Sch. Code:</b>58042
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>BIKASH SADHUKHAN</td>
+                                        <td>
+                                            <b>Address : </b>VIJAY NAGAR   CAMPBELL BAY GREAT NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>gsssvijaynagar@blogspot.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520040">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>42</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520041<br />
+                                            <b>Sch. Code:</b>58039
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>LEONARD JOHN</td>
+                                        <td>
+                                            <b>Address : </b>MUS CAR-NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://educationandaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520041">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>43</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520042<br />
+                                            <b>Sch. Code:</b>58007
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SAIRUN BIBI</td>
+                                        <td>
+                                            <b>Address : </b>DAIRY FARM  P.O JUNGLIGHAT PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520042">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>44</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520043<br />
+                                            <b>Sch. Code:</b>58045
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SENI SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>N C PAUL</td>
+                                        <td>
+                                            <b>Address : </b>LAXMANPUR  NEIL KENDRA P.O. NEIL ISLAND SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520043">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>45</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520044<br />
+                                            <b>Sch. Code:</b>58035
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR.SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>J DASAN PUSHPARAJ</td>
+                                        <td>
+                                            <b>Address : </b>BATHUBASTI POST  GARACHARAMA POST VIA PORT BLAIR SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gsssbathubasti.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520044">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>46</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520045<br />
+                                            <b>Sch. Code:</b>58033
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>T MINERVA </td>
+                                        <td>
+                                            <b>Address : </b>VILLAGE MANPUR  P.O.TUSHNABAD SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520045">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>47</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520046<br />
+                                            <b>Sch. Code:</b>58005
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT  SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>PRASANNA KUMARI</td>
+                                        <td>
+                                            <b>Address : </b>KISHORI NAGAR NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520046">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>48</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520047<br />
+                                            <b>Sch. Code:</b>58046
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>ELSIE MOSES REUBEN</td>
+                                        <td>
+                                            <b>Address : </b>BENGALI  TERESSA ISLAND VIA ABERDEEN BAZAR PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520047">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>49</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520048<br />
+                                            <b>Sch. Code:</b>58047
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>ALLEN</td>
+                                        <td>
+                                            <b>Address : </b>CHAINPUR P.O PUDUMADURAI MAYABUNDER VIA MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520048">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>50</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520049<br />
+                                            <b>Sch. Code:</b>58048
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>PRABHASH ROY</td>
+                                        <td>
+                                            <b>Address : </b>HARMANDER BAY LITTLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andamannicobar.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520049">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>51</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520050<br />
+                                            <b>Sch. Code:</b>58049
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>D S SHOBHA</td>
+                                        <td>
+                                            <b>Address : </b>ADAZIG (PO) ALKATCHA BARATANG ISLAND SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>gssadazigbtang@gmail.comn
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520050">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>52</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520051<br />
+                                            <b>Sch. Code:</b>58051
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SOLOMON</td>
+                                        <td>
+                                            <b>Address : </b>KAKANA CAR NICOBAR A &amp; N ISLANDS <br />
+                                            <b>Website : </b>www.education.andaman.nic.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>53</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520052<br />
+                                            <b>Sch. Code:</b>58050
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>Bibhuti Biswas </td>
+                                        <td>
+                                            <b>Address : </b>RAM NAGAR POST DIGILIPUR VIA  NTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.edurec.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520052">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>54</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520053<br />
+                                            <b>Sch. Code:</b>58052
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SULEKHA</td>
+                                        <td>
+                                            <b>Address : </b>GANDHI NAGAR CAMPBELL BAY GREAT NICOBAR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520053">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>55</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520054<br />
+                                            <b>Sch. Code:</b>58053
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>HASAMUDEEN</td>
+                                        <td>
+                                            <b>Address : </b>MILETILAK VIA WIMBERLYGUNJ SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520054">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>56</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520055<br />
+                                            <b>Sch. Code:</b>58054
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SUBODH KUMAR MAITRA</td>
+                                        <td>
+                                            <b>Address : </b>NIMBUTALA (VILL &amp; PO) MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520055">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>57</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520056<br />
+                                            <b>Sch. Code:</b>58056
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>REETESH KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>SHIVAPURAM VILLAGE BETAPUR POST MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gssshivapuramand.nic.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520056">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>58</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520057<br />
+                                            <b>Sch. Code:</b>58057
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>RANJANA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>VIVEKANANDAPUR VIA HUTBAY LITTLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520057">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>59</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520058<br />
+                                            <b>Sch. Code:</b>58058
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>Molly Lily</td>
+                                        <td>
+                                            <b>Address : </b>TUSNABAD PORT BLAIR  SOUTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://educationssis.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520058">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>60</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520059<br />
+                                            <b>Sch. Code:</b>58060
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>SAIRUN BIBI</td>
+                                        <td>
+                                            <b>Address : </b>MOHANPURA PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>http://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520059">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>61</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520060<br />
+                                            <b>Sch. Code:</b>58061
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>AVIJIT BALA</td>
+                                        <td>
+                                            <b>Address : </b>PASCHIM SAGAR  DIGLIPUR NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520060">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>62</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520061<br />
+                                            <b>Sch. Code:</b>58062
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>KAKOLY DEY</td>
+                                        <td>
+                                            <b>Address : </b>KERALAPURAM DIGLIPUR AERIAL BAY PO NTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.Education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520061">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>63</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520062<br />
+                                            <b>Sch. Code:</b>58063
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY  SCHOOL <br /> <b>Head/Principal Name: </b>ANJANA MISTRY Teacher In charge</td>
+                                        <td>
+                                            <b>Address : </b>KAUSHALYA NAGAR  RANGAT MIDDLE ANDAMAN<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520062">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>64</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520063<br />
+                                            <b>Sch. Code:</b>
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>AMJAD HUSSAIN</td>
+                                        <td>
+                                            <b>Address : </b>PILPILLOW NANCOWRIE A &amp; N ISLANDS <br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520063">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>65</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520064<br />
+                                            <b>Sch. Code:</b>58064
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. DEMONSTRATION MULTI PURPOSE <br /> <b>Head/Principal Name: </b>SUKU RAJAN L</td>
+                                        <td>
+                                            <b>Address : </b>SCHOOL MIDDLE POINT PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520064">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>66</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520065<br />
+                                            <b>Sch. Code:</b>58067
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>E K JOHN</td>
+                                        <td>
+                                            <b>Address : </b>WEBI  MAYABUNDER P.O NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>gsswebi@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520065">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>67</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520066<br />
+                                            <b>Sch. Code:</b>58065
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>IREENA</td>
+                                        <td>
+                                            <b>Address : </b>SOUTH POINT SHADIPUR POST PTBLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gsssouth.jimdo.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520066">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>68</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520067<br />
+                                            <b>Sch. Code:</b>58066
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>JOB</td>
+                                        <td>
+                                            <b>Address : </b>P.O. CALICUT PT BLAIR SOUTH ANDAMANS<br />
+                                            <b>Website : </b>gsscalicut41@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520067">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>69</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520068<br />
+                                            <b>Sch. Code:</b>58069
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>AZIZ FATMA</td>
+                                        <td>
+                                            <b>Address : </b>DISTT JUNGLIGHAT PT BLAIR SOUTH ANDAMANS<br />
+                                            <b>Website : </b>http://www.andaman.education.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520068">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>70</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520069<br />
+                                            <b>Sch. Code:</b>58068
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>PRIYA G NAIR</td>
+                                        <td>
+                                            <b>Address : </b>NAMUNAGHAR SOUTH ANDAMAN A&amp;N ISLAND<br />
+                                            <b>Website : </b>gssnamunaghar@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520069">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>71</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520070<br />
+                                            <b>Sch. Code:</b>58059
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVT. SENIOR SECONDARY SCHOOL SABARI JUNCTION <br /> <b>Head/Principal Name: </b>HARIPADA MONDAL</td>
+                                        <td>
+                                            <b>Address : </b>SABRI JN. MIDDLE MIDDLE ANDAMAN<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520070">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>72</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520071<br />
+                                            <b>Sch. Code:</b>
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SH ALI</td>
+                                        <td>
+                                            <b>Address : </b>WESTBAY KATCHAL KATCHAL ISLANDS ANDAMAN &amp; NICOBAR ISLANDS<br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520071">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>73</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520072<br />
+                                            <b>Sch. Code:</b>58070
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>PRAKASH HOWLADAR</td>
+                                        <td>
+                                            <b>Address : </b>KARMATANG NO 10 MAYABUNDER P.O A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/dis_wise_schoolname.aspx
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520072">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>74</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520073<br />
+                                            <b>Sch. Code:</b>58071
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT MODEL SECONDARY SCHOOL KAMORTA <br /> <b>Head/Principal Name: </b>MOLLY LILY</td>
+                                        <td>
+                                            <b>Address : </b>KAMORTA NANCOWRIE ISLANDS A &amp; N<br />
+                                            <b>Website : </b>https://andaman.gov.in/casian/Schools.aspx?school=2520073
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520073">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>75</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520074<br />
+                                            <b>Sch. Code:</b>58072
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVT. SENIOR SECONDARY SCHOOL, PROTHRAPUR <br /> <b>Head/Principal Name: </b> J DASAN PUSHPARAJ</td>
+                                        <td>
+                                            <b>Address : </b>PRATHRAPUR BRIJKUNJ PO BRICHKUNJ P O A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520074">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>76</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520075<br />
+                                            <b>Sch. Code:</b>58073
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT SR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SALEEM KERKETTA</td>
+                                        <td>
+                                            <b>Address : </b>C F O  NALLAH VIL. DHARAMPUR PO BETAPUR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gssscfonallah.blogspot.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520075">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>77</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520076<br />
+                                            <b>Sch. Code:</b>58074
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>Mohammed younus</td>
+                                        <td>
+                                            <b>Address : </b>DELANIPUR HADDO PO PT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/Schools.aspx?school=
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520076">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>78</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520077<br />
+                                            <b>Sch. Code:</b>58075
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>BINU SARA PAUL</td>
+                                        <td>
+                                            <b>Address : </b>SHOAL BAY-12 SOUTH ANDEMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.gssshoalbay12.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520077">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>79</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520078<br />
+                                            <b>Sch. Code:</b>58076
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>Gopal Chandra Das</td>
+                                        <td>
+                                            <b>Address : </b>MILDERA II KATCHAL PORT BLAIR A &amp; N ISLANDS <br />
+                                            <b>Website : </b>gssmildera@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520078">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>80</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520079<br />
+                                            <b>Sch. Code:</b>58078
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>SOMA BAIRAGI</td>
+                                        <td>
+                                            <b>Address : </b>UTTARA KADAMTALA MIDDLE ANDEMAN<br />
+                                            <b>Website : </b>gssuttara1959@gmail.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520079">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>81</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520080<br />
+                                            <b>Sch. Code:</b>58077
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>M PAVITHRA</td>
+                                        <td>
+                                            <b>Address : </b>MOHANPUR V MAYABUNDER NORTH ANDEMAN<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520080">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>82</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520081<br />
+                                            <b>Sch. Code:</b>58079
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>KRISHAN KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>JIRKATANG 2 SOUTH ANADAMAN PORT BLAIR<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520081">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>83</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520082<br />
+                                            <b>Sch. Code:</b>58080
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>V SREENIVASULU</td>
+                                        <td>
+                                            <b>Address : </b>DURGAPUR DIGLIPUR NTH ANDAMAN ANDAMAN &amp; NICOBAR ISLAND<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520082">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>84</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520083<br />
+                                            <b>Sch. Code:</b>58081
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI GOVT. SENIOR SECONDARY SCHOOL SUBASHGRAM <br /> <b>Head/Principal Name: </b>KAKOLY DEY</td>
+                                        <td>
+                                            <b>Address : </b>SUBHASHGRAM DIGLIPUR NORTH ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520083">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>85</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520084<br />
+                                            <b>Sch. Code:</b>58082
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL <br /> <b>Head/Principal Name: </b>SHAHNAZ BEGUM </td>
+                                        <td>
+                                            <b>Address : </b>PARANGARA KISHORI NAGAR PANCHAYAT, DY EDU OFFICE, NORTH ANDAMAN<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520084">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>86</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520085<br />
+                                            <b>Sch. Code:</b>58083
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. MODEL SR. SEC. SCHOOL <br /> <b>Head/Principal Name: </b>BALBIR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>SITA NAGAR, DIGLIPUR, NTH &amp; MIDDLE ANDAMAN<br />
+                                            <b>Website : </b>www.educationandaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520085">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>87</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520086<br />
+                                            <b>Sch. Code:</b>58090
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>EDMUND</td>
+                                        <td>
+                                            <b>Address : </b>ARONG ANDAMAN &amp; NICOBAR ISLAND<br />
+                                            <b>Website : </b>https://education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520086">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>88</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520087<br />
+                                            <b>Sch. Code:</b>58087
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>BALBIR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>MADHEEPUR, DIGLIPUR, NORTH ANDAMAN<br />
+                                            <b>Website : </b>www.education.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520087">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>89</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520088<br />
+                                            <b>Sch. Code:</b>58086
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT MODEL SENIOR SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>IREENA</td>
+                                        <td>
+                                            <b>Address : </b>GOAL TEKRY,KAMORTA, NANCOWRIE ISLAND,A &amp; N<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/casian
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520088">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>90</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520089<br />
+                                            <b>Sch. Code:</b>58089
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT. SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>EBRAHIM KHAKHA</td>
+                                        <td>
+                                            <b>Address : </b>KUITASUKH, CHOWRA, ISLAND, NANCOWRY, A &amp; N ISLAND<br />
+                                            <b>Website : </b>www.gsskuitasukchowra.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520089">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>91</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520090<br />
+                                            <b>Sch. Code:</b>58088
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SALEEM KERKETTA</td>
+                                        <td>
+                                            <b>Address : </b>PINAKI, BILLGROUND, N &amp; M ANDAMAN<br />
+                                            <b>Website : </b>https://gsspinakinagaremandaman.blogspot.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520090">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>92</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520091<br />
+                                            <b>Sch. Code:</b>58093
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA ZILLA PARISHAD VIDYALAYA <br /> <b>Head/Principal Name: </b>KAMAL CHANDRA DAS</td>
+                                        <td>
+                                            <b>Address : </b>PAHALGAON, PO TUGAPUR, MAYA BUNDER, VILLAGE, PAHALGAON, NTH &amp; MIDDLE ANDAMAN<br />
+                                            <b>Website : </b>https://pahalgaon.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520091">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>93</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520092<br />
+                                            <b>Sch. Code:</b>58092
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANAND KENDRA ZILA PRISHAD VIDYALAYA <br /> <b>Head/Principal Name: </b>SANJAY SINGH</td>
+                                        <td>
+                                            <b>Address : </b>BASNTI PUR NTH AND MIDDLE ANDAMAN PO NIMBUDERA ANDAMAN AND NICOBAR 744201<br />
+                                            <b>Website : </b>www.vkvbasantipur.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520092">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>94</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520094<br />
+                                            <b>Sch. Code:</b>58091
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT DECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>SARAH</td>
+                                        <td>
+                                            <b>Address : </b>TAMALOO, CAR NICOBAR, DISTT NICOBAR, A &amp; N ISLAND<br />
+                                            <b>Website : </b>www.andaman.gov.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520094">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>95</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520096<br />
+                                            <b>Sch. Code:</b>58094
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA NAGARPALIKA VIDYALAYA <br /> <b>Head/Principal Name: </b>SANGITA CHANDER</td>
+                                        <td>
+                                            <b>Address : </b>RANCHI TEKRI, P.O. JUNGLIGHAT, PT BLAIR, DISTT. SOUTH ANDAMAN, ANDAMAN &amp; NICOBAR ISLAND PIN-744103<br />
+                                            <b>Website : </b>www.ranchitekri.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520096">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>96</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520097<br />
+                                            <b>Sch. Code:</b>58095
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA ZILLA PARISHAD VIDYALAYA, <br /> <b>Head/Principal Name: </b>P APPANNA</td>
+                                        <td>
+                                            <b>Address : </b>KADAMTALA,  VILL &amp; POST- KADAMTALA, MIDDLE ANDAMAN, PIN- 744 209, ANDAMAN &amp; NICOBAR ISLAND<br />
+                                            <b>Website : </b>www.kadamtala.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520097">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>97</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520250<br />
+                                            <b>Sch. Code:</b>58209
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVERNMENT SECONDARY SCHOOL NABAGRAM <br /> <b>Head/Principal Name: </b>Manoranjan Mandal</td>
+                                        <td>
+                                            <b>Address : </b>NABAGRAM VILLAGE, POST- KALIGHAT<br />
+                                            <b>Website : </b>www.gssnabagram.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520250">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>98</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2520251<br />
+                                            <b>Sch. Code:</b>59742
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GOVT SEC SCHOOL DUGONG CREEK LITTLE ANDAMAN <br /> <b>Head/Principal Name: </b>RAJ KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>DUGONG CREEK VILLAGE, RAMKRISHNAPUR POST, LITTLE ANDAMAN<br />
+                                            <b>Website : </b>https://education.andaman.gov.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2520251">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>99</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530001<br />
+                                            <b>Sch. Code:</b>56902
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CARMEL SEC SCHOOL <br /> <b>Head/Principal Name: </b>Lavina Maria Dsouza</td>
+                                        <td>
+                                            <b>Address : </b>PHOENIX BAY HADDO POST PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.carmelschoolportblair.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>100</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530002<br />
+                                            <b>Sch. Code:</b>56901
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NIRMALA SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>G LEELA</td>
+                                        <td>
+                                            <b>Address : </b>HADDO POST PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.nirmalaportblair.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>101</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530003<br />
+                                            <b>Sch. Code:</b>56903
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA VIDYALAYA <br /> <b>Head/Principal Name: </b>JAYA SIVASANKARAN</td>
+                                        <td>
+                                            <b>Address : </b>LAMBA LINE  POST BOX NO.501 JUNGLIGHAT P.O  PORT BLAIR A &amp; N ISLANDS<br />
+                                            <b>Website : </b>www.portblair.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>102</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530004<br />
+                                            <b>Sch. Code:</b>56904
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> M E S SCHOOL <br /> <b>Head/Principal Name: </b>J SHABNAM</td>
+                                        <td>
+                                            <b>Address : </b>AZAD NAGAR  STEWART GUNJ BAMBOOFLAT SOUTH ANDAMAN<br />
+                                            <b>Website : </b>www.mesandamans.org.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>103</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530006<br />
+                                            <b>Sch. Code:</b>56905
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KAMARAJ ENG MED SCHOOL <br /> <b>Head/Principal Name: </b>V S BEENA</td>
+                                        <td>
+                                            <b>Address : </b>Brookshabad, Chakkar Gaon Post, Sri Vijaya Puram, South Adaman<br />
+                                            <b>Website : </b>www.kamarajschoolandaman.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>104</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530007<br />
+                                            <b>Sch. Code:</b>56906
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> UMMAT PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>ZOHRA BEGUM</td>
+                                        <td>
+                                            <b>Address : </b>MOHATMA GANDHI ROAD MIDDLE POINT ABERDEEN BAZAR PORT BLAIR (A&amp;N ISLAND)<br />
+                                            <b>Website : </b>www.ummatpublicschool.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>105</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530008<br />
+                                            <b>Sch. Code:</b>56907
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MAHATMA GANDHI INTERNATIONAL SCHOOL <br /> <b>Head/Principal Name: </b>CH SWAPNA</td>
+                                        <td>
+                                            <b>Address : </b>BROOKSHABAD POST BOX 474 JANGLIGHAT PORT BLAIR-474<br />
+                                            <b>Website : </b>www.mgisportblair.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>106</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530009<br />
+                                            <b>Sch. Code:</b>56910
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SARASWATI SHISHU MANDIR <br /> <b>Head/Principal Name: </b>A RAJA MARTHANDAN</td>
+                                        <td>
+                                            <b>Address : </b>PATHER GUDDA GARACHARMA PORT BLAIR ANDAMAN NICOBAR ISLAND<br />
+                                            <b>Website : </b>https://saraswatishishumandir.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>107</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530010<br />
+                                            <b>Sch. Code:</b>56908
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST. MARYS SCHOOL <br /> <b>Head/Principal Name: </b>ACHAMMA KURIAKOSE</td>
+                                        <td>
+                                            <b>Address : </b>ST. MARYS SCHOOL&#xD;&#xA;BATHUBASTI&#xD;&#xA;P.O GARACHARMA&#xD;&#xA;PORT BLAIR&#xD;&#xA;SOUTH ANDAMAN&#xD;&#xA;PIN-744105<br />
+                                            <b>Website : </b>www.stmarysschoolsandaman.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530010">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>108</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530011<br />
+                                            <b>Sch. Code:</b>56909
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA VIDYALAYA <br /> <b>Head/Principal Name: </b>CH SHANMUGA RAO</td>
+                                        <td>
+                                            <b>Address : </b>P.B.NO.-501, JUNGLI GHAT POST,PORT BLAIR ANDAMAN &amp; NICOBAR ISLAND<br />
+                                            <b>Website : </b>www.rangat.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530011">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>109</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530012<br />
+                                            <b>Sch. Code:</b>56911
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> VITALA PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>JAGADAMMA P K</td>
+                                        <td>
+                                            <b>Address : </b>HOPE TOWN BAMBOO FLAT, SOUTH ANDAMAN FERRARGUNG PORTBLAR<br />
+                                            <b>Website : </b>www.vitala.school
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530012">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>110</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530013<br />
+                                            <b>Sch. Code:</b>56912
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CRESCENT PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>N BHAVANI VIJAYAKALA</td>
+                                        <td>
+                                            <b>Address : </b>WIMBERLY GUNJ PO, SOUTH ANDAMAN, FERRAR GUNJ ANDAMAN<br />
+                                            <b>Website : </b>www.cpsandaman.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530013">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>111</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530014<br />
+                                            <b>Sch. Code:</b>58085
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA ZILLA PARISHAD VIDYALAYA, PT MOUT <br /> <b>Head/Principal Name: </b>SABITA DEVI</td>
+                                        <td>
+                                            <b>Address : </b>P.O. CHOULDARI, PORT MOUT, NEAR G S S SCHOOL, DIST. TEHSIL FARARGUNJ SOUTH ANDAMAN PIN 744103<br />
+                                            <b>Website : </b>www.portmout.vkv.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530014">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>112</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530015<br />
+                                            <b>Sch. Code:</b>58084
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANANDA KENDRA ZILLA PARISHAD VIDYALAYA, DIGLIPUR <br /> <b>Head/Principal Name: </b>MANIMOHAN HIRA</td>
+                                        <td>
+                                            <b>Address : </b>R.K. GRAM<br />
+                                            <b>Website : </b>https://diglipur.vkv.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530015">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>113</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530016<br />
+                                            <b>Sch. Code:</b>56913
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KHALSA PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>SARABJEET KAUR JAGPAL</td>
+                                        <td>
+                                            <b>Address : </b>GURUDWARA DR.DIWAN SINGH COMPLEX, PORT BLAIR. ANDAMAN<br />
+                                            <b>Website : </b>www.kpssspb.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530016">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>114</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530017<br />
+                                            <b>Sch. Code:</b>56914
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST. XAVIER SCHOOL,(ENGLISH MEDIUM MIDDLE SCHOOL) <br /> <b>Head/Principal Name: </b>DEONIS KERKETTA</td>
+                                        <td>
+                                            <b>Address : </b>MANNARGHAT, FERRARGUNJ SOUTH ANDAMAN<br />
+                                            <b>Website : </b>www.stxaviermannarghat.co.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530017">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>115</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530018<br />
+                                            <b>Sch. Code:</b>56915
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> IQRA PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>ZEENATH</td>
+                                        <td>
+                                            <b>Address : </b>WIMBERLY GUNJ SOUTH ANDAMAN FERRAR GUNJ &#xD;&#xA;SOUTH ANDAMAN<br />
+                                            <b>Website : </b>http://www.iqra-publicschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530018">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>116</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530019<br />
+                                            <b>Sch. Code:</b>56916
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> M.E.S. SCHOOL, SALAH NAGAR, OGRABRAJ <br /> <b>Head/Principal Name: </b>T ABDUL WAHAB</td>
+                                        <td>
+                                            <b>Address : </b>OGRABRAJ<br />
+                                            <b>Website : </b>www.mesandamans.org.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530019">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>117</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530020<br />
+                                            <b>Sch. Code:</b>56917
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SAGRITARA SCHOOL <br /> <b>Head/Principal Name: </b>PREETY KUJUR</td>
+                                        <td>
+                                            <b>Address : </b>PREM NAGAR, P.O. HADDO<br />
+                                            <b>Website : </b>www.sagritaraschoolportblair.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530020">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>118</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530021<br />
+                                            <b>Sch. Code:</b>56918
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> INVENT PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>S THENMOZHI</td>
+                                        <td>
+                                            <b>Address : </b>INVENT PUBLIC SCHOOL, SIPPIGHAT VILLAGE, PORT BLAIR, SOUTH ANDAMAN<br />
+                                            <b>Website : </b>www.inventpublicschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530021">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>119</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530022<br />
+                                            <b>Sch. Code:</b>56921
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> R.G.T. PUBLIC VIDYALAYA <br /> <b>Head/Principal Name: </b>Sumati Baidya</td>
+                                        <td>
+                                            <b>Address : </b>R.G.T.  ROAD<br />
+                                            <b>Website : </b>www.rgtpublicvidyalaya.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530022">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>120</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530023<br />
+                                            <b>Sch. Code:</b>56919
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NORTH AND MIDDLE ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BHARATIYA VIDYA BHAVAN, MONDAL PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>SAGARIKA MONDAL </td>
+                                        <td>
+                                            <b>Address : </b>VILLAGE: MADHUPUR&#xD;&#xA;POST: DIGLIPUR&#xD;&#xA;NORTH ANDAMAN<br />
+                                            <b>Website : </b>www.mondalpublicschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530023">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>121</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2530150<br />
+                                            <b>Sch. Code:</b>56726
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ANANDA MARGA SCHOOL <br /> <b>Head/Principal Name: </b>ALOKA PAIK</td>
+                                        <td>
+                                            <b>Address : </b>PORT BLAIR, SOUTH ANDAMAN<br />
+                                            <b>Website : </b>www.amsaijunglighat.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2530150">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>122</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2540001<br />
+                                            <b>Sch. Code:</b>59253
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>Sayed Tarique Omar</td>
+                                        <td>
+                                            <b>Address : </b>ARONG CAR NICOBAR PO NICOBAR DISTT A &amp; N ISLANDS 744301 A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/CarNicobar/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2540001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>123</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2540002<br />
+                                            <b>Sch. Code:</b>59252
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>P PETHANASAMY</td>
+                                        <td>
+                                            <b>Address : </b>PANCHAWATI  RANGAT P.O DISTT NORTH &amp; MIDDLE ANDAMAN A &amp; N ISLANDS<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/North-and-M
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2540002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>124</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2540003<br />
+                                            <b>Sch. Code:</b>59256
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA PORTMOUT S ANDAMAN <br /> <b>Head/Principal Name: </b>RAMESH CHAND THAKUR</td>
+                                        <td>
+                                            <b>Address : </b>JAWAHAR NAVODAYA VIDYALAYA, VILLAGE CHOULDARI, PORTMOUT, SOUTH ANDAMAN DISTRICT, ANDAMAN &amp; NICOBAR ISLANDS.PIN: 744103<br />
+                                            <b>Website : </b>Https://navodaya.gov.in/nvs/nvs-school/South-Andaman/en
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2540003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>125</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2570051<br />
+                                            <b>Sch. Code:</b>59744
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ARMY PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Srilatha Laajvanthi K</td>
+                                        <td>
+                                            <b>Address : </b>BRICHGUNJ, SRI VIJAYA PURAM, ANDAMAN AND NICOBAR ISLANDS <br />
+                                            <b>Website : </b>www.apsbrichgunj.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2570051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>126</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2580001<br />
+                                            <b>Sch. Code:</b>59255
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>SOUTH ANDAMAN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NAVY CHILDREN SCHOOL <br /> <b>Head/Principal Name: </b>Anita Devi</td>
+                                        <td>
+                                            <b>Address : </b>MINNIE BAY PORT BLAIR PO JUNGLIGHAT ANDAMAN &amp; NICOBAR ISLANDS<br />
+                                            <b>Website : </b>www.ncsportblair.nesnavy.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2580001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>127</td>
+                                        <td>
+                                            <b>Aff. No. :</b>2590051<br />
+                                            <b>Sch. Code:</b>59743
+                                            </td>
+                                        <td><b>State : </b>ANDAMAN &amp; NICOBAR<br /><b>District : </b>NICOBAR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> COAST GUARD PUBLIC SCHOOL  <br /> <b>Head/Principal Name: </b>SAKSHI ASWASTHI</td>
+                                        <td>
+                                            <b>Address : </b>C/O  HEADQUATER COAST GUARD DIST. NO. 10, LAL TEKRI, CAMPBELL BAY<br />
+                                            <b>Website : </b>https://cgpscampbellbay.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/2590051">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjhsVHghwYOXZSybDAcSSW0wCLKsxFZo3zT62TfwWFXnSclX8EOyv_JGMs7tMVjrNS8SoUsbdSIKx5uxz-hEqLbZOwK4mAiU3UtWZqMIf4Kr2IVvMYhLKkkNeqlG-ZsVj4M" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__bCtH45C1NYx0MBTyNaYDh91XmODVjb4ZwzTWyLyJzgH0ZHeQzU8DzoTNwupsIXeX"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025374573;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

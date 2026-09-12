@@ -1,0 +1,231 @@
+{
+  "academic_year": "2025-2026",
+  "completed_states": {
+    "Delhi": {
+      "programme_rows": 71,
+      "unique_institutions": 36,
+      "pages": 3,
+      "completed_at": "2026-09-11T11:07:05.365788",
+      "source": "Validated Pilot"
+    },
+    "Andaman & Nicobar": {
+      "programme_rows": 2,
+      "unique_institutions": 1,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:07:27.896952"
+    },
+    "Andhra Pradesh": {
+      "programme_rows": 260,
+      "unique_institutions": 166,
+      "pages": 9,
+      "completed_at": "2026-09-11T11:09:01.218463"
+    },
+    "Arunachal Pradesh": {
+      "programme_rows": 10,
+      "unique_institutions": 8,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:09:17.380585"
+    },
+    "Assam": {
+      "programme_rows": 112,
+      "unique_institutions": 63,
+      "pages": 4,
+      "completed_at": "2026-09-11T11:09:59.997900"
+    },
+    "Bihar": {
+      "programme_rows": 63,
+      "unique_institutions": 37,
+      "pages": 3,
+      "completed_at": "2026-09-11T11:10:31.583134"
+    },
+    "Chandigarh": {
+      "programme_rows": 5,
+      "unique_institutions": 3,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:10:46.513368"
+    },
+    "Chhattisgarh": {
+      "programme_rows": 182,
+      "unique_institutions": 112,
+      "pages": 7,
+      "completed_at": "2026-09-11T11:11:51.062094"
+    },
+    "Dadra & Nagar Haveli": {
+      "programme_rows": 2,
+      "unique_institutions": 1,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:12:07.556966"
+    },
+    "Daman & Diu": {
+      "programme_rows": 2,
+      "unique_institutions": 1,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:12:25.536931"
+    },
+    "Goa": {
+      "programme_rows": 12,
+      "unique_institutions": 6,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:12:45.004202"
+    },
+    "Gujarat": {
+      "programme_rows": 446,
+      "unique_institutions": 181,
+      "pages": 16,
+      "completed_at": "2026-09-11T11:15:00.368921"
+    },
+    "Haryana": {
+      "programme_rows": 187,
+      "unique_institutions": 79,
+      "pages": 7,
+      "completed_at": "2026-09-11T11:16:04.641479"
+    },
+    "Himachal Pradesh": {
+      "programme_rows": 112,
+      "unique_institutions": 54,
+      "pages": 4,
+      "completed_at": "2026-09-11T11:16:46.534041"
+    },
+    "Jammu & kashmir": {
+      "programme_rows": 43,
+      "unique_institutions": 31,
+      "pages": 2,
+      "completed_at": "2026-09-11T11:17:12.051412"
+    },
+    "Jharkhand": {
+      "programme_rows": 205,
+      "unique_institutions": 111,
+      "pages": 8,
+      "completed_at": "2026-09-11T11:18:24.617998"
+    },
+    "Karnataka": {
+      "programme_rows": 972,
+      "unique_institutions": 472,
+      "pages": 33,
+      "completed_at": "2026-09-11T11:23:11.298248"
+    },
+    "Kerala": {
+      "programme_rows": 365,
+      "unique_institutions": 241,
+      "pages": 13,
+      "completed_at": "2026-09-11T11:25:12.580185"
+    },
+    "Ladakh": {
+      "programme_rows": 0,
+      "unique_institutions": 0,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:25:26.957338"
+    },
+    "Lakshadweep": {
+      "programme_rows": 1,
+      "unique_institutions": 1,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:25:41.985223"
+    },
+    "Madhya Pradesh": {
+      "programme_rows": 292,
+      "unique_institutions": 134,
+      "pages": 11,
+      "completed_at": "2026-09-11T11:27:22.089822"
+    },
+    "Maharashtra": {
+      "programme_rows": 284,
+      "unique_institutions": 145,
+      "pages": 10,
+      "completed_at": "2026-09-11T11:28:55.698235"
+    },
+    "Manipur": {
+      "programme_rows": 42,
+      "unique_institutions": 30,
+      "pages": 2,
+      "completed_at": "2026-09-11T11:29:21.979947"
+    },
+    "Meghalaya": {
+      "programme_rows": 15,
+      "unique_institutions": 11,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:29:38.209289"
+    },
+    "Mizoram": {
+      "programme_rows": 18,
+      "unique_institutions": 14,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:29:54.635092"
+    },
+    "Nagaland": {
+      "programme_rows": 13,
+      "unique_institutions": 9,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:30:14.192515"
+    },
+    "Orissa": {
+      "programme_rows": 182,
+      "unique_institutions": 94,
+      "pages": 7,
+      "completed_at": "2026-09-11T11:31:20.457059"
+    },
+    "Pondicherry/Puducherry": {
+      "programme_rows": 47,
+      "unique_institutions": 16,
+      "pages": 2,
+      "completed_at": "2026-09-11T11:31:46.372746"
+    },
+    "Punjab": {
+      "programme_rows": 626,
+      "unique_institutions": 238,
+      "pages": 22,
+      "completed_at": "2026-09-11T11:34:53.274707"
+    },
+    "Rajasthan": {
+      "programme_rows": 373,
+      "unique_institutions": 234,
+      "pages": 13,
+      "completed_at": "2026-09-11T11:36:26.410517"
+    },
+    "Sikkim": {
+      "programme_rows": 9,
+      "unique_institutions": 5,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:36:40.450672"
+    },
+    "Tamilnadu": {
+      "programme_rows": 529,
+      "unique_institutions": 297,
+      "pages": 18,
+      "completed_at": "2026-09-11T11:38:48.982210"
+    },
+    "Telangana": {
+      "programme_rows": 190,
+      "unique_institutions": 112,
+      "pages": 7,
+      "completed_at": "2026-09-11T11:39:42.053517"
+    },
+    "Tripura": {
+      "programme_rows": 24,
+      "unique_institutions": 15,
+      "pages": 1,
+      "completed_at": "2026-09-11T11:39:56.546852"
+    },
+    "Uttar Pradesh": {
+      "programme_rows": 826,
+      "unique_institutions": 341,
+      "pages": 28,
+      "completed_at": "2026-09-11T11:43:01.814076"
+    },
+    "Uttaranchal": {
+      "programme_rows": 130,
+      "unique_institutions": 57,
+      "pages": 5,
+      "completed_at": "2026-09-11T11:43:41.190747"
+    },
+    "West Bengal": {
+      "programme_rows": 392,
+      "unique_institutions": 222,
+      "pages": 14,
+      "completed_at": "2026-09-11T11:45:20.369232"
+    }
+  },
+  "failed_states": {},
+  "started_at": "2026-09-11T11:07:05.358880",
+  "updated_at": "2026-09-11T11:45:20.369232"
+}

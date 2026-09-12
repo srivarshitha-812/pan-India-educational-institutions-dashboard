@@ -1,0 +1,53 @@
+[
+  {
+    "aisheCode": "U-0064",
+    "name": "PATNA UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "PATNA",
+    "address": "Ashok Rajpath, Patna",
+    "pincode": "800005",
+    "yearEstablished": 1917,
+    "website": "https://www.patnauniversity.ac.in",
+    "email": "registrar@patnauniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0063",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY PATNA (IIT PATNA)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "PATNA",
+    "address": "Bihta, Patna",
+    "pincode": "801106",
+    "yearEstablished": 2008,
+    "website": "https://www.iitp.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-19800",
+    "name": "PATNA MEDICAL COLLEGE AND HOSPITAL (PMCH)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "PATNA",
+    "address": "Ashok Rajpath, Muradpur, Patna",
+    "pincode": "800004",
+    "yearEstablished": 1925,
+    "nmcId": "NMC-BR-MED-001",
+    "website": "https://patnamedicalcollege.ac.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-19830",
+    "name": "CHANAKYA NATIONAL LAW UNIVERSITY (CNLU)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "PATNA",
+    "address": "Nyaya Nagar, Mithapur, Patna",
+    "pincode": "800001",
+    "yearEstablished": 2006,
+    "otherRegulatorId": "BCI-BR-LAW-001",
+    "website": "https://cnlu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

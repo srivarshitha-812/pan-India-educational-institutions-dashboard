@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option value="12">MANIPUR</option>
+<option value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option selected="selected" value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>49</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjjoq3ahjjj-SBcfhVkDSygZSNwi5InGEsb15GQA_ETmBOo830mgfty8Rn3k8hm4NY2P-Q8tbrRuyPXRpOgookqHPrDsrQ246Qbpu0uSzQ5X1uQ_cpmW09lw03TEHU68PmQ" /><input type="hidden" name="__ncforminfo" value="7XbjzaZWVKzFaRxPzWP2MZTRlZX5KFonqXZVULx8y4axZQSbFfyz7V7nq3o26fgZRlTB2dVfAtIbIphpJUJKN2xWI-oDrS4kM7Tg0I6DsDmHrGli_4skvho9hFeM-UkodTzwozDHlW4PDFJOKi2MvrpRIAGRo-vqjxtrQH7jVSTmrP35ufNCtQ-D6FnCcF-jbMjSgS7wvbPh29DSTCXHzIeWU7teAdcrbHJVekVtwcCFdAODIpUMctPT8MkDIgFQxTtitTXOthb3NQYkhaSOsVh46rou74MkUKGo3smnH2Tnc5FSJGlujL-ll0qVNN6647iT9QII94NOrKhbEkBb96dXSGPTfS3bmfM7Nu_3YFzzOlhFBf7_TFL4wEfN5RgFb9XW5AnPF3qFp4Vqa0RTMI3DGQeSUkvF6KGAtzfZw2XtGrBpNZWAjq4Ri59_KAValCdbf04xZ-iEho_P7kMtig=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1400001<br />
+                                            <b>Sch. Code:</b>39381
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MOKOKCHUNG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>SANTOSH KUMAR YADAV</td>
+                                        <td>
+                                            <b>Address : </b>PAPER NAGAR TULI NAGALAND<br />
+                                            <b>Website : </b>http://tuli.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1400001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1400002<br />
+                                            <b>Sch. Code:</b>39380
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>M H SHIMRAY</td>
+                                        <td>
+                                            <b>Address : </b>PROJECT SEWAK C/O 99 APO, DIMAPUR, NAGALAND<br />
+                                            <b>Website : </b>www.dimapur.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1400002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1400005<br />
+                                            <b>Sch. Code:</b>39383
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>Vimal Kumar </td>
+                                        <td>
+                                            <b>Address : </b>RANGAPAHAR CANTT.   HQ 3 CORPS 939 (FPO) C/O 99 APO DIMAPUR NAGALAND<br />
+                                            <b>Website : </b>https://rangapahar.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1400005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1400006<br />
+                                            <b>Sch. Code:</b>39384
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>KOHIMA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>UMESH CHANDRA</td>
+                                        <td>
+                                            <b>Address : </b>CRPF CAMP LERIE HILL KOHIMA NAGALAND<br />
+                                            <b>Website : </b>https://crpfkohima.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1400006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1400007<br />
+                                            <b>Sch. Code:</b>39620
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>ZUNHEBOTO</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> KV LUMAMI NU <br /> <b>Head/Principal Name: </b>AMIT KUMAR GUPTA</td>
+                                        <td>
+                                            <b>Address : </b>KV LUMAMI NU, LUMAMI DIST ZUNHEBOTO PIN 798627<br />
+                                            <b>Website : </b>https://lumaminu.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1400007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1410008<br />
+                                            <b>Sch. Code:</b>39375
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>KHOLI DIKHO</td>
+                                        <td>
+                                            <b>Address : </b>NIHOKHU, DIMAPUR, NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Dimapur/en/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1410008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1420051<br />
+                                            <b>Sch. Code:</b>37733
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>PHEK</td>
+
+                                        <td>Middle Class</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL, PHEK (NAGALAND) <br /> <b>Head/Principal Name: </b>ARLEEN KAUR</td>
+                                        <td>
+                                            <b>Address : </b>ASSAM RIFLES CAMP GATE 1, ASSAM RIFLES CAMP GATE 1, ASSAM RIFLES CAMP GATE 1<br />
+                                            <b>Website : </b>https://www.arps.phek.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1420051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1420052<br />
+                                            <b>Sch. Code:</b>37742
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>TUENSANG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL TUENSANG <br /> <b>Head/Principal Name: </b>Arenjungla</td>
+                                        <td>
+                                            <b>Address : </b>SAKSI, 3RD NAP, TUENSANG, NAGALAND<br />
+                                            <b>Website : </b>https://emrstuensang.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1420052">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1420053<br />
+                                            <b>Sch. Code:</b>37746
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MON</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL, TIZIT <br /> <b>Head/Principal Name: </b>BENDANGLA AO</td>
+                                        <td>
+                                            <b>Address : </b>NEAR ASSAM RIFLES CHECK GATE, TIZIT, NGANGTING VILLAGE, TIZIT, NGANGTING VILLAGE, TIZIT 798602, MON<br />
+                                            <b>Website : </b>https://www.emrstizit.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1420053">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1420054<br />
+                                            <b>Sch. Code:</b>37748
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>CHUMOUKEDIMA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> EMRS DIPHUPAR <br /> <b>Head/Principal Name: </b>Lanusenla Ao</td>
+                                        <td>
+                                            <b>Address : </b>4TH MILE, K-KHEL DIPHUPAR, CHUMOUKEDIMA, 4TH MILE, K-KHEL DIPHUPAR, CHUMOUKEDIMA, 4TH MILE, K-KHEL DIPHUPAR, CHUMOUKEDIMA<br />
+                                            <b>Website : </b>https://emrsdiphupar.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1420054">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430001<br />
+                                            <b>Sch. Code:</b>35326
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>WOKHA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> VIVEKANAND KENDRA VIDYALAYA <br /> <b>Head/Principal Name: </b>TANMAY SARKAR</td>
+                                        <td>
+                                            <b>Address : </b>(NEEPCO) DOYANG POST DOYANG DISTT WOKHA PB NO 29 POST GOLAGHAT NAGALAND<br />
+                                            <b>Website : </b>https://doyang.vkv.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430005<br />
+                                            <b>Sch. Code:</b>35329
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>KOHIMA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES SCHOOL <br /> <b>Head/Principal Name: </b> MHOZIENUO KENGURUSE</td>
+                                        <td>
+                                            <b>Address : </b>C/O 99 APO KOHIMA NAGALAND<br />
+                                            <b>Website : </b>www.arhskohima.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430006<br />
+                                            <b>Sch. Code:</b>35328
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>TUENSANG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES SCHOOL <br /> <b>Head/Principal Name: </b>Richa Mudgal</td>
+                                        <td>
+                                            <b>Address : </b>TUENSANG 4 ASSAM RIFLES C/O 99 APO<br />
+                                            <b>Website : </b>www.arhstuensang.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430008<br />
+                                            <b>Sch. Code:</b>35331
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> DELHI PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>G MALA</td>
+                                        <td>
+                                            <b>Address : </b>2 1/2 MILE DAROGAPATHAR DIMAPUR NAGALAND<br />
+                                            <b>Website : </b>www.dpsdimapur.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430012<br />
+                                            <b>Sch. Code:</b>35334
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> HOLLOTOLI SCHOOL <br /> <b>Head/Principal Name: </b>CHUBAMENLA JAMIR</td>
+                                        <td>
+                                            <b>Address : </b>N.H. 39, PADAMPUKHIRI, &#xD;&#xA;PURANA BAZAR<br />
+                                            <b>Website : </b>https://hollotolischool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430012">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430013<br />
+                                            <b>Sch. Code:</b>35335
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>PEREN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SAINIK SCHOOL <br /> <b>Head/Principal Name: </b>COL DR  SMITA MISRA</td>
+                                        <td>
+                                            <b>Address : </b>PUNGLWA P.O., PEREN DISTRICT<br />
+                                            <b>Website : </b>https://sainikschoolpunglwa.nic.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430013">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430014<br />
+                                            <b>Sch. Code:</b>35336
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> LIVINGSTONE FOUNDATION INTERNATIONAL <br /> <b>Head/Principal Name: </b>ANDREW AHOTO SEMA</td>
+                                        <td>
+                                            <b>Address : </b>THAHEKHU/ KEVIJAU<br />
+                                            <b>Website : </b>www.livingstonenagaland.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430014">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>18</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430015<br />
+                                            <b>Sch. Code:</b>35338
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MAPLE TREE SCHOOL <br /> <b>Head/Principal Name: </b>PRITAM GHOSH</td>
+                                        <td>
+                                            <b>Address : </b>208, KASHIRAM RANGAPAHAR CANTONMENT ROAD DIMAPUR NAGALAND<br />
+                                            <b>Website : </b>www.mapletreeschool.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430015">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>19</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430016<br />
+                                            <b>Sch. Code:</b>35339
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>KOHIMA</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> G RIO SCHOOL <br /> <b>Head/Principal Name: </b>Temsu Waten</td>
+                                        <td>
+                                            <b>Address : </b>POB 702, HIGH SCHOOL AREA, KOHIMA<br />
+                                            <b>Website : </b>www.grskohima.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430016">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>20</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430017<br />
+                                            <b>Sch. Code:</b>35341
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> CHARIS HIGH ACADEMY <br /> <b>Head/Principal Name: </b>HRIIYIA KAYINA</td>
+                                        <td>
+                                            <b>Address : </b>WARD-3,CHUMUKEDIMA,NEAR UCO BANK<br />
+                                            <b>Website : </b>www.charishighacademy.edu.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430017">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>21</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430018<br />
+                                            <b>Sch. Code:</b>35342
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> DMI ST. JOSEPH GLOBAL SCHOOL <br /> <b>Head/Principal Name: </b>T ROSA MARY</td>
+                                        <td>
+                                            <b>Address : </b>414, VIRGIN TOWN, IKISHE MODEL VILLAGE,<br />
+                                            <b>Website : </b>www.dmisjgs.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430018">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>22</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430019<br />
+                                            <b>Sch. Code:</b>35343
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> HOPE ACADEMY <br /> <b>Head/Principal Name: </b>RAJESH KUMAR DEY</td>
+                                        <td>
+                                            <b>Address : </b>SEITHEKE BASA VILLAGE, DIMAPUR<br />
+                                            <b>Website : </b>www.hopeacademydimapur.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430019">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>23</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430021<br />
+                                            <b>Sch. Code:</b>35447
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST MARYS HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>NEENA DUTTA</td>
+                                        <td>
+                                            <b>Address : </b>LATIKLA COMPLEX, NYAMO LOTHA ROAD, DIMAPUR<br />
+                                            <b>Website : </b>www.stmarysdimapur.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430021">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>24</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430023<br />
+                                            <b>Sch. Code:</b>35443
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SPRING VALLEY SCHOOL <br /> <b>Head/Principal Name: </b>SUDIPTA CHAKRABORTY</td>
+                                        <td>
+                                            <b>Address : </b>SPRING VALLEY SCHOOL &#xD;&#xA;3RD MILE ,HOUSE NO.216 ,CHEKIYE VILLAGE BLOCK 2<br />
+                                            <b>Website : </b>www.thespringvalleyschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430023">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>25</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430024<br />
+                                            <b>Sch. Code:</b>35433
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SHALOM PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>MERENLA LONGCHAR</td>
+                                        <td>
+                                            <b>Address : </b>SHALOM PUBLIC SCHOOL, NAGA CEMETERY ROAD, KIKHRURUZHA COLONY CHUMUKEDIMA DIMAPUR NAGALAND 797103<br />
+                                            <b>Website : </b>www.spschumukedima.simplesite.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430024">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>26</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430025<br />
+                                            <b>Sch. Code:</b>35421
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MOKOKCHUNG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> RAJESHWARI KARUNA SCHOOL <br /> <b>Head/Principal Name: </b>DR. MOAKUMLA AO</td>
+                                        <td>
+                                            <b>Address : </b>RAJESHWARI KARUNA SCHOOL, TULI&#xD;&#xA;WATIYONGPANG AREA, WAMEKEN VALLEY,&#xD;&#xA;TULI SUBDIVISION, P.O. BOX 01&#xD;&#xA;MOKOKCHUNG, NAGALAND- 798618<br />
+                                            <b>Website : </b>http://rajeshwarikarunaschooltuli.org/about_us.asp
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430025">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>27</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430026<br />
+                                            <b>Sch. Code:</b>35528
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SPRING BLOSSOMS ACADEMY <br /> <b>Head/Principal Name: </b>Ram Shanker Singh</td>
+                                        <td>
+                                            <b>Address : </b>BLOCK-7 THAHEKHU VILLAGE, DIMAPUR, NAGALAND- 797112<br />
+                                            <b>Website : </b>www.springblossomsacademy.co.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430026">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>28</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430074<br />
+                                            <b>Sch. Code:</b>35621
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>CHUMOUKEDIMA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SHEMROCK SCHOOL  <br /> <b>Head/Principal Name: </b>KHRIEKERHENUO KEHIE</td>
+                                        <td>
+                                            <b>Address : </b>4TH MILE, CHUMOUKEDIMA<br />
+                                            <b>Website : </b>https://shemrockdimapur.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430074">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>29</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430075<br />
+                                            <b>Sch. Code:</b>35633
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>CHUMOUKEDIMA</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> TUYITU FOUNDATION SCHOOL <br /> <b>Head/Principal Name: </b>JINTHUIBO</td>
+                                        <td>
+                                            <b>Address : </b>4TH MILE,, DIPHUPAR, CHUMOUKEDIMA<br />
+                                            <b>Website : </b>https://tuyitufoundationschool.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430075">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>30</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430076<br />
+                                            <b>Sch. Code:</b>35638
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> THE SYLVAN SCHOOL <br /> <b>Head/Principal Name: </b>SUZZANNE AYEMI</td>
+                                        <td>
+                                            <b>Address : </b>HOLLOHON COLONY , P.O. ERALIBILL, DIMAPUR<br />
+                                            <b>Website : </b>www.thesylvanschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430076">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>31</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1430077<br />
+                                            <b>Sch. Code:</b>35651
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> BEANSTALK SCHOOL <br /> <b>Head/Principal Name: </b>SUNGJEMONGLA</td>
+                                        <td>
+                                            <b>Address : </b>H/NO. 200, SECTOR 4 - LANE 1 (A), LENGRIJAN, DIMAPUR<br />
+                                            <b>Website : </b>https://beanstalkschooldimapur.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1430077">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>32</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440001<br />
+                                            <b>Sch. Code:</b>39370
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>KOHIMA</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>MAHESH PRASAD SHIVHARE</td>
+                                        <td>
+                                            <b>Address : </b>YAKUKIE P B NO 172 KOHIMA NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Kohima/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>33</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440002<br />
+                                            <b>Sch. Code:</b>39371
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>WOKHA</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>BIJAY KUMAR GUPTA</td>
+                                        <td>
+                                            <b>Address : </b>PO- CHUKITONG  DT- WOKHA NAGALAND<br />
+                                            <b>Website : </b>http://www.navodaya.gov.in/nvs/nvs-school/wokha/en
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>34</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440003<br />
+                                            <b>Sch. Code:</b>39369
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>TUENSANG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>HUKAM SINGH</td>
+                                        <td>
+                                            <b>Address : </b>B P O CHARE VIA- MOKOKCHUNG DT - TUENSANG NAGALAND<br />
+                                            <b>Website : </b>www.navodaya.gov.in/nvs/nvs-school/Tuensang/en
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>35</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440004<br />
+                                            <b>Sch. Code:</b>39372
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>PHEK</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>BESII KOLLO</td>
+                                        <td>
+                                            <b>Address : </b>PHEK ZUKETSA VIL- FUTSERO DT - PHEK NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Phek/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>36</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440005<br />
+                                            <b>Sch. Code:</b>39373
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MOKOKCHUNG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA LONGNAK <br /> <b>Head/Principal Name: </b>   Sagar Jangid</td>
+                                        <td>
+                                            <b>Address : </b>JAWAHAR NAVODAYA VIDYALAYA LONGNAK, BPO LONGNAK, PO MANGKOLEMBA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Mokokchung/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>37</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440006<br />
+                                            <b>Sch. Code:</b>39374
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MON</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>RAHUL SINGH BHOGTA</td>
+                                        <td>
+                                            <b>Address : </b>WAKCHING P.O, DISTT MON NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Mon/en/about_us/About
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>38</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440007<br />
+                                            <b>Sch. Code:</b>39376
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>PEREN</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>Kewelhilo Kapfo</td>
+                                        <td>
+                                            <b>Address : </b>JALUKIE-B, PEREN, NAGALAND<br />
+                                            <b>Website : </b>www.navodaya.gov.in/nvs/nvs-school/Peren/en/home
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>39</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440009<br />
+                                            <b>Sch. Code:</b>39377
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MOKOKCHUNG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>KIRAN DANGI</td>
+                                        <td>
+                                            <b>Address : </b>LUMAMI ZUNHEDOTO P O MOKAKCHUNG BOX NO.12 NAGALAND UNIVERSITY LUMANI<br />
+                                            <b>Website : </b>www.zunheboto.jnv.academy
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>40</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440010<br />
+                                            <b>Sch. Code:</b>39378
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>KIPHIRE</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>Srinivasa Rao Dudipalli</td>
+                                        <td>
+                                            <b>Address : </b>KIPHIRE, NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Kiphire/en/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440010">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>41</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1440011<br />
+                                            <b>Sch. Code:</b>39379
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>LONGLENG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>MOMI KOLITA</td>
+                                        <td>
+                                            <b>Address : </b>TANGHA VILLAGE, DISTT &amp; P.O. LONGLENG, NAGALAND<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Longleng/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1440011">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>42</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480001<br />
+                                            <b>Sch. Code:</b>39367
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ARMY PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>HIRA MANI SAIKIA</td>
+                                        <td>
+                                            <b>Address : </b>RANGAPAHAR MILITARY STATION DIMAPUR NAGALAND<br />
+                                            <b>Website : </b>www.apsrangapahar.org.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>43</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480003<br />
+                                            <b>Sch. Code:</b>35330
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>RAJESH KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>WOKHA, NAGALAND-797111<br />
+                                            <b>Website : </b>www.arps-wokha.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>44</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480004<br />
+                                            <b>Sch. Code:</b>39368
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL (HIGH), <br /> <b>Head/Principal Name: </b>Meera Rai</td>
+                                        <td>
+                                            <b>Address : </b>MEDZIPHEMA, 9 ASSAM RIFLES, C/O 99 APO DISTT. DIMAPUR, NAGALAND-797106<br />
+                                            <b>Website : </b>www.arsmedziphema.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>45</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480005<br />
+                                            <b>Sch. Code:</b>35333
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MOKOKCHUNG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES SCHOOL <br /> <b>Head/Principal Name: </b>Lovina Joute</td>
+                                        <td>
+                                            <b>Address : </b>MOKOKCHUNG, NAGALAND<br />
+                                            <b>Website : </b>www.arhs-mkg.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>46</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480006<br />
+                                            <b>Sch. Code:</b>35337
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>ZUNHEBOTO</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES SCHOOL, ZUNHEBOTO <br /> <b>Head/Principal Name: </b>AMRENDRA KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>32 ASSAM RIFLES, C/O, 99 APO- 932032, ZUNHEBOTO, NAGALAND<br />
+                                            <b>Website : </b>www.assamriflesschoolzunheboto.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>47</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480007<br />
+                                            <b>Sch. Code:</b>39366
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>DIMAPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES TRAINING CENTRE HIGH <br /> <b>Head/Principal Name: </b>KENEINGUNUO VIZO</td>
+                                        <td>
+                                            <b>Address : </b>SCHOOL ARTC&amp;S  3RD MILE DIMAPUR NAGALAND<br />
+                                            <b>Website : </b>http://www.arpsdimapur.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>48</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480009<br />
+                                            <b>Sch. Code:</b>35327
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>MON</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES HIGH SCHOOL <br /> <b>Head/Principal Name: </b>TEJ KRISHAN</td>
+                                        <td>
+                                            <b>Address : </b>PO NAGINIMA DISTT MON NAGALAND<br />
+                                            <b>Website : </b>www.arhsnaginimora.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>49</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1480010<br />
+                                            <b>Sch. Code:</b>35340
+                                            </td>
+                                        <td><b>State : </b>NAGALAND<br /><b>District : </b>PEREN</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES SCHOOL <br /> <b>Head/Principal Name: </b>METSISENO KROSE</td>
+                                        <td>
+                                            <b>Address : </b>JALUKIE,P.B.NO.24, DISTT.PEREN, NAGALAND-797110<br />
+                                            <b>Website : </b>www.arpsjalukie.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1480010">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjjoq3ahjjj-SBcfhVkDSygZSNwi5InGEsb15GQA_ETmBOo830mgfty8Rn3k8hm4NY2P-Q8tbrRuyPXRpOgookqHPrDsrQ246Qbpu0uSzQ5X1uQ_cpmW09lw03TEHU68PmQ" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__g7VX9uUajMyNKWj_gEJ__whQ0mDHFyLNn1P6BQsisKAa_3RGW2RabV0FLswTfyT_"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025508776;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

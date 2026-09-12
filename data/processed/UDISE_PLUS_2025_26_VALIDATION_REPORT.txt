@@ -1,0 +1,118 @@
+========================================================================
+UDISE+ 2025-26 SCHOOL DATASET  —  VALIDATION REPORT
+========================================================================
+Generated:        2026-09-09T15:15:47
+Academic Year:    2025-26
+Collection Date:  2026-09-09
+Source:           UDISE+ Data Sharing Portal - Official Research Export
+Schema:           DSP_Schema_V1 (1).pdf
+
+RECORD COUNTS
+--------------------------------------------------
+  Profile-1 rows:               1,466,682
+  Profile-2 rows:               1,466,682
+  Joined (P1 inner P2):         1,466,682
+  P1 without P2 match:                  0
+  Duplicate pseudocodes P1:             0
+  Output rows written:          1,466,682
+
+UNAVAILABLE FIELDS
+--------------------------------------------------
+  school_name  -> NOT_AVAILABLE (no public source maps pseudocode
+                   to School Name for AY 2025-26)
+  udise_code   -> NOT_AVAILABLE (no public source maps pseudocode
+                   to UDISE Code for AY 2025-26)
+
+GEOGRAPHY COMPLETENESS
+--------------------------------------------------
+  state       100.00% populated  (0 missing)
+  district    100.00% populated  (0 missing)
+  block       100.00% populated  (0 missing)
+  pincode     100.00% have value  (38 blank, 35 invalid format)
+
+RECORDS BY STATE/UT  (36 states/UTs)
+--------------------------------------------------
+  UTTAR PRADESH                             265,278
+  MADHYA PRADESH                            119,694
+  MAHARASHTRA                               108,139
+  RAJASTHAN                                 106,445
+  BIHAR                                      95,285
+  WEST BENGAL                                93,147
+  KARNATAKA                                  74,578
+  ODISHA                                     61,594
+  ANDHRA PRADESH                             60,843
+  TAMILNADU                                  57,566
+  CHHATTISGARH                               57,036
+  ASSAM                                      55,333
+  GUJARAT                                    53,425
+  JHARKHAND                                  44,378
+  TELANGANA                                  41,762
+  PUNJAB                                     27,233
+  JAMMU & KASHMIR                            24,228
+  HARYANA                                    23,479
+  UTTARAKHAND                                22,437
+  HIMACHAL PRADESH                           17,064
+  KERALA                                     15,750
+  MEGHALAYA                                  11,462
+  DELHI                                       5,643
+  TRIPURA                                     4,964
+  MANIPUR                                     4,662
+  MIZORAM                                     3,965
+  ARUNACHAL PRADESH                           3,159
+  NAGALAND                                    2,715
+  GOA                                         1,473
+  SIKKIM                                      1,213
+  LADAKH                                        883
+  PUDUCHERRY                                    770
+  DADRA & NAGAR HAVELI AND DAMAN & DIU          426
+  ANDAMAN & NICOBAR ISLANDS                     411
+  CHANDIGARH                                    208
+  LAKSHADWEEP                                    34
+
+SCHOOL CATEGORY BREAKDOWN
+--------------------------------------------------
+  1     Primary Only (Classes 1-5)              722,199
+  2     Upper Primary (Classes 1-8)             346,737
+  4     Upper Primary Only (Classes 6-8)         85,637
+  3     Higher Secondary (Classes 1-12)          83,185
+  6     Higher Secondary Only (Classes 11-12)    73,240
+  7     Secondary Only (Classes 9-10)            44,098
+  5     Secondary (Classes 1-10)                 42,843
+  10    Code_10                                  26,470
+  8     Code_8                                   25,862
+  11    Code_11                                  16,112
+  12    Code_12                                     299
+
+MANAGEMENT BREAKDOWN (top 20)
+--------------------------------------------------
+  1     Department of Education                 769,169
+  5     Other Govt. Dept.                       341,689
+  3     Local Body                              191,018
+  4     Government Aided                         75,719
+  2     Tribal/Social Welfare Department         39,537
+  8     Code_8                                   20,711
+  97    Private Unaided (Recognised)             18,078
+  7     State Govt.-Autonomous Bodies             3,542
+  90    Code_90                                   2,329
+  92    Kendriya Vidyalaya Sangathan (KVS)        1,286
+  99    Central Govt. Aided                       1,067
+  6     Other State Govt. Managed                   945
+  93    Navodaya Vidyalaya Samiti (NVS)             665
+  98    Private Unaided (Unrecognised)              619
+  101   Other Central Govt./PSU                     111
+  95    Central Tibetan School Administration (CTSA)       66
+  94    Sainik School                                47
+  91    Code_91                                      33
+  89    Code_89                                      20
+  96    Eklavya Model Residential School (EMRS)       19
+
+ESTABLISHMENT YEAR ANOMALIES
+--------------------------------------------------
+  Zero/blank:          0
+  Future (>2026):      0
+
+OUTPUT
+--------------------------------------------------
+  CSV:    data/processed/UDISE_PLUS_2025_26_SCHOOLS.csv
+  Report: data/processed/UDISE_PLUS_2025_26_VALIDATION_REPORT.txt
+========================================================================

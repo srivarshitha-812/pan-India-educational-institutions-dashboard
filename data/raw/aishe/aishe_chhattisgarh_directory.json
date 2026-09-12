@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0087",
+    "name": "PT. RAVISHANKAR SHUKLA UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "RAIPUR",
+    "address": "Amanaka G.E.Road, Raipur",
+    "pincode": "492010",
+    "yearEstablished": 1964,
+    "website": "http://www.prsu.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0089",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR (NIT RAIPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "RAIPUR",
+    "address": "G.E. Road, Raipur",
+    "pincode": "492010",
+    "yearEstablished": 1956,
+    "website": "http://www.nitrr.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-22500",
+    "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES RAIPUR (AIIMS RAIPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance / Medical",
+    "district": "RAIPUR",
+    "address": "GE Road, Tatibandh, Raipur",
+    "pincode": "492099",
+    "yearEstablished": 2012,
+    "nmcId": "NMC-CG-MED-001",
+    "website": "https://www.aiimsraipur.edu.in",
+    "approvalAuthority": "Act of Parliament (AIIMS Act)"
+  },
+  {
+    "aisheCode": "C-22540",
+    "name": "HNLU - HIDAYATULLAH NATIONAL LAW UNIVERSITY",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "RAIPUR",
+    "address": "Sector 40, Uparwara, Naya Raipur",
+    "pincode": "492002",
+    "yearEstablished": 2003,
+    "otherRegulatorId": "BCI-CG-LAW-001",
+    "website": "https://hnlu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0352",
+    "name": "NORTH-EASTERN HILL UNIVERSITY (NEHU)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "EAST KHASI HILLS",
+    "address": "Umshing Mawkynroh, Shillong",
+    "pincode": "793022",
+    "yearEstablished": 1973,
+    "website": "https://www.nehu.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0354",
+    "name": "INDIAN INSTITUTE OF MANAGEMENT SHILLONG (IIM SHILLONG)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "EAST KHASI HILLS",
+    "address": "Umsawli, Shillong",
+    "pincode": "793018",
+    "yearEstablished": 2007,
+    "website": "https://www.iimshillong.ac.in",
+    "approvalAuthority": "Act of Parliament (IIM Act)"
+  },
+  {
+    "aisheCode": "C-16200",
+    "name": "NORTH EASTERN INDIRA GANDHI REGIONAL INSTITUTE OF HEALTH AND MEDICAL SCIENCES (NEIGRIHMS)",
+    "level": "Institutes of National Importance",
+    "type": "Autonomous Institute under MoHFW / Medical",
+    "district": "EAST KHASI HILLS",
+    "address": "Mawdiangdiang, Shillong",
+    "pincode": "793018",
+    "yearEstablished": 1987,
+    "nmcId": "NMC-ML-MED-001",
+    "website": "http://neigrihms.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

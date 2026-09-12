@@ -1,0 +1,40 @@
+[
+  {
+    "aisheCode": "U-0090",
+    "name": "PANJAB UNIVERSITY CHANDIGARH",
+    "level": "Universities",
+    "type": "Inter-State Public University",
+    "district": "CHANDIGARH",
+    "address": "Sector 14, Chandigarh",
+    "pincode": "160014",
+    "yearEstablished": 1882,
+    "website": "https://puchd.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0091",
+    "name": "POSTGRADUATE INSTITUTE OF MEDICAL EDUCATION AND RESEARCH (PGIMER CHANDIGARH)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance / Medical",
+    "district": "CHANDIGARH",
+    "address": "Sector 12, Chandigarh",
+    "pincode": "160012",
+    "yearEstablished": 1962,
+    "nmcId": "NMC-CH-MED-001",
+    "website": "https://pgimer.edu.in",
+    "approvalAuthority": "Act of Parliament (PGIMER Act)"
+  },
+  {
+    "aisheCode": "C-29900",
+    "name": "PUNJAB ENGINEERING COLLEGE (PEC DEEMED UNIVERSITY)",
+    "level": "Technical/engineering institutions",
+    "type": "Deemed to be University",
+    "district": "CHANDIGARH",
+    "address": "Sector 12, Chandigarh",
+    "pincode": "160012",
+    "yearEstablished": 1921,
+    "aicteId": "1-PEC-01",
+    "website": "https://pec.ac.in",
+    "approvalAuthority": "UGC / AICTE"
+  }
+]

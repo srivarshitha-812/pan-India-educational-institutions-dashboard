@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0570",
+    "name": "UNIVERSITY OF CALCUTTA",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "KOLKATA",
+    "address": "87/1, College Street, Kolkata",
+    "pincode": "700073",
+    "yearEstablished": 1857,
+    "website": "https://www.caluniv.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0573",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY KHARAGPUR (IIT KHARAGPUR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "PASCHIM MEDINIPUR",
+    "address": "Kharagpur, Paschim Medinipur",
+    "pincode": "721302",
+    "yearEstablished": 1951,
+    "website": "https://www.iitkgp.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0584",
+    "name": "JADAVPUR UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "KOLKATA",
+    "address": "188, Raja S.C. Mallick Rd, Jadavpur, Kolkata",
+    "pincode": "700032",
+    "yearEstablished": 1955,
+    "website": "http://www.jaduniv.edu.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "C-34100",
+    "name": "MEDICAL COLLEGE KOLKATA",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "KOLKATA",
+    "address": "88, College St, Bowbazar, Kolkata",
+    "pincode": "700073",
+    "yearEstablished": 1835,
+    "nmcId": "NMC-WB-MED-001",
+    "website": "https://www.medicalcollegekolkata.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0588",
+    "name": "THE WEST BENGAL NATIONAL UNIVERSITY OF JURIDICAL SCIENCES (WBNUJS KOLKATA)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "KOLKATA",
+    "address": "12, LB Block, Sector III, Bidhannagar, Kolkata",
+    "pincode": "700098",
+    "yearEstablished": 1999,
+    "otherRegulatorId": "BCI-WB-LAW-001",
+    "website": "https://www.nujs.edu",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

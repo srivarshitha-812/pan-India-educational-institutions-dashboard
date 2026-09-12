@@ -1,0 +1,40 @@
+[
+  {
+    "aisheCode": "C-15200",
+    "name": "JAWAHARLAL NEHRU RAJKIYA MAHAVIDYALAYA (JNRM PORT BLAIR)",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "SOUTH ANDAMAN",
+    "address": "South Point, Shadipur, Port Blair",
+    "pincode": "744106",
+    "yearEstablished": 1967,
+    "website": "http://jnrm.and.nic.in",
+    "approvalAuthority": "Pondicherry University / UGC 2(f)/12(B)"
+  },
+  {
+    "aisheCode": "C-15220",
+    "name": "ANDAMAN & NICOBAR ISLANDS INSTITUTE OF MEDICAL SCIENCES (ANIIMS)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "SOUTH ANDAMAN",
+    "address": "DHS Annexe Building, Atlanta Point, Port Blair",
+    "pincode": "744104",
+    "yearEstablished": 2015,
+    "nmcId": "NMC-AN-MED-001",
+    "website": "http://aniims.org",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "S-12000",
+    "name": "DR. B.R. AMBEDKAR INSTITUTE OF TECHNOLOGY",
+    "level": "Technical/engineering institutions",
+    "type": "Government Technical Institute / Polytechnic",
+    "district": "SOUTH ANDAMAN",
+    "address": "Pahargaon, Port Blair",
+    "pincode": "744103",
+    "yearEstablished": 1984,
+    "aicteId": "1-DBRAIT-01",
+    "website": "https://dbrait.andaman.gov.in",
+    "approvalAuthority": "AICTE"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0506",
+    "name": "TRIPURA UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "WEST TRIPURA",
+    "address": "Suryamaninagar, Agartala",
+    "pincode": "799022",
+    "yearEstablished": 1987,
+    "website": "https://www.tripurauniv.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0507",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY AGARTALA",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "WEST TRIPURA",
+    "address": "Jirania, West Tripura",
+    "pincode": "799046",
+    "yearEstablished": 1965,
+    "website": "https://www.nita.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-17900",
+    "name": "AGARTALA GOVERNMENT MEDICAL COLLEGE (AGMC)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "WEST TRIPURA",
+    "address": "GBP Hospital Complex, Kunjaban, Agartala",
+    "pincode": "799006",
+    "yearEstablished": 2005,
+    "nmcId": "NMC-TR-MED-001",
+    "website": "http://agmc.nic.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "aishe",
+    "sector": "Higher Education & Colleges",
+    "authority": "AISHE / Ministry of Education",
+    "status": "IN PROGRESS",
+    "priority": "HIGH",
+    "estimated_institutions": "45,000+ Colleges, 1,200+ Universities",
+    "collected_count": 162,
+    "notes": "Universities extracted; college-level API requires session persistence & captcha bypassing.",
+    "action_plan": "Implement browser session worker for full college directory extraction."
+  },
+  {
+    "id": "aicte",
+    "sector": "Technical & Engineering",
+    "authority": "AICTE",
+    "status": "IN PROGRESS",
+    "priority": "HIGH",
+    "estimated_institutions": "9,000+ Institutes",
+    "collected_count": 67,
+    "notes": "Telangana engineering slice completed. National directory requires automated ASP.NET table scraper.",
+    "action_plan": "Scrape state-wise approved AICTE directory with Playwright worker."
+  },
+  {
+    "id": "ncte",
+    "sector": "Teacher Education (B.Ed, D.El.Ed)",
+    "authority": "NCTE",
+    "status": "IN PROGRESS",
+    "priority": "MEDIUM",
+    "estimated_institutions": "18,000+ Institutes",
+    "collected_count": 19,
+    "notes": "Angular web app requires REST probe extraction per state.",
+    "action_plan": "Execute headless browser script to pull full JSON API payloads."
+  },
+  {
+    "id": "pci",
+    "sector": "Pharmacy",
+    "authority": "Pharmacy Council of India (PCI)",
+    "status": "NOT STARTED",
+    "priority": "HIGH",
+    "estimated_institutions": "4,500+ Colleges",
+    "collected_count": 0,
+    "notes": "No bulk public API. Directory inspection indicates dynamic table requiring session cookie.",
+    "action_plan": "Deploy browser crawler against approved pharmacy institutes portal."
+  },
+  {
+    "id": "bci",
+    "sector": "Legal Education & Law Colleges",
+    "authority": "Bar Council of India (BCI)",
+    "status": "IN PROGRESS",
+    "priority": "MEDIUM",
+    "estimated_institutions": "1,800+ Colleges",
+    "collected_count": 22,
+    "notes": "Telangana slice complete. National PDF directory published periodically.",
+    "action_plan": "Parse national BCI approved centres PDF and normalize into schema."
+  },
+  {
+    "id": "nch",
+    "sector": "Homoeopathy Education",
+    "authority": "National Commission for Homoeopathy (NCH)",
+    "status": "NOT STARTED",
+    "priority": "MEDIUM",
+    "estimated_institutions": "280+ Colleges",
+    "collected_count": 0,
+    "notes": "HTML list published on NCH website; requires table parsing.",
+    "action_plan": "Extract static approval tables from nch.org.in."
+  },
+  {
+    "id": "ncvet",
+    "sector": "Vocational, Skill & ITIs",
+    "authority": "NCVET / DGT MIS",
+    "status": "NOT STARTED",
+    "priority": "HIGH",
+    "estimated_institutions": "15,000+ ITIs & Skill Centers",
+    "collected_count": 0,
+    "notes": "DGT MIS uses ASP.NET ViewState without REST endpoints.",
+    "action_plan": "Automate state/district dropdown traversal using Playwright."
+  }
+]

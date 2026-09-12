@@ -1,0 +1,64 @@
+[
+  {
+    "aisheCode": "U-0143",
+    "name": "GUJARAT UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "AHMEDABAD",
+    "address": "Navrangpura, Ahmedabad",
+    "pincode": "380009",
+    "yearEstablished": 1949,
+    "website": "https://www.gujaratuniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0149",
+    "name": "INDIAN INSTITUTE OF MANAGEMENT AHMEDABAD (IIM AHMEDABAD)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "AHMEDABAD",
+    "address": "Vastrapur, Ahmedabad",
+    "pincode": "380015",
+    "yearEstablished": 1961,
+    "website": "https://www.iima.ac.in",
+    "approvalAuthority": "Act of Parliament (IIM Act)"
+  },
+  {
+    "aisheCode": "U-0144",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY GANDHINAGAR (IIT GANDHINAGAR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "GANDHINAGAR",
+    "address": "Palaj, Gandhinagar",
+    "pincode": "382355",
+    "yearEstablished": 2008,
+    "website": "https://www.iitgn.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-29100",
+    "name": "B.J. MEDICAL COLLEGE AHMEDABAD",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "AHMEDABAD",
+    "address": "Civil Hospital Campus, Asarwa, Ahmedabad",
+    "pincode": "380016",
+    "yearEstablished": 1871,
+    "nmcId": "NMC-GJ-MED-001",
+    "website": "https://www.bjmcabd.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0147",
+    "name": "GUJARAT NATIONAL LAW UNIVERSITY (GNLU)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "GANDHINAGAR",
+    "address": "Attalika Avenue, Knowledge Corridor, Koba, Gandhinagar",
+    "pincode": "382426",
+    "yearEstablished": 2003,
+    "otherRegulatorId": "BCI-GJ-LAW-001",
+    "website": "https://www.gnlu.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

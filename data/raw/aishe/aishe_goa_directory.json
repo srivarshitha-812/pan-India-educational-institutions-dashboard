@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0092",
+    "name": "GOA UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "NORTH GOA",
+    "address": "Taleigao Plateau, Goa",
+    "pincode": "403206",
+    "yearEstablished": 1985,
+    "website": "https://www.unigoa.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0093",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY GOA (NIT GOA)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "SOUTH GOA",
+    "address": "Cuncolim, South Goa",
+    "pincode": "403703",
+    "yearEstablished": 2010,
+    "website": "https://www.nitgoa.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-30500",
+    "name": "GOA MEDICAL COLLEGE",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "NORTH GOA",
+    "address": "Bambolim, Tiswadi, Goa",
+    "pincode": "403202",
+    "yearEstablished": 1842,
+    "nmcId": "NMC-GA-MED-001",
+    "website": "http://www.gmc.goa.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-30520",
+    "name": "GOA COLLEGE OF ENGINEERING",
+    "level": "Technical/engineering institutions",
+    "type": "Government Engineering College",
+    "district": "NORTH GOA",
+    "address": "Farmagudi, Ponda, Goa",
+    "pincode": "403401",
+    "yearEstablished": 1967,
+    "aicteId": "1-GEC-01",
+    "website": "https://www.gec.ac.in",
+    "approvalAuthority": "AICTE, Goa University"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "bciRef": "BCI-TS-LAW-011",
+    "name": "KHAMMAM COLLEGE OF LAW",
+    "management": "Private Unaided",
+    "district": "KHAMMAM",
+    "address": "Mustafa Nagar, Khammam",
+    "pincode": "507001",
+    "university": "Kakatiya University",
+    "threeYearLLB": "Yes",
+    "fiveYearLLB": "Yes",
+    "status": "Approved by BCI (Affiliation Valid)",
+    "website": "https://khammamlawcollege.ac.in"
+  },
+  {
+    "bciRef": "BCI-TS-LAW-001",
+    "name": "UNIVERSITY COLLEGE OF LAW, OSMANIA UNIVERSITY",
+    "management": "State Government / University Constituent",
+    "district": "HYDERABAD",
+    "address": "Osmania University Campus, Hyderabad",
+    "pincode": "500007",
+    "university": "Osmania University",
+    "threeYearLLB": "Yes",
+    "fiveYearLLB": "Yes",
+    "status": "Approved by BCI (Permanent)",
+    "website": "https://osmania.ac.in/law"
+  },
+  {
+    "bciRef": "BCI-TS-LAW-002",
+    "name": "NALSAR UNIVERSITY OF LAW (NATIONAL LAW UNIVERSITY)",
+    "management": "Autonomous State University / NLU",
+    "district": "MEDCHAL MALKAJGIRI",
+    "address": "Justice City, Shameerpet, Hyderabad",
+    "pincode": "500101",
+    "university": "NALSAR (Statutory State Act)",
+    "threeYearLLB": "No",
+    "fiveYearLLB": "Yes",
+    "status": "Approved by BCI (National Law University)",
+    "website": "https://www.nalsar.ac.in"
+  }
+]

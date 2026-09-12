@@ -1,0 +1,13 @@
+# Production Dependencies for Pan-India Educational Institutions Dashboard
+fastapi>=0.110.0,<1.0.0
+uvicorn[standard]>=0.28.0,<1.0.0
+gunicorn>=21.2.0,<22.0.0
+pandas>=2.0.0,<3.0.0
+openpyxl>=3.1.0,<4.0.0
+numpy>=1.24.0,<2.0.0
+python-multipart>=0.0.9
+requests>=2.31.0,<3.0.0
+beautifulsoup4>=4.12.0
+urllib3>=2.0.0
+pydantic>=2.0.0
+pytest>=8.0.0

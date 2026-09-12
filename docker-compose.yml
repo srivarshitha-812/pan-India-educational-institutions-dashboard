@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pan_india_institutes_dashboard
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - ENV=production
+    volumes:
+      # Mount data directories in read-only mode to prevent mutation
+      - ./Final Institute Lists:/app/Final Institute Lists:ro
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/summary')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

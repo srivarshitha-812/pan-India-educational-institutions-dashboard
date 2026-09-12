@@ -1,0 +1,58 @@
+# ==============================================================================
+# Pan-India Educational Institutions Dashboard — Git Ignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Large Datasets & Archives (>50MB) - Excluded from GitHub
+# ------------------------------------------------------------------------------
+data/profile_data_1_All State_2025-26/
+data/profile_data_2_All State_2025-26/
+data/processed/UDISE_PLUS_2025_26_SCHOOLS.csv
+data/processed/UDISE_PLUS_2025_26_SCHOOLS.zip
+data/processed/education_master.db
+data/processed/master_institutions.csv
+
+# ------------------------------------------------------------------------------
+# 2. Python Bytecode & Compilation Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ------------------------------------------------------------------------------
+# 3. Testing & Coverage Artifacts
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ------------------------------------------------------------------------------
+# 4. Environment Variables & Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+# DO NOT ignore .env.example (template for deployment)
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 5. Virtual Environments & Packages
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+
+# ------------------------------------------------------------------------------
+# 6. IDE & OS Temporary Artifacts
+# ------------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

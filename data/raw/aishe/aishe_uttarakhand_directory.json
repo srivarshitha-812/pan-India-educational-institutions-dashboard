@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0560",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY ROORKEE (IIT ROORKEE)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "HARIDWAR",
+    "address": "Roorkee, Haridwar",
+    "pincode": "247667",
+    "yearEstablished": 1847,
+    "website": "https://www.iitr.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "U-0557",
+    "name": "HEMWATI NANDAN BAHUGUNA GARHWAL UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "PAURI GARHWAL",
+    "address": "Srinagar, Pauri Garhwal",
+    "pincode": "246174",
+    "yearEstablished": 1973,
+    "website": "http://www.hnbgu.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "C-27100",
+    "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES RISHIKESH (AIIMS RISHIKESH)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance / Medical",
+    "district": "DEHRADUN",
+    "address": "Virbhadra Road, Rishikesh",
+    "pincode": "249203",
+    "yearEstablished": 2012,
+    "nmcId": "NMC-UK-MED-001",
+    "website": "https://aiimsrishikesh.edu.in",
+    "approvalAuthority": "Act of Parliament (AIIMS Act)"
+  }
+]

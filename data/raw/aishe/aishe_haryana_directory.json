@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0158",
+    "name": "KURUKSHETRA UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "KURUKSHETRA",
+    "address": "Kurukshetra, Haryana",
+    "pincode": "136119",
+    "yearEstablished": 1956,
+    "website": "https://www.kuk.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0160",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY KURUKSHETRA (NIT KURUKSHETRA)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "KURUKSHETRA",
+    "address": "Kurukshetra, Haryana",
+    "pincode": "136119",
+    "yearEstablished": 1963,
+    "website": "https://www.nitkkr.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-27800",
+    "name": "PT. B.D. SHARMA POSTGRADUATE INSTITUTE OF MEDICAL SCIENCES (PGIMS ROHTAK)",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "ROHTAK",
+    "address": "Medical Road, Rohtak",
+    "pincode": "124001",
+    "yearEstablished": 1960,
+    "nmcId": "NMC-HR-MED-001",
+    "website": "http://pgimsrohtak.ac.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

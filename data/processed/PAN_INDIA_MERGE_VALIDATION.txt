@@ -1,0 +1,62 @@
+=====================================================================================
+PAN-INDIA EDUCATIONAL INSTITUTES EXCEL WORKBOOK - MERGE VALIDATION REPORT
+=====================================================================================
+Generated Timestamp     : openpyxl Processing Complete
+Master Output File      : data/processed/PAN_INDIA_EDUCATIONAL_INSTITUTES.xlsx
+Number of Source Files  : 36
+Number of Worksheets    : 36
+Total Source Records    : 18,129
+Total Final Records     : 18,129
+Records Lost            : 0
+Missing States/UTs      : 0 (None)
+Errors Encounted        : 0 (None)
+=====================================================================================
+Order  State / UT Name                            Worksheet Name       Records    Columns 
+-------------------------------------------------------------------------------------
+1      Andhra Pradesh                             Andhra Pradesh       630        38      
+2      Arunachal Pradesh                          Arunachal Pradesh    599        38      
+3      Assam                                      Assam                798        38      
+4      Bihar                                      Bihar                913        38      
+5      Chhattisgarh                               Chhattisgarh         778        38      
+6      Goa                                        Goa                  52         38      
+7      Gujarat                                    Gujarat              797        38      
+8      Haryana                                    Haryana              531        38      
+9      Himachal Pradesh                           Himachal Pradesh     291        38      
+10     Jharkhand                                  Jharkhand            580        38      
+11     Karnataka                                  Karnataka            749        38      
+12     Kerala                                     Kerala               340        38      
+13     Madhya Pradesh                             Madhya Pradesh       1252       38      
+14     Maharashtra                                Maharashtra          870        38      
+15     Manipur                                    Manipur              387        38      
+16     Meghalaya                                  Meghalaya            291        38      
+17     Mizoram                                    Mizoram              267        38      
+18     Nagaland                                   Nagaland             387        38      
+19     Odisha                                     Odisha               725        38      
+20     Punjab                                     Punjab               556        38      
+21     Rajasthan                                  Rajasthan            1181       38      
+22     Sikkim                                     Sikkim               147        38      
+23     Tamil Nadu                                 Tamil Nadu           917        38      
+24     Telangana                                  Telangana            112        38      
+25     Tripura                                    Tripura              195        38      
+26     Uttar Pradesh                              Uttar Pradesh        1805       38      
+27     Uttarakhand                                Uttarakhand          315        38      
+28     West Bengal                                West Bengal          557        38      
+29     Andaman and Nicobar Islands                Andaman & Nicobar    75         38      
+30     Chandigarh                                 Chandigarh           27         38      
+31     Dadra and Nagar Haveli and Daman and Diu   DNH & Diu            75         38      
+32     Delhi                                      Delhi                269        38      
+33     Jammu and Kashmir                          Jammu & Kashmir      484        38      
+34     Ladakh                                     Ladakh               51         38      
+35     Lakshadweep                                Lakshadweep          26         38      
+36     Puducherry                                 Puducherry           100        38      
+=====================================================================================
+WORKSHEET VALIDATION AUDIT CHECKLIST:
+[X] Exactly ONE Excel workbook created: data/processed/PAN_INDIA_EDUCATIONAL_INSTITUTES.xlsx
+[X] Exactly 36 worksheets created (28 States + 8 Union Territories)
+[X] ONE State/UT per worksheet in mandated official order
+[X] All source records preserved (Source: 18,129 == Final: 18,129)
+[X] Header rows frozen on every worksheet (freeze_panes = 'A2')
+[X] Auto-filters enabled across all columns on every worksheet
+[X] Standard 38 columns and formatting preserved for all sheets including Telangana
+[X] Excel 31-character worksheet name limit respected for all sheets
+=====================================================================================

@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option selected="selected" value="12">MANIPUR</option>
+<option value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>85</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjjhTXUEe3ul0U-04nNCjVRUmlmAvLo80osi8q4eEzfn0KZ7y_VAm4MhvSDR5yTlWH-RG0Mdn1yGHQf14yE3yltHB6Wv48j0urpJO6QmyiMP77FUZOSct_AG4Sl9uxeS8_A" /><input type="hidden" name="__ncforminfo" value="9zEZCgDA1_nCYErtqEqLxKOEdgiDctyHaUG64FSOAi_7S4ydvF0whh_fSI7bdrIr9NtoIO7RUw5xcF89BM_WgqemYu0BVsz5oC7NZdNXMc0no6tj5mfBep-mc3jF4l26eOipcbSx6N5d3PSbrPAvLKX5Ykv9z-aKNdjcmirKWHHWhRXQbWwS5HkPj0uYEhb_9QSOSRidlFSeXLURyFyaTttiRtMYhpxOTD6LV2pia_zsk82jeNFITxDIck249ztErpQOmUYLHyVhGfhRRjphgUCb8O-fCWHoym7-MtBB9adH77sidbeKzBkVs7JxDsTKv0laf94dC8fCzy9g_gYfcBkooWjzEOGkUZ5NgX5XovJLpL80E_MHt426QUnpwjGcUzGlidiAi8FGHNRTdIdawHpIPJrmjl1ajHekVG6iT138-LbwwQw-aMAhEyfq9UQIvpxBvYV0Q4qTDkTLHylOvQ=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200001<br />
+                                            <b>Sch. Code:</b>39347
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>VISHWANATH NAMARAM</td>
+                                        <td>
+                                            <b>Address : </b>LAMPHELPET IMPHAL MANIPUR<br />
+                                            <b>Website : </b>https://no1imphal.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200002<br />
+                                            <b>Sch. Code:</b>39348
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>WAHENGBAM KUMARJIT SINGH</td>
+                                        <td>
+                                            <b>Address : </b>H E PROJECT, VIDYUT VIHAR,KOM KEIRAP, LOKTAK MANIPUR<br />
+                                            <b>Website : </b>https://nhpcloktak.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200003<br />
+                                            <b>Sch. Code:</b>39349
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ASHUTOSH SINGH</td>
+                                        <td>
+                                            <b>Address : </b>CRPF GROUP CENTRE LANGJING IMPHAL MANIPUR<br />
+                                            <b>Website : </b>https://no2imphal.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200004<br />
+                                            <b>Sch. Code:</b>39350
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ROHITASH GHINTALA</td>
+                                        <td>
+                                            <b>Address : </b>LEIMAKHONG FIELD POST OFFICE MANTIRI PUKHRI BPO KARAKHUL, IMPHAL MANIPUR<br />
+                                            <b>Website : </b>https://no3imphal.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200005<br />
+                                            <b>Sch. Code:</b>39351
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ROSELYN KHAWBUNG</td>
+                                        <td>
+                                            <b>Address : </b>BSF CAMPUS CHURACHANDPUR  MANIPUR<br />
+                                            <b>Website : </b>www.bsfchurachandpur.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200006<br />
+                                            <b>Sch. Code:</b>39352
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>TAMENGLONG</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ANURAG SHASWAT</td>
+                                        <td>
+                                            <b>Address : </b>TAMENGLONG, (TAMENGLONG HR. SEC. SECHOOL COMPLEX), TAMENGLONG, MANIPUR<br />
+                                            <b>Website : </b>www.tamenglong.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200007<br />
+                                            <b>Sch. Code:</b>39353
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>UKHRUL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>CHIHANSO SHINGNAISUI</td>
+                                        <td>
+                                            <b>Address : </b>NEAR TNL GROUND, WINO BAZAAR, UKHRUL, MANIPUR-795142<br />
+                                            <b>Website : </b>https://ukhrul.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200008<br />
+                                            <b>Sch. Code:</b>39612
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA AKAMPAT <br /> <b>Head/Principal Name: </b>BINA YUMNAM</td>
+                                        <td>
+                                            <b>Address : </b>KHURAI LAMLONG BAZAR IMPHAL EAST<br />
+                                            <b>Website : </b>https://akampat.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1200150<br />
+                                            <b>Sch. Code:</b>39701
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHANDEL</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA CHAKPIKARONG <br /> <b>Head/Principal Name: </b>ANIL KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>GOV HIGHER SEC BUILDING, CHAKPIKARONG<br />
+                                            <b>Website : </b>https://chakpikarong.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1200150">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1220000<br />
+                                            <b>Sch. Code:</b>39613
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>KANGPOKPI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL, GAMNOM SAPORMEINA <br /> <b>Head/Principal Name: </b>DR. NGAMKHOHAO HAOKIP</td>
+                                        <td>
+                                            <b>Address : </b>GAMNOM SAPORMEINA&#xD;&#xA;PO. MOTBUNG&#xD;&#xA;KANGPOKPI DISTRICT, MANIPUR<br />
+                                            <b>Website : </b>www.emrsgamnom.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1220000">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1220001<br />
+                                            <b>Sch. Code:</b>39616
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>TAMENGLONG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL TAMENGLONG <br /> <b>Head/Principal Name: </b>Shaganglung Pamei</td>
+                                        <td>
+                                            <b>Address : </b>FARMLAND, TAMENGLONG<br />
+                                            <b>Website : </b>www.goschool.in/EMRSTML/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1220001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1220150<br />
+                                            <b>Sch. Code:</b>37562
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>TENGNOUPAL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL, MOREH <br /> <b>Head/Principal Name: </b>Henkholun Touthang</td>
+                                        <td>
+                                            <b>Address : </b>MOREH, PO/PS MOREH<br />
+                                            <b>Website : </b>www.emrsmoreh.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1220150">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230002<br />
+                                            <b>Sch. Code:</b>35271
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MANIPUR PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>RK IMOCHA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>KOIRENGEI MANTRIPUKHRI IMPHAL MANIPUR<br />
+                                            <b>Website : </b>www.mpsimphal.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230003<br />
+                                            <b>Sch. Code:</b>35272
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KANAN DEVI MEMORIAL SCHOOL <br /> <b>Head/Principal Name: </b>LAISHRAM MONIKA DEVI</td>
+                                        <td>
+                                            <b>Address : </b>PANGEI IMPHAL EAST MANIPUR<br />
+                                            <b>Website : </b>www.kdmschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230004<br />
+                                            <b>Sch. Code:</b>35273
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> DAV PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>SALAM YAIMA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>DISTT IMPHAL, MANIPUR<br />
+                                            <b>Website : </b>www.davschoolmanipur.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230005<br />
+                                            <b>Sch. Code:</b>35274
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MARIA MONTESSORI SCHOOL <br /> <b>Head/Principal Name: </b>SIDDHESHWAR IROM  </td>
+                                        <td>
+                                            <b>Address : </b>KOIRENGEI MANTRI PUKHRI IMPHAL MANIPUR<br />
+                                            <b>Website : </b>https://www.mariamanipur.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230006<br />
+                                            <b>Sch. Code:</b>35275
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> HUNDRED FLOWERS HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>MOHAMMAD JABIR RAHMAN</td>
+                                        <td>
+                                            <b>Address : </b>KOUBOK HOUBI PUKHAO ROAD BPO PANGEI IMPHAL MANIPUR<br />
+                                            <b>Website : </b>www.hundredflowers.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>18</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230007<br />
+                                            <b>Sch. Code:</b>35276
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> RAJKUMARI SANATOMBI DEVI VIDYALAYA <br /> <b>Head/Principal Name: </b>Wahengbam Sarda Devi</td>
+                                        <td>
+                                            <b>Address : </b>HAOTAL PO- PANGEI DT- IMPHAL MANIPUR<br />
+                                            <b>Website : </b>http://www.iisbenin.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>19</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230008<br />
+                                            <b>Sch. Code:</b>35277
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NAZRETH RESIDENTIAL SCHOOL <br /> <b>Head/Principal Name: </b>PURNIMA KAYINA</td>
+                                        <td>
+                                            <b>Address : </b>OKHRO-IKHRO MAO GATE DISTT. SENAPATI, MANIPUR<br />
+                                            <b>Website : </b>www.nrsmao.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>20</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230009<br />
+                                            <b>Sch. Code:</b>35278
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> TRINITY PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>GONGCHAM PAMEI</td>
+                                        <td>
+                                            <b>Address : </b>TAMENG LONG DISTT IMPHAL MANIPUR<br />
+                                            <b>Website : </b>http://WEB.GOSCHOOL.IN
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>21</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230013<br />
+                                            <b>Sch. Code:</b>35281
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NORTH POINT HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>WAHENGBAM PRIYOKUMAR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>KHABAM LAMKHAI MANTRI PUKHRI IMPHAL<br />
+                                            <b>Website : </b>https://northpointimphal.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230013">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>22</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230015<br />
+                                            <b>Sch. Code:</b>35284
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MT ZION ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>SIBA LOHRII</td>
+                                        <td>
+                                            <b>Address : </b>KATHIKHO KARONG SENAPATI DISTT MANIPUR<br />
+                                            <b>Website : </b>www.mtzioncbsekarong.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230015">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>23</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230016<br />
+                                            <b>Sch. Code:</b>35285
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BHAKTIVEDANTS INSITUTE MISSION HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>MD KHUSNOOR ALAM </td>
+                                        <td>
+                                            <b>Address : </b>AIRPORT ROAD SANGAIPROU IMPHAL MANIPUR<br />
+                                            <b>Website : </b>www.bimhrsecschool.net
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230016">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>24</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230017<br />
+                                            <b>Sch. Code:</b>35286
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SHISHU NISTHA NIKETAN <br /> <b>Head/Principal Name: </b>Sushili Laishram</td>
+                                        <td>
+                                            <b>Address : </b>KWAKEITHEL MAYAIKOIBI IMPHAL MANIPUR CENTRAL, MANIPUR<br />
+                                            <b>Website : </b>www.shishunisthaniketan.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230017">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>25</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230018<br />
+                                            <b>Sch. Code:</b>35287
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST PAULS INSTITUTE <br /> <b>Head/Principal Name: </b>D L MUON</td>
+                                        <td>
+                                            <b>Address : </b>NEW LAMKA (G)&#xD;&#xA;CHURACHANDPUR DISTRICT&#xD;&#xA;MANIPUR<br />
+                                            <b>Website : </b>www.stpaulsinstitute.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230018">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>26</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230021<br />
+                                            <b>Sch. Code:</b>35288
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CAMPS ENGLISH ACADEMY <br /> <b>Head/Principal Name: </b>DR. A DANESHWARI DEVI</td>
+                                        <td>
+                                            <b>Address : </b>KHAFAM LAMKHAI PO MANTRIPUKRI, DISTT IMPHAL MANIPUR<br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230021">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>27</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230022<br />
+                                            <b>Sch. Code:</b>35289
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SLOPE LAND PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>NAHAKPAM CHINGLEMBA MEITEI</td>
+                                        <td>
+                                            <b>Address : </b>SALT VILLAGE KHONGJOM MANIPUR<br />
+                                            <b>Website : </b>https://slopelandpublicschool.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230022">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>28</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230023<br />
+                                            <b>Sch. Code:</b>35290
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> THE MADHUMANGOL MEMORIAL HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>THOKCHOM MOHON SINGH</td>
+                                        <td>
+                                            <b>Address : </b>YAIRIPOK ROAD WANGKHEI, IMPHAL EAST MANIPUR<br />
+                                            <b>Website : </b>www.mmhrsecschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230023">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>29</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230024<br />
+                                            <b>Sch. Code:</b>35291
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>UKHRUL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> LITTLE ANGLE&#x27;S ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>SOSO SHAIZA</td>
+                                        <td>
+                                            <b>Address : </b>TANGREI UKHRUL   MANIPUR<br />
+                                            <b>Website : </b>www.laesukhrul.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230024">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>30</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230025<br />
+                                            <b>Sch. Code:</b>35292
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CENTRAL ACADEMY <br /> <b>Head/Principal Name: </b>ARIBAM GOPESHWAR SHARMA</td>
+                                        <td>
+                                            <b>Address : </b>KHABAM<br />
+                                            <b>Website : </b>www.cetralacademyimphal.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230025">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>31</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230026<br />
+                                            <b>Sch. Code:</b>35293
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SAKLIM CHRISTIAN ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>L V Makinei</td>
+                                        <td>
+                                            <b>Address : </b>KATOMEI SENAPATI<br />
+                                            <b>Website : </b>www.saklim.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230026">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>32</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230027<br />
+                                            <b>Sch. Code:</b>35294
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> THE LODESTAR PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>KIMCHA KHONGSAI</td>
+                                        <td>
+                                            <b>Address : </b>KHONGSAI VENG LAIPHAM KHUNORE, IMPHAL<br />
+                                            <b>Website : </b>www.lodestarpublicschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230027">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>33</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230028<br />
+                                            <b>Sch. Code:</b>35296
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> THE EDEN PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>KSHETRIMAYUM BINODKUMAR</td>
+                                        <td>
+                                            <b>Address : </b>WANG KHEI AYANGPALLI ROAD, DISTT IMPHAL, MANIPUR<br />
+                                            <b>Website : </b>www.theedenpublicschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230028">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>34</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230029<br />
+                                            <b>Sch. Code:</b>35295
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>KANGPOKPI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> IDEAL ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>Dr. Robert Safiur Rahman</td>
+                                        <td>
+                                            <b>Address : </b>P.O. MOTBUNG&#xD;&#xA;DIST: KANGPOKPI<br />
+                                            <b>Website : </b>www.idealschoolmanipur.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230029">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>35</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230030<br />
+                                            <b>Sch. Code:</b>35297
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLE SCHOOL <br /> <b>Head/Principal Name: </b>L SANI KHRASI</td>
+                                        <td>
+                                            <b>Address : </b>22, ASSAM RIFLES, C/O 99 APO, SENAPATI,  MARAM, MANIPUR-795105<br />
+                                            <b>Website : </b>www.arsmaram.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230030">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>36</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230031<br />
+                                            <b>Sch. Code:</b>35298
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> GRACE COTTAGE CULTURAL &amp; EDUCATIONAL DEVELOPMENT FOUNDATION <br /> <b>Head/Principal Name: </b>Kshetrimayum Chaoba Singh</td>
+                                        <td>
+                                            <b>Address : </b>KAKCHING MAKHA LEIKAI  WARD NO. 11<br />
+                                            <b>Website : </b>www.gracecottage.co.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230031">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>37</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230032<br />
+                                            <b>Sch. Code:</b>35300
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ZENITH ACADEMY <br /> <b>Head/Principal Name: </b>Hijam Meerina Devi</td>
+                                        <td>
+                                            <b>Address : </b>SANGAIPROU, IMPHAL WEST, MANIPUR<br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230032">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>38</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230033<br />
+                                            <b>Sch. Code:</b>35299
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MEGA MANIPUR SCHOOL <br /> <b>Head/Principal Name: </b>ATHOKPAM AMUDON SINGH</td>
+                                        <td>
+                                            <b>Address : </b>YARALPAT TINSEED ROAD, POROMPAT, IMPHAL EAST<br />
+                                            <b>Website : </b>www.megamanipurschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230033">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>39</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230034<br />
+                                            <b>Sch. Code:</b>35301
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SUNSHINE ACADEMY <br /> <b>Head/Principal Name: </b>Sharadkumar Longjam</td>
+                                        <td>
+                                            <b>Address : </b>MOIDANGPOK, IMPHAL WEST, LANGJING,<br />
+                                            <b>Website : </b>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230034">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>40</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230035<br />
+                                            <b>Sch. Code:</b>35302
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> S.V.GETWELL SCHOOL <br /> <b>Head/Principal Name: </b>LAISHRAM DINAMANI SINGH</td>
+                                        <td>
+                                            <b>Address : </b>HAOTAL,THANGJAM KHUNOU,B.P.O-PANGEI<br />
+                                            <b>Website : </b>www.svgetwellschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230035">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>41</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230036<br />
+                                            <b>Sch. Code:</b>35303
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> RUDA ACADEMY <br /> <b>Head/Principal Name: </b>ELANGBAM ROMIO SINGH</td>
+                                        <td>
+                                            <b>Address : </b>THOUBAL WANGMATABA, WARD NO. 2, P.O. &amp; P.S. THOUBAL, MANIPUR-795138<br />
+                                            <b>Website : </b>www.rudaacademy.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230036">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>42</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230037<br />
+                                            <b>Sch. Code:</b>35304
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> RK SANATOMBI VIDYALAYA, <br /> <b>Head/Principal Name: </b>S Maniton Singh</td>
+                                        <td>
+                                            <b>Address : </b>JIRIBAM, BAPUPARA, IMPHAL EAST<br />
+                                            <b>Website : </b>www.rksanatombividyalaya.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230037">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>43</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230038<br />
+                                            <b>Sch. Code:</b>35305
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> RADIANT-STAR EDUCATION CENTRE <br /> <b>Head/Principal Name: </b>JAGDISH CHANDRA PATNI</td>
+                                        <td>
+                                            <b>Address : </b>KANGLATONGBI&#xD;&#xA;P.O KANGLATONGBI&#xD;&#xA;795151<br />
+                                            <b>Website : </b>www.radiantstareducationcentre.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230038">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>44</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230039<br />
+                                            <b>Sch. Code:</b>35306
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ARECA SCHOOL <br /> <b>Head/Principal Name: </b>Khanghemmeiru Gangmei</td>
+                                        <td>
+                                            <b>Address : </b>NEAR 2ND M.R., NORTH AOC<br />
+                                            <b>Website : </b>www.arecaschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230039">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>45</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230040<br />
+                                            <b>Sch. Code:</b>35307
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ST. ANTHONY&#x27;S HIGH SCHOOL <br /> <b>Head/Principal Name: </b>Suchitra Devi Potsangbam</td>
+                                        <td>
+                                            <b>Address : </b>HEINGANG ROAD, POUMAI COLONY, CHINGMEIRONG<br />
+                                            <b>Website : </b>https://stanthonymanipur.org/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230040">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>46</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230041<br />
+                                            <b>Sch. Code:</b>35308
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> RAYBURN HIGH <br /> <b>Head/Principal Name: </b>PAUKHENTHANG TOMBING</td>
+                                        <td>
+                                            <b>Address : </b>NEW LAMKA(H), P.O. BOX-32<br />
+                                            <b>Website : </b>http://rayburnhigh.org/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230041">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>47</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230042<br />
+                                            <b>Sch. Code:</b>35309
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ALPHA BCI MEMORIAL ACADEMY <br /> <b>Head/Principal Name: </b> Dr. ROMILA SHIJA</td>
+                                        <td>
+                                            <b>Address : </b>THANGMEIBAND HIJAM DEWAN LEIKAI<br />
+                                            <b>Website : </b>www.alphabcimemorialacademy.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230042">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>48</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230043<br />
+                                            <b>Sch. Code:</b>35310
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> UNACCO SCHOOL <br /> <b>Head/Principal Name: </b>GEETA RANI</td>
+                                        <td>
+                                            <b>Address : </b>KHONGMAN ZONE-III (WEST), IMPHAL EAST DISTRICT, MANIPUR<br />
+                                            <b>Website : </b>http://www.unaccoschool.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230043">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>49</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230044<br />
+                                            <b>Sch. Code:</b>35311
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>KANGPOKPI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> J.N PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Mangnu Haokip</td>
+                                        <td>
+                                            <b>Address : </b>KANGPOKPI ,SADAR HILLS, MANIPUR<br />
+                                            <b>Website : </b>www.jnpschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230044">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>50</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230045<br />
+                                            <b>Sch. Code:</b>35313
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MANNU ENGLISH SCHOOL <br /> <b>Head/Principal Name: </b>Dr YENGKOKPAM RANJAN SINGH</td>
+                                        <td>
+                                            <b>Address : </b>NEW LAMBULANE, NEW CHECKON, IMPHAL,<br />
+                                            <b>Website : </b>www.mannuenglishschool.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230045">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>51</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230047<br />
+                                            <b>Sch. Code:</b>35315
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KINDERGARTEN MONTESSORI SCHOOL <br /> <b>Head/Principal Name: </b> Dr Longjam Dhaneshor Singh</td>
+                                        <td>
+                                            <b>Address : </b>SAGOLBAND TAKYEL KOLOM LEIKAI, IMPHAL WEST - 1<br />
+                                            <b>Website : </b>www.kindergartenmontessorischool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230047">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>52</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230048<br />
+                                            <b>Sch. Code:</b>35317
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> MT EVEREST HIGHER SECONDARY SCHOOL, SENAPATI, MANIPUR <br /> <b>Head/Principal Name: </b>ARJUN PRADHAN</td>
+                                        <td>
+                                            <b>Address : </b>SENAPATI, TAPHOU PHYAMEI, MANIPUR<br />
+                                            <b>Website : </b>http://www.mehssspt.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230048">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>53</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230049<br />
+                                            <b>Sch. Code:</b>35319
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KIDS FOUNDATION <br /> <b>Head/Principal Name: </b>Wahengbam Nishant</td>
+                                        <td>
+                                            <b>Address : </b>AIRPORT ROAD, GHARI<br />
+                                            <b>Website : </b>www.kidsfoundationimphal.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230049">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>54</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230050<br />
+                                            <b>Sch. Code:</b>35320
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> IMPHAL VALLEY SCHOOL, NURTURING TOMORROW <br /> <b>Head/Principal Name: </b>LAISHRAM LISA DEVI</td>
+                                        <td>
+                                            <b>Address : </b>KHABAM CHUMBREITHONG, MANTRIPUKHRI<br />
+                                            <b>Website : </b>www.ivs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230050">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>55</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230051<br />
+                                            <b>Sch. Code:</b>35321
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> HUMAN RESOURCE DEVELOPEMENT, PHAYENG, IMPHAL WEST. <br /> <b>Head/Principal Name: </b>SANJENBAM MANORANJAN SINGH</td>
+                                        <td>
+                                            <b>Address : </b>PHAYENG BPO PHAYENG, PO. LAMSANG, 795146<br />
+                                            <b>Website : </b>www.shrd.org.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>56</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230052<br />
+                                            <b>Sch. Code:</b>35322
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CITY MONTESSORI HIGHER SECONDARY SCHOOL <br /> <b>Head/Principal Name: </b>OINAM KUMAR MEITEI</td>
+                                        <td>
+                                            <b>Address : </b>LAMBOIKHONGANGKHONG IMPHAL<br />
+                                            <b>Website : </b>https://citymontessoriimphal.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230052">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>57</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230053<br />
+                                            <b>Sch. Code:</b>39606
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> TOLCHOU IBETON MEMORIAL ACADEMY <br /> <b>Head/Principal Name: </b>NGANGOM SURJIT SINGH</td>
+                                        <td>
+                                            <b>Address : </b>HIYANGTHANG MAYAI LAMBI ROAD PO CANCHIPUR PS SINGJAMEI<br />
+                                            <b>Website : </b>http://timaedu.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230053">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>58</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230056<br />
+                                            <b>Sch. Code:</b>35442
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> RAMAKRISHNA MISSION SCHOOL <br /> <b>Head/Principal Name: </b>Swami Atmavikasananda</td>
+                                        <td>
+                                            <b>Address : </b>URIPOK BACHASPATI LEIKAI PO/PS/DIST.- IMPHAL WEST&#xD;&#xA;MANIPUR-795001<br />
+                                            <b>Website : </b>https://imphal.rkmm.org/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230056">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>59</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230100<br />
+                                            <b>Sch. Code:</b>35503
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASUF&#xDC; CHRISTIAN SCHOOL <br /> <b>Head/Principal Name: </b>KEISAM BISHWORJIT SINGH</td>
+                                        <td>
+                                            <b>Address : </b>PUNANAMEI VILLAGE&#xD;&#xA;PO MAO GATE<br />
+                                            <b>Website : </b>http://www.acsmao.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230100">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>60</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230101<br />
+                                            <b>Sch. Code:</b>35524
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> UNACCO SCHOOL, EXCELLENCE IN EDUCATION <br /> <b>Head/Principal Name: </b>KONJENGBAM HELENTHOI DEVI</td>
+                                        <td>
+                                            <b>Address : </b>MEITRAM MAKHA LEIKAI, IMPHAL WEST, MANIPUR<br />
+                                            <b>Website : </b>www.unaccoschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230101">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>61</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230151<br />
+                                            <b>Sch. Code:</b>35573
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SHISHU NISTHA NIKETAN <br /> <b>Head/Principal Name: </b>HOPESON PANMEI</td>
+                                        <td>
+                                            <b>Address : </b>IMPHAL, EAST<br />
+                                            <b>Website : </b>HTTP://WWW.SHISHUNISTHANIKETAN-IE.ORG
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230151">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>62</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230152<br />
+                                            <b>Sch. Code:</b>35577
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BRIGHT FOUNDATION SCHOOL  <br /> <b>Head/Principal Name: </b>Dr. JOY SINGH OINAM</td>
+                                        <td>
+                                            <b>Address : </b>KSHETRILEIKAI , PO &amp; PS THOUBAL <br />
+                                            <b>Website : </b>www.brightfoundationschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230152">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>63</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230154<br />
+                                            <b>Sch. Code:</b>35594
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> SOIKHOLAL IDEAL HIGH SCHOOL <br /> <b>Head/Principal Name: </b>Limlenlal Mate</td>
+                                        <td>
+                                            <b>Address : </b>TUIBONG, LAMKA<br />
+                                            <b>Website : </b>https://idealschool.co.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230154">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>64</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230176<br />
+                                            <b>Sch. Code:</b>35616
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>KANGPOKPI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> APPLE BUDS ACADEMY <br /> <b>Head/Principal Name: </b>Lhingneineng  Kipgen</td>
+                                        <td>
+                                            <b>Address : </b>SAPORMEINA, SAITU GAMPHAZOL<br />
+                                            <b>Website : </b>https://applebudsacademy.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230176">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>65</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1230179<br />
+                                            <b>Sch. Code:</b>35653
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> UNACCO SCHOOL, EXCELLENCE IN EDUCATION <br /> <b>Head/Principal Name: </b>P SURACHANDRA SINGH</td>
+                                        <td>
+                                            <b>Address : </b>CHANUNG, IMPHAL EAST, MANIPUR<br />
+                                            <b>Website : </b>https://chanung.unaccoschool.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1230179">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>66</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240001<br />
+                                            <b>Sch. Code:</b>39337
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ATOM KIRANKUMAR</td>
+                                        <td>
+                                            <b>Address : </b>SANDUMBE ACHOUBA KAKCHING DT- THOUBAL MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Thoubal/en/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>67</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240002<br />
+                                            <b>Sch. Code:</b>39338
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHURACHANDPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>VIKRAM SINGH</td>
+                                        <td>
+                                            <b>Address : </b>CHURACHANDPUR TUINOM MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Churachandpur/en/home
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>68</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240003<br />
+                                            <b>Sch. Code:</b>39339
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>SENAPATI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>SORAM ANIL SINGH</td>
+                                        <td>
+                                            <b>Address : </b>PFUKHRO MAO PO- MAO DT- SENAPATHI MANIPUR<br />
+                                            <b>Website : </b>https://www.navodaya.gov.in/nvs/nvs-school/Senapati-1/en/hom
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>69</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240004<br />
+                                            <b>Sch. Code:</b>39342
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHANDEL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>AMARSON SANKHIL</td>
+                                        <td>
+                                            <b>Address : </b>LIWA KHULLEN SARAI CHANDEL MANIPUR<br />
+                                            <b>Website : </b>https://www.navodaya.gov.in/nvs/nvs-school/Chandel
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>70</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240005<br />
+                                            <b>Sch. Code:</b>39341
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ELLORE GOLMEI</td>
+                                        <td>
+                                            <b>Address : </b>KHUMBONG VIA- LANGJING IMPHAL MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Imphal-West
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>71</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240006<br />
+                                            <b>Sch. Code:</b>39336
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>BISHNUPUR</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>RAHAMANUDDIN MD MOINAM</td>
+                                        <td>
+                                            <b>Address : </b>LOKTAK DT- BISHUNPUR MANIPUR<br />
+                                            <b>Website : </b>www.navodaya.gov.in/nvs/nvs-school/Bishnupur/en/home
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>72</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240007<br />
+                                            <b>Sch. Code:</b>39340
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>UKHRUL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ASIT KUMAR PATTANAIK</td>
+                                        <td>
+                                            <b>Address : </b>RAMVA VILL PO LAMLONG BAZAR DISTT UKHRUL MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Ukhrul-1/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>73</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240008<br />
+                                            <b>Sch. Code:</b>39343
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>TAMENGLONG</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>KHIUCHUI ALEX PANMEI</td>
+                                        <td>
+                                            <b>Address : </b>DUIGAILONG KHENJAREN- II PO- TAMENGLON MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Tamenglong/en/home/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>74</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240009<br />
+                                            <b>Sch. Code:</b>39344
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>LUNGSHIM HORAM</td>
+                                        <td>
+                                            <b>Address : </b>YARALPAT PO POROMPAT BPO MOIRANG KAMPU DISTT IMPHAL EAST MANIPUR<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Imphal-East
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>75</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240010<br />
+                                            <b>Sch. Code:</b>39345
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>UKHRUL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODYA VIDYALAYA JESSAMI UKHRUL II DIST, MANIPUR <br /> <b>Head/Principal Name: </b>ARIBAM SURJEET SHARMA</td>
+                                        <td>
+                                            <b>Address : </b>UKHRUL II DIST, MANIPUR<br />
+                                            <b>Website : </b>https://www.navodaya.gov.in/nvs/nvs-school/Ukhrul
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240010">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>76</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240011<br />
+                                            <b>Sch. Code:</b>39346
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>KANGPOKPI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODYA VIDYALAYA <br /> <b>Head/Principal Name: </b>PREM SHANKER YADAV</td>
+                                        <td>
+                                            <b>Address : </b>SENAPATI II KANGPOKNI SADAR HILLS SENAPATI DIST, MANIPUR 795129<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Senapati-2/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240011">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>77</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1240150<br />
+                                            <b>Sch. Code:</b>39711
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-EAST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>M NANDAGOPAL</td>
+                                        <td>
+                                            <b>Address : </b>YARALPAT POROMPAT, TOP DUSARA, IMPHAL EAST<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Imphal-East
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1240150">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>78</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280001<br />
+                                            <b>Sch. Code:</b>39334
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SAINIK SCHOOL <br /> <b>Head/Principal Name: </b>COL A RAJIV </td>
+                                        <td>
+                                            <b>Address : </b>IMPHAL P B NO 21 IMPHAL MANIPUR<br />
+                                            <b>Website : </b>www.ssimphal.nic.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>79</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280002<br />
+                                            <b>Sch. Code:</b>35282
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>UKHRUL</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES HIGH SCHOOL <br /> <b>Head/Principal Name: </b>Vandana Kumari</td>
+                                        <td>
+                                            <b>Address : </b>SOMSAI UKHRUL DISTT MANIPUR<br />
+                                            <b>Website : </b>https://assamriflesschoolsomsai.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>80</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280003<br />
+                                            <b>Sch. Code:</b>39335
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFFLES PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>DR ALKA JAIN</td>
+                                        <td>
+                                            <b>Address : </b>MANTRIPUKHRI IMPHAL MANIPUR<br />
+                                            <b>Website : </b>www.arpsmantripukhri.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>81</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280004<br />
+                                            <b>Sch. Code:</b>35312
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>CHANDEL</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL (HIGH SCHOOL) PALLEL <br /> <b>Head/Principal Name: </b>Amruta Nair</td>
+                                        <td>
+                                            <b>Address : </b>CARE OF HQ 26 SEC. ASSAM RIFLES, PALLEI DISTT. CHANDEL, MANIPUR- 795 135<br />
+                                            <b>Website : </b>www.arpspallel.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>82</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280006<br />
+                                            <b>Sch. Code:</b>35280
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> JWALAMUKHI PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Nirmal Dey</td>
+                                        <td>
+                                            <b>Address : </b>C/O 21 ASSAM RIFLES C/O 99 APO MANIPUR<br />
+                                            <b>Website : </b>www.jpsjwalamukhi.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>83</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280007<br />
+                                            <b>Sch. Code:</b>35279
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Sanjay Kumar</td>
+                                        <td>
+                                            <b>Address : </b>KEITHELMANBI, BPO NEW KEITHAL, MAMBI, PO LANGJING, IMPHAL, WEST MANIPUR<br />
+                                            <b>Website : </b>www.arps-keithelmanbi.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>84</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280008<br />
+                                            <b>Sch. Code:</b>35316
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>THOUBAL</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES JR HIGH SCHOOL <br /> <b>Head/Principal Name: </b>YENGKHOM RAHUL SINGH</td>
+                                        <td>
+                                            <b>Address : </b>P.S.- KAKCHING, DISTT. THOUBAL, MANIPUR<br />
+                                            <b>Website : </b>www.arpskakching.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>85</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1280009<br />
+                                            <b>Sch. Code:</b>35318
+                                            </td>
+                                        <td><b>State : </b>MANIPUR<br /><b>District : </b>IMPHAL-WEST</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NATIONAL SPORTS ACADEMY, <br /> <b>Head/Principal Name: </b>Ranbir Sarangthem</td>
+                                        <td>
+                                            <b>Address : </b>KHUMAN, LAMPAK, SPORTS COMPLEX, IMPHAL- 795 001<br />
+                                            <b>Website : </b>www.nsaimphal.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1280009">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMjjhTXUEe3ul0U-04nNCjVRUmlmAvLo80osi8q4eEzfn0KZ7y_VAm4MhvSDR5yTlWH-RG0Mdn1yGHQf14yE3yltHB6Wv48j0urpJO6QmyiMP77FUZOSct_AG4Sl9uxeS8_A" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__OxUUc6FxdL1lGR2HDdyVfiqtvLpWaCHw6tc02abElmWsNo7ntRObuou8-bwJbdRR"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025497071;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0428",
+    "name": "SIKKIM UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "GANGTOK",
+    "address": "6th Mile, Samdur, Tadong, Gangtok",
+    "pincode": "737102",
+    "yearEstablished": 2007,
+    "website": "https://cus.ac.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0429",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY SIKKIM",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "GYALSHING",
+    "address": "Ravangla, South Sikkim",
+    "pincode": "737139",
+    "yearEstablished": 2010,
+    "website": "http://www.nitsikkim.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-18200",
+    "name": "SIKKIM MANIPAL INSTITUTE OF MEDICAL SCIENCES (SMIMS)",
+    "level": "Medical institutions",
+    "type": "Private Medical College",
+    "district": "GANGTOK",
+    "address": "5th Mile, Tadong, Gangtok",
+    "pincode": "737102",
+    "yearEstablished": 1999,
+    "nmcId": "NMC-SK-MED-001",
+    "website": "https://smu.edu.in/smims.html",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]

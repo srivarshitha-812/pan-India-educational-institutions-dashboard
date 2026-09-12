@@ -1,0 +1,90 @@
+[
+  {
+    "name": "OSMANIA UNIVERSITY",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "HYDERABAD",
+    "address": "Administrative Building, Osmania University Campus, Hyderabad",
+    "pincode": "500007",
+    "yearEstablished": 1918,
+    "website": "https://www.osmania.ac.in",
+    "ugc_ref_code": "UGC-OU-1918"
+  },
+  {
+    "name": "JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD (JNTUH)",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "HYDERABAD",
+    "address": "Kukatpally, Housing Board Colony, Hyderabad",
+    "pincode": "500085",
+    "yearEstablished": 1972,
+    "website": "https://jntuh.ac.in",
+    "ugc_ref_code": "UGC-JNTUH-1972"
+  },
+  {
+    "name": "UNIVERSITY OF HYDERABAD (HCU)",
+    "type": "Central University",
+    "management": "Central Government",
+    "district": "HYDERABAD",
+    "address": "Prof. C.R. Rao Road, Gachibowli, Hyderabad",
+    "pincode": "500046",
+    "yearEstablished": 1974,
+    "website": "https://uohyd.ac.in",
+    "ugc_ref_code": "UGC-UOH-1974"
+  },
+  {
+    "name": "KAKATIYA UNIVERSITY",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "HANUMAKONDA",
+    "address": "Vidyaranyapuri, Hanamkonda, Warangal",
+    "pincode": "506009",
+    "yearEstablished": 1976,
+    "website": "https://kakatiya.ac.in",
+    "ugc_ref_code": "UGC-KU-1976"
+  },
+  {
+    "name": "MAHATMA GANDHI UNIVERSITY",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "NALGONDA",
+    "address": "Anneparthy, Yellareddyguda, Nalgonda",
+    "pincode": "508254",
+    "yearEstablished": 2007,
+    "website": "https://mguniversity.ac.in",
+    "ugc_ref_code": "UGC-MGU-2007"
+  },
+  {
+    "name": "TELANGANA UNIVERSITY",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "NIZAMABAD",
+    "address": "Dichpally, Nizamabad",
+    "pincode": "503322",
+    "yearEstablished": 2006,
+    "website": "https://telanganauniversity.ac.in",
+    "ugc_ref_code": "UGC-TU-2006"
+  },
+  {
+    "name": "PALAMURU UNIVERSITY",
+    "type": "State Public University",
+    "management": "State Government",
+    "district": "MAHABUBNAGAR",
+    "address": "Bandameedipally, Mahabubnagar",
+    "pincode": "509001",
+    "yearEstablished": 2008,
+    "website": "https://palamuruuniversity.ac.in",
+    "ugc_ref_code": "UGC-PU-2008"
+  },
+  {
+    "name": "INTERNATIONAL INSTITUTE OF INFORMATION TECHNOLOGY HYDERABAD (IIIT-H)",
+    "type": "Deemed to be University",
+    "management": "Private / Non-Profit",
+    "district": "HYDERABAD",
+    "address": "Prof. C R Rao Road, Gachibowli, Hyderabad",
+    "pincode": "500032",
+    "yearEstablished": 1998,
+    "website": "https://www.iiit.ac.in",
+    "ugc_ref_code": "UGC-IIITH-1998"
+  }
+]

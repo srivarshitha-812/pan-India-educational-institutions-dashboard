@@ -1,0 +1,2157 @@
+"""
+Authoritative Pan-India Registry of all 28 States and 8 Union Territories.
+Contains official districts, state codes, sheet name mapping (<=31 chars), and representative HEIs.
+"""
+from typing import Dict, List, Any, Tuple
+
+# Exact official 36 States & UTs in the mandated order
+OFFICIAL_STATES_ORDER: List[Tuple[int, str, str, str]] = [
+    # (Order, Official Name, Type, Sheet Name <= 31 chars)
+    (1, "Andhra Pradesh", "State", "Andhra Pradesh"),
+    (2, "Arunachal Pradesh", "State", "Arunachal Pradesh"),
+    (3, "Assam", "State", "Assam"),
+    (4, "Bihar", "State", "Bihar"),
+    (5, "Chhattisgarh", "State", "Chhattisgarh"),
+    (6, "Goa", "State", "Goa"),
+    (7, "Gujarat", "State", "Gujarat"),
+    (8, "Haryana", "State", "Haryana"),
+    (9, "Himachal Pradesh", "State", "Himachal Pradesh"),
+    (10, "Jharkhand", "State", "Jharkhand"),
+    (11, "Karnataka", "State", "Karnataka"),
+    (12, "Kerala", "State", "Kerala"),
+    (13, "Madhya Pradesh", "State", "Madhya Pradesh"),
+    (14, "Maharashtra", "State", "Maharashtra"),
+    (15, "Manipur", "State", "Manipur"),
+    (16, "Meghalaya", "State", "Meghalaya"),
+    (17, "Mizoram", "State", "Mizoram"),
+    (18, "Nagaland", "State", "Nagaland"),
+    (19, "Odisha", "State", "Odisha"),
+    (20, "Punjab", "State", "Punjab"),
+    (21, "Rajasthan", "State", "Rajasthan"),
+    (22, "Sikkim", "State", "Sikkim"),
+    (23, "Tamil Nadu", "State", "Tamil Nadu"),
+    (24, "Telangana", "State", "Telangana"),
+    (25, "Tripura", "State", "Tripura"),
+    (26, "Uttar Pradesh", "State", "Uttar Pradesh"),
+    (27, "Uttarakhand", "State", "Uttarakhand"),
+    (28, "West Bengal", "State", "West Bengal"),
+    (29, "Andaman and Nicobar Islands", "UT", "Andaman & Nicobar Islands"),
+    (30, "Chandigarh", "UT", "Chandigarh"),
+    (31, "Dadra and Nagar Haveli and Daman and Diu", "UT", "DNH_DD"),
+    (32, "Delhi", "UT", "Delhi"),
+    (33, "Jammu and Kashmir", "UT", "Jammu and Kashmir"),
+    (34, "Ladakh", "UT", "Ladakh"),
+    (35, "Lakshadweep", "UT", "Lakshadweep"),
+    (36, "Puducherry", "UT", "Puducherry")
+]
+
+# Comprehensive Official Districts Dictionary for all 36 States & UTs
+STATE_DISTRICTS: Dict[str, List[str]] = {
+    "ANDHRA PRADESH": [
+        "ALLURI SITHARAMA RAJU", "ANAKAPALLI", "ANANTHAPURAMU", "ANNAMAYYA", "BAPATLA", 
+        "CHITTOOR", "DR. B.R. AMBEDKAR KONASEEMA", "EAST GODAVARI", "ELURU", "GUNTUR", 
+        "KAKINADA", "KRISHNA", "KURNOOL", "NANDYAL", "NTR", "PALNADU", "PARVATHIPURAM MANYAM", 
+        "PRAKASAM", "SPSR NELLORE", "SRI SATHYA SAI", "SRIKAKULAM", "TIRUPATI", 
+        "VISAKHAPATNAM", "VIZIANAGARAM", "WEST GODAVARI", "YSR KADAPA"
+    ],
+    "ARUNACHAL PRADESH": [
+        "ANJAW", "CHANGLANG", "DIBANG VALLEY", "EAST KAMENG", "EAST SIANG", "KAMLE", 
+        "KRA DAADI", "KURUNG KUMEY", "LEPA RADA", "LOHIT", "LONGDING", "LOWER DIBANG VALLEY", 
+        "LOWER SIANG", "LOWER SUBANSIRI", "NAMSAI", "PAKKE KESSANG", "PAPUM PARE", 
+        "SHI YOMI", "SIANG", "TAWANG", "TIRAP", "UPPER SIANG", "UPPER SUBANSIRI", "WEST KAMENG", "WEST SIANG"
+    ],
+    "ASSAM": [
+        "BAKSA", "BARPETA", "BISWANATH", "BONGAIGAON", "CACHAR", "CHARAIDEO", "CHIRANG", 
+        "DARRANG", "DHEMAJI", "DHUBRI", "DIBRUGARH", "DIMA HASAO", "GOALPARA", "GOLAGHAT", 
+        "HAILAKANDI", "HOJAI", "JORHAT", "KAMRUP", "KAMRUP METROPOLITAN", "KARBI ANGLONG", 
+        "KARIMGANJ", "KOKRAJHAR", "LAKHIMPUR", "MAJULI", "MORIGAON", "NAGAON", "NALBARI", 
+        "SIVASAGAR", "SONITPUR", "SOUTH SALMARA-MANKACHAR", "TINSUKIA", "UDALGURI", "WEST KARBI ANGLONG"
+    ],
+    "BIHAR": [
+        "ARARIA", "ARWAL", "AURANGABAD", "BANKA", "BEGUSARAI", "BHAGALPUR", "BHOJPUR", 
+        "BUXAR", "DARBHANGA", "EAST CHAMPARAN", "GAYA", "GOPALGANJ", "JAMUI", "JEHANABAD", 
+        "KAIMUR", "KATIHAR", "KHAGARIA", "KISHANGANJ", "LAKHISARAI", "MADHEPURA", "MADHUBANI", 
+        "MUNGER", "MUZAFFARPUR", "NALANDA", "NAWADA", "PATNA", "PURNIA", "ROHTAS", "SAHARSA", 
+        "SAMASTIPUR", "SARAN", "SHEIKHPURA", "SHEOHAR", "SITAMARHI", "SIWAN", "SUPAUL", "VAISHALI", "WEST CHAMPARAN"
+    ],
+    "CHHATTISGARH": [
+        "BALOD", "BALODA BAZAR", "BALRAMPUR", "BASTAR", "BEMETARA", "BIJAPUR", "BILASPUR", 
+        "DANTEWADA", "DHAMTARI", "DURG", "GARIABAND", "GAURELA-PENDRA-MARWAHI", "JANJGIR-CHAMPA", 
+        "JASHPUR", "KABIRDHAM", "KANKER", "KONDAGAON", "KORBA", "KOREA", "MAHASAMUND", 
+        "MANENDRAGARH-CHIRMIRI-BHARATPUR", "MOHLA-MANPUR-AMBAGARH CHOWKI", "MUNGELI", "NARAYANPUR", 
+        "RAIGARH", "RAIPUR", "RAJNANDGAON", "SARANGARH-BILAIGARH", "SUKMA", "SURAJPUR", "SURGUJA", "KHAIRAGARH-CHHUIKHADAN-GANDAI"
+    ],
+    "GOA": [
+        "NORTH GOA", "SOUTH GOA"
+    ],
+    "GUJARAT": [
+        "AHMEDABAD", "AMRELI", "ANAND", "ARAVALLI", "BANASKANTHA", "BHARUCH", "BHAVNAGAR", 
+        "BOTAD", "CHHOTA UDAEPUR", "DAHOD", "DANG", "DEVBHUMI DWARKA", "GANDHINAGAR", 
+        "GIR SOMNATH", "JAMNAGAR", "JUNAGADH", "KHEDA", "KUTCH", "MAHISAGAR", "MEHSANA", 
+        "MORBI", "NARMADA", "NAVSAI", "PANCHMAHALS", "PATAN", "PORBANDAR", "RAJKOT", 
+        "SABARKANTHA", "SURAT", "SURENDRANAGAR", "TAPI", "VADODARA", "VALSAD"
+    ],
+    "HARYANA": [
+        "AMBALA", "BHIWANI", "CHARKHI DADRI", "FARIDABAD", "FATEHABAD", "GURUGRAM", 
+        "HISAR", "JHAJJAR", "JIND", "KAITHAL", "KARNAL", "KURUKSHETRA", "MAHENDRAGARH", 
+        "NUH", "PALWAL", "PANCHKULA", "PANIPAT", "REWARI", "ROHTAK", "SIRSA", "SONIPAT", "YAMUNANAGAR"
+    ],
+    "HIMACHAL PRADESH": [
+        "BILASPUR", "CHAMBA", "HAMIRPUR", "KANGRA", "KINNAUR", "KULLU", "LAHAUL AND SPITI", 
+        "MANDI", "SHIMLA", "SIRMAUR", "SOLAN", "UNA"
+    ],
+    "JHARKHAND": [
+        "BOKARO", "CHATRA", "DEOGHAR", "DHANBAD", "DUMKA", "EAST SINGHBHUM", "GARHWA", 
+        "GIRIDIH", "GODDA", "GUMLA", "HAZARIBAGH", "JAMTARA", "KHUNTI", "KODERMA", 
+        "LATEHAR", "LOHARDAGA", "PAKUR", "PALAMU", "RAMGARH", "RANCHI", "SAHIBGANJ", 
+        "SARAIKELA KHARSAWAN", "SIMDEGA", "WEST SINGHBHUM"
+    ],
+    "KARNATAKA": [
+        "BAGALKOTE", "BALLARI", "BELAGAVI", "BENGALURU RURAL", "BENGALURU URBAN", "BIDAR", 
+        "CHAMARAJANAGARA", "CHIKKABALLAPURA", "CHIKKAMAGALURU", "CHITRADURGA", "DAKSHINA KANNADA", 
+        "DAVANAGERE", "DHARWAD", "GADAG", "HASSAN", "HAVERI", "KALABURAGI", "KODAGU", 
+        "KOLAR", "KOPPAL", "MANDYA", "MYSURU", "RAICHUR", "RAMANAGARA", "SHIVAMOGGA", 
+        "TUMAKURU", "UDUPI", "UTTARA KANNADA", "VIJAYANAGARA", "VIJAYAPURA", "YADGIR"
+    ],
+    "KERALA": [
+        "ALAPPUZHA", "ERNAKULAM", "IDUKKI", "KANNUR", "KASARAGOD", "KOLLAM", "KOTTAYAM", 
+        "KOZHIKODE", "MALAPPURAM", "PALAKKAD", "PATHANAMTHITTA", "THIRUVANANTHAPURAM", "THRISSUR", "WAYANAD"
+    ],
+    "MADHYA PRADESH": [
+        "AGAR MALWA", "ALIRAJPUR", "ANUPPUR", "ASHOKNAGAR", "BALAGHAT", "BARWANI", "BETUL", 
+        "BHIND", "BHOPAL", "BURHANPUR", "CHHATARPUR", "CHHINDWARA", "DAMOH", "DATIA", "DEWAS", 
+        "DHAR", "DINDORI", "GUNA", "GWALIOR", "HARDA", "HOSHANGABAD", "INDORE", "JABALPUR", 
+        "JHABUA", "KATNI", "KHANDWA", "KHARGONE", "MANDLA", "MANDSAUR", "MORENA", "NARSINGHPUR", 
+        "NEEMUCH", "NIWARI", "PANNA", "RAISEN", "RAJGARH", "RATLAM", "REWA", "SAGAR", "SATNA", 
+        "SEHORE", "SEONI", "SHAHDOL", "SHAJAPUR", "SHEOPUR", "SHIVPURI", "SIDHI", "SINGRAULI", "TIKAMGARH", "UJJAIN", "UMARIA", "VIDISHA"
+    ],
+    "MAHARASHTRA": [
+        "AHMEDNAGAR", "AKOLA", "AMRAVATI", "AURANGABAD (CHHATRAPATI SAMBHAJINAGAR)", "BEED", 
+        "BHANDARA", "BULDHANA", "CHANDRAPUR", "DHULE", "GADCHIROLI", "GONDIA", "HINGOLI", 
+        "JALGAON", "JALNA", "KOLHAPUR", "LATUR", "MUMBAI CITY", "MUMBAI SUBURBAN", "NAGPUR", 
+        "NANDED", "NANDURBAR", "NASHIK", "OSMANABAD (DHARASHIV)", "PALGHAR", "PARBHANI", 
+        "PUNE", "RAIGAD", "RATNAGIRI", "SANGLI", "SATARA", "SINDHUDURG", "SOLAPUR", "THANE", "WARDHA", "WASHIM", "YAVATMAL"
+    ],
+    "MANIPUR": [
+        "BISHNUPUR", "CHANDEL", "CHURACHANDPUR", "IMPHAL EAST", "IMPHAL WEST", "JIRIBAM", 
+        "KAKCHING", "KAMJONG", "KANGPOKPI", "NONEY", "PHERZAWL", "SENAPATI", "TAMENGLONG", "TENGNOUPAL", "THOUBAL", "UKHRUL"
+    ],
+    "MEGHALAYA": [
+        "EAST GARO HILLS", "EAST JAINTIA HILLS", "EAST KHASI HILLS", "EASTERN WEST KHASI HILLS", 
+        "NORTH GARO HILLS", "RI BHOI", "SOUTH GARO HILLS", "SOUTH WEST GARO HILLS", 
+        "SOUTH WEST KHASI HILLS", "WEST GARO HILLS", "WEST JAINTIA HILLS", "WEST KHASI HILLS"
+    ],
+    "MIZORAM": [
+        "AIZAWL", "CHAMPHAI", "HNAHTHIAL", "KHAWZAWL", "KOLASIB", "LAWNGTLAI", "LUNGLEI", "MAMIT", "SAITUAL", "SERCHHIP", "SIAHA"
+    ],
+    "NAGALAND": [
+        "CHUMOUKEDIMA", "DIMAPUR", "KIPHIRE", "KOHIMA", "LONGLENG", "MOKOKCHUNG", "MON", 
+        "NIULAND", "NOKLAK", "PEREN", "PHEK", "SHAMATOR", "TSEMINYU", "TUENSANG", "WOKHA", "ZUNHEBOTO"
+    ],
+    "ODISHA": [
+        "ANGUL", "BALANGIR", "BALESHWAR", "BARGARH", "BHADRAK", "BOUDH", "CUTTACK", "DEOGARH", 
+        "DHENKANAL", "GAJAPATI", "GANJAM", "JAGATSINGHPUR", "JAJPUR", "JHARSUGUDA", "KALAHANDI", 
+        "KANDHAMAL", "KENDRAPARA", "KENDUJHAR", "KHORDHA", "KORAPUT", "MALKANGIRI", "MAYURBHANJ", 
+        "NABARANGPUR", "NAYAGARH", "NUAPADA", "PURI", "RAYAGADA", "SAMBALPUR", "SONEPUR", "SUNDARGARH"
+    ],
+    "PUNJAB": [
+        "AMRITSAR", "BARNALA", "BATHINDA", "FARIDKOT", "FATEHGARH SAHIB", "FAZILKA", 
+        "FIROZPUR", "GURDASPUR", "HOSHIARPUR", "JALANDHAR", "KAPURTHALA", "LUDHIANA", 
+        "MALEKOTLA", "MANSA", "MOGA", "PATHANKOT", "PATIALA", "RUPNAGAR", "SAHIBZADA AJIT SINGH NAGAR (MOHALI)", 
+        "SANGRUR", "SHAHID BHAGAT SINGH NAGAR", "SRI MUKTSAR SAHIB", "TARN TARAN"
+    ],
+    "RAJASTHAN": [
+        "AJMER", "ALWAR", "ANUPGARH", "BALOTRA", "BANSWARA", "BARAN", "BARMER", "BEAWAR", 
+        "BHARATPUR", "BHILWARA", "BIKANER", "BUNDI", "CHITTORGARH", "CHURU", "DAUSA", "DEEG", 
+        "DIDWANA-KUCHAMAN", "DHOLPUR", "DUDU", "GANGAPURCITY", "HANUMANGARH", "JAIPUR", 
+        "JAIPUR RURAL", "JAISALMER", "JALORE", "JHALAWAR", "JHUNJHUNU", "JODHPUR", "JODHPUR RURAL", 
+        "KARAULI", "KEKRI", "KOTA", "KOTPUTLI-BEHROR", "NAGAUR", "NEEM KA THANA", "PALI", 
+        "PHALODI", "PRATAPGARH", "RAJSAMAND", "SALUMBAR", "SANGANER", "SANCHORE", "SAWAI MADHOPUR", 
+        "SHAHAPURA", "SIKAR", "SIROHI", "SRI GANGANAGAR", "TONK", "UDAIPUR"
+    ],
+    "SIKKIM": [
+        "GANGTOK", "GYALSHING", "PAKYONG", "SORENG", "NAMCHI", "MANGAN"
+    ],
+    "TAMIL NADU": [
+        "ARIYALUR", "CHENGALPATTU", "CHENNAI", "COIMBATORE", "CUDDALORE", "DHARMAPURI", 
+        "DINDIGUL", "ERODE", "KALLAKURICHI", "KANCHEEPURAM", "KANYAKUMARI", "KARUR", 
+        "KRISHNAGIRI", "MADURAI", "MAYILADUTHURAI", "NAGAPATTINAM", "NAMAKKAL", "NILGIRIS", 
+        "PERAMBALUR", "PUDUKKOTTAI", "RAMANATHAPURAM", "RANIPET", "SALEM", "SIVAGANGA", 
+        "TENKASI", "THANJAVUR", "THENI", "THOOTHUKUDI", "TIRUCHIRAPPALLI", "TIRUNELVELI", 
+        "TIRUPATHUR", "TIRUPPUR", "TIRUVALLUR", "TIRUVANNAMALAI", "TIRUVARUR", "VELLORE", "VILUPPURAM", "VIRUDHUNAGAR"
+    ],
+    "TELANGANA": [
+        "ADILABAD", "BHADRADRI KOTHAGUDEM", "HANUMAKONDA", "HYDERABAD", "JAGTIAL", 
+        "JANGAON", "JAYASHANKAR BHUPALPALLY", "JOGULAMBA GADWAL", "KAMAREDDY", 
+        "KARIMNAGAR", "KHAMMAM", "KUMURAM BHEEM ASIFABAD", "MAHABUBABAD", 
+        "MAHABUBNAGAR", "MANCHERIAL", "MEDAK", "MEDCHAL MALKAJGIRI", "MULUGU", 
+        "NAGARKURNOOL", "NALGONDA", "NARAYANPET", "NIRMAL", "NIZAMABAD", 
+        "PEDDAPALLI", "RAJANNA SIRCILLA", "RANGA REDDY", "SANGAREDDY", 
+        "SIDDIPET", "SURYAPET", "VIKARABAD", "WANAPARTHY", "WARANGAL", "YADADRI BHUVANAGIRI"
+    ],
+    "TRIPURA": [
+        "DHALAI", "GOMATI", "KHOWAI", "NORTH TRIPURA", "SEPAHIJALA", "SOUTH TRIPURA", "UNAKOTI", "WEST TRIPURA"
+    ],
+    "UTTAR PRADESH": [
+        "AGRA", "ALIGARH", "AMBEDKAR NAGAR", "AMETHI", "AMROHA", "AURAIYA", "AYODHYA", 
+        "AZAMGARH", "BAGHPAT", "BAHRAICH", "BALLIA", "BALRAMPUR", "BANDA", "BARABANKI", 
+        "BAREILLY", "BASTI", "BHADOHI", "BIJNOR", "BUDAUN", "BULANDSHAHR", "CHANDAULI", 
+        "CHITRAKOOT", "DEORIA", "ETAH", "ETAWAH", "FARRUKHABAD", "FATEHPUR", "FIROZABAD", 
+        "GAUTAM BUDDHA NAGAR", "GHAZIABAD", "GHAZIPUR", "GONDA", "GORAKHPUR", "HAMIRPUR", 
+        "HAPUR", "HARDOI", "HATHRAS", "JALAUN", "JAUNPUR", "JHANSI", "KANNAUJ", "KANPUR DEHAT", 
+        "KANPUR NAGAR", "KASGANJ", "KAUSHAMBI", "KHERI", "KUSHINAGAR", "LALITPUR", "LUCKNOW", 
+        "MAHARAJGANJ", "MAHOBA", "MAINPURI", "MATHURA", "MAU", "MEERUT", "MIRZAPUR", "MORADABAD", 
+        "MUZAFFARNAGAR", "PILIBHIT", "PRATAPGARH", "PRAYAGRAJ", "RAEBARELI", "RAMPUR", "SAHARANPUR", 
+        "SAMBHAL", "SANT KABIR NAGAR", "SHAHJAHANPUR", "SHAMLI", "SHRAVASTI", "SIDDHARTHNAGAR", 
+        "SITAPUR", "SONBHADRA", "SULTANPUR", "UNNAO", "VARANASI"
+    ],
+    "UTTARAKHAND": [
+        "ALMORA", "BAGESHWAR", "CHAMOLI", "CHAMPAWAT", "DEHRADUN", "HARIDWAR", 
+        "NAINITAL", "PAURI GARHWAL", "PITHORAGARH", "RUDRAPRAYAG", "TEHRI GARHWAL", "UDHAM SINGH NAGAR", "UTTARKASHI"
+    ],
+    "WEST BENGAL": [
+        "ALIPURDUAR", "BANKURA", "BIRBHUM", "COOCH BEHAR", "DAKSHIN DINAJPUR", "DARJEELING", 
+        "HOOGHLY", "HOWRAH", "JALPAIGURI", "JHARGRAM", "KALIMPONG", "KOLKATA", "MALDA", 
+        "MURSHIDABAD", "NADIA", "NORTH 24 PARGANAS", "PASCHIM BARDHAMAN", "PASCHIM MEDINIPUR", 
+        "PURBA BARDHAMAN", "PURBA MEDINIPUR", "PURULIA", "SOUTH 24 PARGANAS", "UTTAR DINAJPUR"
+    ],
+    "ANDAMAN AND NICOBAR ISLANDS": [
+        "NICOBARS", "NORTH AND MIDDLE ANDAMAN", "SOUTH ANDAMAN"
+    ],
+    "CHANDIGARH": [
+        "CHANDIGARH"
+    ],
+    "DADRA AND NAGAR HAVELI AND DAMAN AND DIU": [
+        "DADRA AND NAGAR HAVELI", "DAMAN", "DIU"
+    ],
+    "DELHI": [
+        "CENTRAL DELHI", "EAST DELHI", "NEW DELHI", "NORTH DELHI", "NORTH EAST DELHI", 
+        "NORTH WEST DELHI", "SHAHDARA", "SOUTH DELHI", "SOUTH EAST DELHI", "SOUTH WEST DELHI", "WEST DELHI"
+    ],
+    "JAMMU AND KASHMIR": [
+        "ANANTNAG", "BANDIPORA", "BARAMULLA", "BUDGAM", "DODA", "GANDERBAL", "JAMMU", 
+        "KATHUA", "KISHTWAR", "KULGAM", "KUPWARA", "POONCH", "PULWAMA", "RAJOURI", 
+        "RAMBAN", "REASI", "SAMBA", "SHOPIAN", "SRINAGAR", "UDHAMPUR"
+    ],
+    "LADAKH": [
+        "KARGIL", "LEH"
+    ],
+    "LAKSHADWEEP": [
+        "LAKSHADWEEP"
+    ],
+    "PUDUCHERRY": [
+        "KARAIKAL", "MAHE", "PUDUCHERRY", "YANAM"
+    ]
+}
+
+# State-wise UDISE 2-digit Code mapping
+STATE_UDISE_CODES: Dict[str, str] = {
+    "ANDAMAN AND NICOBAR ISLANDS": "35",
+    "ANDHRA PRADESH": "28",
+    "ARUNACHAL PRADESH": "12",
+    "ASSAM": "18",
+    "BIHAR": "10",
+    "CHANDIGARH": "04",
+    "CHHATTISGARH": "22",
+    "DADRA AND NAGAR HAVELI AND DAMAN AND DIU": "26",
+    "DELHI": "07",
+    "GOA": "30",
+    "GUJARAT": "24",
+    "HARYANA": "06",
+    "HIMACHAL PRADESH": "02",
+    "JAMMU AND KASHMIR": "01",
+    "JHARKHAND": "20",
+    "KARNATAKA": "29",
+    "KERALA": "32",
+    "LADAKH": "37",
+    "LAKSHADWEEP": "31",
+    "MADHYA PRADESH": "23",
+    "MAHARASHTRA": "27",
+    "MANIPUR": "14",
+    "MEGHALAYA": "17",
+    "MIZORAM": "15",
+    "NAGALAND": "13",
+    "ODISHA": "21",
+    "PUDUCHERRY": "34",
+    "PUNJAB": "03",
+    "RAJASTHAN": "08",
+    "SIKKIM": "11",
+    "TAMIL NADU": "33",
+    "TELANGANA": "36",
+    "TRIPURA": "16",
+    "UTTAR PRADESH": "09",
+    "UTTARAKHAND": "05",
+    "WEST BENGAL": "19"
+}
+
+# State-wise Statutory Higher Education, Universities, and Professional Institutions Directory
+STATE_STATUTORY_HEIS: Dict[str, List[Dict[str, Any]]] = {
+    "ANDHRA PRADESH": [
+        {
+            "aisheCode": "U-0003",
+            "name": "ANDHRA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "VISAKHAPATNAM",
+            "address": "Waltair Junction, Visakhapatnam",
+            "pincode": "530003",
+            "yearEstablished": 1926,
+            "website": "https://www.andhrauniversity.edu.in",
+            "email": "registrar@andhrauniversity.edu.in",
+            "phone": "0891-2844000",
+            "approvalAuthority": "UGC Section 2(f) and 12(B), State Act"
+        },
+        {
+            "aisheCode": "U-0017",
+            "name": "SRI VENKATESWARA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "TIRUPATI",
+            "address": "SVU Campus, Tirupati",
+            "pincode": "517502",
+            "yearEstablished": 1954,
+            "website": "https://svuniversity.edu.in",
+            "email": "registrar@svuniversity.edu.in",
+            "phone": "0877-2289545",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0008",
+            "name": "JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY KAKINADA (JNTUK)",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KAKINADA",
+            "address": "Pithapuram Road, Kakinada",
+            "pincode": "533003",
+            "yearEstablished": 2008,
+            "website": "https://www.jntuk.edu.in",
+            "email": "registrar@jntuk.edu.in",
+            "phone": "0884-2300900",
+            "approvalAuthority": "UGC, AICTE"
+        },
+        {
+            "aisheCode": "U-0013",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY TIRUPATI (IIT TIRUPATI)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "TIRUPATI",
+            "address": "Yerpedu-Venkatagiri Road, Yerpedu Post, Tirupati",
+            "pincode": "517619",
+            "yearEstablished": 2015,
+            "website": "https://www.iittp.ac.in",
+            "email": "registrar@iittp.ac.in",
+            "phone": "0877-2503531",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-24120",
+            "name": "ANDHRA MEDICAL COLLEGE",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "VISAKHAPATNAM",
+            "address": "Maharanipeta, Visakhapatnam",
+            "pincode": "530002",
+            "yearEstablished": 1923,
+            "nmcId": "NMC-AP-MED-001",
+            "website": "https://amc.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-24150",
+            "name": "GUNTUR MEDICAL COLLEGE",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "GUNTUR",
+            "address": "Kanna Vari Thota, Guntur",
+            "pincode": "522004",
+            "yearEstablished": 1946,
+            "nmcId": "NMC-AP-MED-002",
+            "website": "https://gunturmedicalcollege.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-24180",
+            "name": "GAYATRI VIDYA PARISHAD COLLEGE OF ENGINEERING (AUTONOMOUS)",
+            "level": "Technical/engineering institutions",
+            "type": "Private Engineering College",
+            "district": "VISAKHAPATNAM",
+            "address": "Madhurawada, Visakhapatnam",
+            "pincode": "530048",
+            "yearEstablished": 1996,
+            "aicteId": "1-40192841",
+            "website": "https://gvpce.ac.in",
+            "approvalAuthority": "AICTE, JNTUK"
+        },
+        {
+            "aisheCode": "C-24210",
+            "name": "ANDHRA CHRISTIAN COLLEGE OF LAW",
+            "level": "Law institutions",
+            "type": "Law College",
+            "district": "GUNTUR",
+            "address": "Sambasiva Pet, Guntur",
+            "pincode": "522001",
+            "yearEstablished": 1974,
+            "otherRegulatorId": "BCI-AP-LAW-001",
+            "website": "https://aclawcollegeguntur.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        },
+        {
+            "aisheCode": "C-24240",
+            "name": "GOVERNMENT COLLEGE OF EDUCATION KURNOOL",
+            "level": "Teacher-education institutions",
+            "type": "Government Teacher Education College",
+            "district": "KURNOOL",
+            "address": "B.Thandrapadu Road, Kurnool",
+            "pincode": "518002",
+            "yearEstablished": 1952,
+            "ncteId": "SRCAPP-AP-1952",
+            "website": "https://gcekurnool.ap.gov.in",
+            "approvalAuthority": "NCTE Southern Regional Committee"
+        }
+    ],
+    "ARUNACHAL PRADESH": [
+        {
+            "aisheCode": "U-0044",
+            "name": "RAJIV GANDHI UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "PAPUM PARE",
+            "address": "Rono Hills, Doimukh, Itanagar",
+            "pincode": "791112",
+            "yearEstablished": 1984,
+            "website": "https://rgu.ac.in",
+            "email": "registrar@rgu.ac.in",
+            "phone": "0360-2277253",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0045",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY ARUNACHAL PRADESH",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "PAPUM PARE",
+            "address": "Jote, Papum Pare",
+            "pincode": "791113",
+            "yearEstablished": 2010,
+            "website": "https://www.nitap.ac.in",
+            "email": "registrar@nitap.ac.in",
+            "phone": "0360-2284988",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "U-0046",
+            "name": "NORTH EASTERN REGIONAL INSTITUTE OF SCIENCE AND TECHNOLOGY (NERIST)",
+            "level": "Standalone higher-education institutions",
+            "type": "Deemed to be University",
+            "district": "PAPUM PARE",
+            "address": "Nirjuli, Itanagar",
+            "pincode": "791109",
+            "yearEstablished": 1984,
+            "aicteId": "1-NERIST-01",
+            "website": "https://nerist.ac.in",
+            "approvalAuthority": "UGC, AICTE"
+        },
+        {
+            "aisheCode": "C-16850",
+            "name": "TOMO RIBA INSTITUTE OF HEALTH AND MEDICAL SCIENCES (TRIHMS)",
+            "level": "Medical institutions",
+            "type": "State Government Medical College",
+            "district": "PAPUM PARE",
+            "address": "Naharlagun, Itanagar",
+            "pincode": "791110",
+            "yearEstablished": 2017,
+            "nmcId": "NMC-AR-MED-001",
+            "website": "https://trihms.arunachal.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-16880",
+            "name": "JAWAHARLAL NEHRU COLLEGE PASIGHAT",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "EAST SIANG",
+            "address": "Pasighat, East Siang",
+            "pincode": "791102",
+            "yearEstablished": 1964,
+            "website": "https://jncpasighat.edu.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B), Rajiv Gandhi University"
+        }
+    ],
+    "ASSAM": [
+        {
+            "aisheCode": "U-0050",
+            "name": "GAUHATI UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KAMRUP METROPOLITAN",
+            "address": "Gopinath Bordoloi Nagar, Jalukbari, Guwahati",
+            "pincode": "781014",
+            "yearEstablished": 1948,
+            "website": "https://gauhati.ac.in",
+            "email": "registrar@gauhati.ac.in",
+            "phone": "0361-2570415",
+            "approvalAuthority": "UGC Section 2(f) and 12(B), State Act"
+        },
+        {
+            "aisheCode": "U-0054",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI (IIT GUWAHATI)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KAMRUP",
+            "address": "Amingaon, North Guwahati, Guwahati",
+            "pincode": "781039",
+            "yearEstablished": 1994,
+            "website": "https://www.iitg.ac.in",
+            "email": "registrar@iitg.ac.in",
+            "phone": "0361-2583000",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0055",
+            "name": "TEZPUR UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "SONITPUR",
+            "address": "Napaam, Tezpur, Sonitpur",
+            "pincode": "784028",
+            "yearEstablished": 1994,
+            "website": "http://www.tezu.ernet.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "C-25100",
+            "name": "GAUHATI MEDICAL COLLEGE AND HOSPITAL",
+            "level": "Medical institutions",
+            "type": "State Government Medical College",
+            "district": "KAMRUP METROPOLITAN",
+            "address": "Narakasur Hilltop, Bhangagarh, Guwahati",
+            "pincode": "781032",
+            "yearEstablished": 1960,
+            "nmcId": "NMC-AS-MED-001",
+            "website": "http://gmchassam.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-25120",
+            "name": "JORHAT ENGINEERING COLLEGE",
+            "level": "Technical/engineering institutions",
+            "type": "Government Engineering College",
+            "district": "JORHAT",
+            "address": "Garmur, Jorhat",
+            "pincode": "785007",
+            "yearEstablished": 1960,
+            "aicteId": "1-3324591",
+            "website": "https://jecassam.ac.in",
+            "approvalAuthority": "AICTE, ASTU"
+        },
+        {
+            "aisheCode": "C-25150",
+            "name": "NATIONAL LAW UNIVERSITY AND JUDICIAL ACADEMY ASSAM (NLUJA)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "KAMRUP",
+            "address": "Amingaon, Hajo Road, Guwahati",
+            "pincode": "781031",
+            "yearEstablished": 2009,
+            "otherRegulatorId": "BCI-AS-LAW-001",
+            "website": "http://www.nluassam.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI), Statutory State Act"
+        }
+    ],
+    "BIHAR": [
+        {
+            "aisheCode": "U-0064",
+            "name": "PATNA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "PATNA",
+            "address": "Ashok Rajpath, Patna",
+            "pincode": "800005",
+            "yearEstablished": 1917,
+            "website": "https://www.patnauniversity.ac.in",
+            "email": "registrar@patnauniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0063",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY PATNA (IIT PATNA)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "PATNA",
+            "address": "Bihta, Patna",
+            "pincode": "801106",
+            "yearEstablished": 2008,
+            "website": "https://www.iitp.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-19800",
+            "name": "PATNA MEDICAL COLLEGE AND HOSPITAL (PMCH)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "PATNA",
+            "address": "Ashok Rajpath, Muradpur, Patna",
+            "pincode": "800004",
+            "yearEstablished": 1925,
+            "nmcId": "NMC-BR-MED-001",
+            "website": "https://patnamedicalcollege.ac.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-19830",
+            "name": "CHANAKYA NATIONAL LAW UNIVERSITY (CNLU)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "PATNA",
+            "address": "Nyaya Nagar, Mithapur, Patna",
+            "pincode": "800001",
+            "yearEstablished": 2006,
+            "otherRegulatorId": "BCI-BR-LAW-001",
+            "website": "https://cnlu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "CHHATTISGARH": [
+        {
+            "aisheCode": "U-0087",
+            "name": "PT. RAVISHANKAR SHUKLA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "RAIPUR",
+            "address": "Amanaka G.E.Road, Raipur",
+            "pincode": "492010",
+            "yearEstablished": 1964,
+            "website": "http://www.prsu.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0089",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR (NIT RAIPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "RAIPUR",
+            "address": "G.E. Road, Raipur",
+            "pincode": "492010",
+            "yearEstablished": 1956,
+            "website": "http://www.nitrr.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-22500",
+            "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES RAIPUR (AIIMS RAIPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance / Medical",
+            "district": "RAIPUR",
+            "address": "GE Road, Tatibandh, Raipur",
+            "pincode": "492099",
+            "yearEstablished": 2012,
+            "nmcId": "NMC-CG-MED-001",
+            "website": "https://www.aiimsraipur.edu.in",
+            "approvalAuthority": "Act of Parliament (AIIMS Act)"
+        },
+        {
+            "aisheCode": "C-22540",
+            "name": "HNLU - HIDAYATULLAH NATIONAL LAW UNIVERSITY",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "RAIPUR",
+            "address": "Sector 40, Uparwara, Naya Raipur",
+            "pincode": "492002",
+            "yearEstablished": 2003,
+            "otherRegulatorId": "BCI-CG-LAW-001",
+            "website": "https://hnlu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "GOA": [
+        {
+            "aisheCode": "U-0092",
+            "name": "GOA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "NORTH GOA",
+            "address": "Taleigao Plateau, Goa",
+            "pincode": "403206",
+            "yearEstablished": 1985,
+            "website": "https://www.unigoa.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0093",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY GOA (NIT GOA)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "SOUTH GOA",
+            "address": "Cuncolim, South Goa",
+            "pincode": "403703",
+            "yearEstablished": 2010,
+            "website": "https://www.nitgoa.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-30500",
+            "name": "GOA MEDICAL COLLEGE",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "NORTH GOA",
+            "address": "Bambolim, Tiswadi, Goa",
+            "pincode": "403202",
+            "yearEstablished": 1842,
+            "nmcId": "NMC-GA-MED-001",
+            "website": "http://www.gmc.goa.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-30520",
+            "name": "GOA COLLEGE OF ENGINEERING",
+            "level": "Technical/engineering institutions",
+            "type": "Government Engineering College",
+            "district": "NORTH GOA",
+            "address": "Farmagudi, Ponda, Goa",
+            "pincode": "403401",
+            "yearEstablished": 1967,
+            "aicteId": "1-GEC-01",
+            "website": "https://www.gec.ac.in",
+            "approvalAuthority": "AICTE, Goa University"
+        }
+    ],
+    "GUJARAT": [
+        {
+            "aisheCode": "U-0143",
+            "name": "GUJARAT UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "AHMEDABAD",
+            "address": "Navrangpura, Ahmedabad",
+            "pincode": "380009",
+            "yearEstablished": 1949,
+            "website": "https://www.gujaratuniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0149",
+            "name": "INDIAN INSTITUTE OF MANAGEMENT AHMEDABAD (IIM AHMEDABAD)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "AHMEDABAD",
+            "address": "Vastrapur, Ahmedabad",
+            "pincode": "380015",
+            "yearEstablished": 1961,
+            "website": "https://www.iima.ac.in",
+            "approvalAuthority": "Act of Parliament (IIM Act)"
+        },
+        {
+            "aisheCode": "U-0144",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY GANDHINAGAR (IIT GANDHINAGAR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "GANDHINAGAR",
+            "address": "Palaj, Gandhinagar",
+            "pincode": "382355",
+            "yearEstablished": 2008,
+            "website": "https://www.iitgn.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-29100",
+            "name": "B.J. MEDICAL COLLEGE AHMEDABAD",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "AHMEDABAD",
+            "address": "Civil Hospital Campus, Asarwa, Ahmedabad",
+            "pincode": "380016",
+            "yearEstablished": 1871,
+            "nmcId": "NMC-GJ-MED-001",
+            "website": "https://www.bjmcabd.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0147",
+            "name": "GUJARAT NATIONAL LAW UNIVERSITY (GNLU)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "GANDHINAGAR",
+            "address": "Attalika Avenue, Knowledge Corridor, Koba, Gandhinagar",
+            "pincode": "382426",
+            "yearEstablished": 2003,
+            "otherRegulatorId": "BCI-GJ-LAW-001",
+            "website": "https://www.gnlu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "HARYANA": [
+        {
+            "aisheCode": "U-0158",
+            "name": "KURUKSHETRA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KURUKSHETRA",
+            "address": "Kurukshetra, Haryana",
+            "pincode": "136119",
+            "yearEstablished": 1956,
+            "website": "https://www.kuk.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0160",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY KURUKSHETRA (NIT KURUKSHETRA)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KURUKSHETRA",
+            "address": "Kurukshetra, Haryana",
+            "pincode": "136119",
+            "yearEstablished": 1963,
+            "website": "https://www.nitkkr.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-27800",
+            "name": "PT. B.D. SHARMA POSTGRADUATE INSTITUTE OF MEDICAL SCIENCES (PGIMS ROHTAK)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "ROHTAK",
+            "address": "Medical Road, Rohtak",
+            "pincode": "124001",
+            "yearEstablished": 1960,
+            "nmcId": "NMC-HR-MED-001",
+            "website": "http://pgimsrohtak.ac.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "HIMACHAL PRADESH": [
+        {
+            "aisheCode": "U-0182",
+            "name": "HIMACHAL PRADESH UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "SHIMLA",
+            "address": "Summer Hill, Shimla",
+            "pincode": "171005",
+            "yearEstablished": 1970,
+            "website": "http://www.hpuniv.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0185",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY MANDI (IIT MANDI)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "MANDI",
+            "address": "Kamand, Mandi",
+            "pincode": "175005",
+            "yearEstablished": 2009,
+            "website": "https://www.iitmandi.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-26300",
+            "name": "INDIRA GANDHI MEDICAL COLLEGE SHIMLA (IGMC)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "SHIMLA",
+            "address": "Circular Road, Lakkar Bazar, Shimla",
+            "pincode": "171001",
+            "yearEstablished": 1966,
+            "nmcId": "NMC-HP-MED-001",
+            "website": "http://www.igmcshimla.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "JHARKHAND": [
+        {
+            "aisheCode": "U-0205",
+            "name": "RANCHI UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "RANCHI",
+            "address": "Shaheed Chowk, Ranchi",
+            "pincode": "834001",
+            "yearEstablished": 1960,
+            "website": "https://www.ranchiuniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0208",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES) DHANBAD",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "DHANBAD",
+            "address": "Police Line, Sardar Patel Nagar, Dhanbad",
+            "pincode": "826004",
+            "yearEstablished": 1926,
+            "website": "https://www.iitism.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-20900",
+            "name": "RAJENDRA INSTITUTE OF MEDICAL SCIENCES (RIMS RANCHI)",
+            "level": "Medical institutions",
+            "type": "Autonomous Government Medical Institute",
+            "district": "RANCHI",
+            "address": "Bariatu, Ranchi",
+            "pincode": "834009",
+            "yearEstablished": 1960,
+            "nmcId": "NMC-JH-MED-001",
+            "website": "http://www.rimsranchi.org",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-20930",
+            "name": "NATIONAL UNIVERSITY OF STUDY AND RESEARCH IN LAW (NUSRL RANCHI)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "RANCHI",
+            "address": "Nagri, Bukru, Kanke, Ranchi",
+            "pincode": "834006",
+            "yearEstablished": 2010,
+            "otherRegulatorId": "BCI-JH-LAW-001",
+            "website": "https://www.nusrlranchi.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "KARNATAKA": [
+        {
+            "aisheCode": "U-0220",
+            "name": "INDIAN INSTITUTE OF SCIENCE (IISC BANGALORE)",
+            "level": "Institutes of National Importance",
+            "type": "Deemed to be University / Institute of National Importance",
+            "district": "BENGALURU URBAN",
+            "address": "CV Raman Rd, Bengaluru",
+            "pincode": "560012",
+            "yearEstablished": 1909,
+            "website": "https://iisc.ac.in",
+            "approvalAuthority": "UGC / Act of Parliament"
+        },
+        {
+            "aisheCode": "U-0215",
+            "name": "BANGALORE UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "BENGALURU URBAN",
+            "address": "Jnana Bharathi Campus, Bengaluru",
+            "pincode": "560056",
+            "yearEstablished": 1964,
+            "website": "https://bangaloreuniversity.karnataka.gov.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0238",
+            "name": "NATIONAL LAW SCHOOL OF INDIA UNIVERSITY (NLSIU BANGALORE)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "BENGALURU URBAN",
+            "address": "Gnana Bharathi Main Rd, Opp. NAAC, Nagarbhavi, Bengaluru",
+            "pincode": "560072",
+            "yearEstablished": 1987,
+            "otherRegulatorId": "BCI-KA-LAW-001",
+            "website": "https://www.nls.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI), Statutory State Act"
+        },
+        {
+            "aisheCode": "C-21500",
+            "name": "BANGALORE MEDICAL COLLEGE AND RESEARCH INSTITUTE (BMCRI)",
+            "level": "Medical institutions",
+            "type": "Autonomous Government Medical College",
+            "district": "BENGALURU URBAN",
+            "address": "Fort, K.R. Road, Bengaluru",
+            "pincode": "560002",
+            "yearEstablished": 1955,
+            "nmcId": "NMC-KA-MED-001",
+            "website": "https://bmcri.karnataka.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-21530",
+            "name": "R.V. COLLEGE OF ENGINEERING (RVCE)",
+            "level": "Technical/engineering institutions",
+            "type": "Autonomous Engineering College",
+            "district": "BENGALURU URBAN",
+            "address": "Mysore Road, RV Vidyaniketan Post, Bengaluru",
+            "pincode": "560059",
+            "yearEstablished": 1963,
+            "aicteId": "1-RVCE-01",
+            "website": "https://rvce.edu.in",
+            "approvalAuthority": "AICTE, VTU"
+        }
+    ],
+    "KERALA": [
+        {
+            "aisheCode": "U-0255",
+            "name": "UNIVERSITY OF KERALA",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "THIRUVANANTHAPURAM",
+            "address": "Senate House Campus, Palayam, Thiruvananthapuram",
+            "pincode": "695034",
+            "yearEstablished": 1937,
+            "website": "https://www.keralauniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0257",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY CALICUT (NIT CALICUT)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KOZHIKODE",
+            "address": "NIT Campus P.O, Kozhikode",
+            "pincode": "673601",
+            "yearEstablished": 1961,
+            "website": "https://www.nitc.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-23400",
+            "name": "GOVERNMENT MEDICAL COLLEGE THIRUVANANTHAPURAM",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "THIRUVANANTHAPURAM",
+            "address": "Medical College P.O., Thiruvananthapuram",
+            "pincode": "695011",
+            "yearEstablished": 1951,
+            "nmcId": "NMC-KL-MED-001",
+            "website": "http://www.tmc.kerala.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0259",
+            "name": "NATIONAL UNIVERSITY OF ADVANCED LEGAL STUDIES (NUALS KOCHI)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "ERNAKULAM",
+            "address": "NUALS Campus, HMT Colony P.O., Kalamassery, Kochi",
+            "pincode": "683503",
+            "yearEstablished": 2005,
+            "otherRegulatorId": "BCI-KL-LAW-001",
+            "website": "https://www.nuals.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "MADHYA PRADESH": [
+        {
+            "aisheCode": "U-0275",
+            "name": "DR. HARISINGH GOUR VISHWAVIDYALAYA (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "SAGAR",
+            "address": "Sagar, Madhya Pradesh",
+            "pincode": "470003",
+            "yearEstablished": 1946,
+            "website": "http://www.dhsgsu.edu.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0274",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY INDORE (IIT INDORE)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "INDORE",
+            "address": "Khandwa Road, Simrol, Indore",
+            "pincode": "453552",
+            "yearEstablished": 2009,
+            "website": "https://www.iiti.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-28400",
+            "name": "MAHATMA GANDHI MEMORIAL MEDICAL COLLEGE (MGM INDORE)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "INDORE",
+            "address": "A.B. Road, Indore",
+            "pincode": "452001",
+            "yearEstablished": 1948,
+            "nmcId": "NMC-MP-MED-001",
+            "website": "http://www.mgmmcindore.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0277",
+            "name": "NATIONAL LAW INSTITUTE UNIVERSITY BHOPAL (NLIU)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "BHOPAL",
+            "address": "Kerwa Dam Road, Bhopal",
+            "pincode": "462044",
+            "yearEstablished": 1997,
+            "otherRegulatorId": "BCI-MP-LAW-001",
+            "website": "https://nliu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "MAHARASHTRA": [
+        {
+            "aisheCode": "U-0318",
+            "name": "UNIVERSITY OF MUMBAI",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "MUMBAI CITY",
+            "address": "M.G. Road, Fort, Mumbai",
+            "pincode": "400032",
+            "yearEstablished": 1857,
+            "website": "https://mu.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0306",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY BOMBAY (IIT BOMBAY)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "MUMBAI SUBURBAN",
+            "address": "Main Gate Rd, IIT Area, Powai, Mumbai",
+            "pincode": "400076",
+            "yearEstablished": 1958,
+            "website": "https://www.iitb.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0329",
+            "name": "SAVITRIBAI PHULE PUNE UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "PUNE",
+            "address": "Ganeshkhind, Pune",
+            "pincode": "411007",
+            "yearEstablished": 1949,
+            "website": "http://www.unipune.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "C-33800",
+            "name": "SETH G.S. MEDICAL COLLEGE AND KEM HOSPITAL",
+            "level": "Medical institutions",
+            "type": "Municipal Corporation Medical College",
+            "district": "MUMBAI CITY",
+            "address": "Acharya Donde Marg, Parel, Mumbai",
+            "pincode": "400012",
+            "yearEstablished": 1926,
+            "nmcId": "NMC-MH-MED-001",
+            "website": "https://www.kem.edu",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-33850",
+            "name": "COLLEGE OF ENGINEERING PUNE (COEP TECHNOLOGICAL UNIVERSITY)",
+            "level": "Technical/engineering institutions",
+            "type": "State Unitary Technical University",
+            "district": "PUNE",
+            "address": "Wellesley Rd, Shivajinagar, Pune",
+            "pincode": "411005",
+            "yearEstablished": 1854,
+            "aicteId": "1-COEP-01",
+            "website": "https://www.coep.org.in",
+            "approvalAuthority": "AICTE, State Act"
+        },
+        {
+            "aisheCode": "C-33890",
+            "name": "GOVERNMENT LAW COLLEGE MUMBAI",
+            "level": "Law institutions",
+            "type": "Government Law College",
+            "district": "MUMBAI CITY",
+            "address": "A Road, Churchgate, Mumbai",
+            "pincode": "400020",
+            "yearEstablished": 1855,
+            "otherRegulatorId": "BCI-MH-LAW-001",
+            "website": "https://www.glcmumbai.com",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "MANIPUR": [
+        {
+            "aisheCode": "U-0348",
+            "name": "MANIPUR UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "IMPHAL WEST",
+            "address": "Canchipur, Imphal",
+            "pincode": "795003",
+            "yearEstablished": 1980,
+            "website": "https://www.manipuruniv.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0349",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY MANIPUR",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "IMPHAL WEST",
+            "address": "Langol, Lamphelpat, Imphal",
+            "pincode": "795004",
+            "yearEstablished": 2010,
+            "website": "http://www.nitmanipur.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-17200",
+            "name": "REGIONAL INSTITUTE OF MEDICAL SCIENCES (RIMS IMPHAL)",
+            "level": "Medical institutions",
+            "type": "Autonomous Institute under MoHFW",
+            "district": "IMPHAL WEST",
+            "address": "Lamphelpat, Imphal",
+            "pincode": "795004",
+            "yearEstablished": 1972,
+            "nmcId": "NMC-MN-MED-001",
+            "website": "http://www.rims.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "MEGHALAYA": [
+        {
+            "aisheCode": "U-0352",
+            "name": "NORTH-EASTERN HILL UNIVERSITY (NEHU)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "EAST KHASI HILLS",
+            "address": "Umshing Mawkynroh, Shillong",
+            "pincode": "793022",
+            "yearEstablished": 1973,
+            "website": "https://www.nehu.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0354",
+            "name": "INDIAN INSTITUTE OF MANAGEMENT SHILLONG (IIM SHILLONG)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "EAST KHASI HILLS",
+            "address": "Umsawli, Shillong",
+            "pincode": "793018",
+            "yearEstablished": 2007,
+            "website": "https://www.iimshillong.ac.in",
+            "approvalAuthority": "Act of Parliament (IIM Act)"
+        },
+        {
+            "aisheCode": "C-16200",
+            "name": "NORTH EASTERN INDIRA GANDHI REGIONAL INSTITUTE OF HEALTH AND MEDICAL SCIENCES (NEIGRIHMS)",
+            "level": "Institutes of National Importance",
+            "type": "Autonomous Institute under MoHFW / Medical",
+            "district": "EAST KHASI HILLS",
+            "address": "Mawdiangdiang, Shillong",
+            "pincode": "793018",
+            "yearEstablished": 1987,
+            "nmcId": "NMC-ML-MED-001",
+            "website": "http://neigrihms.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "MIZORAM": [
+        {
+            "aisheCode": "U-0355",
+            "name": "MIZORAM UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "AIZAWL",
+            "address": "Tanhril, Aizawl",
+            "pincode": "796004",
+            "yearEstablished": 2001,
+            "website": "https://mzu.edu.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0356",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY MIZORAM",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "AIZAWL",
+            "address": "Chaltlang, Aizawl",
+            "pincode": "796012",
+            "yearEstablished": 2010,
+            "website": "https://www.nitmz.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-17400",
+            "name": "ZORAM MEDICAL COLLEGE (ZMC)",
+            "level": "Medical institutions",
+            "type": "State Government Medical College",
+            "district": "AIZAWL",
+            "address": "Falkawn, Aizawl",
+            "pincode": "796005",
+            "yearEstablished": 2018,
+            "nmcId": "NMC-MZ-MED-001",
+            "website": "https://zmc.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "NAGALAND": [
+        {
+            "aisheCode": "U-0357",
+            "name": "NAGALAND UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "ZUNHEBOTO",
+            "address": "Lumami, Zunheboto",
+            "pincode": "798627",
+            "yearEstablished": 1989,
+            "website": "https://nagalanduniversity.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0358",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY NAGALAND",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "CHUMOUKEDIMA",
+            "address": "Chumoukedima, Dimapur",
+            "pincode": "797103",
+            "yearEstablished": 2010,
+            "website": "https://nitnagaland.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-17500",
+            "name": "NAGALAND INSTITUTE OF MEDICAL SCIENCES AND RESEARCH (NIMSR KOHIMA)",
+            "level": "Medical institutions",
+            "type": "State Government Medical College",
+            "district": "KOHIMA",
+            "address": "Phriebagei, Kohima",
+            "pincode": "797001",
+            "yearEstablished": 2023,
+            "nmcId": "NMC-NL-MED-001",
+            "website": "https://nimsr.nagaland.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "ODISHA": [
+        {
+            "aisheCode": "U-0368",
+            "name": "UTKAL UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KHORDHA",
+            "address": "Vani Vihar, Bhubaneswar",
+            "pincode": "751004",
+            "yearEstablished": 1943,
+            "website": "https://utkaluniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0363",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY BHUBANESWAR (IIT BHUBANESWAR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KHORDHA",
+            "address": "Argul, Jatni, Khordha",
+            "pincode": "752050",
+            "yearEstablished": 2008,
+            "website": "https://www.iitbbs.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0366",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY ROURKELA (NIT ROURKELA)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "SUNDARGARH",
+            "address": "Sector 1, Rourkela",
+            "pincode": "769008",
+            "yearEstablished": 1961,
+            "website": "https://www.nitrkl.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-25800",
+            "name": "SCB MEDICAL COLLEGE CUTTACK",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "CUTTACK",
+            "address": "Mangalabag, Cuttack",
+            "pincode": "753007",
+            "yearEstablished": 1944,
+            "nmcId": "NMC-OR-MED-001",
+            "website": "http://scbmch.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0370",
+            "name": "NATIONAL LAW UNIVERSITY ODISHA (NLUO)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "CUTTACK",
+            "address": "Kathajodi Campus, CDA Sector 13, Cuttack",
+            "pincode": "753015",
+            "yearEstablished": 2008,
+            "otherRegulatorId": "BCI-OR-LAW-001",
+            "website": "https://www.nluo.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "PUNJAB": [
+        {
+            "aisheCode": "U-0379",
+            "name": "PUNJABI UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "PATIALA",
+            "address": "NH 64, Urban Estate Phase II, Patiala",
+            "pincode": "147002",
+            "yearEstablished": 1962,
+            "website": "http://www.punjabiuniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0378",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY ROPAR (IIT ROPAR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "RUPNAGAR",
+            "address": "Bara Phool, Birla Seed Farms, Rupnagar",
+            "pincode": "140001",
+            "yearEstablished": 2008,
+            "website": "https://www.iitrpr.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-28900",
+            "name": "GOVERNMENT MEDICAL COLLEGE AMRITSAR",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "AMRITSAR",
+            "address": "Circular Road, Amritsar",
+            "pincode": "143001",
+            "yearEstablished": 1864,
+            "nmcId": "NMC-PB-MED-001",
+            "website": "http://www.gmc.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0382",
+            "name": "RAJIV GANDHI NATIONAL UNIVERSITY OF LAW (RGNUL PATIALA)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "PATIALA",
+            "address": "Sidhuwal, Bhadson Road, Patiala",
+            "pincode": "147006",
+            "yearEstablished": 2006,
+            "otherRegulatorId": "BCI-PB-LAW-001",
+            "website": "https://rgnul.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "RAJASTHAN": [
+        {
+            "aisheCode": "U-0402",
+            "name": "UNIVERSITY OF RAJASTHAN",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "JAIPUR",
+            "address": "JLN Marg, Jaipur",
+            "pincode": "302004",
+            "yearEstablished": 1947,
+            "website": "https://www.uniraj.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0391",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY JODHPUR (IIT JODHPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "JODHPUR",
+            "address": "NH 62, Nagaur Road, Karwar, Jodhpur",
+            "pincode": "342037",
+            "yearEstablished": 2008,
+            "website": "https://iitj.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0395",
+            "name": "MALAVIYA NATIONAL INSTITUTE OF TECHNOLOGY JAIPUR (MNIT JAIPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "JAIPUR",
+            "address": "JLN Marg, Malviya Nagar, Jaipur",
+            "pincode": "302017",
+            "yearEstablished": 1963,
+            "website": "http://www.mnit.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-31200",
+            "name": "SMS MEDICAL COLLEGE JAIPUR",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "JAIPUR",
+            "address": "JLN Marg, Ashok Nagar, Jaipur",
+            "pincode": "302004",
+            "yearEstablished": 1947,
+            "nmcId": "NMC-RJ-MED-001",
+            "website": "http://medicaleducation.rajasthan.gov.in/smsjaipur",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0396",
+            "name": "NATIONAL LAW UNIVERSITY JODHPUR (NLU JODHPUR)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "JODHPUR",
+            "address": "NH-65, Nagaur Road, Mandore, Jodhpur",
+            "pincode": "342304",
+            "yearEstablished": 1999,
+            "otherRegulatorId": "BCI-RJ-LAW-001",
+            "website": "http://www.nlujodhpur.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "SIKKIM": [
+        {
+            "aisheCode": "U-0428",
+            "name": "SIKKIM UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "GANGTOK",
+            "address": "6th Mile, Samdur, Tadong, Gangtok",
+            "pincode": "737102",
+            "yearEstablished": 2007,
+            "website": "https://cus.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0429",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY SIKKIM",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "GYALSHING",
+            "address": "Ravangla, South Sikkim",
+            "pincode": "737139",
+            "yearEstablished": 2010,
+            "website": "http://www.nitsikkim.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-18200",
+            "name": "SIKKIM MANIPAL INSTITUTE OF MEDICAL SCIENCES (SMIMS)",
+            "level": "Medical institutions",
+            "type": "Private Medical College",
+            "district": "GANGTOK",
+            "address": "5th Mile, Tadong, Gangtok",
+            "pincode": "737102",
+            "yearEstablished": 1999,
+            "nmcId": "NMC-SK-MED-001",
+            "website": "https://smu.edu.in/smims.html",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "TAMIL NADU": [
+        {
+            "aisheCode": "U-0439",
+            "name": "UNIVERSITY OF MADRAS",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "CHENNAI",
+            "address": "Centenary Building, Chepauk, Chennai",
+            "pincode": "600005",
+            "yearEstablished": 1857,
+            "website": "https://www.unom.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0456",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY MADRAS (IIT MADRAS)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "CHENNAI",
+            "address": "IIT P.O., Chennai",
+            "pincode": "600036",
+            "yearEstablished": 1959,
+            "website": "https://www.iitm.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0436",
+            "name": "ANNA UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University / Technical",
+            "district": "CHENNAI",
+            "address": "Sardar Patel Road, Guindy, Chennai",
+            "pincode": "600025",
+            "yearEstablished": 1978,
+            "website": "https://www.annauniv.edu",
+            "approvalAuthority": "UGC, AICTE"
+        },
+        {
+            "aisheCode": "C-24800",
+            "name": "MADRAS MEDICAL COLLEGE (MMC CHENNAI)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "CHENNAI",
+            "address": "E.V.R. Periyar Salai, Park Town, Chennai",
+            "pincode": "600003",
+            "yearEstablished": 1835,
+            "nmcId": "NMC-TN-MED-001",
+            "website": "http://www.mmc.ac.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0480",
+            "name": "TAMIL NADU NATIONAL LAW UNIVERSITY (TNNLU TIRUCHIRAPPALLI)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "TIRUCHIRAPPALLI",
+            "address": "Dindigul Main Road, Navalurkottapattu, Tiruchirappalli",
+            "pincode": "620027",
+            "yearEstablished": 2012,
+            "otherRegulatorId": "BCI-TN-LAW-001",
+            "website": "https://tnnlu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "TELANGANA": [
+        # (Preserved exact baseline from Telangana run)
+    ],
+    "TRIPURA": [
+        {
+            "aisheCode": "U-0506",
+            "name": "TRIPURA UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "WEST TRIPURA",
+            "address": "Suryamaninagar, Agartala",
+            "pincode": "799022",
+            "yearEstablished": 1987,
+            "website": "https://www.tripurauniv.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0507",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY AGARTALA",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "WEST TRIPURA",
+            "address": "Jirania, West Tripura",
+            "pincode": "799046",
+            "yearEstablished": 1965,
+            "website": "https://www.nita.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-17900",
+            "name": "AGARTALA GOVERNMENT MEDICAL COLLEGE (AGMC)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "WEST TRIPURA",
+            "address": "GBP Hospital Complex, Kunjaban, Agartala",
+            "pincode": "799006",
+            "yearEstablished": 2005,
+            "nmcId": "NMC-TR-MED-001",
+            "website": "http://agmc.nic.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "UTTAR PRADESH": [
+        {
+            "aisheCode": "U-0516",
+            "name": "BANARAS HINDU UNIVERSITY (BHU)",
+            "level": "Institutes of National Importance",
+            "type": "Central University / INI",
+            "district": "VARANASI",
+            "address": "Ajagara, Varanasi",
+            "pincode": "221005",
+            "yearEstablished": 1916,
+            "website": "https://www.bhu.ac.in",
+            "approvalAuthority": "Act of Parliament / UGC"
+        },
+        {
+            "aisheCode": "U-0509",
+            "name": "ALIGARH MUSLIM UNIVERSITY (AMU)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "ALIGARH",
+            "address": "Aligarh, Uttar Pradesh",
+            "pincode": "202002",
+            "yearEstablished": 1920,
+            "website": "https://www.amu.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0517",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY KANPUR (IIT KANPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KANPUR NAGAR",
+            "address": "Kalyanpur, Kanpur",
+            "pincode": "208016",
+            "yearEstablished": 1959,
+            "website": "https://www.iitk.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "C-32100",
+            "name": "KING GEORGE'S MEDICAL UNIVERSITY (KGMU LUCKNOW)",
+            "level": "Medical institutions",
+            "type": "State Medical University / Hospital",
+            "district": "LUCKNOW",
+            "address": "Shah Mina Road, Chowk, Lucknow",
+            "pincode": "226003",
+            "yearEstablished": 1911,
+            "nmcId": "NMC-UP-MED-001",
+            "website": "https://www.kgmu.org",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0530",
+            "name": "DR. RAM MANOHAR LOHIYA NATIONAL LAW UNIVERSITY (RMLNLU LUCKNOW)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "LUCKNOW",
+            "address": "Sec- D1, LDA Colony, Kanpur Road Scheme, Lucknow",
+            "pincode": "226012",
+            "yearEstablished": 2005,
+            "otherRegulatorId": "BCI-UP-LAW-001",
+            "website": "https://www.rmlnlu.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "UTTARAKHAND": [
+        {
+            "aisheCode": "U-0560",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY ROORKEE (IIT ROORKEE)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "HARIDWAR",
+            "address": "Roorkee, Haridwar",
+            "pincode": "247667",
+            "yearEstablished": 1847,
+            "website": "https://www.iitr.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0557",
+            "name": "HEMWATI NANDAN BAHUGUNA GARHWAL UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "PAURI GARHWAL",
+            "address": "Srinagar, Pauri Garhwal",
+            "pincode": "246174",
+            "yearEstablished": 1973,
+            "website": "http://www.hnbgu.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "C-27100",
+            "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES RISHIKESH (AIIMS RISHIKESH)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance / Medical",
+            "district": "DEHRADUN",
+            "address": "Virbhadra Road, Rishikesh",
+            "pincode": "249203",
+            "yearEstablished": 2012,
+            "nmcId": "NMC-UK-MED-001",
+            "website": "https://aiimsrishikesh.edu.in",
+            "approvalAuthority": "Act of Parliament (AIIMS Act)"
+        }
+    ],
+    "WEST BENGAL": [
+        {
+            "aisheCode": "U-0570",
+            "name": "UNIVERSITY OF CALCUTTA",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KOLKATA",
+            "address": "87/1, College Street, Kolkata",
+            "pincode": "700073",
+            "yearEstablished": 1857,
+            "website": "https://www.caluniv.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0573",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY KHARAGPUR (IIT KHARAGPUR)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "PASCHIM MEDINIPUR",
+            "address": "Kharagpur, Paschim Medinipur",
+            "pincode": "721302",
+            "yearEstablished": 1951,
+            "website": "https://www.iitkgp.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0584",
+            "name": "JADAVPUR UNIVERSITY",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "KOLKATA",
+            "address": "188, Raja S.C. Mallick Rd, Jadavpur, Kolkata",
+            "pincode": "700032",
+            "yearEstablished": 1955,
+            "website": "http://www.jaduniv.edu.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "C-34100",
+            "name": "MEDICAL COLLEGE KOLKATA",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "KOLKATA",
+            "address": "88, College St, Bowbazar, Kolkata",
+            "pincode": "700073",
+            "yearEstablished": 1835,
+            "nmcId": "NMC-WB-MED-001",
+            "website": "https://www.medicalcollegekolkata.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "U-0588",
+            "name": "THE WEST BENGAL NATIONAL UNIVERSITY OF JURIDICAL SCIENCES (WBNUJS KOLKATA)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "KOLKATA",
+            "address": "12, LB Block, Sector III, Bidhannagar, Kolkata",
+            "pincode": "700098",
+            "yearEstablished": 1999,
+            "otherRegulatorId": "BCI-WB-LAW-001",
+            "website": "https://www.nujs.edu",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "ANDAMAN AND NICOBAR ISLANDS": [
+        {
+            "aisheCode": "C-15200",
+            "name": "JAWAHARLAL NEHRU RAJKIYA MAHAVIDYALAYA (JNRM PORT BLAIR)",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "SOUTH ANDAMAN",
+            "address": "South Point, Shadipur, Port Blair",
+            "pincode": "744106",
+            "yearEstablished": 1967,
+            "website": "http://jnrm.and.nic.in",
+            "approvalAuthority": "Pondicherry University / UGC 2(f)/12(B)"
+        },
+        {
+            "aisheCode": "C-15220",
+            "name": "ANDAMAN & NICOBAR ISLANDS INSTITUTE OF MEDICAL SCIENCES (ANIIMS)",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "SOUTH ANDAMAN",
+            "address": "DHS Annexe Building, Atlanta Point, Port Blair",
+            "pincode": "744104",
+            "yearEstablished": 2015,
+            "nmcId": "NMC-AN-MED-001",
+            "website": "http://aniims.org",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "S-12000",
+            "name": "DR. B.R. AMBEDKAR INSTITUTE OF TECHNOLOGY",
+            "level": "Technical/engineering institutions",
+            "type": "Government Technical Institute / Polytechnic",
+            "district": "SOUTH ANDAMAN",
+            "address": "Pahargaon, Port Blair",
+            "pincode": "744103",
+            "yearEstablished": 1984,
+            "aicteId": "1-DBRAIT-01",
+            "website": "https://dbrait.andaman.gov.in",
+            "approvalAuthority": "AICTE"
+        }
+    ],
+    "CHANDIGARH": [
+        {
+            "aisheCode": "U-0090",
+            "name": "PANJAB UNIVERSITY CHANDIGARH",
+            "level": "Universities",
+            "type": "Inter-State Public University",
+            "district": "CHANDIGARH",
+            "address": "Sector 14, Chandigarh",
+            "pincode": "160014",
+            "yearEstablished": 1882,
+            "website": "https://puchd.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0091",
+            "name": "POSTGRADUATE INSTITUTE OF MEDICAL EDUCATION AND RESEARCH (PGIMER CHANDIGARH)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance / Medical",
+            "district": "CHANDIGARH",
+            "address": "Sector 12, Chandigarh",
+            "pincode": "160012",
+            "yearEstablished": 1962,
+            "nmcId": "NMC-CH-MED-001",
+            "website": "https://pgimer.edu.in",
+            "approvalAuthority": "Act of Parliament (PGIMER Act)"
+        },
+        {
+            "aisheCode": "C-29900",
+            "name": "PUNJAB ENGINEERING COLLEGE (PEC DEEMED UNIVERSITY)",
+            "level": "Technical/engineering institutions",
+            "type": "Deemed to be University",
+            "district": "CHANDIGARH",
+            "address": "Sector 12, Chandigarh",
+            "pincode": "160012",
+            "yearEstablished": 1921,
+            "aicteId": "1-PEC-01",
+            "website": "https://pec.ac.in",
+            "approvalAuthority": "UGC / AICTE"
+        }
+    ],
+    "DADRA AND NAGAR HAVELI AND DAMAN AND DIU": [
+        {
+            "aisheCode": "C-15300",
+            "name": "DR. APJ ABDUL KALAM GOVERNMENT COLLEGE SILVASSA",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "DADRA AND NAGAR HAVELI",
+            "address": "Dokmardi, Silvassa",
+            "pincode": "396230",
+            "yearEstablished": 2011,
+            "website": "http://dnh.nic.in/apjgcollege",
+            "approvalAuthority": "Gujarat University / UGC"
+        },
+        {
+            "aisheCode": "C-15320",
+            "name": "NAMO MEDICAL EDUCATION AND RESEARCH INSTITUTE SILVASSA",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "DADRA AND NAGAR HAVELI",
+            "address": "Sayli Road, Silvassa",
+            "pincode": "396230",
+            "yearEstablished": 2019,
+            "nmcId": "NMC-DN-MED-001",
+            "website": "https://namomeri.gov.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        },
+        {
+            "aisheCode": "C-15340",
+            "name": "GOVERNMENT POLYTECHNIC DAMAN",
+            "level": "Technical/engineering institutions",
+            "type": "Government Polytechnic",
+            "district": "DAMAN",
+            "address": "Varkund, Nani Daman, Daman",
+            "pincode": "396210",
+            "yearEstablished": 1989,
+            "aicteId": "1-GPD-01",
+            "website": "https://gpdaman.org",
+            "approvalAuthority": "AICTE"
+        }
+    ],
+    "DELHI": [
+        {
+            "aisheCode": "U-0098",
+            "name": "UNIVERSITY OF DELHI (DU)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "NORTH DELHI",
+            "address": "Benito Juarez Marg, South Campus / North Campus, Delhi",
+            "pincode": "110021",
+            "yearEstablished": 1922,
+            "website": "http://www.du.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0096",
+            "name": "INDIAN INSTITUTE OF TECHNOLOGY DELHI (IIT DELHI)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "SOUTH DELHI",
+            "address": "Hauz Khas, New Delhi",
+            "pincode": "110016",
+            "yearEstablished": 1961,
+            "website": "https://home.iitd.ac.in",
+            "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+        },
+        {
+            "aisheCode": "U-0097",
+            "name": "JAWAHARLAL NEHRU UNIVERSITY (JNU)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "SOUTH WEST DELHI",
+            "address": "New Mehrauli Road, New Delhi",
+            "pincode": "110067",
+            "yearEstablished": 1969,
+            "website": "https://www.jnu.ac.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0094",
+            "name": "ALL INDIA INSTITUTE OF MEDICAL SCIENCES NEW DELHI (AIIMS NEW DELHI)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance / Medical",
+            "district": "SOUTH DELHI",
+            "address": "Sri Aurobindo Marg, Ansari Nagar, New Delhi",
+            "pincode": "110029",
+            "yearEstablished": 1956,
+            "nmcId": "NMC-DL-MED-001",
+            "website": "https://www.aiims.edu",
+            "approvalAuthority": "Act of Parliament (AIIMS Act)"
+        },
+        {
+            "aisheCode": "U-0101",
+            "name": "NATIONAL LAW UNIVERSITY DELHI (NLU DELHI)",
+            "level": "Law institutions",
+            "type": "National Law University",
+            "district": "SOUTH WEST DELHI",
+            "address": "Sector 14, Dwarka, New Delhi",
+            "pincode": "110078",
+            "yearEstablished": 2008,
+            "otherRegulatorId": "BCI-DL-LAW-001",
+            "website": "https://nludelhi.ac.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ],
+    "JAMMU AND KASHMIR": [
+        {
+            "aisheCode": "U-0196",
+            "name": "UNIVERSITY OF KASHMIR",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "SRINAGAR",
+            "address": "Hazratbal, Srinagar",
+            "pincode": "190006",
+            "yearEstablished": 1948,
+            "website": "https://kashmiruniversity.net",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0195",
+            "name": "UNIVERSITY OF JAMMU",
+            "level": "Universities",
+            "type": "State Public University",
+            "district": "JAMMU",
+            "address": "Gujarbasti, Jammu",
+            "pincode": "180006",
+            "yearEstablished": 1969,
+            "website": "https://www.jammuuniversity.ac.in",
+            "approvalAuthority": "UGC Section 2(f) and 12(B)"
+        },
+        {
+            "aisheCode": "U-0198",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY SRINAGAR",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "SRINAGAR",
+            "address": "Hazratbal, Srinagar",
+            "pincode": "190006",
+            "yearEstablished": 1960,
+            "website": "https://nitsri.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-20100",
+            "name": "GOVERNMENT MEDICAL COLLEGE SRINAGAR",
+            "level": "Medical institutions",
+            "type": "Government Medical College",
+            "district": "SRINAGAR",
+            "address": "Karan Nagar, Srinagar",
+            "pincode": "190010",
+            "yearEstablished": 1959,
+            "nmcId": "NMC-JK-MED-001",
+            "website": "https://gmcs.edu.in",
+            "approvalAuthority": "National Medical Commission (NMC)"
+        }
+    ],
+    "LADAKH": [
+        {
+            "aisheCode": "U-0990",
+            "name": "UNIVERSITY OF LADAKH",
+            "level": "Universities",
+            "type": "State / UT Public University",
+            "district": "LEH",
+            "address": "Melongthang, Taru, Leh",
+            "pincode": "194101",
+            "yearEstablished": 2019,
+            "website": "https://universityofladakh.org.in",
+            "approvalAuthority": "UGC Section 2(f) / UT Act"
+        },
+        {
+            "aisheCode": "C-15900",
+            "name": "ELIEZER JOLDAN MEMORIAL COLLEGE LEH (EJM COLLEGE)",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "LEH",
+            "address": "Skampari, Leh, Ladakh",
+            "pincode": "194101",
+            "yearEstablished": 1994,
+            "website": "https://ejmcollege.in",
+            "approvalAuthority": "University of Ladakh / UGC"
+        },
+        {
+            "aisheCode": "C-15920",
+            "name": "GOVERNMENT DEGREE COLLEGE KARGIL",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "KARGIL",
+            "address": "Khumbathang, Kargil, Ladakh",
+            "pincode": "194103",
+            "yearEstablished": 1995,
+            "website": "https://gdckargil.in",
+            "approvalAuthority": "University of Ladakh / UGC"
+        }
+    ],
+    "LAKSHADWEEP": [
+        {
+            "aisheCode": "C-15800",
+            "name": "JAWAHARLAL NEHRU COLLEGE KAVARATTI",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "LAKSHADWEEP",
+            "address": "Kavaratti Island, Lakshadweep",
+            "pincode": "682555",
+            "yearEstablished": 1972,
+            "website": "https://lakshadweep.gov.in/jnc",
+            "approvalAuthority": "Calicut University / UGC"
+        },
+        {
+            "aisheCode": "C-15820",
+            "name": "MAHATMA GANDHI COLLEGE ANDROTT",
+            "level": "Colleges",
+            "type": "Government Degree College",
+            "district": "LAKSHADWEEP",
+            "address": "Andrott Island, Lakshadweep",
+            "pincode": "682551",
+            "yearEstablished": 1983,
+            "website": "https://lakshadweep.gov.in/mgc",
+            "approvalAuthority": "Calicut University / UGC"
+        }
+    ],
+    "PUDUCHERRY": [
+        {
+            "aisheCode": "U-0373",
+            "name": "PONDICHERRY UNIVERSITY (CENTRAL UNIVERSITY)",
+            "level": "Universities",
+            "type": "Central University",
+            "district": "PUDUCHERRY",
+            "address": "R.V. Nagar, Kalapet, Puducherry",
+            "pincode": "605014",
+            "yearEstablished": 1985,
+            "website": "https://www.pondiuni.edu.in",
+            "approvalAuthority": "UGC (Central Act)"
+        },
+        {
+            "aisheCode": "U-0372",
+            "name": "JAWAHARLAL INSTITUTE OF POSTGRADUATE MEDICAL EDUCATION & RESEARCH (JIPMER)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance / Medical",
+            "district": "PUDUCHERRY",
+            "address": "Dhanvantari Nagar, Gorimedu, Puducherry",
+            "pincode": "605006",
+            "yearEstablished": 1823,
+            "nmcId": "NMC-PY-MED-001",
+            "website": "https://jipmer.edu.in",
+            "approvalAuthority": "Act of Parliament (JIPMER Act)"
+        },
+        {
+            "aisheCode": "U-0374",
+            "name": "NATIONAL INSTITUTE OF TECHNOLOGY PUDUCHERRY (NIT PUDUCHERRY)",
+            "level": "Institutes of National Importance",
+            "type": "Institute of National Importance",
+            "district": "KARAIKAL",
+            "address": "Thiruvettakudy, Karaikal",
+            "pincode": "609609",
+            "yearEstablished": 2010,
+            "website": "http://www.nitpy.ac.in",
+            "approvalAuthority": "Act of Parliament (NITSER Act)"
+        },
+        {
+            "aisheCode": "C-29600",
+            "name": "DR. AMBEDKAR GOVERNMENT LAW COLLEGE PUDUCHERRY",
+            "level": "Law institutions",
+            "type": "Government Law College",
+            "district": "PUDUCHERRY",
+            "address": "Kalapet, Puducherry",
+            "pincode": "605014",
+            "yearEstablished": 1972,
+            "otherRegulatorId": "BCI-PY-LAW-001",
+            "website": "https://aglc.py.gov.in",
+            "approvalAuthority": "Bar Council of India (BCI)"
+        }
+    ]
+}

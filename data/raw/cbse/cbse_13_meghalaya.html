@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>List of Affiliated Schools | SARAS 7.0</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/SARAS/ui/assets/images/favicon.png" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/navbar.css" />
+
+    <link rel="stylesheet" href="/SARAS/ui/assets/css/custom.css" />
+    <link href="/SARAS/ui/assets/css/custom-responsive.css" rel="stylesheet" />
+    <link href="/SARAS/ui/assets/css/fontawesome.css" rel="stylesheet" />
+
+    <!--Data Table Files Start-->
+    <link href="/SARAS/ui/assets/css/datatables.min.css" rel="stylesheet" />    
+    <!--Data Table Files End-->
+
+</head>
+
+<body class="defaultLayoutBg mb__50">
+    <!--Preloader start here-->
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="/SARAS/ui/assets/images/favicon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newHeaderMain">
+        <div class="container customContainer">
+            <div class="newHeaderMainBlk">
+                <img src="/SARAS/ui/assets/images/cbse-logo.png" alt="cbse" />
+                <div class="newHeaderTitle">
+                    <h1>SARAS 7.0</h1>
+                    <h2>School Affiliation Re-Engineered Automation System</h2>
+                </div>
+                <div class="newHeaderIcon">
+                    <img src="/SARAS/ui/assets/images/digitalcbselogo.png" alt="digitalcbselogo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="pb-3">
+        
+<div class="statisticsMain">
+
+    <div class="container-fluid">
+        <div class="regForm statisticsBlk affiliatedListMain">
+            <div class="homeBtn">
+                <a class="btn btn-primary actionBtn backLink" href="/SARAS/Home/Category_Wise">Back to Home</a>
+            </div>
+            <h3 class="pageTitle">CBSE SCHOOLS DIRECTORY</h3>
+            <div class="affiliatedListFilleter">
+<form action="/SARAS/AffiliatedList/ListOfSchdirReport" autocomplete="off" method="post">                    <h4>Total No. of Schools affiliated with CBSE : <span>33152</span></h4>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group radioGroup form-control inputControl">
+                                    <div>
+                                        <input id="SearchMainRadioKeyword_wise" name="MainRadioValue" type="radio" value="Keyword_wise" />
+                                        <label class="labelControl" for="SearchMainRadioKeyword_wise">Keyword wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioAffi_No_wise" name="MainRadioValue" type="radio" value="Affi_No_wise" />
+                                        <label class="labelControl" for="SearchMainRadioAffi_No_wise">Affi. No. wise</label>
+                                    </div>
+                                    <div>
+                                        <input checked="checked" id="SearchMainRadioState_wise" name="MainRadioValue" type="radio" value="State_wise" />
+                                        <label class="labelControl" for="SearchMainRadioState_wise">State wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioRegion_wise" name="MainRadioValue" type="radio" value="Region_wise" />
+                                        <label class="labelControl" for="SearchMainRadioRegion_wise">Region wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioSchool_level_wise" name="MainRadioValue" type="radio" value="School_level_wise" />
+                                        <label class="labelControl" for="SearchMainRadioSchool_level_wise">School level wise</label>
+                                    </div>
+                                    <div>
+                                        <input id="SearchMainRadioDisaffiliated_schools" name="MainRadioValue" type="radio" value="Disaffiliated_schools" />
+                                        <label class="labelControl" for="SearchMainRadioDisaffiliated_schools">Disaffiliated/Closed schools</label>
+                                    </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="MainRadioValue" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStateDist" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">State</label>
+                            <select class="form-select selectControl" data-val="true" data-val-required="Required" id="State" name="State"><option value="">--select--</option>
+<option value="25">ANDAMAN &amp; NICOBAR</option>
+<option value="1">ANDHRA PRADESH</option>
+<option value="22">ARUNACHAL PRADESH</option>
+<option value="2">ASSAM</option>
+<option value="3">BIHAR</option>
+<option value="26">CHANDIGARH</option>
+<option value="33">CHATTISGARH</option>
+<option value="30">DADAR &amp; NAGAR HAVELI</option>
+<option value="31">DAMAN &amp; DIU</option>
+<option value="27">DELHI</option>
+<option value="50">FOREIGN SCHOOLS</option>
+<option value="28">GOA</option>
+<option value="4">GUJARAT</option>
+<option value="5">HARYANA</option>
+<option value="6">HIMACHAL PRADESH</option>
+<option value="7">JAMMU &amp; KASHMIR</option>
+<option value="34">JHARKHAND</option>
+<option value="8">KARNATAKA</option>
+<option value="9">KERALA</option>
+<option value="37">LADAKH</option>
+<option value="32">LAKSHADWEEP</option>
+<option value="10">MADHYA PRADESH</option>
+<option value="11">MAHARASHTRA</option>
+<option value="12">MANIPUR</option>
+<option selected="selected" value="13">MEGHALAYA</option>
+<option value="23">MIZORAM</option>
+<option value="14">NAGALAND</option>
+<option value="15">ODISHA</option>
+<option value="29">PUDUCHERRY</option>
+<option value="16">PUNJAB</option>
+<option value="17">RAJASTHAN</option>
+<option value="18">SIKKIM</option>
+<option value="19">TAMILNADU</option>
+<option value="36">TELANGANA</option>
+<option value="20">TRIPURA</option>
+<option value="21">UTTAR PRADESH</option>
+<option value="35">UTTARAKHAND</option>
+<option value="24">WEST BENGAL</option>
+</select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labelControl">District</label>
+                            <input type="hidden" id="hdnDistrict" />
+                            <select class="form-select selectControl District" id="District" name="District"></select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByRegion" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Region</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-required="Required" id="Region" name="Region"><option value="">--select--</option>
+<option value="M">Chennai</option>
+<option value="G">Guwahati</option>
+<option value="A">Ajmer</option>
+<option value="C">chandigarh</option>
+<option value="D">Delhi</option>
+<option value="R">prayagraj</option>
+<option value="P">Patna</option>
+<option value="B">Bhubaneswar</option>
+<option value="T">Trivendram</option>
+<option value="U">Dehradun</option>
+<option value="K">BANGALURU</option>
+<option value="L">Bhopal</option>
+<option value="N">Noida</option>
+<option value="E">PUNE</option>
+<option value="H">PANCHKULA</option>
+<option value="W">DELHI WEST</option>
+<option value="V">Vijaywada</option>
+<option value="Y">GURUGRAM</option>
+<option value="Q">LUCKNOW</option>
+<option value="J">RANCHI</option>
+<option value="S">RAIPUR</option>
+<option value="I">AHMEDABAD</option>
+</select>
+                            <span class="text-danger field-validation-error" data-valmsg-for="Region" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByKeyword" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Enter A KeyWord</label>
+                            <input class="form-control inputControl input-validation-error" type="text" data-val="true" data-val-required="Required" id="InstName_orAddress" name="InstName_orAddress" value="" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="InstName_orAddress" data-valmsg-replace="true">Required</span>
+                            <label class="labelControl mt__10">(Keyword is any word from School Name or Address)</label>
+                        </div>
+                    </div>
+                    <div id="div_SearchByAffNo" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Affiliation No./ School Code</label>
+                            <input class="form-control inputControl input-validation-error" type="number" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The RegiAffNo field is required." id="RegiAffNo" name="RegiAffNo" value="0" /><input name="__Invariant" type="hidden" value="RegiAffNo" />
+                            <span class="text-danger field-validation-error" data-valmsg-for="RegiAffNo" data-valmsg-replace="true">Required</span>
+                        </div>
+                    </div>
+                    <div id="div_SearchByStatusWise" class="form-group row" style="display:none;">
+                        <div class="col-md-6">
+                            <label class="labelControl">Select School Status</label>
+                            <select class="form-select selectControl input-validation-error" data-val="true" data-val-range="Required" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="The SchoolStatusWise field is required." id="SchoolStatusWise" name="SchoolStatusWise">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">Middle Class</option>
+                                <option value="2">Secondary Level</option>
+                                <option value="3">Senior Secondary Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="div_SearchByDisaff" class="form-group" style="display:none;">
+                        <h4>
+                            Total No Of DisAffiliated Schools : <span>34</span>
+                        </h4>
+                    </div>
+                    <div class="text-center mt__15">
+                        <input type="submit" value="Search" class="btn btn-primary actionBtn" />
+                    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMji5EQaPtHeobuXvmp4j4CSIF6HB2d9gNsPzKZ5oIdHhDtZHNRBxYBRb9ZwmSBOaVd4D_TF4f2E2J-WywvxW19OXTXF5JLQRI5np1jQHkQmbbChpmWKC_bo9cKQ5IhJvePc" /><input type="hidden" name="__ncforminfo" value="iTS-tB-TCuxiWHHIwXSyjsBt6eiLhE_PYraQHX13NmyiuIp2gVguey2umQ0152QdqlPuNR_T2sMFCVls5kqGB7gZJZaQur09UwOvDSNb0bjfAxulabHO9mxPrH60AnI0nstBAAIebrLdSMQlrTAEa5taRraIlqUpw1wJqqns_wqNTAo48aP7yYUfCwsrC2NhsJ-NFMgppmrLy3eXJE30roPjxe8vbqJ2L3Veodlty-Bdem_aoK09Kr9HtHZldyA2lj18Lt5Xi2vZ_x03xqP2ILT6XI_f6X4tp1SvJv3jWlBT3Wk39ffjuMgmtFKOO_NvnfL-1bFqnE74TC35NiY7lDPbcFlLf_2ssOHo2_awMsS8pt3aYTlq08hZ0dVv_-mkPtqIOfWDoJExHcvlHzk9jk08M0XU_4XlQdCynvfMEihuKR4hbyDhCfXzrPcksszksy3waR4KuDjxsz3HBCjzag=="/></form>            </div>
+            <div class="statisticsTable">
+                <div class="table-responsive">
+                    <form method="post">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S No</th>
+                                    <th>Aff. No & School Code</th>
+                                    <th>State & District</th>
+                                    <th>Status</th>
+                                    <th>School & Head Name</th>
+                                    <th> Address</th>
+                                    <th>Details </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+
+                                        <td>1</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300001<br />
+                                            <b>Sch. Code:</b>39329
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA TURA MEGHALAYA <br /> <b>Head/Principal Name: </b>SUBHRAJIT BISWAS</td>
+                                        <td>
+                                            <b>Address : </b>TURA WEST GARO HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://tura.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>2</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300002<br />
+                                            <b>Sch. Code:</b>39327
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>DHIRENDRA BAHADUR SINGH</td>
+                                        <td>
+                                            <b>Address : </b>HAPPY VALLEY SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>https://happyvalley.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>3</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300003<br />
+                                            <b>Sch. Code:</b>39328
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>NAVINA KUMAR SRIVASTAVA</td>
+                                        <td>
+                                            <b>Address : </b>EASTERN AIR COMMAND NONGLYER UPPER SHILLONG SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>https://eacuppershillong.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>4</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300004<br />
+                                            <b>Sch. Code:</b>39330
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> KENDRIYA VIDYALAYA <br /> <b>Head/Principal Name: </b>K ALUNG KHUMBA</td>
+                                        <td>
+                                            <b>Address : </b>N E H U PERMANENT CAMPUS UMSHING SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>www.nehushillong.kvs.ac.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>5</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300005<br />
+                                            <b>Sch. Code:</b>39331
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA AFS LAITKOR PEAK SHILLONG <br /> <b>Head/Principal Name: </b>MON BAHADUR CHETTRI</td>
+                                        <td>
+                                            <b>Address : </b>LAITKOR PEAK SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>https://afsshillong.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>6</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300006<br />
+                                            <b>Sch. Code:</b>39332
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA NEPA BARAPANI <br /> <b>Head/Principal Name: </b> PRAVEEN KUMAR MISHRA</td>
+                                        <td>
+                                            <b>Address : </b>NEPA BARAPANI MEGHALAYA<br />
+                                            <b>Website : </b>https://nepabarapani.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>7</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1300007<br />
+                                            <b>Sch. Code:</b>39333
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI KENDRIYA VIDYALAYA UMROI CANTT <br /> <b>Head/Principal Name: </b>DEEPAK KUMAR BEDI</td>
+                                        <td>
+                                            <b>Address : </b>UMROI CANTONMENT BARAPANI, RI-BHOI DISTT, MEGHALAYA<br />
+                                            <b>Website : </b>https://umroicantt.kvs.ac.in/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1300007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>8</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1320051<br />
+                                            <b>Sch. Code:</b>37740
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST GARO HILLS</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> EKLAVYA MODEL RESIDENTIAL SCHOOL <br /> <b>Head/Principal Name: </b>MURUGESAN NANDAGOPAL</td>
+                                        <td>
+                                            <b>Address : </b>SAMANDA,EAST GARO HILLS,MEGHALAYA-794111, RIKWARENGGRE, CHIANG-PS,SAMANDA,794111, EMRS,SAMANDA,EAST GARO HILLS-794111<br />
+                                            <b>Website : </b>www.tribal.nic.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1320051">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>9</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1320052<br />
+                                            <b>Sch. Code:</b>37747
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> EMRS PAHAMSYIEM, RI BHOI DISTRICT <br /> <b>Head/Principal Name: </b>EKTA GUPTA</td>
+                                        <td>
+                                            <b>Address : </b>VILLAGE- PAHAMSYIEM, POST OFFICE - NONGPOH, BLOCK- UMLING, POLICE STATION- NONGPOH<br />
+                                            <b>Website : </b>https://emrsribhoi.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1320052">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>10</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330001<br />
+                                            <b>Sch. Code:</b>35263
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> B S F SR SEC SCHOOL <br /> <b>Head/Principal Name: </b>SARLA MISHRA</td>
+                                        <td>
+                                            <b>Address : </b>UMPLING SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>www.bsfshshillong.org
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>11</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330003<br />
+                                            <b>Sch. Code:</b>35264
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> B K BAJORIA SCHOOL <br /> <b>Head/Principal Name: </b>VANDANA GUPTA</td>
+                                        <td>
+                                            <b>Address : </b>BOYCE ROAD SHILLONG MEGHALAYA<br />
+                                            <b>Website : </b>www.bkbajoriaschool.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>12</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330007<br />
+                                            <b>Sch. Code:</b>35266
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CHRIST SCHOOL <br /> <b>Head/Principal Name: </b>Samantha</td>
+                                        <td>
+                                            <b>Address : </b>CHRIST SCHOOL&#xD;&#xA;NONGSDER, UMIAM P.O.,&#xD;&#xA;BARAPANI, MEGHALAYA<br />
+                                            <b>Website : </b>www.christschoolshillong.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>13</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330008<br />
+                                            <b>Sch. Code:</b>35267
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST JAINTIA HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> STAR PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Dilip Kumar</td>
+                                        <td>
+                                            <b>Address : </b>CEMENT MANUFACTURING COMPANY LIMITED, LUMSHNONG JAINTIA HILLS, KHLIEHRIAT, MEGHALAYA<br />
+                                            <b>Website : </b>https://starpublicschool.co.in/mandatory-disclosure.php
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>14</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330009<br />
+                                            <b>Sch. Code:</b>35268
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> CAPT. WILLIAMS SCHOOL <br /> <b>Head/Principal Name: </b>DEBZANIE MOMIN</td>
+                                        <td>
+                                            <b>Address : </b>MATCHAKOLGRE OPP-SHERWOOD SCHOOL<br />
+                                            <b>Website : </b>www.captwilliamsschooltura.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>15</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330010<br />
+                                            <b>Sch. Code:</b>35270
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> NOKREK HEIGHTS SCHOOL <br /> <b>Head/Principal Name: </b>NENGSE M MARAK</td>
+                                        <td>
+                                            <b>Address : </b>WALBAKGRE, NEAR BSF CAMP, TURA - 794101, WEST GARO HILLS, MEGHALAYA<br />
+                                            <b>Website : </b>https://nokrekheightstura.com/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330010">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>16</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330011<br />
+                                            <b>Sch. Code:</b>35269
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> DELHI PUBLIC SCHOOL KHANAPARA <br /> <b>Head/Principal Name: </b>MONMOYUREE BORKOTOKY</td>
+                                        <td>
+                                            <b>Address : </b>KLING ROAD, 9TH MILE,&#xD;&#xA;OPP CRPF GATE CAMP,&#xD;&#xA;BARIDUA,&#xD;&#xA;MEGHALAYA-793101<br />
+                                            <b>Website : </b>www.dpskhanapara.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330011">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>17</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330100<br />
+                                            <b>Sch. Code:</b>35590
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> BDW INTERNATIONAL SCHOOL <br /> <b>Head/Principal Name: </b>Roshan Kerketta</td>
+                                        <td>
+                                            <b>Address : </b>NONGMENSONG, SHILLONG<br />
+                                            <b>Website : </b>www.bdwinternationalschool.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330100">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>18</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1330101<br />
+                                            <b>Sch. Code:</b>35637
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST JAINTIA HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> SARASWATI VIDYA MANDIR <br /> <b>Head/Principal Name: </b>Jandashisha sungoh</td>
+                                        <td>
+                                            <b>Address : </b>KONGONG, WAPUNGSHNONG, NEAR NH-6<br />
+                                            <b>Website : </b>www.sewtmeghalaya.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1330101">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>19</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340001<br />
+                                            <b>Sch. Code:</b>39319
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>RAVI KANT</td>
+                                        <td>
+                                            <b>Address : </b>WILLIAM NAGAR EAST GARO HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/East-Garo-Hills
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>20</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340002<br />
+                                            <b>Sch. Code:</b>39321
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>SHANTTI KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>NIYANGBARI EAST KHASI HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/Ri-Bhoi/en/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>21</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340003<br />
+                                            <b>Sch. Code:</b>39320
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>PRAKASH KUMAR GUPTA</td>
+                                        <td>
+                                            <b>Address : </b>BAGHMARA WEST GARO HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/SOUTH-GARO-HILLS/en/a
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>22</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340004<br />
+                                            <b>Sch. Code:</b>39322
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST JAINTIA HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> PM SHRI SCHOOL JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>NEERAJ KUMAR</td>
+                                        <td>
+                                            <b>Address : </b>MUKHLA, DT- JAYANTIA HILLS, P.O. THADLASKEIN, MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/WEST-JAINTIA-HILLS/en
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340004">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>23</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340005<br />
+                                            <b>Sch. Code:</b>39323
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>BRAJESH SINGH</td>
+                                        <td>
+                                            <b>Address : </b>NONGPYNDENG PO- NONGSTOIN DT- WEST KHASI HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/WEST-KHASI-HILLS/en/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340005">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>24</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340006<br />
+                                            <b>Sch. Code:</b>39324
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>ABDUL GANI</td>
+                                        <td>
+                                            <b>Address : </b>KENRIKONA, PO MAHEDERGANJ DISTT SOUTH WEST GARO HILLS MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/South-West-Garo-Hills
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340006">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>25</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340007<br />
+                                            <b>Sch. Code:</b>39325
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>NEELAM SHARMA</td>
+                                        <td>
+                                            <b>Address : </b>MAWPHLONG, EAST KHASI HILLS(1), DISTT. MEGHALAYA- 793121<br />
+                                            <b>Website : </b>www.navodaya.gov.in/nvs/nvs-school/East-Khasi-Hills-1/en/hom
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340007">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>26</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340008<br />
+                                            <b>Sch. Code:</b>39326
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>VILAS TAYDE</td>
+                                        <td>
+                                            <b>Address : </b>MAWSYN RAM, DISTT. EAST KHASI HILLS-II, MEGHALAYA<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/en/Home1/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340008">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>27</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340009<br />
+                                            <b>Sch. Code:</b>39615
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST JAINTIA HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>Dr Raj Kumar</td>
+                                        <td>
+                                            <b>Address : </b>VILL: RYMBAI, PO: LAD RYMBAI, DIST: EAST JAINTIA HILLS<br />
+                                            <b>Website : </b>www.navodaya.gov.in/nvs/nvs-school/EAST-JAINTIA-HILLS/
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340009">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>28</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340100<br />
+                                            <b>Sch. Code:</b>39706
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>SOUTH WEST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA SOUTH WEST KHASI HILLS <br /> <b>Head/Principal Name: </b>NILESH DANAPPAJI HINGMIRE</td>
+                                        <td>
+                                            <b>Address : </b>MAWKYRWAT, SOUTH WEST KHASI HILLS<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/nvs-school/South-West-Khasi-Hill
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340100">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>29</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340101<br />
+                                            <b>Sch. Code:</b>39714
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>NORTH GARO HILLS</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA <br /> <b>Head/Principal Name: </b>RAVI KANT</td>
+                                        <td>
+                                            <b>Address : </b>RAJA APAL, POST BAJENGDOBA, NORTH GARO HILLS<br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/ML/North-Garo-Hills
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340101">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>30</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1340102<br />
+                                            <b>Sch. Code:</b>39715
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>WEST GARO HILLS</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> JAWAHAR NAVODAYA VIDYALAYA WEST GARO HILLS <br /> <b>Head/Principal Name: </b>DR. DIPAK CHANDRA DAS</td>
+                                        <td>
+                                            <b>Address : </b>VILLAGE BANDUKLMALI, RMSA BUILDING, P.O. PHOTAMATI, BLOCK TIKRIKILLA , PERMANENT SITE  SADOLPARA DADENGGRE  <br />
+                                            <b>Website : </b>https://navodaya.gov.in/nvs/ML/West-Garo-Hills
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1340102">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>31</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1380001<br />
+                                            <b>Sch. Code:</b>39316
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ARMY PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>ANWAR HUSSAIN MAZUMDER</td>
+                                        <td>
+                                            <b>Address : </b>SHILLONG CANTONMENT  HEAD QRS 101 AREA C/O 99 APO, DISTT EAST KHASI HILLS, MEGHALAYA<br />
+                                            <b>Website : </b>www.apsshillong.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1380001">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>32</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1380002<br />
+                                            <b>Sch. Code:</b>39317
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>RI BHOI</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ARMY PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>Dr. Shipra Basu</td>
+                                        <td>
+                                            <b>Address : </b>UMROI MILITARY STATION MEGHALAYA<br />
+                                            <b>Website : </b>https://apsumroimilstn.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1380002">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>33</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1380003<br />
+                                            <b>Sch. Code:</b>39318
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Secondary Level</td>
+                                        <td><b>Name : </b> ARMY PUBLIC SCHOOL HAPPY VALLEY <br /> <b>Head/Principal Name: </b> DALIMI BARUAH</td>
+                                        <td>
+                                            <b>Address : </b>ARMY SCHOOL HAPPY VALLEY&#xD;&#xA;58 GORKHA TRAINING CENTRE&#xD;&#xA;HAPPY VALLEY&#xD;&#xA;SHILLONG, MEGHALAYA-793007<br />
+                                            <b>Website : </b>www.apshappyvalley.co.in
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1380003">View</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>34</td>
+                                        <td>
+                                            <b>Aff. No. :</b>1380004<br />
+                                            <b>Sch. Code:</b>35265
+                                            </td>
+                                        <td><b>State : </b>MEGHALAYA<br /><b>District : </b>EAST KHASI HILLS</td>
+
+                                        <td>Senior Secondary Level</td>
+                                        <td><b>Name : </b> ASSAM RIFLES PUBLIC SCHOOL <br /> <b>Head/Principal Name: </b>SHAJU ACHANDY</td>
+                                        <td>
+                                            <b>Address : </b>LAITKOR SHILLONG &#xD;&#xA;EAST KHASI HILLS 793010<br />
+                                            <b>Website : </b>www.arpsshillong.com
+                                        </td>
+                                        <td>
+                                            <a target="_blank" rel="noopener noreferrer" href="/SARAS/AffiliatedList/AfflicationDetails/1380004">View</a>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                        </table>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KbfpI0C7_pHpy1IgxLFMji5EQaPtHeobuXvmp4j4CSIF6HB2d9gNsPzKZ5oIdHhDtZHNRBxYBRb9ZwmSBOaVd4D_TF4f2E2J-WywvxW19OXTXF5JLQRI5np1jQHkQmbbChpmWKC_bo9cKQ5IhJvePc" /></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- jquery-->
+    <script src="/SARAS/ui/assets/js/jquery.min.js"></script>
+    <script src="/SARAS/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/SARAS/ui/assets/js/custom.js"></script>
+    <script src="/SARAS/ui/assets/js/colorCustom.js"></script>
+
+    <!--Data Table Files Start-->
+    <script src="/SARAS/ui/assets/js/datatables.min.js"></script>
+    <!--Data Table Files End-->
+
+    
+<script src="/SARAS/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/SARAS/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    $("input[name='MainRadioValue']").click(function () {
+        var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+            //alert($('input:radio[name=MainRadioValue]:checked').val());
+        if (mainRadioValue == "Keyword_wise") {
+            $("#div_SearchByKeyword").show();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Affi_No_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").show();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "State_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").show();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+            else if (mainRadioValue == "Region_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").show();
+            }
+            else if (mainRadioValue == "School_level_wise") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").show();
+            $("#div_SearchByDisaff").hide();
+            $("#div_SearchByRegion").hide();
+            }
+        else if (mainRadioValue == "Disaffiliated_schools") {
+            $("#div_SearchByKeyword").hide();
+            $("#div_SearchByAffNo").hide();
+            $("#div_SearchByStateDist").hide();
+            $("#div_SearchByStatusWise").hide();
+            $("#div_SearchByDisaff").show();
+            $("#div_SearchByRegion").hide();
+            window.location.href = "ListOfSchdirReportNew?ID1=D";
+
+            }
+        });
+
+          $(function () {
+            var dtVal = $("#hdnDistrict").val();
+            if (dtVal != "" && $("#State").val() !="") {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        if (v.value == dtVal) {
+                            row += "<option selected='selected' value=" + v.value + ">" + v.text + "</option>";
+                        }
+                        else {
+                            row += "<option value=" + v.value + ">" + v.text + "</option>";
+                        }
+                    });
+                    $("#District").html(row);
+                });
+            }
+
+
+            $("#State").change(function () {
+        var url = '/SARAS/AffiliatedList/Dist_Bind';
+                $.getJSON(url, { state_id: $("#State").val() }, function (d) {
+                    var row = "";
+                    $("#District").empty();
+                    $.each(d, function (i, v) {
+                        row += "<option value=" + v.value + ">" + v.text + "</option>";
+                    });
+                    $("#District").html(row);
+                });
+            });
+
+
+
+              var mainRadioValue = $('input:radio[name=MainRadioValue]:checked').val();
+              //alert($('input:radio[name=MainRadioValue]:checked').val());
+              if (mainRadioValue == "Keyword_wise") {
+                  $("#div_SearchByKeyword").show();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Affi_No_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").show();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "State_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").show();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+              }
+              else if (mainRadioValue == "Region_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").show();
+              }
+              else if (mainRadioValue == "School_level_wise") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").show();
+                  $("#div_SearchByDisaff").hide();
+                  $("#div_SearchByRegion").hide();
+
+              }
+              else if (mainRadioValue == "Disaffiliated_schools") {
+                  $("#div_SearchByKeyword").hide();
+                  $("#div_SearchByAffNo").hide();
+                  $("#div_SearchByStateDist").hide();
+                  $("#div_SearchByStatusWise").hide();
+                  $("#div_SearchByDisaff").show();
+                  $("#div_SearchByRegion").hide();
+                  window.location.href = "ListOfSchdirReportNew?ID1=D";
+              }
+          });
+
+
+
+    </script>
+
+<script type="text/javascript" src="/bnith__g7VX9uUajMyjNlmfA5bb_kYYXxwiGTx01mRt037MWzbGkWo9UOVnpDuWq6B8DdUK"></script> <script language="JavaScript" type="text/javascript">const _0x35e8=['visitorId','18127kSXadA','356575NPKVMA','7306axxsAH','get','657833TzFjkt','717302TQdBjl','34lMHocq','x-bni-rncf=1789025501060;expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','61XMWbpU','cookie',';expires=Thu, 01 Jan 2037 00:00:00 UTC;path=/;','then','651866OSUgMa','811155xdatvf','x-bni-fpc='];function _0x258e(_0x5954fe,_0x43567d){return _0x258e=function(_0x35e81f,_0x258e26){_0x35e81f=_0x35e81f-0x179;let _0x1280dc=_0x35e8[_0x35e81f];return _0x1280dc;},_0x258e(_0x5954fe,_0x43567d);}(function(_0x5674de,_0xdcf1af){const _0x512a29=_0x258e;while(!![]){try{const _0x55f636=parseInt(_0x512a29(0x17b))+-parseInt(_0x512a29(0x179))*parseInt(_0x512a29(0x17f))+-parseInt(_0x512a29(0x183))+-parseInt(_0x512a29(0x184))+parseInt(_0x512a29(0x187))*parseInt(_0x512a29(0x17d))+parseInt(_0x512a29(0x188))+parseInt(_0x512a29(0x17c));if(_0x55f636===_0xdcf1af)break;else _0x5674de['push'](_0x5674de['shift']());}catch(_0xd3a1ce){_0x5674de['push'](_0x5674de['shift']());}}}(_0x35e8,0x6b42d));function getClientIdentity(){const _0x47e86b=_0x258e,_0x448fbc=FingerprintJS['load']();_0x448fbc[_0x47e86b(0x182)](_0x4bb924=>_0x4bb924[_0x47e86b(0x17a)]())[_0x47e86b(0x182)](_0x2f8ca1=>{const _0x44872c=_0x47e86b,_0xa48f50=_0x2f8ca1[_0x44872c(0x186)];document[_0x44872c(0x180)]=_0x44872c(0x185)+_0xa48f50+_0x44872c(0x181),document[_0x44872c(0x180)]=_0x44872c(0x17e);});}getClientIdentity();</script></body>
+
+
+
+
+</html>

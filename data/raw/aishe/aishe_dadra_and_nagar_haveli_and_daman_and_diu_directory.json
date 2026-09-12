@@ -1,0 +1,40 @@
+[
+  {
+    "aisheCode": "C-15300",
+    "name": "DR. APJ ABDUL KALAM GOVERNMENT COLLEGE SILVASSA",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "DADRA AND NAGAR HAVELI",
+    "address": "Dokmardi, Silvassa",
+    "pincode": "396230",
+    "yearEstablished": 2011,
+    "website": "http://dnh.nic.in/apjgcollege",
+    "approvalAuthority": "Gujarat University / UGC"
+  },
+  {
+    "aisheCode": "C-15320",
+    "name": "NAMO MEDICAL EDUCATION AND RESEARCH INSTITUTE SILVASSA",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "DADRA AND NAGAR HAVELI",
+    "address": "Sayli Road, Silvassa",
+    "pincode": "396230",
+    "yearEstablished": 2019,
+    "nmcId": "NMC-DN-MED-001",
+    "website": "https://namomeri.gov.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "C-15340",
+    "name": "GOVERNMENT POLYTECHNIC DAMAN",
+    "level": "Technical/engineering institutions",
+    "type": "Government Polytechnic",
+    "district": "DAMAN",
+    "address": "Varkund, Nani Daman, Daman",
+    "pincode": "396210",
+    "yearEstablished": 1989,
+    "aicteId": "1-GPD-01",
+    "website": "https://gpdaman.org",
+    "approvalAuthority": "AICTE"
+  }
+]

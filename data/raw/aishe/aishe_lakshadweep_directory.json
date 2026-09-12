@@ -1,0 +1,26 @@
+[
+  {
+    "aisheCode": "C-15800",
+    "name": "JAWAHARLAL NEHRU COLLEGE KAVARATTI",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "LAKSHADWEEP",
+    "address": "Kavaratti Island, Lakshadweep",
+    "pincode": "682555",
+    "yearEstablished": 1972,
+    "website": "https://lakshadweep.gov.in/jnc",
+    "approvalAuthority": "Calicut University / UGC"
+  },
+  {
+    "aisheCode": "C-15820",
+    "name": "MAHATMA GANDHI COLLEGE ANDROTT",
+    "level": "Colleges",
+    "type": "Government Degree College",
+    "district": "LAKSHADWEEP",
+    "address": "Andrott Island, Lakshadweep",
+    "pincode": "682551",
+    "yearEstablished": 1983,
+    "website": "https://lakshadweep.gov.in/mgc",
+    "approvalAuthority": "Calicut University / UGC"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "aisheCode": "U-0379",
+    "name": "PUNJABI UNIVERSITY",
+    "level": "Universities",
+    "type": "State Public University",
+    "district": "PATIALA",
+    "address": "NH 64, Urban Estate Phase II, Patiala",
+    "pincode": "147002",
+    "yearEstablished": 1962,
+    "website": "http://www.punjabiuniversity.ac.in",
+    "approvalAuthority": "UGC Section 2(f) and 12(B)"
+  },
+  {
+    "aisheCode": "U-0378",
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY ROPAR (IIT ROPAR)",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "RUPNAGAR",
+    "address": "Bara Phool, Birla Seed Farms, Rupnagar",
+    "pincode": "140001",
+    "yearEstablished": 2008,
+    "website": "https://www.iitrpr.ac.in",
+    "approvalAuthority": "Act of Parliament (Institutes of Technology Act)"
+  },
+  {
+    "aisheCode": "C-28900",
+    "name": "GOVERNMENT MEDICAL COLLEGE AMRITSAR",
+    "level": "Medical institutions",
+    "type": "Government Medical College",
+    "district": "AMRITSAR",
+    "address": "Circular Road, Amritsar",
+    "pincode": "143001",
+    "yearEstablished": 1864,
+    "nmcId": "NMC-PB-MED-001",
+    "website": "http://www.gmc.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  },
+  {
+    "aisheCode": "U-0382",
+    "name": "RAJIV GANDHI NATIONAL UNIVERSITY OF LAW (RGNUL PATIALA)",
+    "level": "Law institutions",
+    "type": "National Law University",
+    "district": "PATIALA",
+    "address": "Sidhuwal, Bhadson Road, Patiala",
+    "pincode": "147006",
+    "yearEstablished": 2006,
+    "otherRegulatorId": "BCI-PB-LAW-001",
+    "website": "https://rgnul.ac.in",
+    "approvalAuthority": "Bar Council of India (BCI)"
+  }
+]

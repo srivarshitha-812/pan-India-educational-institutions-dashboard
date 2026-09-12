@@ -1,0 +1,39 @@
+[
+  {
+    "aisheCode": "U-0355",
+    "name": "MIZORAM UNIVERSITY (CENTRAL UNIVERSITY)",
+    "level": "Universities",
+    "type": "Central University",
+    "district": "AIZAWL",
+    "address": "Tanhril, Aizawl",
+    "pincode": "796004",
+    "yearEstablished": 2001,
+    "website": "https://mzu.edu.in",
+    "approvalAuthority": "UGC (Central Act)"
+  },
+  {
+    "aisheCode": "U-0356",
+    "name": "NATIONAL INSTITUTE OF TECHNOLOGY MIZORAM",
+    "level": "Institutes of National Importance",
+    "type": "Institute of National Importance",
+    "district": "AIZAWL",
+    "address": "Chaltlang, Aizawl",
+    "pincode": "796012",
+    "yearEstablished": 2010,
+    "website": "https://www.nitmz.ac.in",
+    "approvalAuthority": "Act of Parliament (NITSER Act)"
+  },
+  {
+    "aisheCode": "C-17400",
+    "name": "ZORAM MEDICAL COLLEGE (ZMC)",
+    "level": "Medical institutions",
+    "type": "State Government Medical College",
+    "district": "AIZAWL",
+    "address": "Falkawn, Aizawl",
+    "pincode": "796005",
+    "yearEstablished": 2018,
+    "nmcId": "NMC-MZ-MED-001",
+    "website": "https://zmc.edu.in",
+    "approvalAuthority": "National Medical Commission (NMC)"
+  }
+]
