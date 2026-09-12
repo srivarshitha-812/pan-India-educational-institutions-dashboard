@@ -15,7 +15,32 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/dashboard.css">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=9">
+
+  <!-- Mobile critical overrides — loaded inline to bypass CSS caching -->
+  <style>
+    @media (max-width: 1000px) {
+      /* Hide search bar from header on mobile — accessible via sidebar Global Search nav */
+      .global-search-bar { display: none !important; }
+      .header-right .global-search-bar { display: none !important; }
+      /* Compact single-row header */
+      .top-header {
+        flex-direction: row !important;
+        height: 56px !important;
+        min-height: 56px !important;
+        overflow: hidden !important;
+        padding: 0 14px !important;
+        gap: 12px !important;
+      }
+      .header-left { flex: 1 !important; min-width: 0 !important; }
+      .header-meta { display: none !important; }
+      .header-title { font-size: 1rem !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+      .header-refresh-btn { width: 40px !important; height: 40px !important; min-width: 40px !important; padding: 0 !important; border-radius: 50% !important; }
+      .header-refresh-btn .refresh-btn-text { display: none !important; }
+      /* Enough top padding so first content line is never behind the header */
+      .views-container { padding-top: 20px !important; padding-left: 14px !important; padding-right: 14px !important; }
+    }
+  </style>
 </head>
 <body>
 
