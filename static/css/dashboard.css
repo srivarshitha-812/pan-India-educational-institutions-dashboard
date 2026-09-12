@@ -1357,50 +1357,50 @@ body.sidebar-drawer-open {
    Mobile & Small Tablet Viewports (max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Single-row compact header on mobile — eliminates 2-row overlap on first KPI card */
   .top-header {
-    padding: 10px 14px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .header-left {
-    width: 100%;
-    justify-content: flex-start;
+    padding: 0 14px;
+    flex-direction: row;
+    align-items: center;
+    height: 56px;
+    min-height: 56px;
     gap: 12px;
   }
 
+  .header-left {
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
   .header-title {
-    font-size: 1.12rem;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .header-meta {
     display: none;
   }
 
+  /* Hide search bar from header on mobile — use sidebar Global Search instead */
   .header-right {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-shrink: 0;
   }
 
   .global-search-bar {
-    flex: 1;
-    width: 100%;
-    max-width: none;
-  }
-
-  .global-search-bar input {
-    height: 42px;
-    font-size: 0.88rem;
+    display: none;
   }
 
   .header-refresh-btn {
-    height: 42px;
-    min-width: 44px;
-    padding: 0 12px;
+    height: 40px;
+    min-width: 40px;
+    width: 40px;
+    padding: 0;
     justify-content: center;
+    border-radius: 50%;
     flex-shrink: 0;
   }
 
