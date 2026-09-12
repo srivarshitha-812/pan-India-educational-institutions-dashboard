@@ -118,6 +118,8 @@ body.sidebar-drawer-open {
 }
 
 /* Sidebar Navigation */
+/* Default: sidebar is a fixed overlay drawer (hidden off-screen).
+   On desktop (≥1025px) it becomes a sticky inline sidebar. */
 .sidebar {
   width: 280px;
   min-width: 280px;
@@ -125,13 +127,44 @@ body.sidebar-drawer-open {
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   height: 100vh;
   height: 100dvh;
-  z-index: 100;
+  z-index: 1000;
   overflow-y: auto;
+  transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+}
+
+/* Desktop: restore sidebar as sticky inline element */
+@media (min-width: 1025px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    transform: none !important;
+    box-shadow: none;
+    z-index: 100;
+    flex-shrink: 0;
+  }
+  .sidebar-close-btn {
+    display: none !important;
+  }
+  .sidebar-backdrop {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: none !important;
+  }
 }
 
 .sidebar-header {
@@ -140,7 +173,11 @@ body.sidebar-drawer-open {
 }
 
 .sidebar-close-btn {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   background: transparent;
   border: none;
   color: var(--text-muted);
@@ -149,6 +186,7 @@ body.sidebar-drawer-open {
   padding: 4px;
   line-height: 1;
   transition: var(--transition-fast);
+  touch-action: manipulation;
 }
 
 .sidebar-close-btn:hover {
@@ -263,14 +301,14 @@ body.sidebar-drawer-open {
 
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
-  display: none;
+  display: flex;  /* visible by default on mobile; hidden on desktop via @media min-width */
   flex-direction: column;
   justify-content: space-between;
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  min-height: 42px;
-  padding: 11px 9px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 10px;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -278,19 +316,24 @@ body.sidebar-drawer-open {
   transition: var(--transition-fast);
   touch-action: manipulation;
   flex-shrink: 0;
+  gap: 0;
 }
 
 .mobile-menu-toggle .menu-bar {
+  display: block;
   width: 100%;
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
   transition: var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.mobile-menu-toggle:hover, .mobile-menu-toggle:focus {
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
   background: var(--bg-surface-light);
   border-color: var(--accent-primary);
+  outline: none;
 }
 
 /* Top App Header */
@@ -1263,36 +1306,11 @@ body.sidebar-drawer-open {
    Tablet Viewports (max-width: 1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  /* Convert fixed sidebar to sliding mobile/tablet drawer */
+  /* Sidebar is already fixed/hidden by default in base styles.
+     Just ensure max-width is capped and border is visible. */
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
     max-width: 85vw;
-    height: 100vh;
-    height: 100dvh;
-    z-index: 1000;
-    transform: translateX(-100%);
-    box-shadow: none;
     border-right: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
-  }
-
-  .sidebar-close-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
   }
 
   .top-header {
