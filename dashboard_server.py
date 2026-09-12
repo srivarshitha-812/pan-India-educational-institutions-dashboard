@@ -13,6 +13,7 @@ from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 import uvicorn
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -41,6 +42,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # Standard Indian States and UTs (28 + 8 = 36)
 STANDARD_STATES_UTS = [
@@ -1341,7 +1344,14 @@ if __name__ == "__main__":
     import socket
 
     env_port = int(os.environ.get("PORT", 8000))
-    default_host = "0.0.0.0" if (os.environ.get("RENDER") or os.environ.get("ENV") == "production") else "127.0.0.1"
+    is_cloud = (
+        os.environ.get("RENDER")
+        or os.environ.get("RAILWAY_ENVIRONMENT")
+        or os.environ.get("RAILWAY_STATIC_URL")
+        or os.environ.get("RAILWAY_PUBLIC_DOMAIN")
+        or os.environ.get("ENV") == "production"
+    )
+    default_host = "0.0.0.0" if is_cloud else "127.0.0.1"
     env_host = os.environ.get("HOST", default_host)
 
     parser = argparse.ArgumentParser(description="Pan-India Educational Institutions Dashboard Server")

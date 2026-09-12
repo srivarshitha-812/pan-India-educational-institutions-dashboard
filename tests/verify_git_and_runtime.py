@@ -75,6 +75,7 @@ def verify():
         "generate_data_dictionary.py",
         "requirements.txt",
         "Procfile",
+        "railway.json",
         "Dockerfile",
         "docker-compose.yml",
         ".env.example",
