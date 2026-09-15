@@ -296,12 +296,12 @@ class DataRegistry:
                 "id": "pci",
                 "sector": "Pharmacy",
                 "authority": "Pharmacy Council of India (PCI)",
-                "status": "NOT STARTED",
-                "priority": "HIGH",
-                "estimated_institutions": "4,500+ Colleges",
-                "collected_count": 0,
-                "notes": "No bulk public API. Directory inspection indicates dynamic table requiring session cookie.",
-                "action_plan": "Deploy browser crawler against approved pharmacy institutes portal."
+                "status": "VALIDATED",
+                "priority": "LOW",
+                "estimated_institutions": "6,664 Colleges",
+                "collected_count": 6664,
+                "notes": "Complete national register of approved pharmacy institutions extracted from official PCI portal (16,033 stream filings consolidated into 6,664 physical institutions across 32 States/UTs).",
+                "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (6,664 physical institutions with 100% official PCI IDs)."
             },
             {
                 "id": "bci",
@@ -416,6 +416,8 @@ class DataRegistry:
             return "Homoeopathy Education"
         elif "law" in fn or "bci" in fn:
             return "Legal Education & Law Colleges"
+        elif "pharmacy" in fn or "pci" in fn:
+            return "Pharmacy"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -441,6 +443,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["nch_college_code", "nch college code"])
         elif "law" in fn_lower or "bci" in fn_lower:
             return self._find_matching_col(cols, ["bci college id", "bci_college_id", "bci_id", "bci id"])
+        elif "pharmacy" in fn_lower or "pci" in fn_lower:
+            return self._find_matching_col(cols, ["pci college id", "pci_college_id", "pci code", "pci_code", "pci id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -947,7 +951,7 @@ class DataRegistry:
                 "categories": {},
                 "districts": {},
                 "available_datasets": set(),
-                "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine"],
+                "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
                 "missing_categories": []
             }
 
@@ -961,7 +965,7 @@ class DataRegistry:
                     "categories": {},
                     "districts": {},
                     "available_datasets": set(),
-                    "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine"],
+                    "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
                     "missing_categories": []
                 }
             

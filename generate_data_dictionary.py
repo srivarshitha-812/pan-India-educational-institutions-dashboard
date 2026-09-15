@@ -1742,7 +1742,219 @@ DICTIONARY_RECORDS: List[Dict[str, Any]] = [
     },
 
     # =========================================================================
-    # 13. DASHBOARD-CALCULATED & AUDIT FIELDS (Cross-Cutting)
+    # 13. PCI NATIONAL PHARMACY COLLEGES REGISTER (16 Fields)
+    # =========================================================================
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "S.No",
+        "data_type": "Integer",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "1",
+        "allowed_values": "Sequential positive integers (1 to 6,664)",
+        "description": "Sequential identifier assigned during reconciliation of the national physical pharmacy college register.",
+        "notes": "Provides fixed row reference across the deduplicated roster."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Institution Name",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Advance Institute Of Biotech And Paramedical Sciences",
+        "allowed_values": "Official statutory name of the pharmacy institution",
+        "description": "Cleaned legal name of the pharmacy institution/college recognized under the Pharmacy Act, 1948.",
+        "notes": "Consolidated across course streams; captures the primary physical institution entity."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "State",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Uttar Pradesh",
+        "allowed_values": "One of 36 Canonical Indian States or Union Territories",
+        "description": "State or Union Territory in which the pharmacy college campus is physically located.",
+        "notes": "Standardized to canonical spelling across all 32 covered States/UTs."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "District",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "No",
+        "example_value": "Lucknow",
+        "allowed_values": "Recognized Indian district name, or 'Not Specified'",
+        "description": "District administrative boundary extracted by cross-referencing state district masters and location tokens.",
+        "notes": "89.6% district resolution achieved across 6,664 physical institutions."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "City",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "No",
+        "example_value": "Lucknow",
+        "allowed_values": "Town, city, or municipal locality",
+        "description": "City or urban agglomeration serving the physical pharmacy college campus.",
+        "notes": "Extracted from institutional address and district tokens."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Address",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Advance Institute Of Biotech And Paramedical Sciences Kanpur Road Lucknow",
+        "allowed_values": "Full street/campus address string",
+        "description": "Complete physical address including road, village, mandal, and district location tokens.",
+        "notes": "Preserves full campus geographical provenance."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "University / Affiliating University",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Dr. A.P.J. Abdul Kalam Technical University",
+        "allowed_values": "Recognized university or state examining board",
+        "description": "Statutory Examining Authority or University to which the pharmacy college is affiliated.",
+        "notes": "Cleaned from examiningauthority_name; captures both degree-granting universities and state technical boards."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Management Type",
+        "data_type": "String (Categorical)",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "Private / Self-Financed",
+        "allowed_values": "Government / University Constituent, Private / Self-Financed",
+        "description": "Administrative ownership category inferred from institution and university designations.",
+        "notes": "Classified based on statutory ownership indicators."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Approval Status",
+        "data_type": "String (Categorical)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Approved u/s 12",
+        "allowed_values": "Approved u/s 12, Approved for Conduct of Course, Approved u/s 12 & Conduct of Course, Approved",
+        "description": "Statutory regulatory approval status under Section 12 or conduct provisions of the Pharmacy Act, 1948.",
+        "notes": "Indicates whether qualifying examinations are approved for registration as a registered pharmacist."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Programmes / Courses",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "B.Pharm, D.Pharm, M.Pharm (Pharmaceutics)",
+        "allowed_values": "Comma-separated pharmacy qualifications: D.Pharm, B.Pharm, M.Pharm, Pharm.D, Pharm.D (PB), Bridge Course",
+        "description": "Consolidated list of all PCI-approved programmes offered at this physical campus.",
+        "notes": "Unified from 16,033 course-stream filings into a single physical college row."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "PCI College ID",
+        "data_type": "String (Identifier)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "PCI-1",
+        "allowed_values": "Official PCI Code pattern: PCI-\\d+",
+        "description": "Official unique regulatory institution code assigned by Pharmacy Council of India.",
+        "notes": "100% complete across all 6,664 institutions; serves as the primary canonical regulatory key."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Approval Year / Academic Year",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "2026-2027",
+        "allowed_values": "Academic year span (e.g. 2026-2027, 2025-2026) or 'Current Approval'",
+        "description": "Academic session up to which PCI approval has been extended or granted.",
+        "notes": "Extracted from official Central Council / Executive Committee decision orders."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Intake / Seats",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Total: 160 (B.Pharm: 100, D.Pharm: 60)",
+        "allowed_values": "Approved annual admissions count per course or council norms",
+        "description": "Total approved student intake capacity across all active pharmacy programmes.",
+        "notes": "Extracted from formal Council decision notifications."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Remarks",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "No",
+        "example_value": "Approved across 2 regulatory stream decision(s). Aadhaar Enabled Biometric Attendance System (AEBAS) implementation mandated.",
+        "allowed_values": "Stream decision counts and regulatory directives",
+        "description": "Council directives and multi-stream consolidation metadata.",
+        "notes": "Captures AEBAS compliance requirements and decision stream linkages."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Source URL",
+        "data_type": "URL (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "https://www.pci.gov.in/",
+        "allowed_values": "Valid HTTPS URL on official pci.gov.in portal",
+        "description": "Canonical link to official PCI approved institutions register.",
+        "notes": "Ensures complete statutory lineage to Pharmacy Council of India."
+    },
+    {
+        "dataset": "PCI National Pharmacy Colleges Register",
+        "source_regulator": "Pharmacy Council of India (PCI)",
+        "academic_year": "2026-27",
+        "field_name": "Collection Date",
+        "data_type": "Date (ISO 8601)",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "2026-09-15",
+        "allowed_values": "YYYY-MM-DD",
+        "description": "Date on which data was retrieved and verified from PCI official portal.",
+        "notes": "Audit timestamp."
+    },
+
+    # =========================================================================
+    # 14. DASHBOARD-CALCULATED & AUDIT FIELDS (Cross-Cutting)
     # =========================================================================
     {
         "dataset": "Dashboard Common Architecture",
@@ -1967,6 +2179,19 @@ DATASET_OVERVIEW_META: List[Dict[str, Any]] = [
         "fields_documented": 16,
         "schema_reference": "Bar Council of India Statutory CLE Register (BCA0026X2518XJCSA38.pdf)",
         "notes": "100% complete national census of recognized/approved Centres of Legal Education (CLEs) across India under Advocates Act, 1961."
+    },
+    {
+        "dataset_name": "PCI National Pharmacy Colleges Register",
+        "source_authority": "Pharmacy Council of India (PCI)",
+        "sector": "Pharmacy Education (D.Pharm / B.Pharm / M.Pharm / Pharm.D)",
+        "academic_year": "2026-27",
+        "as_of_date": "2026-09-15",
+        "total_records": "6,664",
+        "states_covered": "32 / 36 (89%)",
+        "official_id_field": "PCI_College_ID (e.g. PCI-1, PCI-6)",
+        "fields_documented": 16,
+        "schema_reference": "Pharmacy Council of India Statutory Register (16,033 stream filings)",
+        "notes": "100% complete national census of recognized/approved pharmacy colleges across India under Pharmacy Act, 1948."
     },
     {
         "dataset_name": "Dashboard Common Architecture",

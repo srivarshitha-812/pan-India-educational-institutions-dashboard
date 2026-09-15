@@ -95,7 +95,8 @@ def verify():
         "Final Institute Lists/Rehabilitation Colleges.xlsx",
         "Final Institute Lists/Ayurveda Colleges.xlsx",
         "Final Institute Lists/Homoeopathy Colleges.xlsx",
-        "Final Institute Lists/Law Colleges.xlsx"
+        "Final Institute Lists/Law Colleges.xlsx",
+        "Final Institute Lists/Pharmacy Colleges.xlsx"
     ]
     
     print("\n--- 3. VERIFY ESSENTIAL RUNTIME FILES ARE TRACKED (NOT IGNORED) ---")
@@ -129,11 +130,11 @@ def verify():
     kpis = summary["kpis"]
     print(f"  [OK] Summary KPIs: {kpis['states_covered']} States, {kpis['total_records_final']} Final Records")
     assert kpis['states_covered'] == 36
-    assert kpis['total_records_final'] == 10708
+    assert kpis['total_records_final'] == 17372
     
-    # Final Lists check all 8
+    # Final Lists check all 9
     final_data = get_json("/api/datasets/final")
-    assert len(final_data["lists"]) == 8
+    assert len(final_data["lists"]) == 9
     print(f"  [OK] All {len(final_data['lists'])} Final Lists loaded:")
     for l in final_data["lists"]:
         print(f"       - {l.get('file_name', l.get('id', '')): <40}: {l['total_records']:,} institutions")
@@ -141,7 +142,7 @@ def verify():
     # Data Dictionary
     dict_data = get_json("/api/dictionary")
     print(f"  [OK] Data Dictionary: {dict_data['total_fields']} fields documented")
-    assert dict_data['total_fields'] == 132
+    assert dict_data['total_fields'] == 148
     
     # Search tests
     # Gachibowli

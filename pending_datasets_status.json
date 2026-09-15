@@ -36,12 +36,12 @@
     "id": "pci",
     "sector": "Pharmacy",
     "authority": "Pharmacy Council of India (PCI)",
-    "status": "NOT STARTED",
-    "priority": "HIGH",
-    "estimated_institutions": "4,500+ Colleges",
-    "collected_count": 0,
-    "notes": "No bulk public API. Directory inspection indicates dynamic table requiring session cookie.",
-    "action_plan": "Deploy browser crawler against approved pharmacy institutes portal."
+    "status": "VALIDATED",
+    "priority": "LOW",
+    "estimated_institutions": "6,664 Colleges",
+    "collected_count": 6664,
+    "notes": "Complete national register of approved pharmacy institutions extracted from official PCI portal (16,033 stream filings consolidated into 6,664 physical institutions across 32 States/UTs).",
+    "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (6,664 physical institutions with 100% official PCI IDs)."
   },
   {
     "id": "bci",
