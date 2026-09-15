@@ -491,15 +491,43 @@
         <section class="tab-view" id="view-pending">
           <div class="section-header">
             <div>
-              <h3 class="section-title"><span>⏳</span> Pending Regulatory Sectors & Collection Tracker</h3>
+              <h3 class="section-title"><span>⏳</span> Pending Regulatory Datasets & Roadmap</h3>
               <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Status of remaining national regulatory datasets required for complete Pan-India higher education coverage.
+                Strict collection tracking for remaining unharvested national regulatory portals and completed census registries.
               </p>
             </div>
           </div>
 
-          <div class="pending-grid" id="pending-grid">
-            <!-- Dynamically populated -->
+          <!-- Section 1: Strict Pending Queue -->
+          <div style="margin-bottom: 36px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h4 style="font-family: var(--font-heading); color: #fbbf24; display: flex; align-items: center; gap: 8px; font-size: 1.05rem;">
+                <span>📋</span> Remaining Regulatory Portals (Pending Collection)
+              </h4>
+              <span class="kpi-badge warning" id="badge-pending-queue-count">7 Portals Awaiting Collection</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
+              These national regulatory directories are pending or actively in development. Official targets are marked "Count not established" until certified rosters are harvested.
+            </p>
+            <div class="pending-grid" id="pending-grid">
+              <!-- Dynamically populated with genuinely pending portals -->
+            </div>
+          </div>
+
+          <!-- Section 2: Completed & Integrated Portals -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h4 style="font-family: var(--font-heading); color: #34d399; display: flex; align-items: center; gap: 8px; font-size: 1.05rem;">
+                <span>✅</span> Completed & Integrated Portals
+              </h4>
+              <span class="kpi-badge success" id="badge-completed-queue-count">9 Portals Live in Census</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
+              Official national directories harvested, cleaned, deduplicated, and integrated into Final Institute Lists.
+            </p>
+            <div class="pending-grid" id="completed-grid">
+              <!-- Dynamically populated from Final Institute Lists -->
+            </div>
           </div>
         </section>
 
@@ -510,8 +538,8 @@
           <div class="section-header">
             <div>
               <h3 class="section-title"><span>🔍</span> Global Search Across Final Institute Lists</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Search across all 10,708 final institutions by name, official ID, state, district, or PIN code.
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;" id="search-view-subtitle">
+                Search across all final institutions by name, official ID, state, district, or PIN code.
               </p>
             </div>
           </div>

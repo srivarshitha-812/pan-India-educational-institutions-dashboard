@@ -261,13 +261,13 @@ class DataRegistry:
         default_pending = [
             {
                 "id": "aishe",
-                "sector": "Higher Education & Colleges",
+                "sector": "Colleges / Higher Education",
                 "authority": "AISHE / Ministry of Education",
                 "status": "IN PROGRESS",
                 "priority": "HIGH",
-                "estimated_institutions": "45,000+ Colleges, 1,200+ Universities",
+                "estimated_institutions": "Count not established",
                 "collected_count": 162,
-                "notes": "Universities extracted; college-level API requires session persistence & captcha bypassing.",
+                "notes": "University directory extracted; affiliated college-level directory requires session persistence & verification.",
                 "action_plan": "Implement browser session worker for full college directory extraction."
             },
             {
@@ -276,9 +276,9 @@ class DataRegistry:
                 "authority": "AICTE",
                 "status": "IN PROGRESS",
                 "priority": "HIGH",
-                "estimated_institutions": "9,000+ Institutes",
+                "estimated_institutions": "Count not established",
                 "collected_count": 67,
-                "notes": "Telangana engineering slice completed. National directory requires automated ASP.NET table scraper.",
+                "notes": "State slice tested. National approved directory requires automated multi-state traversal.",
                 "action_plan": "Scrape state-wise approved AICTE directory with Playwright worker."
             },
             {
@@ -287,43 +287,10 @@ class DataRegistry:
                 "authority": "NCTE",
                 "status": "IN PROGRESS",
                 "priority": "MEDIUM",
-                "estimated_institutions": "18,000+ Institutes",
+                "estimated_institutions": "Count not established",
                 "collected_count": 19,
-                "notes": "Angular web app requires REST probe extraction per state.",
+                "notes": "Angular web app requires REST probe extraction per regional committee.",
                 "action_plan": "Execute headless browser script to pull full JSON API payloads."
-            },
-            {
-                "id": "pci",
-                "sector": "Pharmacy",
-                "authority": "Pharmacy Council of India (PCI)",
-                "status": "VALIDATED",
-                "priority": "LOW",
-                "estimated_institutions": "6,664 Colleges",
-                "collected_count": 6664,
-                "notes": "Complete national register of approved pharmacy institutions extracted from official PCI portal (16,033 stream filings consolidated into 6,664 physical institutions across 32 States/UTs).",
-                "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (6,664 physical institutions with 100% official PCI IDs)."
-            },
-            {
-                "id": "bci",
-                "sector": "Legal Education & Law Colleges",
-                "authority": "Bar Council of India (BCI)",
-                "status": "VALIDATED",
-                "priority": "LOW",
-                "estimated_institutions": "3,074 Colleges",
-                "collected_count": 3074,
-                "notes": "Complete national approved Centres of Legal Education (CLEs) extracted from official BCI 107-page master roster (BCA0026X2518XJCSA38.pdf) and verified against online BCI directory. 3,074 physical law colleges across 31 States/UTs.",
-                "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (3,074 physical institutions, 5,492 approved course entries)."
-            },
-            {
-                "id": "nch",
-                "sector": "Homoeopathy Education",
-                "authority": "National Commission for Homoeopathy (NCH)",
-                "status": "VALIDATED",
-                "priority": "LOW",
-                "estimated_institutions": "299 Colleges",
-                "collected_count": 299,
-                "notes": "Complete AY 2026-27 permission status extracted from official NCH PDF (nch.org.in). 26 states/UTs covered.",
-                "action_plan": "Dataset completed and loaded into Final Institute Lists (299 institutions)."
             },
             {
                 "id": "ncvet",
@@ -331,10 +298,43 @@ class DataRegistry:
                 "authority": "NCVET / DGT MIS",
                 "status": "NOT STARTED",
                 "priority": "HIGH",
-                "estimated_institutions": "15,000+ ITIs & Skill Centers",
+                "estimated_institutions": "Count not established",
                 "collected_count": 0,
-                "notes": "DGT MIS uses ASP.NET ViewState without REST endpoints.",
+                "notes": "DGT MIS uses ASP.NET ViewState forms without public REST endpoints.",
                 "action_plan": "Automate state/district dropdown traversal using Playwright."
+            },
+            {
+                "id": "dci",
+                "sector": "Dental Education (BDS, MDS)",
+                "authority": "Dental Council of India (DCI)",
+                "status": "NOT STARTED",
+                "priority": "HIGH",
+                "estimated_institutions": "Count not established",
+                "collected_count": 0,
+                "notes": "Official register of approved/recognized dental colleges across India.",
+                "action_plan": "Harvest recognized institution list directly from dciindia.gov.in."
+            },
+            {
+                "id": "vci",
+                "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
+                "authority": "Veterinary Council of India (VCI)",
+                "status": "NOT STARTED",
+                "priority": "MEDIUM",
+                "estimated_institutions": "Count not established",
+                "collected_count": 0,
+                "notes": "Recognized veterinary colleges and institutions under the Indian Veterinary Council Act.",
+                "action_plan": "Extract official accredited colleges from vci.dahd.gov.in."
+            },
+            {
+                "id": "icar",
+                "sector": "Agricultural & Allied Sciences",
+                "authority": "Indian Council of Agricultural Research (ICAR)",
+                "status": "NOT STARTED",
+                "priority": "MEDIUM",
+                "estimated_institutions": "Count not established",
+                "collected_count": 0,
+                "notes": "Accredited agricultural universities, deemed universities, and ICAR institutions.",
+                "action_plan": "Extract accredited agricultural colleges and universities from icar.org.in."
             }
         ]
 
@@ -984,6 +984,119 @@ class DataRegistry:
             present_cats = set(data["categories"].keys())
             data["missing_categories"] = [c for c in data["all_categories_expected"] if c not in present_cats]
 
+    def get_completed_portals(self) -> List[Dict[str, Any]]:
+        """Dynamically builds completed portals list from actual loaded final institute files"""
+        regulator_map = {
+            "welcome_to_ugc__new_delhi__india": {
+                "authority": "University Grants Commission (UGC)",
+                "regulator_code": "UGC",
+                "category": "Universities & Higher Education",
+                "source_portal": "https://www.ugc.gov.in/"
+            },
+            "welcome_to_ugc_new_delhi_india": {
+                "authority": "University Grants Commission (UGC)",
+                "regulator_code": "UGC",
+                "category": "Universities & Higher Education",
+                "source_portal": "https://www.ugc.gov.in/"
+            },
+            "medical_colleges": {
+                "authority": "National Medical Commission (NMC)",
+                "regulator_code": "NMC",
+                "category": "Medical Education",
+                "source_portal": "https://www.nmc.org.in/"
+            },
+            "nursing_colleges": {
+                "authority": "Indian Nursing Council (INC)",
+                "regulator_code": "INC",
+                "category": "Nursing",
+                "source_portal": "https://indiannursingcouncil.org/"
+            },
+            "architecture_colleges": {
+                "authority": "Council of Architecture (CoA)",
+                "regulator_code": "CoA",
+                "category": "Architecture",
+                "source_portal": "https://www.coa.gov.in/"
+            },
+            "rehabilitation_colleges": {
+                "authority": "Rehabilitation Council of India (RCI)",
+                "regulator_code": "RCI",
+                "category": "Rehabilitation & Special Education",
+                "source_portal": "https://rehabcouncil.nic.in/"
+            },
+            "ayurveda_colleges": {
+                "authority": "National Commission for Indian System of Medicine (NCISM)",
+                "regulator_code": "NCISM",
+                "category": "Ayurveda & Unani Medicine",
+                "source_portal": "https://ncismindia.org/"
+            },
+            "homoeopathy_colleges": {
+                "authority": "National Commission for Homoeopathy (NCH)",
+                "regulator_code": "NCH",
+                "category": "Homoeopathy Education",
+                "source_portal": "https://nch.org.in/"
+            },
+            "law_colleges": {
+                "authority": "Bar Council of India (BCI)",
+                "regulator_code": "BCI",
+                "category": "Legal Education & Law Colleges",
+                "source_portal": "https://www.barcouncilofindia.org/"
+            },
+            "pharmacy_colleges": {
+                "authority": "Pharmacy Council of India (PCI)",
+                "regulator_code": "PCI",
+                "category": "Pharmacy",
+                "source_portal": "https://www.pci.gov.in/"
+            }
+        }
+        completed = []
+        for list_id, stats in self.final_lists.items():
+            meta = regulator_map.get(list_id)
+            if not meta:
+                meta = {
+                    "authority": stats.get("category", "Regulatory Council"),
+                    "regulator_code": stats.get("category", "COUNCIL"),
+                    "category": stats.get("category", "Higher Education"),
+                    "source_portal": ""
+                }
+            completed.append({
+                "id": list_id,
+                "authority": meta["authority"],
+                "regulator_code": meta["regulator_code"],
+                "category": stats["category"],
+                "file_name": stats["file_name"],
+                "file_id": list_id,
+                "final_institution_count": stats["total_records"],
+                "collected_count": stats["total_records"],
+                "status": "COMPLETED",
+                "official_id_display": stats.get("official_id_display", "—"),
+                "states_covered": stats.get("states_covered", 0),
+                "districts_covered": stats.get("districts_covered", 0),
+                "source_portal": meta.get("source_portal", "")
+            })
+        completed.sort(key=lambda x: x["final_institution_count"], reverse=True)
+        return completed
+
+    def get_pending_portals(self) -> List[Dict[str, Any]]:
+        """Returns only genuinely pending portals, strictly excluding any that exist in final lists"""
+        completed = self.get_completed_portals()
+        completed_codes = {c["regulator_code"].lower() for c in completed}
+        completed_ids = {c["id"].lower() for c in completed}
+        
+        pending = []
+        for p in self.pending_datasets:
+            pid = p.get("id", "").lower()
+            auth = p.get("authority", "").lower()
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism"]:
+                continue
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation"]):
+                continue
+            item = dict(p)
+            val = str(item.get("estimated_institutions", ""))
+            if not val or any(x in val for x in ["45,000", "9,000", "18,000", "15,000"]):
+                item["estimated_institutions"] = "Count not established"
+            pending.append(item)
+        return pending
+
 registry = DataRegistry()
 
 # API Endpoints
@@ -1000,7 +1113,7 @@ def get_summary():
     high_priority = sum(1 for d in registry.source_datasets if d["review_priority"] == "HIGH")
     high_priority += sum(1 for s in registry.final_lists.values() if s["review_priority"] == "HIGH")
     
-    pending_count = sum(1 for d in registry.pending_datasets if d.get("status") not in ("VALIDATED", "COLLECTED", "COMPLETE"))
+    pending_count = len(registry.get_pending_portals())
 
     # States covered in final lists calculated strictly against the 36 canonical States and UTs
     canonical_covered = [
@@ -1239,10 +1352,14 @@ def global_search(
 
 @app.get("/api/pending")
 def get_pending():
-    """Returns the status board of pending regulatory datasets"""
+    """Returns the status board of pending regulatory datasets and completed portals"""
+    pending = registry.get_pending_portals()
+    completed = registry.get_completed_portals()
     return {
-        "count": len(registry.pending_datasets),
-        "pending": registry.pending_datasets
+        "count": len(pending),
+        "pending": pending,
+        "completed_count": len(completed),
+        "completed": completed
     }
 
 @app.post("/api/pending/update")

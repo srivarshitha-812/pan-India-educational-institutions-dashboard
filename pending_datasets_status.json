@@ -1,13 +1,13 @@
 [
   {
     "id": "aishe",
-    "sector": "Higher Education & Colleges",
+    "sector": "Colleges / Higher Education",
     "authority": "AISHE / Ministry of Education",
     "status": "IN PROGRESS",
     "priority": "HIGH",
-    "estimated_institutions": "45,000+ Colleges, 1,200+ Universities",
+    "estimated_institutions": "Count not established",
     "collected_count": 162,
-    "notes": "Universities extracted; college-level API requires session persistence & captcha bypassing.",
+    "notes": "University directory extracted; affiliated college-level directory requires session persistence & verification.",
     "action_plan": "Implement browser session worker for full college directory extraction."
   },
   {
@@ -16,9 +16,9 @@
     "authority": "AICTE",
     "status": "IN PROGRESS",
     "priority": "HIGH",
-    "estimated_institutions": "9,000+ Institutes",
+    "estimated_institutions": "Count not established",
     "collected_count": 67,
-    "notes": "Telangana engineering slice completed. National directory requires automated ASP.NET table scraper.",
+    "notes": "State slice tested. National approved directory requires automated multi-state traversal.",
     "action_plan": "Scrape state-wise approved AICTE directory with Playwright worker."
   },
   {
@@ -27,43 +27,10 @@
     "authority": "NCTE",
     "status": "IN PROGRESS",
     "priority": "MEDIUM",
-    "estimated_institutions": "18,000+ Institutes",
+    "estimated_institutions": "Count not established",
     "collected_count": 19,
-    "notes": "Angular web app requires REST probe extraction per state.",
+    "notes": "Angular web app requires REST probe extraction per regional committee.",
     "action_plan": "Execute headless browser script to pull full JSON API payloads."
-  },
-  {
-    "id": "pci",
-    "sector": "Pharmacy",
-    "authority": "Pharmacy Council of India (PCI)",
-    "status": "VALIDATED",
-    "priority": "LOW",
-    "estimated_institutions": "6,664 Colleges",
-    "collected_count": 6664,
-    "notes": "Complete national register of approved pharmacy institutions extracted from official PCI portal (16,033 stream filings consolidated into 6,664 physical institutions across 32 States/UTs).",
-    "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (6,664 physical institutions with 100% official PCI IDs)."
-  },
-  {
-    "id": "bci",
-    "sector": "Legal Education & Law Colleges",
-    "authority": "Bar Council of India (BCI)",
-    "status": "VALIDATED",
-    "priority": "LOW",
-    "estimated_institutions": "3,074 Colleges",
-    "collected_count": 3074,
-    "notes": "Complete national approved Centres of Legal Education (CLEs) extracted from official BCI 107-page master roster (BCA0026X2518XJCSA38.pdf) and verified against online BCI directory. 3,074 physical law colleges across 31 States/UTs.",
-    "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (3,074 physical institutions, 5,492 approved course entries)."
-  },
-  {
-    "id": "nch",
-    "sector": "Homoeopathy Education",
-    "authority": "National Commission for Homoeopathy (NCH)",
-    "status": "VALIDATED",
-    "priority": "LOW",
-    "estimated_institutions": "299 Colleges",
-    "collected_count": 299,
-    "notes": "Complete AY 2026-27 permission status extracted from official NCH PDF (nch.org.in). 26 states/UTs covered. Official NCH College Codes used as identifiers.",
-    "action_plan": "Dataset completed and loaded into Final Institute Lists (299 institutions)."
   },
   {
     "id": "ncvet",
@@ -71,9 +38,42 @@
     "authority": "NCVET / DGT MIS",
     "status": "NOT STARTED",
     "priority": "HIGH",
-    "estimated_institutions": "15,000+ ITIs & Skill Centers",
+    "estimated_institutions": "Count not established",
     "collected_count": 0,
-    "notes": "DGT MIS uses ASP.NET ViewState without REST endpoints.",
+    "notes": "DGT MIS uses ASP.NET ViewState forms without public REST endpoints.",
     "action_plan": "Automate state/district dropdown traversal using Playwright."
+  },
+  {
+    "id": "dci",
+    "sector": "Dental Education (BDS, MDS)",
+    "authority": "Dental Council of India (DCI)",
+    "status": "NOT STARTED",
+    "priority": "HIGH",
+    "estimated_institutions": "Count not established",
+    "collected_count": 0,
+    "notes": "Official register of approved/recognized dental colleges across India.",
+    "action_plan": "Harvest recognized institution list directly from dciindia.gov.in."
+  },
+  {
+    "id": "vci",
+    "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
+    "authority": "Veterinary Council of India (VCI)",
+    "status": "NOT STARTED",
+    "priority": "MEDIUM",
+    "estimated_institutions": "Count not established",
+    "collected_count": 0,
+    "notes": "Recognized veterinary colleges and institutions under the Indian Veterinary Council Act.",
+    "action_plan": "Extract official accredited colleges from vci.dahd.gov.in."
+  },
+  {
+    "id": "icar",
+    "sector": "Agricultural & Allied Sciences",
+    "authority": "Indian Council of Agricultural Research (ICAR)",
+    "status": "NOT STARTED",
+    "priority": "MEDIUM",
+    "estimated_institutions": "Count not established",
+    "collected_count": 0,
+    "notes": "Accredited agricultural universities, deemed universities, and ICAR institutions.",
+    "action_plan": "Extract accredited agricultural colleges and universities from icar.org.in."
   }
 ]

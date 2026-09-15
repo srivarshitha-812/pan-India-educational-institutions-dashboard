@@ -11,6 +11,7 @@ class DashboardApp {
     this.finalLists = [];
     this.statesList = [];
     this.pendingDatasets = [];
+    this.completedPortals = [];
     this.dictionaryData = null;
     this.activeView = 'dashboard';
 
@@ -161,7 +162,8 @@ class DashboardApp {
       this.sourceDatasets = sourcesRes.datasets;
       this.finalLists = finalRes.lists;
       this.statesList = statesRes.states;
-      this.pendingDatasets = pendingRes.pending;
+      this.pendingDatasets = pendingRes.pending || [];
+      this.completedPortals = pendingRes.completed || [];
       this.dictionaryData = dictRes;
 
       this.renderKPIs();
@@ -176,9 +178,12 @@ class DashboardApp {
       // Update badges
       const badgeFinal = document.getElementById('badge-final-count');
       if (badgeFinal) badgeFinal.textContent = this.finalLists.length;
-      const activePending = this.pendingDatasets.filter(p => !['VALIDATED', 'COLLECTED', 'COMPLETE'].includes(p.status));
       const badgePending = document.getElementById('badge-pending-count');
-      if (badgePending) badgePending.textContent = activePending.length;
+      if (badgePending) badgePending.textContent = this.pendingDatasets.length;
+      const badgePendingQueue = document.getElementById('badge-pending-queue-count');
+      if (badgePendingQueue) badgePendingQueue.textContent = `${this.pendingDatasets.length} Portals Awaiting Collection`;
+      const badgeCompletedQueue = document.getElementById('badge-completed-queue-count');
+      if (badgeCompletedQueue) badgeCompletedQueue.textContent = `${this.completedPortals.length} Portals Live in Census`;
       if (this.dictionaryData && this.dictionaryData.total_fields) {
         const dictBadge = document.getElementById('badge-dictionary-count');
         if (dictBadge) dictBadge.textContent = this.dictionaryData.total_fields;
@@ -832,41 +837,97 @@ class DashboardApp {
   }
 
   /* --------------------------------------------------------------------------
-     9. Pending Regulatory Datasets
+     9. Pending Regulatory Datasets & Completed Portals
      -------------------------------------------------------------------------- */
   renderPendingDatasets() {
     const grid = document.getElementById('pending-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
+    const completedGrid = document.getElementById('completed-grid');
 
-    this.pendingDatasets.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'pending-card';
+    // 1. Render Strict Pending Queue (only genuinely pending portals)
+    if (grid) {
+      grid.innerHTML = '';
+      if (!this.pendingDatasets || this.pendingDatasets.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 32px; color: var(--text-muted); background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-color);">All recognized regulatory councils have been completed and integrated!</div>';
+      } else {
+        this.pendingDatasets.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'pending-card';
 
-      let statusBadge = 'warning';
-      if (p.status === 'VALIDATED' || p.status === 'COLLECTED' || p.status === 'COMPLETE') statusBadge = 'success';
-      else if (p.status === 'NOT STARTED') statusBadge = 'danger';
+          let statusBadge = 'warning';
+          if (p.status === 'NOT STARTED') statusBadge = 'danger';
+          else if (p.status === 'IN PROGRESS') statusBadge = 'warning';
 
-      card.innerHTML = `
-        <div class="pending-card-top">
-          <div class="pending-authority">${p.authority}</div>
-          <h3 class="pending-title">${p.sector}</h3>
-          <div class="pending-status-row">
-            <span class="status-pill ${statusBadge}">${p.status}</span>
-            <span style="font-size: 0.75rem; color: var(--text-muted);">${p.estimated_institutions}</span>
-          </div>
-          <div class="pending-notes">${p.notes}</div>
-          <div class="pending-action-plan"><strong>Action Plan:</strong> ${p.action_plan}</div>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-          <span style="font-size: 0.75rem; color: var(--text-muted);">Harvested: ${p.collected_count}</span>
-          <button class="btn btn-outline btn-sm" onclick="window.dashboardApp.openPendingEditModal('${p.id}')">
-            Update Status
-          </button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
+          card.innerHTML = `
+            <div class="pending-card-top">
+              <div class="pending-authority">${p.authority}</div>
+              <h3 class="pending-title">${p.sector}</h3>
+              <div class="pending-status-row">
+                <span class="status-pill ${statusBadge}">${p.status}</span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">${p.estimated_institutions || 'Count not established'}</span>
+              </div>
+              <div class="pending-notes">${p.notes}</div>
+              <div class="pending-action-plan"><strong>Action Plan:</strong> ${p.action_plan}</div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Harvested: ${p.collected_count > 0 ? p.collected_count : 0}</span>
+              <button class="btn btn-outline btn-sm" onclick="window.dashboardApp.openPendingEditModal('${p.id}')">
+                Update Status
+              </button>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+    }
+
+    // 2. Render Completed & Integrated Portals
+    if (completedGrid) {
+      completedGrid.innerHTML = '';
+      if (!this.completedPortals || this.completedPortals.length === 0) {
+        completedGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 32px; color: var(--text-muted);">No completed portals available.</div>';
+      } else {
+        this.completedPortals.forEach(c => {
+          const card = document.createElement('div');
+          card.className = 'pending-card';
+          card.style.borderColor = 'rgba(52, 211, 153, 0.3)';
+          card.style.background = 'linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, var(--bg-card) 100%)';
+
+          card.innerHTML = `
+            <div class="pending-card-top">
+              <div class="pending-authority" style="color: #34d399; font-weight: 600;">${c.authority}</div>
+              <h3 class="pending-title">${c.category}</h3>
+              <div class="pending-status-row" style="margin-bottom: 8px;">
+                <span class="status-pill success">COMPLETED</span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">${c.file_name}</span>
+              </div>
+              <div style="margin: 10px 0;">
+                <div style="font-size: 1.35rem; font-weight: 800; color: #34d399; font-family: var(--font-heading);">
+                  ${c.final_institution_count.toLocaleString('en-IN')}
+                  <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-secondary);">Cleaned Institutions</span>
+                </div>
+              </div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 4px;">
+                Official ID: <code style="color: #93c5fd;">${c.official_id_display}</code>
+              </div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">
+                Coverage: <strong>${c.states_covered}</strong> States/UTs ${c.districts_covered > 0 ? `| <strong>${c.districts_covered}</strong> Districts` : ''}
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+              <button class="btn btn-outline btn-sm" style="border-color: #34d399; color: #34d399;" onclick="window.dashboardApp.viewFinalList('${c.file_id}')">
+                View Final List →
+              </button>
+            </div>
+          `;
+          completedGrid.appendChild(card);
+        });
+      }
+    }
+  }
+
+  viewFinalList(fileId) {
+    this.switchView('final-lists');
+    this.openRecordModal(fileId);
   }
 
   openPendingEditModal(pendingId) {
