@@ -318,12 +318,12 @@ class DataRegistry:
                 "id": "nch",
                 "sector": "Homoeopathy Education",
                 "authority": "National Commission for Homoeopathy (NCH)",
-                "status": "NOT STARTED",
-                "priority": "MEDIUM",
-                "estimated_institutions": "280+ Colleges",
-                "collected_count": 0,
-                "notes": "HTML list published on NCH website; requires table parsing.",
-                "action_plan": "Extract static approval tables from nch.org.in."
+                "status": "VALIDATED",
+                "priority": "LOW",
+                "estimated_institutions": "299 Colleges",
+                "collected_count": 299,
+                "notes": "Complete AY 2026-27 permission status extracted from official NCH PDF (nch.org.in). 26 states/UTs covered.",
+                "action_plan": "Dataset completed and loaded into Final Institute Lists (299 institutions)."
             },
             {
                 "id": "ncvet",
@@ -989,7 +989,7 @@ def get_summary():
     high_priority = sum(1 for d in registry.source_datasets if d["review_priority"] == "HIGH")
     high_priority += sum(1 for s in registry.final_lists.values() if s["review_priority"] == "HIGH")
     
-    pending_count = len(registry.pending_datasets)
+    pending_count = sum(1 for d in registry.pending_datasets if d.get("status") not in ("VALIDATED", "COLLECTED", "COMPLETE"))
 
     # States covered in final lists calculated strictly against the 36 canonical States and UTs
     canonical_covered = [

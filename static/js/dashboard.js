@@ -180,7 +180,8 @@ class DashboardApp {
       // Update badges
       document.getElementById('badge-source-count').textContent = this.sourceDatasets.length;
       document.getElementById('badge-final-count').textContent = this.finalLists.length;
-      document.getElementById('badge-pending-count').textContent = this.pendingDatasets.length;
+      const activePending = this.pendingDatasets.filter(p => !['VALIDATED', 'COLLECTED', 'COMPLETE'].includes(p.status));
+      document.getElementById('badge-pending-count').textContent = activePending.length;
       if (this.dictionaryData && this.dictionaryData.total_fields) {
         const dictBadge = document.getElementById('badge-dictionary-count');
         if (dictBadge) dictBadge.textContent = this.dictionaryData.total_fields;
@@ -863,7 +864,7 @@ class DashboardApp {
       card.className = 'pending-card';
 
       let statusBadge = 'warning';
-      if (p.status === 'VALIDATED' || p.status === 'COLLECTED') statusBadge = 'success';
+      if (p.status === 'VALIDATED' || p.status === 'COLLECTED' || p.status === 'COMPLETE') statusBadge = 'success';
       else if (p.status === 'NOT STARTED') statusBadge = 'danger';
 
       card.innerHTML = `
