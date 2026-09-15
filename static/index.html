@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pan-India Educational Institutions — Executive Review Dashboard</title>
-  <meta name="description" content="Executive review dashboard for Pan-India Educational Institutions census, analyzing source datasets, final cleaned institute lists, data quality, and pending sectors.">
+  <meta name="description" content="Executive review dashboard for Pan-India Educational Institutions census, analyzing cleaned final institute lists, data quality, and pending sectors.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,15 +66,10 @@
           <span class="nav-icon">📊</span>
           <span>Executive Overview</span>
         </li>
-        <li class="nav-item" data-view="sources" id="nav-sources">
-          <span class="nav-icon">📁</span>
-          <span>Source Datasets</span>
-          <span class="nav-badge" id="badge-source-count">10</span>
-        </li>
         <li class="nav-item" data-view="final" id="nav-final">
           <span class="nav-icon">✅</span>
           <span>Final Institute Lists</span>
-          <span class="nav-badge" id="badge-final-count">6</span>
+          <span class="nav-badge" id="badge-final-count">8</span>
         </li>
         <li class="nav-item" data-view="dictionary" id="nav-dictionary">
           <span class="nav-icon">📚</span>
@@ -144,18 +139,6 @@
           <!-- KPI Cards Grid -->
           <div class="kpi-grid" id="kpi-grid">
             
-            <div class="kpi-card info">
-              <div class="kpi-header">
-                <span class="kpi-title">Datasets Collected</span>
-                <span class="kpi-icon">📁</span>
-              </div>
-              <div class="kpi-value" id="kpi-datasets-collected">--</div>
-              <div class="kpi-footer">
-                <span class="kpi-badge info">Regulatory Sources</span>
-                <span>Official government portals</span>
-              </div>
-            </div>
-
             <div class="kpi-card success">
               <div class="kpi-header">
                 <span class="kpi-title">Final Institute Lists</span>
@@ -168,18 +151,6 @@
               </div>
             </div>
 
-            <div class="kpi-card warning">
-              <div class="kpi-header">
-                <span class="kpi-title">Total Records (Sources)</span>
-                <span class="kpi-icon">📚</span>
-              </div>
-              <div class="kpi-value" id="kpi-source-records">--</div>
-              <div class="kpi-footer">
-                <span class="kpi-badge warning">Raw Records</span>
-                <span>May contain cross-source overlap</span>
-              </div>
-            </div>
-
             <div class="kpi-card purple">
               <div class="kpi-header">
                 <span class="kpi-title">Records Across Final Lists</span>
@@ -187,8 +158,8 @@
               </div>
               <div class="kpi-value" id="kpi-final-records">--</div>
               <div class="kpi-footer">
-                <span class="kpi-badge info">Higher Ed Roster</span>
-                <span>Cleaned colleges & universities</span>
+                <span class="kpi-badge info">Higher Ed Rosters</span>
+                <span>Cross-source overlap may exist</span>
               </div>
             </div>
 
@@ -263,7 +234,7 @@
               <div>
                 <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-bottom: 4px;">Recommended Review Flow</h3>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                  Begin by reviewing the <strong>Final Institute Lists</strong> (6 cleaned datasets, 7,336 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Pending Datasets Roadmap</strong>.
+                  Begin by reviewing the <strong>Final Institute Lists</strong> (8 cleaned datasets, 10,708 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Pending Datasets Roadmap</strong>.
                 </p>
               </div>
               <div style="display: flex; gap: 10px;">
@@ -273,63 +244,6 @@
             </div>
           </div>
 
-        </section>
-
-        <!-- ===================================================================
-             VIEW 2: SOURCE DATASETS
-             =================================================================== -->
-        <section class="tab-view" id="view-sources">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>📁</span> Source Datasets (Raw & Regulatory Registers)</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Official datasets collected directly from government portals, research exports, and statutory registers. Click any row for deep data quality analysis.
-              </p>
-            </div>
-          </div>
-
-          <div class="table-wrapper">
-            <div class="table-filters-bar">
-              <div class="filter-group">
-                <span class="filter-label">Filter Category:</span>
-                <select class="filter-select" id="source-cat-filter">
-                  <option value="All">All Categories</option>
-                  <option value="School Education">School Education</option>
-                  <option value="Higher Education (Universities)">Universities</option>
-                  <option value="Medical Education">Medical</option>
-                  <option value="Nursing Education">Nursing</option>
-                  <option value="Architecture">Architecture</option>
-                  <option value="Rehabilitation & Special Education">Rehabilitation</option>
-                  <option value="Ayurveda & Unani Medicine">Ayurveda & Unani</option>
-                  <option value="State Census (All Levels)">State Census</option>
-                </select>
-              </div>
-              <div class="filter-group">
-                <input type="text" class="filter-input" id="source-search-filter" placeholder="Filter by source or file name..." style="width: 250px;">
-              </div>
-            </div>
-
-            <table class="data-table" id="sources-table">
-              <thead>
-                <tr>
-                  <th>Dataset</th>
-                  <th>Category</th>
-                  <th>Record Count</th>
-                  <th>States / UTs</th>
-                  <th>Districts</th>
-                  <th>Academic Year</th>
-                  <th>Source Authority</th>
-                  <th>Official ID</th>
-                  <th>Quality Status</th>
-                  <th>Priority</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="sources-table-body">
-                <!-- Dynamically populated -->
-              </tbody>
-            </table>
-          </div>
         </section>
 
         <!-- ===================================================================
@@ -373,9 +287,8 @@
 
           <!-- Explanatory note -->
           <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
-            <strong>Distinction between Source Datasets & Final Institute Lists:</strong><br>
-            A <em>Source Dataset</em> contains raw program-level or board-level entries (e.g., 5,108 nursing programmes or 11,585 medical courses).<br>
-            A <em>Final Institute List</em> has been algorithmically parsed, deduplicated, and unified so that each row represents a single physical institution with its respective regulatory codes and addresses.
+            <strong>Final Institute Lists Roster:</strong><br>
+            Each row represents a validated physical institution with its respective regulatory codes, addresses, and state/district mappings. Cross-source deduplication should be considered when analyzing multi-disciplinary universities across separate regulatory councils.
           </div>
         </section>
 
@@ -598,7 +511,7 @@
             <div>
               <h3 class="section-title"><span>🔍</span> Global Search Across Final Institute Lists</h3>
               <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Search across all 7,336 final institutions by name, official ID, state, district, or PIN code.
+                Search across all 10,708 final institutions by name, official ID, state, district, or PIN code.
               </p>
             </div>
           </div>

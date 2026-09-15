@@ -91,9 +91,6 @@ class DashboardApp {
       }, 300);
     });
 
-    // Source Table Filter
-    document.getElementById('source-cat-filter')?.addEventListener('change', () => this.filterSourceTable());
-    document.getElementById('source-search-filter')?.addEventListener('input', () => this.filterSourceTable());
 
     // State Search Filter
     document.getElementById('state-search')?.addEventListener('input', (e) => {
@@ -169,7 +166,6 @@ class DashboardApp {
 
       this.renderKPIs();
       this.renderCharts();
-      this.renderSourceTable();
       this.renderFinalListsTable();
       this.renderDataDictionary();
       this.renderStateExplorer();
@@ -178,10 +174,11 @@ class DashboardApp {
       this.renderPendingDatasets();
 
       // Update badges
-      document.getElementById('badge-source-count').textContent = this.sourceDatasets.length;
-      document.getElementById('badge-final-count').textContent = this.finalLists.length;
+      const badgeFinal = document.getElementById('badge-final-count');
+      if (badgeFinal) badgeFinal.textContent = this.finalLists.length;
       const activePending = this.pendingDatasets.filter(p => !['VALIDATED', 'COLLECTED', 'COMPLETE'].includes(p.status));
-      document.getElementById('badge-pending-count').textContent = activePending.length;
+      const badgePending = document.getElementById('badge-pending-count');
+      if (badgePending) badgePending.textContent = activePending.length;
       if (this.dictionaryData && this.dictionaryData.total_fields) {
         const dictBadge = document.getElementById('badge-dictionary-count');
         if (dictBadge) dictBadge.textContent = this.dictionaryData.total_fields;
@@ -211,7 +208,6 @@ class DashboardApp {
     // Update Page Title
     const titleMap = {
       dashboard: { title: 'Executive Overview', meta: 'National Institution Datasets & Cleaned Census Lists' },
-      sources: { title: 'Source Datasets Directory', meta: 'Raw & Official Statutory Registers' },
       final: { title: 'Final Institute Lists', meta: 'Deduplicated Higher Education Institution Roster' },
       dictionary: { title: 'Data Dictionary & Schema Specification', meta: 'Official regulatory lineage, field definitions, data types, and allowed values' },
       states: { title: 'State / UT Geographic Explorer', meta: 'Pan-India Sub-National Analysis across 36 States & UTs' },
@@ -254,11 +250,14 @@ class DashboardApp {
     if (!this.summaryData) return;
     const kpis = this.summaryData.kpis;
 
-    document.getElementById('kpi-datasets-collected').textContent = kpis.datasets_collected;
-    document.getElementById('kpi-final-lists').textContent = kpis.final_lists_available;
-    document.getElementById('kpi-source-records').textContent = kpis.total_records_source.toLocaleString('en-IN');
-    document.getElementById('kpi-final-records').textContent = kpis.total_records_final.toLocaleString('en-IN');
-    document.getElementById('kpi-states-covered').textContent = `${kpis.states_covered} / ${kpis.total_states_target}`;
+    const elFinal = document.getElementById('kpi-final-lists');
+    if (elFinal) elFinal.textContent = kpis.final_lists_available;
+
+    const elFinalRec = document.getElementById('kpi-final-records');
+    if (elFinalRec) elFinalRec.textContent = kpis.total_records_final.toLocaleString('en-IN');
+
+    const elStates = document.getElementById('kpi-states-covered');
+    if (elStates) elStates.textContent = `${kpis.states_covered} / ${kpis.total_states_target}`;
     
     const statesBadge = document.getElementById('kpi-states-badge');
     if (statesBadge) {
@@ -266,8 +265,11 @@ class DashboardApp {
       statesBadge.textContent = `${pct}% Target`;
     }
 
-    document.getElementById('kpi-pending-datasets').textContent = kpis.datasets_pending;
-    document.getElementById('kpi-review-required').textContent = kpis.datasets_requiring_review;
+    const elPending = document.getElementById('kpi-pending-datasets');
+    if (elPending) elPending.textContent = kpis.datasets_pending;
+
+    const elReview = document.getElementById('kpi-review-required');
+    if (elReview) elReview.textContent = kpis.datasets_requiring_review;
   }
 
   /* --------------------------------------------------------------------------
@@ -770,27 +772,6 @@ class DashboardApp {
       `;
       tbody.appendChild(tr);
     });
-
-    // Key Source Datasets
-    this.sourceDatasets.forEach(d => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>
-          <strong style="color: #93c5fd;">[Source] ${d.name}</strong><br>
-          <span style="font-size: 0.72rem; color: var(--text-muted);">${d.file_name}</span>
-        </td>
-        <td>${d.total_records.toLocaleString('en-IN')}</td>
-        <td>${d.unique_records.toLocaleString('en-IN')}</td>
-        <td>${d.has_official_id ? d.duplicate_ids : '<span style="color: var(--text-muted);">N/A</span>'}</td>
-        <td>${d.id === 'udise_plus_schools' ? '<span style="color: #ef4444; font-weight: 700;">Withheld in DSP</span>' : '0'}</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>${d.id === 'udise_plus_schools' ? '38' : '0'}</td>
-        <td><span class="status-pill ${d.quality_status.toLowerCase()}">${d.quality_status}</span></td>
-      `;
-      tbody.appendChild(tr);
-    });
   }
 
   /* --------------------------------------------------------------------------
@@ -808,7 +789,6 @@ class DashboardApp {
     lowCont.innerHTML = '';
 
     const allItems = [
-      ...this.sourceDatasets.map(d => ({ ...d, isFinal: false })),
       ...this.finalLists.map(l => ({ ...l, name: `${l.category} (${l.file_name})`, isFinal: true }))
     ];
 
