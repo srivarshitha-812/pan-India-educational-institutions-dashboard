@@ -1279,7 +1279,258 @@ DICTIONARY_RECORDS: List[Dict[str, Any]] = [
     },
 
     # =========================================================================
-    # 11. DASHBOARD-CALCULATED & AUDIT FIELDS (Cross-Cutting)
+    # 11. NCH HOMOEOPATHY COLLEGES REGISTER (19 Fields)
+    # =========================================================================
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "S.No (NCH)",
+        "data_type": "Integer",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "1",
+        "allowed_values": "Sequential serial number (1–299)",
+        "description": "Gazetted institution serial number from the official NCH AY 2026-27 permission status document.",
+        "notes": "100% sequential across all 25 pages with zero gaps."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Institution Name",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "Dr. Allu Ramalingaiah Government Homoeopathic Medical College",
+        "allowed_values": "Official registered homoeopathic college title",
+        "description": "Standardized, deduplicated official name of the homoeopathic institution, parsed cleanly from the composite header address text.",
+        "notes": "100% populated. No missing college names."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Full Name & Address",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Dr. Allu Ramalingaiah Govt. Homoeo Medical College, D.No. 26-1-11, V.L. Puram, Rajahmundry-533103, East Godavari Distt.",
+        "allowed_values": "Verbatim institution address and locality string",
+        "description": "Raw unparsed text string from NCH PDF containing college name, postal address, street, district, PIN code, and contact information.",
+        "notes": "Primary source textual record for institutional entity verification."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Email",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "No",
+        "example_value": "arghmcrjy@gmail.com",
+        "allowed_values": "Valid email address or empty",
+        "description": "Administrative or institutional principal contact email address parsed from the composite address block using regex pattern matching.",
+        "notes": "Extracted where present in official directory."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Pincode",
+        "data_type": "Integer (String)",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "No",
+        "example_value": "533103",
+        "allowed_values": "6-digit Indian PIN code",
+        "description": "Six-digit postal index number extracted from the campus address block.",
+        "notes": "Extracted with boundary validation."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "State/UT",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Andhra Pradesh",
+        "allowed_values": "Standard 36 States/UTs",
+        "description": "State or Union Territory heading under which the homoeopathic college is officially registered by NCH.",
+        "notes": "Covers 26 States and UTs offering recognized homoeopathic medical education."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "NCH College Code",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes (Where Assigned)",
+        "example_value": "101",
+        "allowed_values": "Official MARBH/NCH numeric or alphanumeric college code",
+        "description": "Statutory regulatory identifier assigned to the college by the Medical Assessment and Rating Board for Homoeopathy (MARBH).",
+        "notes": "Official regulatory ID. 9 newly applied colleges lack pre-assigned codes and use deterministic canonical keys."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Identifier Type",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "NCH_COLLEGE_CODE",
+        "allowed_values": "NCH_COLLEGE_CODE, NCH_DERIVED_KEY",
+        "description": "Audit classification indicating whether the college possesses an official MARBH code or a synthetic deterministic surrogate identifier.",
+        "notes": "Provides transparency on regulatory ID presence."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Canonical Key",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "NCH_101",
+        "allowed_values": "NCH_<CODE> or NCH_DERIVED_<SNO>",
+        "description": "Normalized, immutable institutional key used for national multi-source cross-registry linking.",
+        "notes": "Ensures unique index representation in master census."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Management Type",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Govt.",
+        "allowed_values": "Govt., Pvt. (Private), Trust, Society, Grant-in-aid",
+        "description": "Institutional governance and ownership model (Government vs Private/Trust).",
+        "notes": "Normalized from raw 'Govt/Pvt' PDF column."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "UG Seat Intake",
+        "data_type": "Integer (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "No",
+        "example_value": "63",
+        "allowed_values": "Numeric seat capacity or 'Nil' / '-'",
+        "description": "Undergraduate Bachelor of Homoeopathic Medicine and Surgery (BHMS) annual student admission intake capacity applied for or permitted.",
+        "notes": "Applicable for UG-granting institutions."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "UG Permission",
+        "data_type": "Integer (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "No",
+        "example_value": "63",
+        "allowed_values": "Numeric permitted seats (including EWS quota) or '-'",
+        "description": "Number of undergraduate BHMS seats officially approved and permitted by MARBH for the academic session 2026-27.",
+        "notes": "Zero or '-' indicates admission denial or withheld status."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "PG Seat Intake",
+        "data_type": "Integer (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "No",
+        "example_value": "18",
+        "allowed_values": "Numeric seat capacity or '-'",
+        "description": "Postgraduate MD (Homoeopathy) student intake capacity applied for or recognized.",
+        "notes": "Applicable for PG specialty colleges."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "PG Permission",
+        "data_type": "Integer (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "No",
+        "example_value": "18",
+        "allowed_values": "Numeric permitted PG seats or '-'",
+        "description": "Total postgraduate seats approved by MARBH across clinical and non-clinical homoeopathic disciplines for AY 2026-27.",
+        "notes": "Subject-wise allocations detailed in companion column."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "MARBH Decision",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "Conditional Permission",
+        "allowed_values": "Permission, Conditional Permission, Denial, Permission Withheld, Status Not Available",
+        "description": "Official regulatory determination issued by the Medical Assessment and Rating Board for Homoeopathy regarding college inspection and compliance.",
+        "notes": "Key statutory quality indicator governing student admissions for 2026-27."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Overall Permission Status",
+        "data_type": "String",
+        "field_classification": "DERIVED FIELD",
+        "is_required": "Yes",
+        "example_value": "Conditional Permission",
+        "allowed_values": "Conditional Permission (93), Status Not Available (114), Permission (52), Denial (39), Permission Withheld (1)",
+        "description": "Normalized categorical status representing the institution's operational approval standing.",
+        "notes": "Enables executive filtering and quality dashboard visualization."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Scheme",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "UG & PG",
+        "allowed_values": "UG, PG, UG & PG",
+        "description": "Educational program tier authorized at the institution (Undergraduate, Postgraduate, or Both).",
+        "notes": "Delineates institutional scope of medical training."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Academic Year",
+        "data_type": "String",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "2026-27",
+        "allowed_values": "2026-27",
+        "description": "Academic cycle for which the statutory permission status and seat intake quota apply.",
+        "notes": "Current active AY under MARBH/NCH Gazette."
+    },
+    {
+        "dataset": "NCH Homoeopathy Colleges Register",
+        "source_regulator": "National Commission for Homoeopathy (NCH)",
+        "academic_year": "2026-27",
+        "field_name": "Source URL",
+        "data_type": "URL (String)",
+        "field_classification": "SOURCE FIELD",
+        "is_required": "Yes",
+        "example_value": "https://nch.org.in/upload/Permission-Status%20as%20on%2003-08-2026.pdf",
+        "allowed_values": "Valid HTTPS URL on official nch.org.in portal",
+        "description": "Direct canonical link to the official regulatory PDF document published on the NCH portal.",
+        "notes": "Ensures complete data auditability and statutory lineage."
+    },
+
+    # =========================================================================
+    # 12. DASHBOARD-CALCULATED & AUDIT FIELDS (Cross-Cutting)
     # =========================================================================
     {
         "dataset": "Dashboard Common Architecture",
@@ -1480,6 +1731,19 @@ DATASET_OVERVIEW_META: List[Dict[str, Any]] = [
         "notes": "Complete cross-source deduplicated institutional census for Telangana."
     },
     {
+        "dataset_name": "NCH Homoeopathy Colleges Register",
+        "source_authority": "National Commission for Homoeopathy (NCH)",
+        "sector": "Homoeopathy Education (BHMS / MD Homoeopathy)",
+        "academic_year": "2026-27",
+        "as_of_date": "2026-08-03",
+        "total_records": "299",
+        "states_covered": "26 / 36 (72%)",
+        "official_id_field": "NCH_College_Code (MARBH Assigned)",
+        "fields_documented": 19,
+        "schema_reference": "Medical Assessment and Rating Board for Homoeopathy (MARBH) Permission Status Roster",
+        "notes": "100% complete national census of recognized/permitted and denied homoeopathic medical colleges across India under NCH Act, 2020."
+    },
+    {
         "dataset_name": "Dashboard Common Architecture",
         "source_authority": "National Census Dashboard Engine",
         "sector": "Cross-Cutting Metadata & Search",
@@ -1619,6 +1883,7 @@ def generate_workbook():
         "CBSE_Schools": "CBSE SARAS National Affiliation Directory",
         "CISCE_Schools": "CISCE National School Locator Register",
         "Telangana_Census": "Telangana State Multi-Source Verified Census",
+        "NCH_Homoeopathy": "NCH Homoeopathy Colleges Register",
         "Dashboard_Calculated": "Dashboard Common Architecture"
     }
 

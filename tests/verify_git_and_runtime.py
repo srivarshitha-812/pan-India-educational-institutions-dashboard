@@ -91,7 +91,8 @@ def verify():
         "Final Institute Lists/Nursing Colleges.xlsx",
         "Final Institute Lists/Architecture Colleges.xlsx",
         "Final Institute Lists/Rehabilitation Colleges.xlsx",
-        "Final Institute Lists/Ayurveda Colleges.xlsx"
+        "Final Institute Lists/Ayurveda Colleges.xlsx",
+        "Final Institute Lists/Homoeopathy Colleges.xlsx"
     ]
     
     print("\n--- 3. VERIFY ESSENTIAL RUNTIME FILES ARE TRACKED (NOT IGNORED) ---")
@@ -112,12 +113,12 @@ def verify():
     kpis = summary["kpis"]
     print(f"  [OK] Summary KPIs: {kpis['states_covered']} States, {kpis['total_records_final']} Final Records")
     assert kpis['states_covered'] == 36
-    assert kpis['total_records_final'] == 7335
+    assert kpis['total_records_final'] == 7634
     
-    # Final Lists check all 6
+    # Final Lists check all 7
     req_final = urllib.request.urlopen(f"{base_url}/api/datasets/final")
     final_data = json.loads(req_final.read().decode())
-    assert len(final_data["lists"]) == 6
+    assert len(final_data["lists"]) == 7
     print(f"  [OK] All {len(final_data['lists'])} Final Lists loaded:")
     for l in final_data["lists"]:
         print(f"       - {l.get('file_name', l.get('id', '')): <40}: {l['total_records']:,} institutions")
@@ -126,7 +127,7 @@ def verify():
     req_dict = urllib.request.urlopen(f"{base_url}/api/dictionary")
     dict_data = json.loads(req_dict.read().decode())
     print(f"  [OK] Data Dictionary: {dict_data['total_fields']} fields documented")
-    assert dict_data['total_fields'] == 97
+    assert dict_data['total_fields'] == 116
     
     # Search tests
     # Gachibowli
