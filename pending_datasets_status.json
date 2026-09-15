@@ -58,12 +58,12 @@
     "id": "nch",
     "sector": "Homoeopathy Education",
     "authority": "National Commission for Homoeopathy (NCH)",
-    "status": "NOT STARTED",
+    "status": "COMPLETE",
     "priority": "MEDIUM",
-    "estimated_institutions": "280+ Colleges",
-    "collected_count": 0,
-    "notes": "HTML list published on NCH website; requires table parsing.",
-    "action_plan": "Extract static approval tables from nch.org.in."
+    "estimated_institutions": "299 Colleges",
+    "collected_count": 299,
+    "notes": "Complete AY 2026-27 permission status extracted from official NCH PDF (nch.org.in). 26 states/UTs covered. Official NCH College Codes used as identifiers.",
+    "action_plan": "Dataset complete. Next: BCI law colleges."
   },
   {
     "id": "ncvet",

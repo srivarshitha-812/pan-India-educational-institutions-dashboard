@@ -389,6 +389,9 @@ class DataRegistry:
             return pd.read_excel(file_path, skiprows=1)
         elif "ayurveda" in fname or "unani" in fname:
             return pd.read_excel(file_path, skiprows=1)
+        elif "homoeopathy" in fname or "homeopathy" in fname or "nch" in fname:
+            # NCH Homoeopathy file has 2 title rows then column headers on row 3
+            return pd.read_excel(file_path, skiprows=2)
         else:
             return pd.read_excel(file_path)
 
@@ -406,6 +409,8 @@ class DataRegistry:
             return "Universities & Higher Education"
         elif "ayurveda" in fn or "unani" in fn or "ncism" in fn:
             return "Ayurveda & Unani Medicine"
+        elif "homoeopathy" in fn or "homeopathy" in fn or "nch" in fn:
+            return "Homoeopathy Education"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -426,6 +431,9 @@ class DataRegistry:
             return self._find_matching_col(cols, ["rci_institute_code"])
         elif "ayurveda" in fn_lower or "unani" in fn_lower or "ncism" in fn_lower:
             return self._find_matching_col(cols, ["college id", "ncism_id"])
+        elif "homoeopathy" in fn_lower or "homeopathy" in fn_lower or "nch" in fn_lower:
+            # NCH College Code is the official regulatory ID assigned by MARBH/NCH
+            return self._find_matching_col(cols, ["nch_college_code", "nch college code"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
