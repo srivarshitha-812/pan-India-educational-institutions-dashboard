@@ -47,12 +47,12 @@
     "id": "bci",
     "sector": "Legal Education & Law Colleges",
     "authority": "Bar Council of India (BCI)",
-    "status": "IN PROGRESS",
-    "priority": "MEDIUM",
-    "estimated_institutions": "1,800+ Colleges",
-    "collected_count": 22,
-    "notes": "Telangana slice complete. National PDF directory published periodically.",
-    "action_plan": "Parse national BCI approved centres PDF and normalize into schema."
+    "status": "VALIDATED",
+    "priority": "LOW",
+    "estimated_institutions": "3,074 Colleges",
+    "collected_count": 3074,
+    "notes": "Complete national approved Centres of Legal Education (CLEs) extracted from official BCI 107-page master roster (BCA0026X2518XJCSA38.pdf) and verified against online BCI directory. 3,074 physical law colleges across 31 States/UTs.",
+    "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (3,074 physical institutions, 5,492 approved course entries)."
   },
   {
     "id": "nch",

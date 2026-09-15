@@ -307,12 +307,12 @@ class DataRegistry:
                 "id": "bci",
                 "sector": "Legal Education & Law Colleges",
                 "authority": "Bar Council of India (BCI)",
-                "status": "IN PROGRESS",
-                "priority": "MEDIUM",
-                "estimated_institutions": "1,800+ Colleges",
-                "collected_count": 22,
-                "notes": "Telangana slice complete. National PDF directory published periodically.",
-                "action_plan": "Parse national BCI approved centres PDF and normalize into schema."
+                "status": "VALIDATED",
+                "priority": "LOW",
+                "estimated_institutions": "3,074 Colleges",
+                "collected_count": 3074,
+                "notes": "Complete national approved Centres of Legal Education (CLEs) extracted from official BCI 107-page master roster (BCA0026X2518XJCSA38.pdf) and verified against online BCI directory. 3,074 physical law colleges across 31 States/UTs.",
+                "action_plan": "Dataset completed, validated, and loaded into Final Institute Lists (3,074 physical institutions, 5,492 approved course entries)."
             },
             {
                 "id": "nch",
@@ -392,6 +392,9 @@ class DataRegistry:
         elif "homoeopathy" in fname or "homeopathy" in fname or "nch" in fname:
             # NCH Homoeopathy file has 2 title rows then column headers on row 3
             return pd.read_excel(file_path, skiprows=2)
+        elif "law" in fname or "bci" in fname:
+            # BCI Law Colleges has clean headers on row 1
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -411,6 +414,8 @@ class DataRegistry:
             return "Ayurveda & Unani Medicine"
         elif "homoeopathy" in fn or "homeopathy" in fn or "nch" in fn:
             return "Homoeopathy Education"
+        elif "law" in fn or "bci" in fn:
+            return "Legal Education & Law Colleges"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -434,6 +439,8 @@ class DataRegistry:
         elif "homoeopathy" in fn_lower or "homeopathy" in fn_lower or "nch" in fn_lower:
             # NCH College Code is the official regulatory ID assigned by MARBH/NCH
             return self._find_matching_col(cols, ["nch_college_code", "nch college code"])
+        elif "law" in fn_lower or "bci" in fn_lower:
+            return self._find_matching_col(cols, ["bci college id", "bci_college_id", "bci_id", "bci id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID

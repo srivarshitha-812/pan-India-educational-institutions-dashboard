@@ -1,10 +1,12 @@
 import os
+import sys
 import pathlib
 import fnmatch
 import urllib.request
 import json
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
 
 def parse_gitignore():
     gitignore_path = BASE_DIR / ".gitignore"
@@ -92,7 +94,8 @@ def verify():
         "Final Institute Lists/Architecture Colleges.xlsx",
         "Final Institute Lists/Rehabilitation Colleges.xlsx",
         "Final Institute Lists/Ayurveda Colleges.xlsx",
-        "Final Institute Lists/Homoeopathy Colleges.xlsx"
+        "Final Institute Lists/Homoeopathy Colleges.xlsx",
+        "Final Institute Lists/Law Colleges.xlsx"
     ]
     
     print("\n--- 3. VERIFY ESSENTIAL RUNTIME FILES ARE TRACKED (NOT IGNORED) ---")
@@ -106,45 +109,53 @@ def verify():
     # 3. Test Live Dashboard Endpoints
     print("\n--- 4. VERIFY RUNTIME DASHBOARD INTEGRITY VIA API ---")
     base_url = "http://127.0.0.1:8000"
-    
+    client = None
+    try:
+        urllib.request.urlopen(f"{base_url}/api/summary", timeout=1)
+        def get_json(path):
+            req = urllib.request.urlopen(f"{base_url}{path}")
+            return json.loads(req.read().decode())
+    except Exception:
+        from starlette.testclient import TestClient
+        from dashboard_server import app, registry
+        registry.load_all()
+        client = TestClient(app)
+        def get_json(path):
+            resp = client.get(path)
+            return resp.json()
+
     # Summary
-    req = urllib.request.urlopen(f"{base_url}/api/summary")
-    summary = json.loads(req.read().decode())
+    summary = get_json("/api/summary")
     kpis = summary["kpis"]
     print(f"  [OK] Summary KPIs: {kpis['states_covered']} States, {kpis['total_records_final']} Final Records")
     assert kpis['states_covered'] == 36
-    assert kpis['total_records_final'] == 7634
+    assert kpis['total_records_final'] == 10708
     
-    # Final Lists check all 7
-    req_final = urllib.request.urlopen(f"{base_url}/api/datasets/final")
-    final_data = json.loads(req_final.read().decode())
-    assert len(final_data["lists"]) == 7
+    # Final Lists check all 8
+    final_data = get_json("/api/datasets/final")
+    assert len(final_data["lists"]) == 8
     print(f"  [OK] All {len(final_data['lists'])} Final Lists loaded:")
     for l in final_data["lists"]:
         print(f"       - {l.get('file_name', l.get('id', '')): <40}: {l['total_records']:,} institutions")
         
     # Data Dictionary
-    req_dict = urllib.request.urlopen(f"{base_url}/api/dictionary")
-    dict_data = json.loads(req_dict.read().decode())
+    dict_data = get_json("/api/dictionary")
     print(f"  [OK] Data Dictionary: {dict_data['total_fields']} fields documented")
-    assert dict_data['total_fields'] == 116
+    assert dict_data['total_fields'] == 132
     
     # Search tests
     # Gachibowli
-    req_g = urllib.request.urlopen(f"{base_url}/api/search?q=Gachibowli")
-    g_res = json.loads(req_g.read().decode())
+    g_res = get_json("/api/search?q=Gachibowli")
     assert g_res["total_matches"] > 0
     print(f"  [OK] Search 'Gachibowli': {g_res['total_matches']} matches (Found IIIT Hyderabad)")
     
     # KPHB
-    req_k = urllib.request.urlopen(f"{base_url}/api/search?q=KPHB")
-    k_res = json.loads(req_k.read().decode())
+    k_res = get_json("/api/search?q=KPHB")
     assert k_res["total_matches"] > 0
     print(f"  [OK] Search 'KPHB': {k_res['total_matches']} matches (Found JNTUH)")
     
     # State / District filter
-    req_st = urllib.request.urlopen(f"{base_url}/api/states/Telangana")
-    st_res = json.loads(req_st.read().decode())
+    st_res = get_json("/api/states/Telangana")
     print(f"  [OK] State Explorer 'Telangana': {st_res['total_institutions']} institutions across {len(st_res['districts'])} districts")
     assert st_res['total_institutions'] > 0
     
