@@ -44,17 +44,6 @@
     "action_plan": "Automate state/district dropdown traversal using Playwright."
   },
   {
-    "id": "dci",
-    "sector": "Dental Education (BDS, MDS)",
-    "authority": "Dental Council of India (DCI)",
-    "status": "NOT STARTED",
-    "priority": "HIGH",
-    "estimated_institutions": "Count not established",
-    "collected_count": 0,
-    "notes": "Official register of approved/recognized dental colleges across India.",
-    "action_plan": "Harvest recognized institution list directly from dciindia.gov.in."
-  },
-  {
     "id": "vci",
     "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
     "authority": "Veterinary Council of India (VCI)",

@@ -163,6 +163,7 @@ STATE_SYNONYMS = {
     # Uttarakhand
     "uttarakhand": "Uttarakhand",
     "uttaranchal": "Uttarakhand",
+    "uttrakhand": "Uttarakhand",
     # West Bengal
     "west bengal": "West Bengal",
     "bengal": "West Bengal"
@@ -304,17 +305,6 @@ class DataRegistry:
                 "action_plan": "Automate state/district dropdown traversal using Playwright."
             },
             {
-                "id": "dci",
-                "sector": "Dental Education (BDS, MDS)",
-                "authority": "Dental Council of India (DCI)",
-                "status": "NOT STARTED",
-                "priority": "HIGH",
-                "estimated_institutions": "Count not established",
-                "collected_count": 0,
-                "notes": "Official register of approved/recognized dental colleges across India.",
-                "action_plan": "Harvest recognized institution list directly from dciindia.gov.in."
-            },
-            {
                 "id": "vci",
                 "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
                 "authority": "Veterinary Council of India (VCI)",
@@ -395,6 +385,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "dental" in fname or "dci" in fname or "ndc" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Dental Colleges" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Dental Colleges", skiprows=1)
+            except Exception:
+                pass
+            return pd.read_excel(file_path, skiprows=1)
         elif "homoeopathy" in fname or "homeopathy" in fname or "nch" in fname:
             # NCH Homoeopathy file has 2 title rows then column headers on row 3
             return pd.read_excel(file_path, skiprows=2)
@@ -418,6 +416,8 @@ class DataRegistry:
             return "Universities & Higher Education"
         elif "ayurveda" in fn or "unani" in fn or "ncism" in fn:
             return "Ayurveda & Unani Medicine"
+        elif "dental" in fn or "dci" in fn or "ndc" in fn:
+            return "Dental Education"
         elif "homoeopathy" in fn or "homeopathy" in fn or "nch" in fn:
             return "Homoeopathy Education"
         elif "law" in fn or "bci" in fn:
@@ -444,6 +444,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["rci_institute_code"])
         elif "ayurveda" in fn_lower or "unani" in fn_lower or "ncism" in fn_lower:
             return self._find_matching_col(cols, ["college id", "ncism_id"])
+        elif "dental" in fn_lower or "dci" in fn_lower or "ndc" in fn_lower:
+            return self._find_matching_col(cols, ["official id", "college id", "dci_id", "ndc_id"])
         elif "homoeopathy" in fn_lower or "homeopathy" in fn_lower or "nch" in fn_lower:
             # NCH College Code is the official regulatory ID assigned by MARBH/NCH
             return self._find_matching_col(cols, ["nch_college_code", "nch college code"])
@@ -878,6 +880,30 @@ class DataRegistry:
                 "data_type": "FINAL_INSTITUTE_LIST"
             },
             {
+                "id": "ndc_dental",
+                "name": "NDC Dental Colleges of India",
+                "category": "Dental Education",
+                "total_records": 330,
+                "unique_records": 330,
+                "duplicate_records": 0,
+                "states_covered": 28,
+                "districts_covered": 242,
+                "academic_year": "2026-27",
+                "source": "National Dental Commission (NDC) / former Dental Council of India (DCI)",
+                "file_name": "Dental Colleges.xlsx",
+                "file_path": "Final Institute Lists/Dental Colleges.xlsx",
+                "file_size_mb": 0.18,
+                "important_columns": ["Official ID", "College Name", "State", "District / City", "BDS Seats", "MDS Seats", "Total Dental Intake Capacity", "Current Regulatory Status", "Regulatory Remarks"],
+                "has_official_id": True,
+                "official_id_name": "Official ID (NDC/DCI Portal ID)",
+                "duplicate_ids": 0,
+                "missing_important_fields": "Lady Hardinge Medical College (Delhi) lacks municipal district & address on official portal (recorded as PASS — SOURCE LIMITATION).",
+                "quality_status": "PASS",
+                "review_priority": "LOW",
+                "notes": "Full national universe (330 physical institutions) from official NDC College Search for AY 2026-27.",
+                "data_type": "FINAL_INSTITUTE_LIST"
+            },
+            {
                 "id": "cbse_saras",
                 "name": "CBSE SARAS National Affiliation Directory",
                 "category": "School Education (CBSE Board)",
@@ -1036,7 +1062,7 @@ class DataRegistry:
                 "categories": {},
                 "districts": {},
                 "available_datasets": set(),
-                "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
+                "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Dental Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
                 "missing_categories": []
             }
 
@@ -1050,7 +1076,7 @@ class DataRegistry:
                     "categories": {},
                     "districts": {},
                     "available_datasets": set(),
-                    "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
+                    "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Dental Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
                     "missing_categories": []
                 }
             
@@ -1131,6 +1157,12 @@ class DataRegistry:
                 "regulator_code": "PCI",
                 "category": "Pharmacy",
                 "source_portal": "https://www.pci.gov.in/"
+            },
+            "dental_colleges": {
+                "authority": "National Dental Commission (NDC) / DCI",
+                "regulator_code": "NDC",
+                "category": "Dental Education",
+                "source_portal": "https://dciindia.gov.in/"
             }
         }
         completed = []
