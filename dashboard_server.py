@@ -388,7 +388,13 @@ class DataRegistry:
         if "welcome to ugc" in fname or "ugc" in fname:
             return pd.read_excel(file_path, skiprows=1)
         elif "ayurveda" in fname or "unani" in fname:
-            return pd.read_excel(file_path, skiprows=1)
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Combined" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Combined")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         elif "homoeopathy" in fname or "homeopathy" in fname or "nch" in fname:
             # NCH Homoeopathy file has 2 title rows then column headers on row 3
             return pd.read_excel(file_path, skiprows=2)
@@ -851,25 +857,25 @@ class DataRegistry:
                 "id": "ncism_ayurveda",
                 "name": "NCISM Ayurveda & Unani Medical Colleges",
                 "category": "Ayurveda & Unani Medicine",
-                "total_records": 23,
-                "unique_records": 23,
+                "total_records": 650,
+                "unique_records": 650,
                 "duplicate_records": 0,
-                "states_covered": 12,
-                "districts_covered": 21,
+                "states_covered": 25,
+                "districts_covered": 210,
                 "academic_year": "2025-26",
                 "source": "National Commission for Indian System of Medicine (NCISM)",
                 "file_name": "Ayurveda Colleges.xlsx",
                 "file_path": "Final Institute Lists/Ayurveda Colleges.xlsx",
-                "file_size_mb": 0.01,
-                "important_columns": ["College ID", "Name of the College", "State", "Govt./Aided/ Private/ Deemed"],
+                "file_size_mb": 0.12,
+                "important_columns": ["College ID", "System", "Name of the College", "State", "District", "Management", "UG Seats", "PG Seats", "Permission Status"],
                 "has_official_id": True,
                 "official_id_name": "College ID (NCISM Registration Code)",
                 "duplicate_ids": 0,
-                "missing_important_fields": "Addresses and PIN codes not present in official rating roster.",
-                "quality_status": "PASS",
+                "missing_important_fields": "Source documents embed geographic details inside institution address blocks.",
+                "quality_status": "PASS — SOURCE LIMITATION",
                 "review_priority": "LOW",
-                "notes": "Verified rating roster of approved colleges for AY 2025-26.",
-                "data_type": "SOURCE_DATASET"
+                "notes": "Full national universe (593 Ayurveda + 57 Unani = 650 institutions) from official NCISM registries for AY 2025-26.",
+                "data_type": "FINAL_INSTITUTE_LIST"
             },
             {
                 "id": "cbse_saras",

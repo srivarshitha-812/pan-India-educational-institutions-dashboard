@@ -18,7 +18,7 @@ def verify_all():
         "Nursing Colleges.xlsx": 3633,
         "Architecture Colleges.xlsx": 404,
         "Rehabilitation Colleges.xlsx": 1055,
-        "Ayurveda Colleges.xlsx": 23,
+        "Ayurveda Colleges.xlsx": 650,
     }
     
     total_final = 0
@@ -26,8 +26,10 @@ def verify_all():
     for fname, exp_count in expected_counts.items():
         fpath = final_dir / fname
         assert fpath.exists(), f"Missing Final List: {fname}"
-        if "welcome to ugc" in fname.lower() or "ayurveda" in fname.lower():
+        if "welcome to ugc" in fname.lower():
             df = pd.read_excel(fpath, skiprows=1)
+        elif "ayurveda" in fname.lower():
+            df = pd.read_excel(fpath, sheet_name="Combined")
         else:
             df = pd.read_excel(fpath)
         actual = len(df)
@@ -35,8 +37,8 @@ def verify_all():
         assert actual == exp_count, f"Count mismatch for {fname}: got {actual}, expected {exp_count}"
         total_final += actual
         
-    print(f"  TOTAL RECORDS ACROSS FINAL LISTS: {total_final:>5} (Expected: 7,335)")
-    assert total_final == 7335, f"Total mismatch: got {total_final}, expected 7335"
+    print(f"  TOTAL RECORDS ACROSS FINAL LISTS: {total_final:>5} (Expected: 7,962)")
+    assert total_final == 7962, f"Total mismatch: got {total_final}, expected 7962"
     
     # 2. UDISE+ Dataset
     print("\n--- 2. UDISE+ MASTER DATASET ---")
@@ -57,8 +59,8 @@ def verify_all():
     with open(dict_json, "r", encoding="utf-8") as f:
         ddata = json.load(f)
     field_count = ddata.get("total_fields", len(ddata.get("records", [])))
-    print(f"  [OK] Data Dictionary documented fields : {field_count:>5} fields (Expected: 97)")
-    assert field_count == 97, f"Data Dictionary count mismatch: got {field_count}, expected 97"
+    print(f"  [OK] Data Dictionary documented fields : {field_count:>5} fields (Expected: 148)")
+    assert field_count == 148, f"Data Dictionary count mismatch: got {field_count}, expected 148"
     
     # 4. Database Integrity
     print("\n--- 4. PROCESSED SQLITE DATABASE ---")

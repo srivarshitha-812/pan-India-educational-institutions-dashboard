@@ -83,13 +83,13 @@
       "source_authority": "National Commission for Indian System of Medicine",
       "sector": "Ayurveda & Unani Medicine",
       "academic_year": "2025-26",
-      "as_of_date": "2026-09-10",
-      "total_records": "23",
-      "states_covered": "12 / 36 (33%)",
+      "as_of_date": "2026-09-16",
+      "total_records": "650",
+      "states_covered": "25 / 36 (69%)",
       "official_id_field": "College ID (NCISM Code)",
       "fields_documented": 4,
-      "schema_reference": "NCISM AY 2025-26 Rating Roster",
-      "notes": "Rating roster of approved ISM colleges eligible for rating in AY 2025-26."
+      "schema_reference": "NCISM AY 2025-26 National Registries & Permission Lists",
+      "notes": "Full national universe (593 Ayurveda + 57 Unani = 650 physical institutions) from official NCISM registries enriched with AY 2025-26 permission circulars."
     },
     {
       "dataset_name": "CBSE SARAS National Affiliation Directory",
