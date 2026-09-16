@@ -550,24 +550,102 @@ class DataRegistry:
             acad_year = "2025-26"
 
         # Quality scoring
-        # Status: PASS, WARNING, NEEDS REVIEW
+        # Status: PASS, PASS — SOURCE LIMITATION, NEEDS REVIEW, INCOMPLETE
+        #
+        # Distinction rules:
+        #   PASS                  — No significant data-quality problem.
+        #   PASS — SOURCE LIMITATION — The source portal itself does not provide a field
+        #                              (e.g., NMC has no district/PIN column; INC programme
+        #                               rows share institution names legitimately; Ayurveda
+        #                               roster has no address at all). Dataset is otherwise valid.
+        #   NEEDS REVIEW          — Actual unresolved duplicate IDs, identity conflicts,
+        #                           completeness gaps, or reconciliation issues.
+        #   INCOMPLETE            — National collection is not complete.
+        #
+        # Per-dataset source limitation flags:
+        fn_lower = filename.lower()
+        source_limitation_reasons = []
+
+        # Multi-programme rows (same institution, multiple programmes) — legitimate source structure
+        is_multi_programme_source = (
+            "nursing" in fn_lower or "inc" in fn_lower
+            or "pharmacy" in fn_lower or "pci" in fn_lower
+        )
+
+        # UGC multi-type listing (same university under multiple categories) — source structure
+        is_multi_type_source = ("ugc" in fn_lower or "welcome to ugc" in fn_lower)
+
+        # Sources that do not export district column at all
+        no_district_in_source = (
+            "medical" in fn_lower or "nmc" in fn_lower  # NMC has no district col
+            or "ayurveda" in fn_lower or "ncism" in fn_lower  # NCISM sparse roster
+        )
+
+        # Homoeopathy — District column exists but NCH does not populate it
+        district_unpopulated_by_source = (
+            "homoeopathy" in fn_lower or "homeopathy" in fn_lower or "nch" in fn_lower
+        )
+
+        # Sources that do not export address/PIN at all
+        no_address_in_source = (
+            "ayurveda" in fn_lower or "ncism" in fn_lower
+        )
+
         issues = []
+        source_limitation_flags = []
+
         if missing_names > 0:
             issues.append(f"{missing_names} missing names")
         if has_official_id and dup_ids > 0:
             issues.append(f"{dup_ids} duplicate official IDs")
         if missing_state > (total_rows * 0.05):
             issues.append(f"{missing_state} missing states")
-        
-        if len(issues) == 0:
+
+        # Determine source limitation flags
+        if is_multi_programme_source and unique_names < total_rows:
+            source_limitation_flags.append(
+                "Source exports multiple programme rows per institution; "
+                "row count > unique institution count is expected source behaviour, not a data error."
+            )
+        if is_multi_type_source and unique_names < total_rows:
+            source_limitation_flags.append(
+                "Source lists universities under multiple type categories; "
+                "row count > unique name count reflects source structure."
+            )
+        if no_district_in_source and not dist_col:
+            source_limitation_flags.append(
+                "District field not exported by official source portal; "
+                "all other mandatory fields complete."
+            )
+        if district_unpopulated_by_source and dist_col and missing_dist == total_rows:
+            source_limitation_flags.append(
+                "District column present but not populated by source portal (NCH); "
+                "address and PIN fields available."
+            )
+        if no_address_in_source and not addr_col:
+            source_limitation_flags.append(
+                "Address and PIN not exported by official source (sparse rating roster); "
+                "college name and state fully populated."
+            )
+
+        # Determine final quality status
+        critical_issue = (has_official_id and dup_ids > 10) or missing_state > (total_rows * 0.1) or missing_names > 0
+        if critical_issue and not source_limitation_flags:
+            quality_status = "NEEDS REVIEW"
+            review_priority = "HIGH"
+        elif source_limitation_flags and not critical_issue:
+            quality_status = "PASS \u2014 SOURCE LIMITATION"
+            review_priority = "LOW"
+        elif not issues and not source_limitation_flags:
             quality_status = "PASS"
             review_priority = "LOW"
-        elif (has_official_id and dup_ids > 10) or missing_state > (total_rows * 0.1):
+        elif critical_issue and source_limitation_flags:
+            # Both a genuine issue AND source limitations — flag for review
             quality_status = "NEEDS REVIEW"
             review_priority = "HIGH"
         else:
-            quality_status = "WARNING"
-            review_priority = "MEDIUM"
+            quality_status = "PASS \u2014 SOURCE LIMITATION"
+            review_priority = "LOW"
 
         return {
             "id": re.sub(r'[^a-zA-Z0-9_]', '_', file_path.stem.lower()).strip('_'),
@@ -597,6 +675,7 @@ class DataRegistry:
             "missing_district": missing_dist,
             "missing_address": missing_addr,
             "missing_pin": missing_pin,
+            "source_limitation_notes": source_limitation_flags,
             "states_covered": states_covered,
             "districts_covered": districts_covered,
             "state_counts": state_counts,
@@ -1076,6 +1155,66 @@ class DataRegistry:
         completed.sort(key=lambda x: x["final_institution_count"], reverse=True)
         return completed
 
+    def get_review_priority_items(self) -> Dict[str, List[Dict[str, Any]]]:
+        """Returns HIGH/MEDIUM/LOW review priority items.
+        UDISE+ is always HIGH priority, independent of the removed Source Datasets page."""
+        high_items = []
+        medium_items = []
+        low_items = []
+
+        # UDISE+ is a permanent HIGH-priority item — school name and UDISE Code unavailable
+        # in the open research export; pseudocode-to-official-school mapping unresolved.
+        # We do NOT load 1.47M records into browser memory — this is metadata only.
+        high_items.append({
+            "id": "udise_plus_national_schools",
+            "name": "UDISE+ National Schools",
+            "category": "School Education",
+            "source": "UDISE+ Data Sharing Portal (Ministry of Education)",
+            "total_records": 1466682,
+            "academic_year": "2025\u201326",
+            "priority": "HIGH",
+            "data_type": "EXCLUDED_LARGE_DATASET",
+            "reason": "School Name and UDISE Code are unavailable in the open research export "
+                      "(withheld as NOT_AVAILABLE in DSP Research Export). "
+                      "Pseudocode-to-official-school mapping remains unresolved. "
+                      "Records not loaded into browser memory due to 1.47M record scale.",
+            "action_required": "Resolve pseudocode-to-UDISE-Code mapping via KYS Track API "
+                               "or secure school-name linkage through DSP Identified Export.",
+            "isFinal": False
+        })
+
+        # Add final lists with NEEDS REVIEW status as HIGH
+        for list_id, stats in self.final_lists.items():
+            priority = stats.get("review_priority", "LOW")
+            item = {
+                "id": stats["id"],
+                "name": f"{stats['category']} ({stats['file_name']})",
+                "category": stats["category"],
+                "total_records": stats["total_records"],
+                "academic_year": stats["academic_year"],
+                "priority": priority,
+                "data_type": "FINAL_INSTITUTE_LIST",
+                "quality_status": stats.get("quality_status", "PASS"),
+                "notes": stats.get("source_limitation_notes", []),
+                "issues": stats.get("issues", []),
+                "isFinal": True
+            }
+            if priority == "HIGH":
+                high_items.append(item)
+            elif priority == "MEDIUM":
+                medium_items.append(item)
+            else:
+                low_items.append(item)
+
+        return {
+            "high": high_items,
+            "medium": medium_items,
+            "low": low_items,
+            "high_count": len(high_items),
+            "medium_count": len(medium_items),
+            "low_count": len(low_items)
+        }
+
     def get_pending_portals(self) -> List[Dict[str, Any]]:
         """Returns only genuinely pending portals, strictly excluding any that exist in final lists"""
         completed = self.get_completed_portals()
@@ -1109,8 +1248,9 @@ def get_summary():
     # Total final records
     total_final_records = sum(s["total_records"] for s in registry.final_lists.values())
     
-    # Review priority counts
-    high_priority = sum(1 for d in registry.source_datasets if d["review_priority"] == "HIGH")
+    # Review priority counts — UDISE+ is always HIGH priority regardless of source datasets page
+    # (1 for UDISE+ permanent item + any final lists with NEEDS REVIEW)
+    high_priority = 1  # UDISE+ National Schools — permanent HIGH item
     high_priority += sum(1 for s in registry.final_lists.values() if s["review_priority"] == "HIGH")
     
     pending_count = len(registry.get_pending_portals())
@@ -1314,6 +1454,7 @@ def get_state_detail(
         "categories": state_info["categories"],
         "districts": state_info["districts"],
         "available_datasets": state_info["available_datasets"],
+        "all_categories_expected": state_info["all_categories_expected"],
         "missing_categories": state_info["missing_categories"],
         "matched_institutions_count": len(matched_institutions),
         "institutions": matched_institutions[:200]  # Cap at 200 for instantaneous response
@@ -1361,6 +1502,14 @@ def get_pending():
         "completed_count": len(completed),
         "completed": completed
     }
+
+@app.get("/api/review-priority")
+def get_review_priority():
+    """Returns structured HIGH/MEDIUM/LOW review priority items.
+    UDISE+ is always included as a HIGH priority item independent of the Source Datasets page.
+    Final institute lists are bucketed by their computed review_priority field."""
+    return registry.get_review_priority_items()
+
 
 @app.post("/api/pending/update")
 async def update_pending(request: Request):

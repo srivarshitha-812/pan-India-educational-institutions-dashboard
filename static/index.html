@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/dashboard.css?v=9">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=10">
 
   <!-- Mobile critical overrides — loaded inline to bypass CSS caching -->
   <style>
@@ -74,7 +74,7 @@
         <li class="nav-item" data-view="dictionary" id="nav-dictionary">
           <span class="nav-icon">📚</span>
           <span>Data Dictionary</span>
-          <span class="nav-badge success" id="badge-dictionary-count">97</span>
+          <span class="nav-badge success" id="badge-dictionary-count">148</span>
         </li>
         <li class="nav-item" data-view="states" id="nav-states">
           <span class="nav-icon">🗺️</span>
@@ -234,7 +234,7 @@
               <div>
                 <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-bottom: 4px;">Recommended Review Flow</h3>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                  Begin by reviewing the <strong>Final Institute Lists</strong> (8 cleaned datasets, 10,708 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Pending Datasets Roadmap</strong>.
+                  Begin by reviewing the <strong>Final Institute Lists</strong> (9 cleaned datasets, 17,372 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Dataset Collection Roadmap</strong>.
                 </p>
               </div>
               <div style="display: flex; gap: 10px;">
@@ -419,21 +419,27 @@
 
           <div class="quality-criteria-grid">
             <div class="chart-card" style="border-left: 4px solid var(--color-success);">
-              <h4 style="font-family: var(--font-heading); color: var(--color-success); margin-bottom: 6px;">PASS Criteria</h4>
+              <h4 style="font-family: var(--font-heading); color: var(--color-success); margin-bottom: 6px;">PASS</h4>
               <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
-                100% Institution Names present, valid Official Regulator IDs, 0 duplicate keys, and complete State mapping.
+                100% Institution Names present, valid Official Regulator IDs, 0 duplicate keys, and complete State mapping. No significant data-quality problem.
               </p>
             </div>
-            <div class="chart-card" style="border-left: 4px solid var(--color-warning);">
-              <h4 style="font-family: var(--font-heading); color: var(--color-warning); margin-bottom: 6px;">WARNING Criteria</h4>
+            <div class="chart-card" style="border-left: 4px solid #67e8f9;">
+              <h4 style="font-family: var(--font-heading); color: #67e8f9; margin-bottom: 6px;">PASS — SOURCE LIMITATION</h4>
               <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
-                Minor missing attributes such as PIN codes or addresses in older institutions, or partial state tagging (e.g. overseas institutes).
+                The source portal itself does not provide a field (e.g., NMC has no district/PIN column; INC/PCI export multiple programme rows per institution; NCISM roster has no address). Dataset is otherwise valid.
               </p>
             </div>
             <div class="chart-card" style="border-left: 4px solid var(--color-danger);">
-              <h4 style="font-family: var(--font-heading); color: var(--color-danger); margin-bottom: 6px;">NEEDS REVIEW Criteria</h4>
+              <h4 style="font-family: var(--font-heading); color: var(--color-danger); margin-bottom: 6px;">NEEDS REVIEW</h4>
               <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
-                Large volume datasets with withheld names/codes in research export (e.g., UDISE+ DSP pseudocodes requiring KYS track mapping).
+                Actual unresolved duplicate IDs, identity conflicts, completeness gaps or reconciliation issues. Requires manual investigation before census inclusion.
+              </p>
+            </div>
+            <div class="chart-card" style="border-left: 4px solid #fb923c;">
+              <h4 style="font-family: var(--font-heading); color: #fb923c; margin-bottom: 6px;">INCOMPLETE</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+                National collection is not yet complete. Partial harvest has been performed but the full national register has not been captured.
               </p>
             </div>
           </div>
@@ -491,7 +497,7 @@
         <section class="tab-view" id="view-pending">
           <div class="section-header">
             <div>
-              <h3 class="section-title"><span>⏳</span> Pending Regulatory Datasets & Roadmap</h3>
+              <h3 class="section-title"><span>⏳</span> Dataset Collection Roadmap</h3>
               <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
                 Strict collection tracking for remaining unharvested national regulatory portals and completed census registries.
               </p>
@@ -638,7 +644,7 @@
               <div class="filter-group" style="min-width: 260px;">
                 <span class="filter-label">Dataset:</span>
                 <select class="filter-select" id="dict-dataset-filter" style="width: 100%;">
-                  <option value="All">All Datasets (97 Fields)</option>
+                  <option value="All">All Datasets (148 Fields)</option>
                 </select>
               </div>
               <div class="filter-group" style="min-width: 220px;">
@@ -653,7 +659,7 @@
             </div>
 
             <div class="table-meta-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.4);">
-              <span id="dict-results-count" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Showing 97 fields</span>
+              <span id="dict-results-count" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Showing 148 fields</span>
               <span style="font-size: 0.78rem; color: var(--text-muted);">Definitions verified against official specifications</span>
             </div>
 
@@ -799,6 +805,6 @@
   </div>
 
   <!-- Main JavaScript App -->
-  <script src="/static/js/dashboard.js?v=11"></script>
+  <script src="/static/js/dashboard.js?v=12"></script>
 </body>
 </html>

@@ -149,22 +149,22 @@ class DashboardApp {
 
   async loadAllData() {
     try {
-      const [summaryRes, sourcesRes, finalRes, statesRes, pendingRes, dictRes] = await Promise.all([
+      const [summaryRes, finalRes, statesRes, pendingRes, dictRes, priorityRes] = await Promise.all([
         fetch('/api/summary').then(r => r.json()),
-        fetch('/api/datasets/sources').then(r => r.json()),
         fetch('/api/datasets/final').then(r => r.json()),
         fetch('/api/states').then(r => r.json()),
         fetch('/api/pending').then(r => r.json()),
-        fetch('/api/dictionary?page=1&page_size=500').then(r => r.json()).catch(() => null)
+        fetch('/api/dictionary?page=1&page_size=500').then(r => r.json()).catch(() => null),
+        fetch('/api/review-priority').then(r => r.json()).catch(() => null)
       ]);
 
       this.summaryData = summaryRes;
-      this.sourceDatasets = sourcesRes.datasets;
       this.finalLists = finalRes.lists;
       this.statesList = statesRes.states;
       this.pendingDatasets = pendingRes.pending || [];
       this.completedPortals = pendingRes.completed || [];
       this.dictionaryData = dictRes;
+      this.reviewPriorityData = priorityRes;
 
       this.renderKPIs();
       this.renderCharts();
@@ -187,6 +187,12 @@ class DashboardApp {
       if (this.dictionaryData && this.dictionaryData.total_fields) {
         const dictBadge = document.getElementById('badge-dictionary-count');
         if (dictBadge) dictBadge.textContent = this.dictionaryData.total_fields;
+      }
+      // Update High Priority sidebar badge from actual review priority count
+      const priorityBadge = document.getElementById('badge-priority-count');
+      if (priorityBadge && this.reviewPriorityData) {
+        const highCount = this.reviewPriorityData.high_count || 0;
+        priorityBadge.textContent = highCount > 0 ? `${highCount} HIGH` : 'HIGH';
       }
 
     } catch (err) {
@@ -218,7 +224,7 @@ class DashboardApp {
       states: { title: 'State / UT Geographic Explorer', meta: 'Pan-India Sub-National Analysis across 36 States & UTs' },
       quality: { title: 'Data Quality & Integrity Audit', meta: 'Null Value, Duplication & Completeness Scorecard' },
       priority: { title: 'Review Priority Queue', meta: 'Ranked Datasets Requiring Strategic Attention' },
-      pending: { title: 'Pending Datasets Roadmap', meta: 'Collection Tracker for Remaining Regulatory Portals' },
+      pending: { title: 'Dataset Collection Roadmap', meta: 'Remaining Regulatory Portals & Completed Census Registries' },
       search: { title: 'Global Institution Search', meta: 'Multi-attribute Query across All Final Lists' }
     };
 
@@ -299,12 +305,15 @@ class DashboardApp {
           datasets: [{
             data: catValues,
             backgroundColor: [
-              '#3b82f6', // Medical
-              '#10b981', // Nursing
-              '#8b5cf6', // Universities
-              '#f59e0b', // Rehabilitation
-              '#ec4899', // Architecture
-              '#06b6d4'  // Ayurveda
+              '#ef4444', // Medical Education — red (health/medical)
+              '#10b981', // Nursing — emerald green
+              '#6366f1', // Universities & Higher Education — indigo
+              '#f59e0b', // Rehabilitation & Special Education — amber
+              '#8b5cf6', // Architecture — purple
+              '#06b6d4', // Ayurveda & Unani — cyan
+              '#ec4899', // Homoeopathy — pink
+              '#84cc16', // Legal Education & Law — lime
+              '#f97316', // Pharmacy — orange
             ],
             borderWidth: 2,
             borderColor: '#111827'
@@ -349,8 +358,22 @@ class DashboardApp {
           datasets: [{
             label: 'Institutions',
             data: sValues,
-            backgroundColor: 'rgba(99, 102, 241, 0.75)',
-            borderColor: '#6366f1',
+            backgroundColor: sValues.map((_, i) => [
+              'rgba(99,102,241,0.80)',
+              'rgba(16,185,129,0.80)',
+              'rgba(239,68,68,0.80)',
+              'rgba(245,158,11,0.80)',
+              'rgba(139,92,246,0.80)',
+              'rgba(6,182,212,0.80)',
+              'rgba(236,72,153,0.80)',
+              'rgba(132,204,22,0.80)',
+              'rgba(249,115,22,0.80)',
+              'rgba(56,189,248,0.80)',
+            ][i % 10]),
+            borderColor: sValues.map((_, i) => [
+              '#6366f1','#10b981','#ef4444','#f59e0b','#8b5cf6',
+              '#06b6d4','#ec4899','#84cc16','#f97316','#38bdf8',
+            ][i % 10]),
             borderWidth: 1,
             borderRadius: 6
           }]
@@ -489,6 +512,17 @@ class DashboardApp {
     modal.classList.add('open');
   }
 
+  /* Helper: converts quality_status string to a valid CSS class name */
+  statusToCssClass(status) {
+    if (!status) return 'pass';
+    const s = status.toLowerCase();
+    if (s.includes('source limitation')) return 'pass_source_limitation';
+    if (s.includes('needs review') || s.includes('needs_review')) return 'needs_review';
+    if (s.includes('incomplete')) return 'incomplete';
+    if (s.includes('warning')) return 'warning';
+    return s.replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '') || 'pass';
+  }
+
   /* --------------------------------------------------------------------------
      4. Final Institute Lists Table
      -------------------------------------------------------------------------- */
@@ -499,7 +533,7 @@ class DashboardApp {
 
     this.finalLists.forEach(l => {
       const tr = document.createElement('tr');
-      const statusClass = l.quality_status.toLowerCase();
+      const statusClass = this.statusToCssClass(l.quality_status);
 
       tr.innerHTML = `
         <td><span class="category-tag">${l.category}</span></td>
@@ -682,8 +716,11 @@ class DashboardApp {
       // Missing Categories Chips
       const missChips = document.getElementById('state-missing-chips');
       missChips.innerHTML = '';
+      const allExpected = res.all_categories_expected || [];
+      const totalExpected = allExpected.length || 9;
+      const representedCount = Object.keys(res.categories).length;
       if (res.missing_categories.length === 0) {
-        missChips.innerHTML = '<span style="color: #34d399; font-size: 0.8rem;">✓ All 6 major regulated sectors have representation in this State!</span>';
+        missChips.innerHTML = `<span style="color: #34d399; font-size: 0.8rem;">✓ ${representedCount} of ${totalExpected} final-list categories have representation in this State!</span>`;
       } else {
         res.missing_categories.forEach(mc => {
           missChips.innerHTML += `
@@ -760,6 +797,10 @@ class DashboardApp {
     // Final Lists
     this.finalLists.forEach(l => {
       const tr = document.createElement('tr');
+      const statusClass = this.statusToCssClass(l.quality_status);
+      // Build source limitation tooltip / note text
+      const sourceLimitNotes = (l.source_limitation_notes || []).join(' | ');
+      const statusLabel = l.quality_status;
       tr.innerHTML = `
         <td>
           <strong style="color: #fff;">${l.category}</strong><br>
@@ -773,7 +814,10 @@ class DashboardApp {
         <td>${l.missing_district > 0 ? `<span style="color: #f59e0b;">${l.missing_district}</span>` : '0'}</td>
         <td>${l.missing_address > 0 ? l.missing_address : '0'}</td>
         <td>${l.missing_pin > 0 ? l.missing_pin : '0'}</td>
-        <td><span class="status-pill ${l.quality_status.toLowerCase()}">${l.quality_status}</span></td>
+        <td>
+          <span class="status-pill ${statusClass}" title="${sourceLimitNotes}">${statusLabel}</span>
+          ${sourceLimitNotes ? `<div style="font-size:0.68rem;color:var(--text-muted);margin-top:3px;line-height:1.3;">ℹ️ Source limitation</div>` : ''}
+        </td>
       `;
       tbody.appendChild(tr);
     });
@@ -784,6 +828,7 @@ class DashboardApp {
      -------------------------------------------------------------------------- */
   renderReviewPriority() {
     const highCont = document.getElementById('priority-high-container');
+    const medSection = document.querySelector('#view-priority > div > div:nth-child(2)');
     const medCont = document.getElementById('priority-medium-container');
     const lowCont = document.getElementById('priority-low-container');
 
@@ -793,47 +838,90 @@ class DashboardApp {
     medCont.innerHTML = '';
     lowCont.innerHTML = '';
 
-    const allItems = [
-      ...this.finalLists.map(l => ({ ...l, name: `${l.category} (${l.file_name})`, isFinal: true }))
-    ];
+    const data = this.reviewPriorityData;
+    if (!data) {
+      highCont.innerHTML = '<p style="color: var(--text-muted); padding: 20px;">Loading priority data...</p>';
+      return;
+    }
 
-    allItems.forEach(item => {
-      const priority = item.review_priority;
+    const renderCard = (item) => {
       const card = document.createElement('div');
       card.className = 'chart-card';
       card.style.display = 'flex';
       card.style.flexDirection = 'column';
       card.style.justifyContent = 'space-between';
 
-      const buttonAction = item.isFinal
-        ? `onclick="window.dashboardApp.openRecordModal('${item.id}')"`
-        : `onclick="window.dashboardApp.showSourceDetail(${JSON.stringify(item).replace(/"/g, '&quot;')})"`;
+      const priority = item.priority || 'LOW';
+      const isExcluded = item.data_type === 'EXCLUDED_LARGE_DATASET';
+      const isFinal = item.isFinal;
+
+      let actionBtn = '';
+      if (isExcluded) {
+        // UDISE+ — no modal, just informational
+        actionBtn = `<span style="font-size: 0.75rem; color: #f87171; font-style: italic;">⚠️ Records excluded from browser memory (1.47M scale)</span>`;
+      } else if (isFinal) {
+        actionBtn = `<button class="btn btn-outline btn-sm" onclick="window.dashboardApp.openRecordModal('${item.id}')">Review Cleaned Roster →</button>`;
+      } else {
+        actionBtn = `<button class="btn btn-outline btn-sm" onclick="window.dashboardApp.switchView('quality')">View Quality Scorecard →</button>`;
+      }
+
+      // Build notes / reason text
+      let noteText = '';
+      if (item.reason) {
+        noteText = item.reason;
+      } else if (item.notes && item.notes.length > 0) {
+        noteText = item.notes.join(' ');
+      } else if (item.issues && item.issues.length > 0) {
+        noteText = item.issues.join(', ');
+      } else {
+        noteText = item.quality_status === 'PASS' ? 'Validated registry.' : (item.quality_status || 'Reviewed.');
+      }
+
+      const recordLabel = isExcluded ? 'Total Records (National Census):' : 'Total Institutions / Records:';
+      const typeLabel = isExcluded ? 'EXCLUDED — LARGE DATASET' : (isFinal ? 'FINAL LIST' : 'SOURCE');
+      const acYear = item.academic_year || '';
 
       card.innerHTML = `
         <div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
             <span class="priority-badge ${priority.toLowerCase()}">${priority} PRIORITY</span>
-            <span style="font-size: 0.72rem; color: var(--text-muted);">${item.isFinal ? 'FINAL LIST' : 'SOURCE'}</span>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">${typeLabel}</span>
           </div>
-          <h4 style="font-family: var(--font-heading); font-size: 1.05rem; color: #fff; margin-bottom: 6px;">${item.name}</h4>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
-            Total Institutions / Records: <strong style="color: #fff;">${item.total_records.toLocaleString('en-IN')}</strong>
+          <h4 style="font-family: var(--font-heading); font-size: 1.05rem; color: #fff; margin-bottom: 4px;">${item.name}</h4>
+          ${acYear ? `<div style="font-size: 0.75rem; color: #a5b4fc; margin-bottom: 6px;">Academic Year: ${acYear}</div>` : ''}
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">
+            ${recordLabel} <strong style="color: #fff;">${(item.total_records || 0).toLocaleString('en-IN')}</strong>
           </div>
-          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px;">
-            ${item.notes || (item.issues ? item.issues.join(', ') : 'Validated registry.')}
-          </p>
+          ${item.action_required ? `<div style="font-size: 0.78rem; color: #f59e0b; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); border-radius: 4px; padding: 6px 10px; margin-bottom: 10px;"><strong>Action Required:</strong> ${item.action_required}</div>` : ''}
+          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px;">${noteText}</p>
         </div>
         <div style="display: flex; justify-content: flex-end;">
-          <button class="btn btn-outline btn-sm" ${buttonAction}>
-            ${item.isFinal ? 'Review Cleaned Roster →' : 'Inspect Audit →'}
-          </button>
+          ${actionBtn}
         </div>
       `;
+      return card;
+    };
 
-      if (priority === 'HIGH') highCont.appendChild(card);
-      else if (priority === 'MEDIUM') medCont.appendChild(card);
-      else lowCont.appendChild(card);
-    });
+    // Render HIGH
+    (data.high || []).forEach(item => highCont.appendChild(renderCard(item)));
+    if ((data.high || []).length === 0) {
+      highCont.innerHTML = '<p style="color: var(--text-muted); padding: 16px; font-size: 0.85rem;">No high priority items at this time.</p>';
+    }
+
+    // Render MEDIUM — hide section entirely if empty
+    const medParent = medCont ? medCont.parentElement : null;
+    if ((data.medium || []).length === 0) {
+      if (medParent) medParent.style.display = 'none';
+    } else {
+      if (medParent) medParent.style.display = '';
+      data.medium.forEach(item => medCont.appendChild(renderCard(item)));
+    }
+
+    // Render LOW
+    (data.low || []).forEach(item => lowCont.appendChild(renderCard(item)));
+    if ((data.low || []).length === 0) {
+      lowCont.innerHTML = '<p style="color: var(--text-muted); padding: 16px; font-size: 0.85rem;">No low priority items.</p>';
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -1026,17 +1114,22 @@ class DashboardApp {
     if (!this.dictionaryData) return;
     const records = this.dictionaryData.records || [];
     const datasets = this.dictionaryData.available_datasets || [];
+    const totalFields = this.dictionaryData.total_fields || records.length;
 
     // Populate dataset dropdown
     const select = document.getElementById('dict-dataset-filter');
-    if (select && select.options.length <= 1) {
-      datasets.forEach(ds => {
-        const opt = document.createElement('option');
-        opt.value = ds;
-        const count = records.filter(r => r.dataset === ds).length;
-        opt.textContent = `${ds} (${count})`;
-        select.appendChild(opt);
-      });
+    if (select) {
+      // Always update the "All Datasets" option with the live total
+      select.options[0].textContent = `All Datasets (${totalFields} Fields)`;
+      if (select.options.length <= 1) {
+        datasets.forEach(ds => {
+          const opt = document.createElement('option');
+          opt.value = ds;
+          const count = records.filter(r => r.dataset === ds).length;
+          opt.textContent = `${ds} (${count})`;
+          select.appendChild(opt);
+        });
+      }
     }
 
     // Populate KPI counts
