@@ -399,6 +399,14 @@ class DataRegistry:
         elif "law" in fname or "bci" in fname:
             # BCI Law Colleges has clean headers on row 1
             return pd.read_excel(file_path)
+        elif "teacher" in fname or "ncte" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -424,6 +432,8 @@ class DataRegistry:
             return "Legal Education & Law Colleges"
         elif "pharmacy" in fn or "pci" in fn:
             return "Pharmacy"
+        elif "teacher" in fn or "ncte" in fn:
+            return "Teacher Education"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -453,6 +463,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["bci college id", "bci_college_id", "bci_id", "bci id"])
         elif "pharmacy" in fn_lower or "pci" in fn_lower:
             return self._find_matching_col(cols, ["pci college id", "pci_college_id", "pci code", "pci_code", "pci id"])
+        elif "teacher" in fn_lower or "ncte" in fn_lower:
+            return self._find_matching_col(cols, ["ncte institute id", "ncte_id", "institute id", "official id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -904,6 +916,30 @@ class DataRegistry:
                 "data_type": "FINAL_INSTITUTE_LIST"
             },
             {
+                "id": "ncte_teacher_education",
+                "name": "NCTE Teacher Education Colleges",
+                "category": "Teacher Education",
+                "total_records": 17556,
+                "unique_records": 17556,
+                "duplicate_records": 0,
+                "states_covered": 35,
+                "districts_covered": 412,
+                "academic_year": "2025-26",
+                "source": "National Council for Teacher Education (NCTE) Official Portal",
+                "file_name": "NCTE Teacher Education Colleges.xlsx",
+                "file_path": "Final Institute Lists/NCTE Teacher Education Colleges.xlsx",
+                "file_size_mb": 5.26,
+                "important_columns": ["NCTE Institute ID", "Institution Name", "State", "District", "Management Type", "Affiliating University", "Recognized Programmes", "Total Approved Intake"],
+                "has_official_id": True,
+                "official_id_name": "NCTE Institute ID (e.g., NCTE4305471)",
+                "duplicate_ids": 0,
+                "missing_important_fields": "All 17,556 physical institutions have official NCTE IDs, names, and state assignments.",
+                "quality_status": "PASS",
+                "review_priority": "LOW",
+                "notes": "Full national universe (17,556 canonical physical institutions) covering 28,372 course offerings across all 4 regional committees for AY 2025-26. 1,274 withdrawn institutions preserved in separate audit sheet.",
+                "data_type": "FINAL_INSTITUTE_LIST"
+            },
+            {
                 "id": "cbse_saras",
                 "name": "CBSE SARAS National Affiliation Directory",
                 "category": "School Education (CBSE Board)",
@@ -1263,9 +1299,9 @@ class DataRegistry:
         for p in self.pending_datasets:
             pid = p.get("id", "").lower()
             auth = p.get("authority", "").lower()
-            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism"]:
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte"]:
                 continue
-            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation"]):
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte"]):
                 continue
             item = dict(p)
             val = str(item.get("estimated_institutions", ""))

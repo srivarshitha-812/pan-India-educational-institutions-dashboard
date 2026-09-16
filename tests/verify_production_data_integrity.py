@@ -23,6 +23,7 @@ def verify_all():
         "Law Colleges.xlsx": 3074,
         "Pharmacy Colleges.xlsx": 6664,
         "Dental Colleges.xlsx": 330,
+        "NCTE Teacher Education Colleges.xlsx": 17556,
     }
     
     total_final = 0
@@ -36,6 +37,8 @@ def verify_all():
             df = pd.read_excel(fpath, sheet_name="Combined")
         elif "dental" in fname.lower():
             df = pd.read_excel(fpath, sheet_name="Dental Colleges", skiprows=1)
+        elif "ncte" in fname.lower():
+            df = pd.read_excel(fpath, sheet_name="Institutions Roster")
         elif "homoeopathy" in fname.lower():
             df = pd.read_excel(fpath, skiprows=2)
         else:
@@ -45,8 +48,8 @@ def verify_all():
         assert actual == exp_count, f"Count mismatch for {fname}: got {actual}, expected {exp_count}"
         total_final += actual
         
-    print(f"  TOTAL RECORDS ACROSS FINAL LISTS: {total_final:>5} (Expected: 18,329)")
-    assert total_final == 18329, f"Total mismatch: got {total_final}, expected 18329"
+    print(f"  TOTAL RECORDS ACROSS FINAL LISTS: {total_final:>5} (Expected: 35,885)")
+    assert total_final == 35885, f"Total mismatch: got {total_final}, expected 35885"
     
     # 2. UDISE+ Dataset
     print("\n--- 2. UDISE+ MASTER DATASET ---")

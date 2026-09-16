@@ -22,17 +22,6 @@
     "action_plan": "Scrape state-wise approved AICTE directory with Playwright worker."
   },
   {
-    "id": "ncte",
-    "sector": "Teacher Education (B.Ed, D.El.Ed)",
-    "authority": "NCTE",
-    "status": "IN PROGRESS",
-    "priority": "MEDIUM",
-    "estimated_institutions": "Count not established",
-    "collected_count": 19,
-    "notes": "Angular web app requires REST probe extraction per regional committee.",
-    "action_plan": "Execute headless browser script to pull full JSON API payloads."
-  },
-  {
     "id": "ncvet",
     "sector": "Vocational, Skill & ITIs",
     "authority": "NCVET / DGT MIS",

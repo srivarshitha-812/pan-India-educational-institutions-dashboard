@@ -4,6 +4,119 @@
  * state explorer drill-downs, and global search indexing.
  */
 
+/* ==========================================================================
+   GLOBAL CATEGORY COLOR SYSTEM
+   Visually distinguishable, accessibility-conscious categorical palette.
+   Status colors remain semantic:
+   - Green = PASS / COMPLETED (#10b981 / #34d399)
+   - Amber/Yellow = IN PROGRESS / WARNING (#f59e0b)
+   - Red = HIGH PRIORITY / ERROR / NEEDS REVIEW (#ef4444)
+   - Neutral blue/gray = informational (#64748b)
+   ========================================================================== */
+const CATEGORY_COLOR_MAP = {
+  'Pharmacy': {
+    hex: '#ea580c',       // Warm Tangerine Orange
+    bg: 'rgba(234, 88, 12, 0.15)',
+    border: 'rgba(234, 88, 12, 0.45)',
+    text: '#fb923c'
+  },
+  'Architecture': {
+    hex: '#0d9488',       // Dark Pine / Deep Teal
+    bg: 'rgba(13, 148, 136, 0.15)',
+    border: 'rgba(13, 148, 136, 0.45)',
+    text: '#2dd4bf'
+  },
+  'Rehabilitation & Special Education': {
+    hex: '#d946ef',       // Vibrant Fuchsia / Orchid
+    bg: 'rgba(217, 70, 239, 0.15)',
+    border: 'rgba(217, 70, 239, 0.45)',
+    text: '#f0abfc'
+  },
+  'Universities & Higher Education': {
+    hex: '#4f46e5',       // Royal Indigo
+    bg: 'rgba(79, 70, 229, 0.15)',
+    border: 'rgba(79, 70, 229, 0.45)',
+    text: '#a5b4fc'
+  },
+  'Homoeopathy Education': {
+    hex: '#0284c7',       // Sky Azure
+    bg: 'rgba(2, 132, 199, 0.15)',
+    border: 'rgba(2, 132, 199, 0.45)',
+    text: '#38bdf8'
+  },
+  'Nursing': {
+    hex: '#7c3aed',       // Electric Purple / Violet
+    bg: 'rgba(124, 58, 237, 0.15)',
+    border: 'rgba(124, 58, 237, 0.45)',
+    text: '#c4b5fd'
+  },
+  'Dental Education': {
+    hex: '#06b6d4',       // Bright Cyan / Turquoise
+    bg: 'rgba(6, 182, 212, 0.15)',
+    border: 'rgba(6, 182, 212, 0.45)',
+    text: '#67e8f9'
+  },
+  'Medical Education': {
+    hex: '#be123c',       // Deep Crimson Rose
+    bg: 'rgba(190, 18, 60, 0.15)',
+    border: 'rgba(190, 18, 60, 0.45)',
+    text: '#fb7185'
+  },
+  'Ayurveda & Unani Medicine': {
+    hex: '#ca8a04',       // Warm Golden Ochre
+    bg: 'rgba(202, 138, 4, 0.15)',
+    border: 'rgba(202, 138, 4, 0.45)',
+    text: '#fde047'
+  },
+  'Legal Education & Law Colleges': {
+    hex: '#1e3a8a',       // Deep Midnight Cobalt
+    bg: 'rgba(30, 58, 138, 0.25)',
+    border: 'rgba(59, 130, 246, 0.45)',
+    text: '#93c5fd'
+  },
+  'Teacher Education': {
+    hex: '#831843',       // Scholarly Wine / Maroon
+    bg: 'rgba(131, 24, 67, 0.18)',
+    border: 'rgba(131, 24, 67, 0.50)',
+    text: '#f472b6'
+  },
+  'School Education': {
+    hex: '#52525b',       // Neutral Zinc
+    bg: 'rgba(82, 82, 91, 0.20)',
+    border: 'rgba(82, 82, 91, 0.50)',
+    text: '#d4d4d8'
+  }
+};
+
+const FALLBACK_CATEGORY_PALETTE = [
+  '#0891b2', '#c026d3', '#e11d48', '#d97706', '#4338ca', '#059669', '#7c3aed', '#b45309'
+];
+
+function getCategoryColor(category) {
+  if (!category) return '#64748b';
+  const entry = CATEGORY_COLOR_MAP[category];
+  if (entry) return entry.hex;
+  let hash = 0;
+  for (let i = 0; i < category.length; i++) {
+    hash = category.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return FALLBACK_CATEGORY_PALETTE[Math.abs(hash) % FALLBACK_CATEGORY_PALETTE.length];
+}
+
+function getCategoryBadgeStyle(category) {
+  const entry = CATEGORY_COLOR_MAP[category];
+  if (entry) {
+    return `background: ${entry.bg}; color: ${entry.text}; border: 1px solid ${entry.border};`;
+  }
+  const hex = getCategoryColor(category);
+  return `background: ${hex}22; color: ${hex}; border: 1px solid ${hex}55;`;
+}
+
+function renderCategoryTag(category) {
+  const style = getCategoryBadgeStyle(category);
+  return `<span class="category-tag" style="${style}"><span class="category-tag-dot"></span>${category || 'Unassigned'}</span>`;
+}
+
 class DashboardApp {
   constructor() {
     this.summaryData = null;
@@ -295,6 +408,7 @@ class DashboardApp {
 
       const catLabels = Object.keys(breakdowns.institutions_by_category);
       const catValues = Object.values(breakdowns.institutions_by_category);
+      const catColors = catLabels.map(cat => getCategoryColor(cat));
 
       this.categoryChart = new Chart(catCanvas, {
         type: 'doughnut',
@@ -302,19 +416,10 @@ class DashboardApp {
           labels: catLabels,
           datasets: [{
             data: catValues,
-            backgroundColor: [
-              '#ef4444', // Medical Education — red (health/medical)
-              '#10b981', // Nursing — emerald green
-              '#6366f1', // Universities & Higher Education — indigo
-              '#f59e0b', // Rehabilitation & Special Education — amber
-              '#8b5cf6', // Architecture — purple
-              '#06b6d4', // Ayurveda & Unani — cyan
-              '#ec4899', // Homoeopathy — pink
-              '#84cc16', // Legal Education & Law — lime
-              '#f97316', // Pharmacy — orange
-            ],
+            backgroundColor: catColors,
+            hoverBackgroundColor: catColors,
             borderWidth: 2,
-            borderColor: '#111827'
+            borderColor: '#0f172a'
           }]
         },
         options: {
@@ -322,11 +427,31 @@ class DashboardApp {
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              position: 'right',
+              position: window.innerWidth < 768 ? 'bottom' : 'right',
               labels: {
                 color: '#cbd5e1',
                 boxWidth: 12,
-                font: { size: 11, family: 'Inter' }
+                boxHeight: 12,
+                padding: 12,
+                font: { size: 11, family: 'Inter', weight: '500' },
+                generateLabels: (chart) => {
+                  const data = chart.data;
+                  if (data.labels.length && data.datasets.length) {
+                    return data.labels.map((label, i) => {
+                      const value = data.datasets[0].data[i] || 0;
+                      const fill = data.datasets[0].backgroundColor[i];
+                      return {
+                        text: `${label} (${value.toLocaleString('en-IN')})`,
+                        fillStyle: fill,
+                        strokeStyle: fill,
+                        lineWidth: 0,
+                        hidden: isNaN(value) || chart.getDatasetMeta(0).data[i].hidden,
+                        index: i
+                      };
+                    });
+                  }
+                  return [];
+                }
               }
             },
             tooltip: {
@@ -335,7 +460,7 @@ class DashboardApp {
               }
             }
           },
-          cutout: '68%'
+          cutout: '66%'
         }
       });
     }
@@ -424,7 +549,7 @@ class DashboardApp {
           <strong style="color: #fff;">${d.name}</strong><br>
           <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">${d.file_name}</span>
         </td>
-        <td><span class="category-tag">${d.category}</span></td>
+        <td>${renderCategoryTag(d.category)}</td>
         <td><strong style="color: #fff;">${d.total_records.toLocaleString('en-IN')}</strong></td>
         <td>${d.states_covered} / 36</td>
         <td>${d.districts_covered}</td>
@@ -534,7 +659,7 @@ class DashboardApp {
       const statusClass = this.statusToCssClass(l.quality_status);
 
       tr.innerHTML = `
-        <td><span class="category-tag">${l.category}</span></td>
+        <td>${renderCategoryTag(l.category)}</td>
         <td>
           <strong style="color: #fff;">${l.file_name}</strong><br>
           <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">${l.file_size_kb} KB</span>
@@ -704,9 +829,14 @@ class DashboardApp {
         Object.entries(res.categories).forEach(([cat, cnt]) => {
           const chip = document.createElement('div');
           chip.className = 'category-chip';
+          const catColor = getCategoryColor(cat);
+          chip.style.setProperty('--chip-border', catColor);
           chip.innerHTML = `
-            <span>${cat}:</span>
-            <strong>${cnt}</strong>
+            <div class="category-chip-label">
+              <span class="category-chip-dot" style="background-color: ${catColor}; box-shadow: 0 0 6px ${catColor}88;"></span>
+              <span>${cat}:</span>
+            </div>
+            <strong>${cnt.toLocaleString('en-IN')}</strong>
           `;
           catChips.appendChild(chip);
         });
@@ -768,7 +898,7 @@ class DashboardApp {
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td><strong style="color: #fff;">${inst.institution_name}</strong></td>
-        <td><span class="category-tag">${inst.category}</span></td>
+        <td>${renderCategoryTag(inst.category)}</td>
         <td>${inst.district}</td>
         <td><code style="color: #93c5fd; font-size: 0.75rem;">${inst.official_id}</code></td>
         <td><span style="font-size: 0.72rem; color: var(--text-muted);">${inst.dataset_name}</span></td>
@@ -1040,7 +1170,7 @@ class DashboardApp {
       res.results.forEach(r => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td><span class="category-tag">${r.category}</span></td>
+          <td>${renderCategoryTag(r.category)}</td>
           <td>
             <strong style="color: #fff;">${r.institution}</strong>
             ${r.address ? `<div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 3px; line-height: 1.3;">📍 ${r.address}</div>` : ''}
