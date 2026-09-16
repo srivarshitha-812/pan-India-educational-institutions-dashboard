@@ -811,6 +811,22 @@ body.sidebar-drawer-open {
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
+/* PASS — SOURCE LIMITATION: blue-teal to distinguish from plain PASS (green) */
+.status-pill.pass_source_limitation,
+.status-pill[class*="pass"][class*="source"] {
+  background: rgba(6, 182, 212, 0.12);
+  color: #67e8f9;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+/* INCOMPLETE: amber/orange */
+.status-pill.incomplete {
+  background: rgba(249, 115, 22, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+
 .priority-badge {
   display: inline-flex;
   align-items: center;
@@ -1285,9 +1301,10 @@ body.sidebar-drawer-open {
 
 .quality-criteria-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
+
 
 .priority-cards-grid {
   display: grid;
