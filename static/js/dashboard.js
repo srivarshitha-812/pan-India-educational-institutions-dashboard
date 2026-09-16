@@ -182,8 +182,6 @@ class DashboardApp {
       if (badgePending) badgePending.textContent = this.pendingDatasets.length;
       const badgePendingQueue = document.getElementById('badge-pending-queue-count');
       if (badgePendingQueue) badgePendingQueue.textContent = `${this.pendingDatasets.length} Portals Awaiting Collection`;
-      const badgeCompletedQueue = document.getElementById('badge-completed-queue-count');
-      if (badgeCompletedQueue) badgeCompletedQueue.textContent = `${this.completedPortals.length} Portals Live in Census`;
       if (this.dictionaryData && this.dictionaryData.total_fields) {
         const dictBadge = document.getElementById('badge-dictionary-count');
         if (dictBadge) dictBadge.textContent = this.dictionaryData.total_fields;
@@ -224,7 +222,7 @@ class DashboardApp {
       states: { title: 'State / UT Geographic Explorer', meta: 'Pan-India Sub-National Analysis across 36 States & UTs' },
       quality: { title: 'Data Quality & Integrity Audit', meta: 'Null Value, Duplication & Completeness Scorecard' },
       priority: { title: 'Review Priority Queue', meta: 'Ranked Datasets Requiring Strategic Attention' },
-      pending: { title: 'Dataset Collection Roadmap', meta: 'Remaining Regulatory Portals & Completed Census Registries' },
+      pending: { title: 'Pending Datasets', meta: 'Remaining Regulatory Portals (Pending Collection)' },
       search: { title: 'Global Institution Search', meta: 'Multi-attribute Query across All Final Lists' }
     };
 
@@ -668,7 +666,7 @@ class DashboardApp {
       item.className = `state-item ${idx === 0 ? 'active' : ''}`;
       item.setAttribute('data-state-name', st.state_name);
       item.innerHTML = `
-        <span>${st.state_name}</span>
+        <span class="state-item-name">${st.state_name}</span>
         <span class="state-item-count">${st.total_institutions}</span>
       `;
 
@@ -701,15 +699,16 @@ class DashboardApp {
       const catChips = document.getElementById('state-category-chips');
       catChips.innerHTML = '';
       if (Object.keys(res.categories).length === 0) {
-        catChips.innerHTML = '<span style="color: var(--text-muted); font-size: 0.8rem;">No final institutions recorded yet.</span>';
+        catChips.innerHTML = '<span style="color: var(--text-muted); font-size: 0.8rem; grid-column: 1/-1;">No final institutions recorded yet.</span>';
       } else {
         Object.entries(res.categories).forEach(([cat, cnt]) => {
-          catChips.innerHTML += `
-            <div class="category-chip">
-              <span>${cat}:</span>
-              <strong>${cnt}</strong>
-            </div>
+          const chip = document.createElement('div');
+          chip.className = 'category-chip';
+          chip.innerHTML = `
+            <span>${cat}:</span>
+            <strong>${cnt}</strong>
           `;
+          catChips.appendChild(chip);
         });
       }
 
@@ -720,14 +719,13 @@ class DashboardApp {
       const totalExpected = allExpected.length || 9;
       const representedCount = Object.keys(res.categories).length;
       if (res.missing_categories.length === 0) {
-        missChips.innerHTML = `<span style="color: #34d399; font-size: 0.8rem;">✓ ${representedCount} of ${totalExpected} final-list categories have representation in this State!</span>`;
+        missChips.innerHTML = `<span style="color: #34d399; font-size: 0.82rem; grid-column: 1/-1; line-height: 1.4; word-break: break-word; overflow-wrap: anywhere;">✓ ${representedCount} of ${totalExpected} final-list categories have representation in this State!</span>`;
       } else {
         res.missing_categories.forEach(mc => {
-          missChips.innerHTML += `
-            <div class="category-chip missing-chip">
-              <span>⚠️ ${mc}</span>
-            </div>
-          `;
+          const chip = document.createElement('div');
+          chip.className = 'category-chip missing-chip';
+          chip.innerHTML = `<span>⚠️ ${mc}</span>`;
+          missChips.appendChild(chip);
         });
       }
 
@@ -736,13 +734,13 @@ class DashboardApp {
       distList.innerHTML = '';
       const sortedDists = Object.entries(res.districts).sort((a,b) => b[1] - a[1]);
       if (sortedDists.length === 0) {
-        distList.innerHTML = '<span style="color: var(--text-muted);">District data unassigned for this state.</span>';
+        distList.innerHTML = '<span style="color: var(--text-muted); grid-column: 1/-1;">District data unassigned for this state.</span>';
       } else {
         sortedDists.forEach(([dname, dcnt]) => {
           distList.innerHTML += `
-            <div style="background: var(--bg-surface); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between;">
-              <span style="color: #fff;">${dname}</span>
-              <strong style="color: #93c5fd;">${dcnt}</strong>
+            <div style="background: var(--bg-surface); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 8px; min-width: 0; word-break: break-word;">
+              <span style="color: #fff; min-width: 0; word-break: break-word;">${dname}</span>
+              <strong style="color: #93c5fd; flex-shrink: 0;">${dcnt}</strong>
             </div>
           `;
         });
@@ -925,13 +923,12 @@ class DashboardApp {
   }
 
   /* --------------------------------------------------------------------------
-     9. Pending Regulatory Datasets & Completed Portals
+     9. Pending Regulatory Datasets
      -------------------------------------------------------------------------- */
   renderPendingDatasets() {
     const grid = document.getElementById('pending-grid');
-    const completedGrid = document.getElementById('completed-grid');
 
-    // 1. Render Strict Pending Queue (only genuinely pending portals)
+    // Render Strict Pending Queue (only genuinely pending portals)
     if (grid) {
       grid.innerHTML = '';
       if (!this.pendingDatasets || this.pendingDatasets.length === 0) {
@@ -964,50 +961,6 @@ class DashboardApp {
             </div>
           `;
           grid.appendChild(card);
-        });
-      }
-    }
-
-    // 2. Render Completed & Integrated Portals
-    if (completedGrid) {
-      completedGrid.innerHTML = '';
-      if (!this.completedPortals || this.completedPortals.length === 0) {
-        completedGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 32px; color: var(--text-muted);">No completed portals available.</div>';
-      } else {
-        this.completedPortals.forEach(c => {
-          const card = document.createElement('div');
-          card.className = 'pending-card';
-          card.style.borderColor = 'rgba(52, 211, 153, 0.3)';
-          card.style.background = 'linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, var(--bg-card) 100%)';
-
-          card.innerHTML = `
-            <div class="pending-card-top">
-              <div class="pending-authority" style="color: #34d399; font-weight: 600;">${c.authority}</div>
-              <h3 class="pending-title">${c.category}</h3>
-              <div class="pending-status-row" style="margin-bottom: 8px;">
-                <span class="status-pill success">COMPLETED</span>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">${c.file_name}</span>
-              </div>
-              <div style="margin: 10px 0;">
-                <div style="font-size: 1.35rem; font-weight: 800; color: #34d399; font-family: var(--font-heading);">
-                  ${c.final_institution_count.toLocaleString('en-IN')}
-                  <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-secondary);">Cleaned Institutions</span>
-                </div>
-              </div>
-              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 4px;">
-                Official ID: <code style="color: #93c5fd;">${c.official_id_display}</code>
-              </div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">
-                Coverage: <strong>${c.states_covered}</strong> States/UTs ${c.districts_covered > 0 ? `| <strong>${c.districts_covered}</strong> Districts` : ''}
-              </div>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-              <button class="btn btn-outline btn-sm" style="border-color: #34d399; color: #34d399;" onclick="window.dashboardApp.viewFinalList('${c.file_id}')">
-                View Final List →
-              </button>
-            </div>
-          `;
-          completedGrid.appendChild(card);
         });
       }
     }

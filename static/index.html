@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/dashboard.css?v=10">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=11">
 
   <!-- Mobile critical overrides — loaded inline to bypass CSS caching -->
   <style>
@@ -23,22 +23,55 @@
       /* Hide search bar from header on mobile — accessible via sidebar Global Search nav */
       .global-search-bar { display: none !important; }
       .header-right .global-search-bar { display: none !important; }
-      /* Compact single-row header */
+      /* Compact single-row responsive header */
       .top-header {
         flex-direction: row !important;
-        height: 56px !important;
+        height: auto !important;
         min-height: 56px !important;
-        overflow: hidden !important;
-        padding: 0 14px !important;
-        gap: 12px !important;
+        overflow: visible !important;
+        padding: 8px 14px !important;
+        gap: 10px !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
       }
-      .header-left { flex: 1 !important; min-width: 0 !important; }
+      .header-left {
+        flex: 1 !important;
+        min-width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
       .header-meta { display: none !important; }
-      .header-title { font-size: 1rem !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
-      .header-refresh-btn { width: 40px !important; height: 40px !important; min-width: 40px !important; padding: 0 !important; border-radius: 50% !important; }
+      .header-title {
+        font-size: 0.95rem !important;
+        line-height: 1.25 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+      }
+      .header-refresh-btn {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+      }
       .header-refresh-btn .refresh-btn-text { display: none !important; }
       /* Enough top padding so first content line is never behind the header */
-      .views-container { padding-top: 20px !important; padding-left: 14px !important; padding-right: 14px !important; }
+      .views-container {
+        padding-top: 16px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+      }
+    }
+    @media (max-width: 360px) {
+      .top-header { padding: 6px 10px !important; gap: 8px !important; }
+      .header-title { font-size: 0.88rem !important; }
+      .views-container { padding-left: 8px !important; padding-right: 8px !important; }
     }
   </style>
 </head>
@@ -250,13 +283,10 @@
              VIEW 3: FINAL INSTITUTE LISTS
              =================================================================== -->
         <section class="tab-view" id="view-final">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>✅</span> Final Institute Lists (Cleaned & Deduplicated)</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Deduplicated, institution-level files prepared from collected sources. These represent the canonical foundation for the national census.
-              </p>
-            </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">
+              Deduplicated, institution-level files prepared from collected sources representing the canonical census foundation.
+            </p>
             <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #a5b4fc; background: rgba(99, 102, 241, 0.1); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(99, 102, 241, 0.25);">
               Source: Final Institute Lists/
             </div>
@@ -296,13 +326,10 @@
              VIEW 4: STATE / UT EXPLORER
              =================================================================== -->
         <section class="tab-view" id="view-states">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>🗺️</span> State / UT Geographic Explorer</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Select any of India's 28 States or 8 Union Territories to inspect institution counts, sector breakdowns, district distributions, and rosters.
-              </p>
-            </div>
+          <div style="margin-bottom: 16px;">
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">
+              Select any of India's 28 States or 8 Union Territories to inspect institution counts, sector breakdowns, district distributions, and rosters.
+            </p>
           </div>
 
           <div class="state-explorer-layout">
@@ -333,7 +360,7 @@
                   <!-- Dynamically populated -->
                 </div>
                 <div style="margin-top: 14px;">
-                  <h4 style="font-family: var(--font-heading); font-size: 0.9rem; color: #f87171; margin-bottom: 6px;">Remaining Sector Gaps in this State:</h4>
+                  <h4 style="font-family: var(--font-heading); font-size: 0.9rem; color: #f87171; margin-bottom: 6px; word-break: break-word; overflow-wrap: anywhere;">Remaining Sector Gaps in this State:</h4>
                   <div class="category-breakdown-chips" id="state-missing-chips">
                     <!-- Dynamically populated -->
                   </div>
@@ -346,22 +373,22 @@
                   <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Top Districts Distribution</span>
                 </div>
                 <div style="padding: 16px; max-height: 200px; overflow-y: auto;">
-                  <div id="state-districts-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; font-size: 0.82rem;">
+                  <div id="state-districts-list" class="state-districts-grid">
                     <!-- Dynamically populated -->
                   </div>
                 </div>
               </div>
 
               <!-- Institution Roster for Selected State -->
-              <div class="table-wrapper">
-                <div class="table-filters-bar">
+              <div class="table-wrapper state-roster-wrapper">
+                <div class="table-filters-bar state-roster-filters-bar">
                   <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Institutions Roster in State</span>
-                  <div class="filter-group">
-                    <input type="text" class="filter-input" id="state-inst-search" placeholder="Search by name or ID..." style="width: 200px;">
+                  <div class="filter-group state-roster-filter-group">
+                    <input type="text" class="filter-input" id="state-inst-search" placeholder="Search by name or ID...">
                   </div>
                 </div>
-                <div style="max-height: 320px; overflow-y: auto;">
-                  <table class="data-table">
+                <div class="state-roster-scroll-container">
+                  <table class="data-table state-roster-table">
                     <thead>
                       <tr>
                         <th>Institution Name</th>
@@ -386,13 +413,10 @@
              VIEW 5: DATA QUALITY AUDIT
              =================================================================== -->
         <section class="tab-view" id="view-quality">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>🛡️</span> Data Quality & Integrity Scorecard</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Automated validation metrics covering null values, duplicate checks, official ID integrity, and geographic completeness.
-              </p>
-            </div>
+          <div style="margin-bottom: 16px;">
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">
+              Automated validation metrics covering null values, duplicate checks, official ID integrity, and geographic completeness.
+            </p>
           </div>
 
           <div class="table-wrapper">
@@ -449,13 +473,10 @@
              VIEW 6: REVIEW PRIORITY
              =================================================================== -->
         <section class="tab-view" id="view-priority">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>🎯</span> Review Priority Queue</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Datasets ranked by attention requirement based on volume, missing identifiers, and verification status.
-              </p>
-            </div>
+          <div style="margin-bottom: 16px;">
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">
+              Datasets ranked by attention requirement based on volume, missing identifiers, and verification status.
+            </p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 24px;">
@@ -495,19 +516,10 @@
              VIEW 7: PENDING DATASETS
              =================================================================== -->
         <section class="tab-view" id="view-pending">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>⏳</span> Dataset Collection Roadmap</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
-                Strict collection tracking for remaining unharvested national regulatory portals and completed census registries.
-              </p>
-            </div>
-          </div>
-
-          <!-- Section 1: Strict Pending Queue -->
-          <div style="margin-bottom: 36px;">
+          <!-- Strict Pending Queue -->
+          <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h4 style="font-family: var(--font-heading); color: #fbbf24; display: flex; align-items: center; gap: 8px; font-size: 1.05rem;">
+              <h4 style="font-family: var(--font-heading); color: #fbbf24; display: flex; align-items: center; gap: 8px; font-size: 1.05rem; margin: 0;">
                 <span>📋</span> Remaining Regulatory Portals (Pending Collection)
               </h4>
               <span class="kpi-badge warning" id="badge-pending-queue-count">7 Portals Awaiting Collection</span>
@@ -519,35 +531,16 @@
               <!-- Dynamically populated with genuinely pending portals -->
             </div>
           </div>
-
-          <!-- Section 2: Completed & Integrated Portals -->
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h4 style="font-family: var(--font-heading); color: #34d399; display: flex; align-items: center; gap: 8px; font-size: 1.05rem;">
-                <span>✅</span> Completed & Integrated Portals
-              </h4>
-              <span class="kpi-badge success" id="badge-completed-queue-count">9 Portals Live in Census</span>
-            </div>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
-              Official national directories harvested, cleaned, deduplicated, and integrated into Final Institute Lists.
-            </p>
-            <div class="pending-grid" id="completed-grid">
-              <!-- Dynamically populated from Final Institute Lists -->
-            </div>
-          </div>
         </section>
 
         <!-- ===================================================================
              VIEW 8: GLOBAL SEARCH
              =================================================================== -->
         <section class="tab-view" id="view-search">
-          <div class="section-header">
-            <div>
-              <h3 class="section-title"><span>🔍</span> Global Search Across Final Institute Lists</h3>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;" id="search-view-subtitle">
-                Search across all final institutions by name, official ID, state, district, or PIN code.
-              </p>
-            </div>
+          <div style="margin-bottom: 16px;">
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;" id="search-view-subtitle">
+              Search across all final institutions by name, official ID, state, district, or PIN code.
+            </p>
           </div>
 
           <div class="table-wrapper">
@@ -584,10 +577,9 @@
              VIEW 9: DATA DICTIONARY & SCHEMA SPECIFICATION
              =================================================================== -->
         <section class="tab-view" id="view-dictionary">
-          <div class="section-header-row">
+          <div class="section-header-row" style="margin-bottom: 20px;">
             <div>
-              <h3 class="section-title">Data Dictionary & Regulatory Schema Documentation</h3>
-              <p class="section-subtitle">
+              <p class="section-subtitle" style="margin: 0;">
                 Official regulatory lineage, field definitions, data types, allowed values, and methodological notes derived from actual datasets.
               </p>
             </div>
