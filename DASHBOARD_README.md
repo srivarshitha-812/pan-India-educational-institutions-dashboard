@@ -48,11 +48,11 @@ The dashboard automatically discovers and inspects the following directories:
 | 4 | **INC Nursing Institutions** | Nursing | **3,633** | 34 / 36 | 2025-26 | Indian Nursing Council Statutory Portal | `inc_institution_key` |
 | 5 | **CoA Architecture** | Architecture | **404** | 31 / 36 | 2025-26 | Council of Architecture National Register | `CoA_Code` |
 | 6 | **RCI Rehabilitation** | Rehabilitation & Special Ed | **1,055** | 34 / 36 | 2025 | Rehabilitation Council of India Register | `RCI_Institute_Code` |
-| 7 | **NCISM Ayurveda & Unani** | Ayurveda / Unani | **23** | 12 / 36 | 2025-26 | National Commission for Indian System of Medicine | `College ID` |
+| 7 | **NCISM Ayurveda & Unani** | Ayurveda / Unani | **650** | 25 / 36 | 2025-26 | National Commission for Indian System of Medicine | `College ID` |
 | 8 | **CBSE SARAS Schools** | School Education (CBSE) | **33,151** | 38 (incl. Foreign) | 2025-26 | CBSE SARAS Affiliation Directory | `Affiliation_Number` |
 | 9 | **CISCE Schools** | School Education (ICSE/ISC)| **3,320** | 36 / 36 | 2025 | CISCE School Locator Register | `CISCE_Code` |
 | 10| **Telangana State Census** | State Census (All Levels) | **46,845** | 1 (Telangana) | 2021-25 | Reconciled State Register (DOST, UDISE, TSBIE) | `Official_Institution_ID` |
-| **Total** | **Source Records** | | **1,557,334** | | | *(Raw records may overlap across regulators)* | |
+| **Total** | **Source Records** | | **1,557,961** | | | *(Raw records may overlap across regulators)* | |
 
 ---
 
@@ -63,12 +63,12 @@ Located in `Final Institute Lists/`. These represent physical institutions clean
 | Category | File Name | Institution Count | States/UTs Covered | Districts | Academic Year | Official ID Column | Quality Status |
 |---|---|---|---|---|---|---|---|
 | **Architecture** | `Architecture Colleges.xlsx` | **404** | 31 | 182 | 2025-26 | `CoA_Code` | `PASS` |
-| **Ayurveda & Unani Medicine** | `Ayurveda Colleges.xlsx` | **23** | 12 | 21 | 2025-26 | `College ID` | `PASS` |
-| **Medical Education** | `Medical Colleges.xlsx` | **919** | 35 | 340 | 2026-27 | `NMC_College_ID` | `PASS` |
-| **Nursing** | `Nursing Colleges.xlsx` | **3,633** | 34 | 455 | 2025-26 | `Not available` *(No regulatory INC code)* | `PASS` |
+| **Ayurveda & Unani Medicine** | `Ayurveda Colleges.xlsx` | **650** | 25 | 210 | 2025-26 | `College ID` | `PASS — SOURCE LIMITATION` |
+| **Medical Education** | `Medical Colleges.xlsx` | **919** | 35 | 340 | 2026-27 | `NMC_College_ID` | `PASS — SOURCE LIMITATION` |
+| **Nursing** | `Nursing Colleges.xlsx` | **3,633** | 34 | 455 | 2025-26 | `Not available` *(No regulatory INC code)* | `PASS — SOURCE LIMITATION` |
 | **Rehabilitation & Special Ed** | `Rehabilitation Colleges.xlsx` | **1,055** | 34 | 298 | 2025 | `RCI_Institute_Code` | `PASS` |
-| **Universities & Higher Education**| `Welcome to UGC, New Delhi, India.xlsx` | **1,301** | 36 | 380 | 2024-26 | `Not available` *(Sr.No is serial only)* | `PASS` |
-| **Total Final Higher Ed Roster** | | **7,335** | **36 / 36** | **650+** | | | **100% Certified** |
+| **Universities & Higher Education**| `Welcome to UGC, New Delhi, India.xlsx` | **1,301** | 36 | 380 | 2024-26 | `Not available` *(Sr.No is serial only)* | `PASS — SOURCE LIMITATION` |
+| **Total Final Higher Ed Roster** | | **7,962** | **36 / 36** | **650+** | | | **100% Certified** |
 
 ---
 
@@ -120,7 +120,7 @@ The dashboard ranks datasets for leadership review into 3 actionable tiers:
    - **RCI Rehabilitation (1,055 rows)**: 100% complete across 34 States/UTs.
    - **NMC Medical (919 rows)**: 100% verified medical colleges with college IDs.
    - **UGC Universities (1,301 rows)**: Complete roster of 2(f) and 12(B) universities.
-   - **NCISM Ayurveda (23 rows)**: Validated rating roster for AY 2025-26.
+   - **NCISM Ayurveda & Unani (650 rows)**: Complete national directory of Ayurveda (593) and Unani (57) institutions across 25 States/UTs for AY 2025-26.
 
 ---
 

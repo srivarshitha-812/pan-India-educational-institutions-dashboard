@@ -130,7 +130,7 @@ def verify():
     kpis = summary["kpis"]
     print(f"  [OK] Summary KPIs: {kpis['states_covered']} States, {kpis['total_records_final']} Final Records")
     assert kpis['states_covered'] == 36
-    assert kpis['total_records_final'] == 17372
+    assert kpis['total_records_final'] == 17999
     
     # Final Lists check all 9
     final_data = get_json("/api/datasets/final")
