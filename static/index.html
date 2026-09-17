@@ -164,6 +164,22 @@
       <!-- Tab Views Container -->
       <div class="views-container">
         
+        <!-- Connection Warning / Error Banner (Hidden by default) -->
+        <div id="connection-error-banner" style="display: none; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; color: #fca5a5; font-size: 0.95rem; line-height: 1.5;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.4rem;">⚠️</span>
+              <div>
+                <strong>Unable to load census datasets from server.</strong>
+                <div style="font-size: 0.85rem; color: #f87171; margin-top: 2px;" id="connection-error-detail">The server may still be initializing or network DNS is blocking endpoints.</div>
+              </div>
+            </div>
+            <button id="btn-retry-connection" style="background: #ef4444; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.85rem;">
+              <span>🔄</span> Retry Now
+            </button>
+          </div>
+        </div>
+
         <!-- ===================================================================
              VIEW 1: EXECUTIVE DASHBOARD
              =================================================================== -->

@@ -4,6 +4,7 @@ import json
 import time
 import math
 import re
+import pickle
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Dict, List, Any, Optional
@@ -226,9 +227,65 @@ class DataRegistry:
         self.data_dictionary: Dict[str, Any] = {"overview": [], "records": [], "total_fields": 0}
         self.last_load_time = 0
 
-    def load_all(self):
+    def _is_cache_valid(self, cache_file: Path) -> bool:
+        if not cache_file.exists():
+            return False
+        cache_mtime = cache_file.stat().st_mtime
+        if FINAL_DIR.exists():
+            for root, _, files in os.walk(FINAL_DIR):
+                for f in files:
+                    if f.lower().endswith(('.xlsx', '.xls', '.csv')) and not f.startswith(('~', '.')):
+                        if (Path(root) / f).stat().st_mtime > cache_mtime:
+                            return False
+        if PENDING_FILE.exists() and PENDING_FILE.stat().st_mtime > cache_mtime:
+            return False
+        dict_json = DATA_DIR / "data_dictionary.json"
+        if dict_json.exists() and dict_json.stat().st_mtime > cache_mtime:
+            return False
+        return True
+
+    def _save_cache(self, cache_file: Path):
+        try:
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_data = {
+                "final_lists": self.final_lists,
+                "final_dfs": self.final_dfs,
+                "source_datasets": self.source_datasets,
+                "search_index": self.search_index,
+                "state_aggregates": self.state_aggregates,
+                "pending_datasets": self.pending_datasets,
+                "data_dictionary": self.data_dictionary,
+                "version": 2
+            }
+            with open(cache_file, "wb") as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+            print(f"[Dashboard] Saved binary cache to {cache_file.name} ({cache_file.stat().st_size / (1024*1024):.1f} MB)")
+        except Exception as e:
+            print(f"[Dashboard] Warning: Could not save binary cache: {e}")
+
+    def load_all(self, force_recompute: bool = False):
         print("[Dashboard] Loading and analyzing datasets...")
         t0 = time.time()
+        cache_file = DATA_DIR / ".dashboard_cache.pkl"
+
+        if not force_recompute and self._is_cache_valid(cache_file):
+            try:
+                with open(cache_file, "rb") as f:
+                    data = pickle.load(f)
+                if isinstance(data, dict) and data.get("version") == 2:
+                    self.final_lists = data.get("final_lists", {})
+                    self.final_dfs = data.get("final_dfs", {})
+                    self.source_datasets = data.get("source_datasets", [])
+                    self.search_index = data.get("search_index", [])
+                    self.state_aggregates = data.get("state_aggregates", {})
+                    self.pending_datasets = data.get("pending_datasets", [])
+                    self.data_dictionary = data.get("data_dictionary", {})
+                    self.last_load_time = time.time()
+                    print(f"[Dashboard] Fast startup: Loaded from cache in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities).")
+                    return
+            except Exception as e:
+                print(f"[Dashboard] Cache load failed ({e}), recomputing from source files...")
+
         self._load_pending_status()
         self._load_data_dictionary()
         self._discover_final_lists()
@@ -236,6 +293,7 @@ class DataRegistry:
         self._build_search_index()
         self._compute_state_aggregates()
         self.last_load_time = time.time()
+        self._save_cache(cache_file)
         print(f"[Dashboard] Finished dataset analysis in {time.time() - t0:.2f} seconds.")
 
     def _load_data_dictionary(self):
@@ -1687,7 +1745,27 @@ STATIC_DIR.mkdir(parents=True, exist_ok=True)
 
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
-@app.get("/", response_class=HTMLResponse)
+@app.api_route("/health", methods=["GET", "HEAD"])
+@app.api_route("/api/health", methods=["GET", "HEAD"])
+def health():
+    return {
+        "status": "healthy",
+        "ready": registry.last_load_time > 0,
+        "datasets_loaded": len(registry.final_lists),
+        "indexed_institutions": len(registry.search_index)
+    }
+
+@app.api_route("/api/refresh", methods=["GET", "POST"])
+def refresh_cache():
+    registry.load_all(force_recompute=True)
+    return {
+        "status": "refreshed",
+        "datasets": len(registry.final_lists),
+        "entities": len(registry.search_index),
+        "last_load_time": registry.last_load_time
+    }
+
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 def serve_index():
     index_file = STATIC_DIR / "index.html"
     if index_file.exists():

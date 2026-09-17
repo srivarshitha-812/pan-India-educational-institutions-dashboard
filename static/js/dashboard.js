@@ -176,6 +176,7 @@ class DashboardApp {
 
     // Refresh Data
     document.getElementById('btn-refresh')?.addEventListener('click', () => this.loadAllData());
+    document.getElementById('btn-retry-connection')?.addEventListener('click', () => this.loadAllData());
 
     // Dictionary Filters
     document.getElementById('dict-search-input')?.addEventListener('input', () => this.filterDataDictionary());
@@ -306,8 +307,18 @@ class DashboardApp {
         priorityBadge.textContent = highCount > 0 ? `${highCount} HIGH` : 'HIGH';
       }
 
+      // Hide error banner on success
+      const banner = document.getElementById('connection-error-banner');
+      if (banner) banner.style.display = 'none';
+
     } catch (err) {
       console.error('[DashboardApp] Error loading data:', err);
+      const banner = document.getElementById('connection-error-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        const detail = document.getElementById('connection-error-detail');
+        if (detail) detail.textContent = `Error: ${err.message || 'Network request failed'}. Please click Retry, check your DNS settings, or run locally via http://localhost:8000.`;
+      }
     }
   }
 

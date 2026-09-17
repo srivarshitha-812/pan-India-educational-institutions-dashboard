@@ -51,8 +51,8 @@ USER appuser
 EXPOSE 8000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD python -c "import os, urllib.request; urllib.request.urlopen('http://127.0.0.1:' + str(os.environ.get('PORT', 8000)) + '/api/summary')" || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+  CMD python -c "import os, urllib.request; urllib.request.urlopen('http://127.0.0.1:' + str(os.environ.get('PORT', 8000)) + '/health')" || exit 1
 
-# Production server start: Gunicorn with Uvicorn workers
-CMD ["sh", "-c", "gunicorn dashboard_server:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind ${HOST}:${PORT} --access-logfile - --error-logfile -"]
+# Production server start: Gunicorn with single Uvicorn worker
+CMD ["sh", "-c", "gunicorn dashboard_server:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind ${HOST}:${PORT} --access-logfile - --error-logfile -"]
