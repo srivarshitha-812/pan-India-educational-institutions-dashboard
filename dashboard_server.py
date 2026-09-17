@@ -536,6 +536,8 @@ class DataRegistry:
             return "Pharmacy"
         elif "teacher" in fn or "ncte" in fn:
             return "Teacher Education"
+        elif "aishe" in fn or "higher_education" in fn or "higher education" in fn:
+            return "Colleges & Higher Education"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -567,6 +569,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["pci college id", "pci_college_id", "pci code", "pci_code", "pci id"])
         elif "teacher" in fn_lower or "ncte" in fn_lower:
             return self._find_matching_col(cols, ["ncte institute id", "ncte_id", "institute id", "official id"])
+        elif "aishe" in fn_lower:
+            return self._find_matching_col(cols, ["aishe code", "aishe_code", "aishecode", "official id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -1319,6 +1323,18 @@ class DataRegistry:
                 "regulator_code": "NDC",
                 "category": "Dental Education",
                 "source_portal": "https://dciindia.gov.in/"
+            },
+            "ncte_teacher_education_colleges": {
+                "authority": "National Council for Teacher Education (NCTE)",
+                "regulator_code": "NCTE",
+                "category": "Teacher Education",
+                "source_portal": "https://ncte.gov.in/"
+            },
+            "aishe_colleges": {
+                "authority": "All India Survey on Higher Education (AISHE) / MoE",
+                "regulator_code": "AISHE",
+                "category": "Colleges & Higher Education",
+                "source_portal": "https://dashboard.aishe.gov.in/hedirectory/"
             }
         }
         completed = []
@@ -1419,9 +1435,9 @@ class DataRegistry:
         for p in self.pending_datasets:
             pid = p.get("id", "").lower()
             auth = p.get("authority", "").lower()
-            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte"]:
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe"]:
                 continue
-            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte"]):
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe"]):
                 continue
             item = dict(p)
             val = str(item.get("estimated_institutions", ""))
