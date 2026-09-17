@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pan-India Educational Institutions — Executive Review Dashboard</title>
-  <meta name="description" content="Executive review dashboard for Pan-India Educational Institutions census, analyzing cleaned final institute lists, data quality, and pending sectors.">
+  <meta name="description" content="Executive review dashboard for Pan-India Educational Institutions census, analyzing institutes list, data quality, and pending sectors.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/dashboard.css?v=12">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=13">
 
   <!-- Mobile critical overrides — loaded inline to bypass CSS caching -->
   <style>
@@ -101,8 +101,8 @@
         </li>
         <li class="nav-item" data-view="final" id="nav-final">
           <span class="nav-icon">✅</span>
-          <span>Final Institute Lists</span>
-          <span class="nav-badge" id="badge-final-count">8</span>
+          <span>Institutes List</span>
+          <span class="nav-badge" id="badge-final-count">--</span>
         </li>
         <li class="nav-item" data-view="dictionary" id="nav-dictionary">
           <span class="nav-icon">📚</span>
@@ -190,7 +190,7 @@
             
             <div class="kpi-card success">
               <div class="kpi-header">
-                <span class="kpi-title">Final Institute Lists</span>
+                <span class="kpi-title">Institutes List</span>
                 <span class="kpi-icon">✅</span>
               </div>
               <div class="kpi-value" id="kpi-final-lists">--</div>
@@ -202,7 +202,7 @@
 
             <div class="kpi-card purple">
               <div class="kpi-header">
-                <span class="kpi-title">Records Across Final Lists</span>
+                <span class="kpi-title">Records Across Institutes List</span>
                 <span class="kpi-icon">🏛️</span>
               </div>
               <div class="kpi-value" id="kpi-final-records">--</div>
@@ -255,7 +255,7 @@
             <div class="chart-card">
               <div class="chart-header">
                 <div>
-                  <h3 class="chart-title">Institutions by Category (Final Lists)</h3>
+                  <h3 class="chart-title">Institutions by Category (Institutes List)</h3>
                   <div class="chart-subtitle">Cleaned & deduplicated higher education institutions</div>
                 </div>
               </div>
@@ -268,7 +268,7 @@
               <div class="chart-header">
                 <div>
                   <h3 class="chart-title">Top 10 States/UTs by Institution Count</h3>
-                  <div class="chart-subtitle">Distribution across higher education final lists</div>
+                  <div class="chart-subtitle">Distribution across institutes list datasets</div>
                 </div>
               </div>
               <div class="chart-body">
@@ -282,12 +282,12 @@
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
               <div>
                 <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-bottom: 4px;">Recommended Review Flow</h3>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                  Begin by reviewing the <strong>Final Institute Lists</strong> (9 cleaned datasets, 17,372 institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Dataset Collection Roadmap</strong>.
+                <p style="font-size: 0.85rem; color: var(--text-secondary);" id="review-flow-desc">
+                  Begin by reviewing the <strong>Institutes List</strong> (<span id="review-flow-datasets">--</span> cleaned datasets, <span id="review-flow-records">--</span> institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Dataset Collection Roadmap</strong>.
                 </p>
               </div>
               <div style="display: flex; gap: 10px;">
-                <button class="btn btn-primary" onclick="window.dashboardApp.switchView('final')">Explore Final Lists →</button>
+                <button class="btn btn-primary" onclick="window.dashboardApp.switchView('final')">Explore Institutes List →</button>
                 <button class="btn btn-outline" onclick="window.dashboardApp.switchView('states')">Open State Explorer</button>
               </div>
             </div>
@@ -296,7 +296,7 @@
         </section>
 
         <!-- ===================================================================
-             VIEW 3: FINAL INSTITUTE LISTS
+             VIEW 3: INSTITUTES LIST
              =================================================================== -->
         <section class="tab-view" id="view-final">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
@@ -333,7 +333,7 @@
 
           <!-- Explanatory note -->
           <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
-            <strong>Final Institute Lists Roster:</strong><br>
+            <strong>Institutes List Roster:</strong><br>
             Each row represents a validated physical institution with its respective regulatory codes, addresses, and state/district mappings. Cross-source deduplication should be considered when analyzing multi-disciplinary universities across separate regulatory councils.
           </div>
         </section>
@@ -590,7 +590,7 @@
               <tbody id="search-table-body">
                 <tr>
                   <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 32px;">
-                    Enter a search term above to explore institutions across all final lists.
+                    Enter a search term above to explore institutions across the institutes list.
                   </td>
                 </tr>
               </tbody>
@@ -718,7 +718,7 @@
     <div class="modal-container">
       <div class="modal-header">
         <div>
-          <h3 class="modal-title" id="modal-list-title">Final Institute List Explorer</h3>
+          <h3 class="modal-title" id="modal-list-title">Institutes List Explorer</h3>
           <span style="font-size: 0.78rem; color: var(--text-secondary);" id="modal-list-subtitle">Server-Side Paginated Grid</span>
         </div>
         <button class="modal-close-btn" onclick="window.dashboardApp.closeModal('record-modal')">&times;</button>
@@ -822,6 +822,6 @@
   </div>
 
   <!-- Main JavaScript App -->
-  <script src="/static/js/dashboard.js?v=13"></script>
+  <script src="/static/js/dashboard.js?v=14"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ import time
 import math
 import re
 import pickle
+import hashlib
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Dict, List, Any, Optional
@@ -226,27 +227,45 @@ class DataRegistry:
         self.pending_datasets: List[Dict[str, Any]] = []
         self.data_dictionary: Dict[str, Any] = {"overview": [], "records": [], "total_fields": 0}
         self.last_load_time = 0
+        self.current_fingerprint = ""
+        self._last_fingerprint_check = 0.0
 
-    def _is_cache_valid(self, cache_file: Path) -> bool:
-        if not cache_file.exists():
-            return False
-        cache_mtime = cache_file.stat().st_mtime
+    def _compute_fingerprint(self) -> str:
+        """Calculates lightweight SHA256 digest of all files in FINAL_DIR, pending status, and dictionary.
+        Detects additions, removals, replacements, and modifications in under 1ms without reading file contents."""
+        items = []
         if FINAL_DIR.exists():
             for root, _, files in os.walk(FINAL_DIR):
-                for f in files:
+                for f in sorted(files):
                     if f.lower().endswith(('.xlsx', '.xls', '.csv')) and not f.startswith(('~', '.')):
-                        if (Path(root) / f).stat().st_mtime > cache_mtime:
-                            return False
-        if PENDING_FILE.exists() and PENDING_FILE.stat().st_mtime > cache_mtime:
-            return False
+                        fp = Path(root) / f
+                        try:
+                            st = fp.stat()
+                            rel = str(fp.relative_to(FINAL_DIR)).replace("\\", "/")
+                            items.append(f"{rel}:{st.st_size}:{st.st_mtime_ns}")
+                        except OSError:
+                            pass
+        if PENDING_FILE.exists():
+            try:
+                st = PENDING_FILE.stat()
+                items.append(f"pending:{st.st_size}:{st.st_mtime_ns}")
+            except OSError:
+                pass
         dict_json = DATA_DIR / "data_dictionary.json"
-        if dict_json.exists() and dict_json.stat().st_mtime > cache_mtime:
-            return False
-        return True
+        if dict_json.exists():
+            try:
+                st = dict_json.stat()
+                items.append(f"dictionary:{st.st_size}:{st.st_mtime_ns}")
+            except OSError:
+                pass
+        
+        raw = "|".join(sorted(items))
+        return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
     def _save_cache(self, cache_file: Path):
         try:
             cache_file.parent.mkdir(parents=True, exist_ok=True)
+            current_fp = self._compute_fingerprint()
             cache_data = {
                 "final_lists": self.final_lists,
                 "final_dfs": self.final_dfs,
@@ -255,11 +274,13 @@ class DataRegistry:
                 "state_aggregates": self.state_aggregates,
                 "pending_datasets": self.pending_datasets,
                 "data_dictionary": self.data_dictionary,
-                "version": 3
+                "fingerprint": current_fp,
+                "version": 4
             }
             with open(cache_file, "wb") as f:
                 pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
-            print(f"[Dashboard] Saved binary cache to {cache_file.name} ({cache_file.stat().st_size / (1024*1024):.1f} MB)")
+            self.current_fingerprint = current_fp
+            print(f"[Dashboard] Saved binary cache to {cache_file.name} ({cache_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
         except Exception as e:
             print(f"[Dashboard] Warning: Could not save binary cache: {e}")
 
@@ -267,12 +288,15 @@ class DataRegistry:
         print("[Dashboard] Loading and analyzing datasets...")
         t0 = time.time()
         cache_file = DATA_DIR / ".dashboard_cache.pkl"
+        current_fp = self._compute_fingerprint()
 
-        if not force_recompute and self._is_cache_valid(cache_file):
+        if not force_recompute and cache_file.exists():
             try:
                 with open(cache_file, "rb") as f:
                     data = pickle.load(f)
-                if isinstance(data, dict) and data.get("version") == 3:
+                if (isinstance(data, dict) 
+                    and data.get("version") == 4 
+                    and data.get("fingerprint") == current_fp):
                     self.final_lists = data.get("final_lists", {})
                     self.final_dfs = data.get("final_dfs", {})
                     self.source_datasets = data.get("source_datasets", [])
@@ -280,9 +304,14 @@ class DataRegistry:
                     self.state_aggregates = data.get("state_aggregates", {})
                     self.pending_datasets = data.get("pending_datasets", [])
                     self.data_dictionary = data.get("data_dictionary", {})
+                    self.current_fingerprint = current_fp
                     self.last_load_time = time.time()
-                    print(f"[Dashboard] Fast startup: Loaded from cache in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities).")
+                    self._last_fingerprint_check = time.time()
+                    print(f"[Dashboard] Fast startup: Loaded from cache in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities, fp: {current_fp[:8]}).")
                     return
+                else:
+                    cached_fp = data.get("fingerprint", "none")[:8] if isinstance(data, dict) else "unknown"
+                    print(f"[Dashboard] Cache invalid or fingerprint mismatch (cached: {cached_fp} vs current: {current_fp[:8]}). Recomputing from source files...")
             except Exception as e:
                 print(f"[Dashboard] Cache load failed ({e}), recomputing from source files...")
 
@@ -293,8 +322,23 @@ class DataRegistry:
         self._build_search_index()
         self._compute_state_aggregates()
         self.last_load_time = time.time()
+        self._last_fingerprint_check = time.time()
         self._save_cache(cache_file)
         print(f"[Dashboard] Finished dataset analysis in {time.time() - t0:.2f} seconds.")
+
+    def check_and_reload_if_changed(self) -> bool:
+        """Lightweight runtime verification (throttled to at most once per 3s).
+        Automatically recomputes registry if any file was added, removed, replaced, or modified."""
+        now = time.time()
+        if now - self._last_fingerprint_check < 3.0:
+            return False
+        self._last_fingerprint_check = now
+        current_fp = self._compute_fingerprint()
+        if current_fp != getattr(self, "current_fingerprint", ""):
+            print(f"[Dashboard] Auto-detected dataset directory change (fp: {self.current_fingerprint[:8]} -> {current_fp[:8]}). Reloading registry...")
+            self.load_all(force_recompute=True)
+            return True
+        return False
 
     def _load_data_dictionary(self):
         dict_json = DATA_DIR / "data_dictionary.json"
@@ -1392,10 +1436,13 @@ registry = DataRegistry()
 @app.get("/api/summary")
 def get_summary():
     """Provides high-level KPIs and executive totals"""
+    # Auto-detect any added, removed, or modified datasets
+    registry.check_and_reload_if_changed()
+
     # Total source records
     total_source_records = sum(d["total_records"] for d in registry.source_datasets)
     
-    # Total final records
+    # Total final records (dynamically calculated across all active datasets)
     total_final_records = sum(s["total_records"] for s in registry.final_lists.values())
     
     # Review priority counts — UDISE+ is always HIGH priority regardless of source datasets page
@@ -1411,6 +1458,13 @@ def get_summary():
         if s in registry.state_aggregates and registry.state_aggregates[s]["total_institutions"] > 0
     ]
     states_covered = len(canonical_covered)
+
+    # Dynamically sum institution records per category across all datasets
+    cat_counts = {}
+    for s in registry.final_lists.values():
+        cat = s.get("category", "Unassigned")
+        cat_counts[cat] = cat_counts.get(cat, 0) + s.get("total_records", 0)
+    sorted_cat_counts = dict(sorted(cat_counts.items(), key=lambda x: x[1], reverse=True))
 
     return {
         "kpis": {
@@ -1429,13 +1483,26 @@ def get_summary():
             "rule": "ONE PHYSICAL INSTITUTION = ONE CANONICAL RECORD"
         },
         "breakdowns": {
-            "institutions_by_category": {s["category"]: s["total_records"] for s in registry.final_lists.values()},
+            "institutions_by_category": sorted_cat_counts,
             "top_states": sorted(
                 [{"state": s, "count": d["total_institutions"]} for s, d in registry.state_aggregates.items() if s != "Unknown / Unclassified"],
                 key=lambda x: x["count"],
                 reverse=True
             )[:10]
         }
+    }
+
+@app.get("/api/refresh")
+@app.post("/api/refresh")
+def refresh_datasets():
+    """Forces cache refresh and reloads all datasets from disk immediately"""
+    registry.load_all(force_recompute=True)
+    return {
+        "status": "success",
+        "datasets_count": len(registry.final_lists),
+        "total_institutions": sum(s["total_records"] for s in registry.final_lists.values()),
+        "fingerprint": getattr(registry, "current_fingerprint", "")[:8],
+        "message": f"Successfully reloaded {len(registry.final_lists)} datasets from registry."
     }
 
 @app.get("/api/datasets/sources")
@@ -1449,6 +1516,7 @@ def get_source_datasets():
 @app.get("/api/datasets/final")
 def get_final_lists():
     """Returns all cleaned final institute lists"""
+    registry.check_and_reload_if_changed()
     return {
         "count": len(registry.final_lists),
         "lists": list(registry.final_lists.values())

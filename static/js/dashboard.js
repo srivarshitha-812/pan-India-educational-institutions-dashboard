@@ -175,7 +175,14 @@ class DashboardApp {
     });
 
     // Refresh Data
-    document.getElementById('btn-refresh')?.addEventListener('click', () => this.loadAllData());
+    document.getElementById('btn-refresh')?.addEventListener('click', async () => {
+      try {
+        await fetch('/api/refresh', { method: 'POST' });
+      } catch (e) {
+        console.warn('Refresh endpoint call:', e);
+      }
+      this.loadAllData();
+    });
     document.getElementById('btn-retry-connection')?.addEventListener('click', () => this.loadAllData());
 
     // Dictionary Filters
@@ -341,13 +348,13 @@ class DashboardApp {
     // Update Page Title
     const titleMap = {
       dashboard: { title: 'Executive Overview', meta: 'National Institution Datasets & Cleaned Census Lists' },
-      final: { title: 'Final Institute Lists', meta: 'Deduplicated Higher Education Institution Roster' },
+      final: { title: 'Institutes List', meta: 'Deduplicated Higher Education Institution Roster' },
       dictionary: { title: 'Data Dictionary & Schema Specification', meta: 'Official regulatory lineage, field definitions, data types, and allowed values' },
       states: { title: 'State / UT Geographic Explorer', meta: 'Pan-India Sub-National Analysis across 36 States & UTs' },
       quality: { title: 'Data Quality & Integrity Audit', meta: 'Null Value, Duplication & Completeness Scorecard' },
       priority: { title: 'Review Priority Queue', meta: 'Ranked Datasets Requiring Strategic Attention' },
       pending: { title: 'Pending Datasets', meta: 'Remaining Regulatory Portals (Pending Collection)' },
-      search: { title: 'Global Institution Search', meta: 'Multi-attribute Query across All Final Lists' }
+      search: { title: 'Global Institution Search', meta: 'Multi-attribute Query across Institutes List' }
     };
 
     const cur = titleMap[viewName] || { title: 'Dashboard', meta: '' };
@@ -403,6 +410,12 @@ class DashboardApp {
 
     const elReview = document.getElementById('kpi-review-required');
     if (elReview) elReview.textContent = kpis.datasets_requiring_review;
+
+    // Dynamically update Recommended Review Flow description with current dataset count and records
+    const flowDesc = document.getElementById('review-flow-desc');
+    if (flowDesc) {
+      flowDesc.innerHTML = `Begin by reviewing the <strong>Institutes List</strong> (${kpis.final_lists_available} cleaned datasets, ${kpis.total_records_final.toLocaleString('en-IN')} institutions), explore geographic spread in <strong>State/UT Explorer</strong>, and inspect the <strong>Dataset Collection Roadmap</strong>.`;
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -672,17 +685,17 @@ class DashboardApp {
       tr.innerHTML = `
         <td>${renderCategoryTag(l.category)}</td>
         <td>
-          <strong style="color: #fff;">${l.file_name}</strong><br>
-          <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">${l.file_size_kb} KB</span>
+          <div class="final-filename">${l.file_name}</div>
+          <span class="final-filesize">${l.file_size_kb} KB</span>
         </td>
-        <td><strong style="color: #10b981; font-size: 0.95rem;">${l.total_records.toLocaleString('en-IN')}</strong></td>
+        <td style="text-align: right;"><strong class="final-inst-count">${l.total_records.toLocaleString('en-IN')}</strong></td>
         <td>${l.states_covered} / 36</td>
-        <td>${l.districts_covered}</td>
+        <td style="text-align: right;">${l.districts_covered}</td>
         <td>${l.academic_year}</td>
         <td>
           ${l.has_official_id ? `<span style="font-size: 0.74rem; font-family: var(--font-mono); color: #93c5fd;">${l.id_column}</span>` : `<span style="font-size: 0.74rem; color: var(--text-muted);">Not available</span>`}
         </td>
-        <td>
+        <td style="text-align: center;">
           ${l.has_official_id ? (l.duplicate_ids > 0 ? `<span style="color: #ef4444; font-weight: 700;">${l.duplicate_ids}</span>` : `<span style="color: #10b981;">0</span>`) : `<span style="color: var(--text-muted);">N/A</span>`}
         </td>
         <td>
@@ -693,7 +706,7 @@ class DashboardApp {
         <td>
           <span class="status-pill ${statusClass}">${l.quality_status}</span>
         </td>
-        <td>
+        <td style="text-align: right;">
           <button class="btn btn-primary btn-sm" onclick="window.dashboardApp.openRecordModal('${l.id}')">
             Review List →
           </button>
@@ -1068,7 +1081,7 @@ class DashboardApp {
       }
 
       const recordLabel = isExcluded ? 'Total Records (National Census):' : 'Total Institutions / Records:';
-      const typeLabel = isExcluded ? 'EXCLUDED — LARGE DATASET' : (isFinal ? 'FINAL LIST' : 'SOURCE');
+      const typeLabel = isExcluded ? 'EXCLUDED — LARGE DATASET' : (isFinal ? 'INSTITUTES LIST' : 'SOURCE');
       const acYear = item.academic_year || '';
 
       card.innerHTML = `
