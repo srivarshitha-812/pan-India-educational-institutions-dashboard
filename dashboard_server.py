@@ -255,7 +255,7 @@ class DataRegistry:
                 "state_aggregates": self.state_aggregates,
                 "pending_datasets": self.pending_datasets,
                 "data_dictionary": self.data_dictionary,
-                "version": 2
+                "version": 3
             }
             with open(cache_file, "wb") as f:
                 pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
@@ -272,7 +272,7 @@ class DataRegistry:
             try:
                 with open(cache_file, "rb") as f:
                     data = pickle.load(f)
-                if isinstance(data, dict) and data.get("version") == 2:
+                if isinstance(data, dict) and data.get("version") == 3:
                     self.final_lists = data.get("final_lists", {})
                     self.final_dfs = data.get("final_dfs", {})
                     self.source_datasets = data.get("source_datasets", [])
@@ -1144,9 +1144,20 @@ class DataRegistry:
                     "_search": search_blob
                 })
 
+    def _get_all_final_categories(self) -> List[str]:
+        """Returns sorted list of unique categories dynamically discovered from final institute lists"""
+        cats = set()
+        for stats in self.final_lists.values():
+            cat = stats.get("category")
+            if cat:
+                cats.add(cat)
+        return sorted(list(cats))
+
     def _compute_state_aggregates(self):
-        """Computes State-by-State breakdown across all final lists"""
+        """Computes State-by-State breakdown across all final lists dynamically"""
         self.state_aggregates = {}
+        all_categories = self._get_all_final_categories()
+        total_cats_count = len(all_categories)
         
         # Initialize for all 36 standard States and UTs
         for s in STANDARD_STATES_UTS:
@@ -1156,8 +1167,10 @@ class DataRegistry:
                 "categories": {},
                 "districts": {},
                 "available_datasets": set(),
-                "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Dental Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
-                "missing_categories": []
+                "all_categories_expected": all_categories,
+                "total_categories_count": total_cats_count,
+                "represented_categories_count": 0,
+                "missing_categories": list(all_categories)
             }
 
         # Aggregate from final institute lists
@@ -1170,8 +1183,10 @@ class DataRegistry:
                     "categories": {},
                     "districts": {},
                     "available_datasets": set(),
-                    "all_categories_expected": ["Universities & Higher Education", "Medical Education", "Dental Education", "Nursing", "Pharmacy", "Architecture", "Rehabilitation & Special Education", "Ayurveda & Unani Medicine", "Homoeopathy Education", "Legal Education & Law Colleges"],
-                    "missing_categories": []
+                    "all_categories_expected": all_categories,
+                    "total_categories_count": total_cats_count,
+                    "represented_categories_count": 0,
+                    "missing_categories": list(all_categories)
                 }
             
             entry = self.state_aggregates[st]
@@ -1183,11 +1198,14 @@ class DataRegistry:
                 entry["districts"][dst] = entry["districts"].get(dst, 0) + 1
             entry["available_datasets"].add(item["dataset_name"])
 
-        # Calculate missing categories and format sets to lists
+        # Calculate missing categories and format sets to lists dynamically
         for st, data in self.state_aggregates.items():
             data["available_datasets"] = sorted(list(data["available_datasets"]))
-            present_cats = set(data["categories"].keys())
-            data["missing_categories"] = [c for c in data["all_categories_expected"] if c not in present_cats]
+            present_cats = set(c for c, cnt in data["categories"].items() if cnt > 0)
+            data["all_categories_expected"] = all_categories
+            data["total_categories_count"] = total_cats_count
+            data["represented_categories_count"] = len([c for c in all_categories if c in present_cats])
+            data["missing_categories"] = [c for c in all_categories if c not in present_cats]
 
     def get_completed_portals(self) -> List[Dict[str, Any]]:
         """Dynamically builds completed portals list from actual loaded final institute files"""
@@ -1525,19 +1543,25 @@ def get_final_list_records(
 @app.get("/api/states")
 def get_states():
     """List of all States/UTs with institution summaries"""
+    all_categories = registry._get_all_final_categories()
+    total_expected = len(all_categories)
     canonical_list = [
         {
             "state_name": s,
             "total_institutions": registry.state_aggregates[s]["total_institutions"] if s in registry.state_aggregates else 0,
             "categories": registry.state_aggregates[s]["categories"] if s in registry.state_aggregates else {},
             "available_datasets_count": len(registry.state_aggregates[s]["available_datasets"]) if s in registry.state_aggregates else 0,
-            "missing_categories_count": len(registry.state_aggregates[s]["missing_categories"]) if s in registry.state_aggregates else 6
+            "total_categories_count": total_expected,
+            "represented_categories_count": registry.state_aggregates[s].get("represented_categories_count", 0) if s in registry.state_aggregates else 0,
+            "missing_categories_count": len(registry.state_aggregates[s]["missing_categories"]) if s in registry.state_aggregates else total_expected
         }
         for s in STANDARD_STATES_UTS
     ]
     canonical_list.sort(key=lambda x: x["total_institutions"], reverse=True)
     return {
         "count": len(canonical_list),
+        "total_categories_target": total_expected,
+        "all_categories_expected": all_categories,
         "states": canonical_list
     }
 
@@ -1561,6 +1585,10 @@ def get_state_detail(
         norm_name = match
 
     state_info = registry.state_aggregates[norm_name]
+    all_categories = registry._get_all_final_categories()
+    present_cats = set(c for c, cnt in state_info["categories"].items() if cnt > 0)
+    represented_count = len([c for c in all_categories if c in present_cats])
+    missing_cats = [c for c in all_categories if c not in present_cats]
     
     # Gather institutions belonging to this state from search index
     matched_institutions = []
@@ -1586,8 +1614,10 @@ def get_state_detail(
         "categories": state_info["categories"],
         "districts": state_info["districts"],
         "available_datasets": state_info["available_datasets"],
-        "all_categories_expected": state_info["all_categories_expected"],
-        "missing_categories": state_info["missing_categories"],
+        "all_categories_expected": all_categories,
+        "total_categories_count": len(all_categories),
+        "represented_categories_count": represented_count,
+        "missing_categories": missing_cats,
         "matched_institutions_count": len(matched_institutions),
         "institutions": matched_institutions[:200]  # Cap at 200 for instantaneous response
     }

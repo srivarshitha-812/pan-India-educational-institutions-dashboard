@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/dashboard.css?v=11">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=12">
 
   <!-- Mobile critical overrides — loaded inline to bypass CSS caching -->
   <style>
@@ -365,18 +365,27 @@
                   <div class="state-meta-badges">
                     <span class="kpi-badge success" id="selected-state-total">-- Institutions</span>
                     <span class="kpi-badge info" id="selected-state-dist-count">-- Districts</span>
+                    <span class="kpi-badge primary" id="selected-state-categories">-- Categories</span>
                   </div>
                 </div>
               </div>
 
               <!-- Breakdown Chips -->
               <div class="chart-card">
-                <h4 style="font-family: var(--font-heading); font-size: 0.95rem; color: #fff; margin-bottom: 8px;">Available Sectors</h4>
+                <div class="state-breakdown-header">
+                  <div>
+                    <h4 class="state-section-title">Available Sectors</h4>
+                    <span class="state-section-subtitle">Active higher education categories in this State/UT</span>
+                  </div>
+                  <div id="state-representation-tag" class="state-representation-tag all-represented">
+                    <!-- Dynamically populated: ✓ X of Y institute categories have representation in this State! -->
+                  </div>
+                </div>
                 <div class="category-breakdown-chips" id="state-category-chips">
                   <!-- Dynamically populated -->
                 </div>
-                <div style="margin-top: 14px;">
-                  <h4 style="font-family: var(--font-heading); font-size: 0.9rem; color: #f87171; margin-bottom: 6px; word-break: break-word; overflow-wrap: anywhere;">Remaining Sector Gaps in this State:</h4>
+                <div id="state-gaps-section" style="margin-top: 14px;">
+                  <h4 id="state-gaps-title" style="font-family: var(--font-heading); font-size: 0.9rem; color: #f87171; margin-bottom: 6px; word-break: break-word; overflow-wrap: anywhere;">Remaining Sector Gaps in this State:</h4>
                   <div class="category-breakdown-chips" id="state-missing-chips">
                     <!-- Dynamically populated -->
                   </div>
@@ -813,6 +822,6 @@
   </div>
 
   <!-- Main JavaScript App -->
-  <script src="/static/js/dashboard.js?v=12"></script>
+  <script src="/static/js/dashboard.js?v=13"></script>
 </body>
 </html>

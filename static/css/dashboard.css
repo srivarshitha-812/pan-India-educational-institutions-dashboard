@@ -1114,11 +1114,62 @@ body.sidebar-drawer-open {
 }
 
 /* Category Breakdown Chips / Cards */
+.state-breakdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.state-section-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.state-section-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.state-representation-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.state-representation-tag.all-represented {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.state-representation-tag.has-gaps {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
 .category-breakdown-chips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 10px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1128,82 +1179,127 @@ body.sidebar-drawer-open {
 @media (max-width: 600px) {
   .category-breakdown-chips {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
   }
 }
 
 .category-chip {
-  background: var(--bg-surface);
+  background: rgba(15, 23, 42, 0.65);
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--chip-border, var(--border-color));
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
+  border-left: 3.5px solid var(--chip-color, var(--border-color));
+  border-radius: 6px;
+  padding: 7px 12px;
   font-size: 0.82rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  min-height: 42px;
   box-sizing: border-box;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .category-chip:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  border-left-color: var(--chip-border, var(--border-color));
-  transform: translateY(-1px);
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .category-chip-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   flex: 1;
   min-width: 0;
 }
 
 .category-chip-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   flex-shrink: 0;
   display: inline-block;
 }
 
-.category-chip span {
-  flex: 1;
-  min-width: 0;
-  white-space: normal;
+.category-chip-name {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.25;
   word-break: break-word;
   overflow-wrap: anywhere;
-  line-height: 1.35;
+  flex: 1;
+  min-width: 0;
 }
 
-.category-chip strong {
+.category-chip-count {
   flex-shrink: 0;
-  color: #fff;
+  color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .missing-chip {
-  background: rgba(239, 68, 68, 0.1);
-  border-color: rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  border-left: 3.5px solid #ef4444;
   color: #fca5a5;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  min-height: 42px;
+  border-radius: 6px;
 }
 
-.missing-chip span {
+.missing-chip-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.missing-chip-name {
+  font-size: 0.8rem;
+  font-weight: 500;
   word-break: break-word;
   overflow-wrap: anywhere;
-  white-space: normal;
+  line-height: 1.25;
+  color: #fca5a5;
+}
+
+.state-rep-success-card {
+  grid-column: 1 / -1;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-left: 3.5px solid #10b981;
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.state-rep-check {
+  color: #34d399;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.state-rep-desc {
+  color: #34d399;
+  font-size: 0.82rem;
   line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* State Districts Grid */

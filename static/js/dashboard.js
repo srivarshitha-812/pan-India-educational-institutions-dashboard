@@ -822,52 +822,103 @@ class DashboardApp {
 
   async selectState(stateName) {
     this.selectedState = stateName;
-    document.getElementById('selected-state-name').textContent = stateName;
+    const nameEl = document.getElementById('selected-state-name');
+    if (nameEl) nameEl.textContent = stateName;
 
     try {
       const res = await fetch(`/api/states/${encodeURIComponent(stateName)}`).then(r => r.json());
 
-      document.getElementById('selected-state-total').textContent = `${res.total_institutions.toLocaleString('en-IN')} Total Institutions`;
-      const distCount = Object.keys(res.districts).length;
-      document.getElementById('selected-state-dist-count').textContent = `${distCount} Districts Populated`;
+      const totalInstEl = document.getElementById('selected-state-total');
+      if (totalInstEl) totalInstEl.textContent = `${res.total_institutions.toLocaleString('en-IN')} Total Institutions`;
+      
+      const distCount = Object.keys(res.districts || {}).length;
+      const distCountEl = document.getElementById('selected-state-dist-count');
+      if (distCountEl) distCountEl.textContent = `${distCount} Districts Populated`;
+
+      // Dynamic calculation of total categories (Y) and represented categories (X)
+      // Both are calculated dynamically from dataset registry and never hardcoded
+      const allExpected = res.all_categories_expected || [];
+      const totalExpected = res.total_categories_count !== undefined ? res.total_categories_count : (allExpected.length || 0);
+      const representedCount = res.represented_categories_count !== undefined 
+        ? res.represented_categories_count 
+        : Object.keys(res.categories || {}).filter(c => res.categories[c] > 0).length;
+
+      // Update Category Badge in state header
+      const catBadge = document.getElementById('selected-state-categories');
+      if (catBadge) {
+        catBadge.textContent = `${representedCount} / ${totalExpected} Categories`;
+      }
+
+      // Representation Tag: Display exact required text
+      // "✓ X of Y institute categories have representation in this State!"
+      const repTag = document.getElementById('state-representation-tag');
+      if (repTag) {
+        repTag.textContent = `✓ ${representedCount} of ${totalExpected} institute categories have representation in this State!`;
+        if (representedCount === totalExpected && totalExpected > 0) {
+          repTag.className = 'state-representation-tag all-represented';
+        } else {
+          repTag.className = 'state-representation-tag has-gaps';
+        }
+      }
 
       // Available Categories Chips
       const catChips = document.getElementById('state-category-chips');
-      catChips.innerHTML = '';
-      if (Object.keys(res.categories).length === 0) {
-        catChips.innerHTML = '<span style="color: var(--text-muted); font-size: 0.8rem; grid-column: 1/-1;">No final institutions recorded yet.</span>';
-      } else {
-        Object.entries(res.categories).forEach(([cat, cnt]) => {
-          const chip = document.createElement('div');
-          chip.className = 'category-chip';
-          const catColor = getCategoryColor(cat);
-          chip.style.setProperty('--chip-border', catColor);
-          chip.innerHTML = `
-            <div class="category-chip-label">
-              <span class="category-chip-dot" style="background-color: ${catColor}; box-shadow: 0 0 6px ${catColor}88;"></span>
-              <span>${cat}:</span>
-            </div>
-            <strong>${cnt.toLocaleString('en-IN')}</strong>
-          `;
-          catChips.appendChild(chip);
-        });
+      if (catChips) {
+        catChips.innerHTML = '';
+        const catEntries = Object.entries(res.categories || {}).filter(([_, cnt]) => cnt > 0);
+        if (catEntries.length === 0) {
+          catChips.innerHTML = '<span style="color: var(--text-muted); font-size: 0.8rem; grid-column: 1/-1;">No institutions recorded in active categories yet.</span>';
+        } else {
+          catEntries.forEach(([cat, cnt]) => {
+            const chip = document.createElement('div');
+            chip.className = 'category-chip';
+            const catColor = getCategoryColor(cat);
+            chip.style.setProperty('--chip-color', catColor);
+            chip.innerHTML = `
+              <div class="category-chip-label">
+                <span class="category-chip-dot" style="background-color: ${catColor};"></span>
+                <span class="category-chip-name">${cat}</span>
+              </div>
+              <strong class="category-chip-count">${cnt.toLocaleString('en-IN')}</strong>
+            `;
+            catChips.appendChild(chip);
+          });
+        }
       }
 
-      // Missing Categories Chips
+      // Missing Categories / Gaps
       const missChips = document.getElementById('state-missing-chips');
-      missChips.innerHTML = '';
-      const allExpected = res.all_categories_expected || [];
-      const totalExpected = allExpected.length || 9;
-      const representedCount = Object.keys(res.categories).length;
-      if (res.missing_categories.length === 0) {
-        missChips.innerHTML = `<span style="color: #34d399; font-size: 0.82rem; grid-column: 1/-1; line-height: 1.4; word-break: break-word; overflow-wrap: anywhere;">✓ ${representedCount} of ${totalExpected} final-list categories have representation in this State!</span>`;
-      } else {
-        res.missing_categories.forEach(mc => {
-          const chip = document.createElement('div');
-          chip.className = 'category-chip missing-chip';
-          chip.innerHTML = `<span>⚠️ ${mc}</span>`;
-          missChips.appendChild(chip);
-        });
+      const gapsTitle = document.getElementById('state-gaps-title');
+      const missingCats = res.missing_categories || [];
+
+      if (missChips) {
+        missChips.innerHTML = '';
+        if (missingCats.length === 0) {
+          if (gapsTitle) {
+            gapsTitle.textContent = 'Category Coverage Status:';
+            gapsTitle.style.color = '#34d399';
+          }
+          missChips.innerHTML = `
+            <div class="state-rep-success-card">
+              <span class="state-rep-check">✓</span>
+              <span class="state-rep-desc">✓ ${representedCount} of ${totalExpected} institute categories have representation in this State!</span>
+            </div>
+          `;
+        } else {
+          if (gapsTitle) {
+            gapsTitle.textContent = `Remaining Sector Gaps in this State (${missingCats.length}):`;
+            gapsTitle.style.color = '#f87171';
+          }
+          missingCats.forEach(mc => {
+            const chip = document.createElement('div');
+            chip.className = 'category-chip missing-chip';
+            chip.innerHTML = `
+              <span class="missing-chip-icon">⚠️</span>
+              <span class="missing-chip-name">${mc}</span>
+            `;
+            missChips.appendChild(chip);
+          });
+        }
       }
 
       // Top Districts List
