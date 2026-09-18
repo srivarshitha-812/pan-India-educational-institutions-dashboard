@@ -132,11 +132,11 @@ def verify():
     kpis = summary["kpis"]
     print(f"  [OK] Summary KPIs: {kpis['states_covered']} States, {kpis['total_records_final']} Final Records")
     assert kpis['states_covered'] == 36
-    assert kpis['total_records_final'] == 35885
+    assert kpis['total_records_final'] == 90027
     
-    # Final Lists check all 11
+    # Final Lists check all 12
     final_data = get_json("/api/datasets/final")
-    assert len(final_data["lists"]) == 11
+    assert len(final_data["lists"]) == 12
     print(f"  [OK] All {len(final_data['lists'])} Final Lists loaded:")
     for l in final_data["lists"]:
         print(f"       - {l.get('file_name', l.get('id', '')): <40}: {l['total_records']:,} institutions")

@@ -520,6 +520,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "aishe" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
