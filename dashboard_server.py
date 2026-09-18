@@ -528,6 +528,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "vci" in fname or "veterinary" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -557,6 +565,8 @@ class DataRegistry:
             return "Teacher Education"
         elif "aishe" in fn or "higher_education" in fn or "higher education" in fn:
             return "Colleges & Higher Education"
+        elif "vci" in fn or "veterinary" in fn:
+            return "Veterinary Sciences"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -590,6 +600,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["ncte institute id", "ncte_id", "institute id", "official id"])
         elif "aishe" in fn_lower:
             return self._find_matching_col(cols, ["aishe code", "aishe_code", "aishecode", "official id"])
+        elif "vci" in fn_lower or "veterinary" in fn_lower:
+            return self._find_matching_col(cols, ["vci canonical id", "canonical_id", "registration / vci code", "vci_code"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -1065,6 +1077,54 @@ class DataRegistry:
                 "data_type": "FINAL_INSTITUTE_LIST"
             },
             {
+                "id": "aishe_colleges",
+                "name": "AISHE Higher Education Colleges",
+                "category": "Colleges & Higher Education",
+                "total_records": 54142,
+                "unique_records": 54142,
+                "duplicate_records": 0,
+                "states_covered": 36,
+                "districts_covered": 748,
+                "academic_year": "2022-23 / 2023-24",
+                "source": "Ministry of Education AISHE Public Directory",
+                "file_name": "AISHE Colleges.xlsx",
+                "file_path": "Final Institute Lists/AISHE Colleges.xlsx",
+                "file_size_mb": 10.01,
+                "important_columns": ["AISHE Code", "Institution Name", "State", "District", "College Category", "Affiliating University"],
+                "has_official_id": True,
+                "official_id_name": "AISHE Code (e.g., C-6575)",
+                "duplicate_ids": 0,
+                "missing_important_fields": "All 54,142 canonical institutions have verified AISHE codes, names, and state assignments.",
+                "quality_status": "PASS",
+                "review_priority": "LOW",
+                "notes": "Full national higher education directory across all 5 official categories and all 36 States/UTs.",
+                "data_type": "FINAL_INSTITUTE_LIST"
+            },
+            {
+                "id": "vci_veterinary_colleges",
+                "name": "VCI Veterinary Colleges",
+                "category": "Veterinary Sciences",
+                "total_records": 96,
+                "unique_records": 96,
+                "duplicate_records": 0,
+                "states_covered": 26,
+                "districts_covered": 75,
+                "academic_year": "AY 2026-27",
+                "source": "Veterinary Council of India (VCI) / DAHD Official Directory",
+                "file_name": "VCI Veterinary Colleges.xlsx",
+                "file_path": "Final Institute Lists/VCI Veterinary Colleges.xlsx",
+                "file_size_mb": 0.04,
+                "important_columns": ["Registration / VCI Code", "Institution Name", "State", "District", "Management Type", "Affiliating University", "Address", "PIN Code"],
+                "has_official_id": True,
+                "official_id_name": "VCI Canonical ID / Registration Code",
+                "duplicate_ids": 0,
+                "missing_important_fields": "All 96 physical institutions have verified names, states, and recognition statuses.",
+                "quality_status": "PASS",
+                "review_priority": "LOW",
+                "notes": "Full national universe of 96 canonical physical veterinary institutions (72 Recognized, 24 Provisionally Recognized) across India. 1 duplicate row entry in source document preserved in audit sheet.",
+                "data_type": "FINAL_INSTITUTE_LIST"
+            },
+            {
                 "id": "cbse_saras",
                 "name": "CBSE SARAS National Affiliation Directory",
                 "category": "School Education (CBSE Board)",
@@ -1354,6 +1414,12 @@ class DataRegistry:
                 "regulator_code": "AISHE",
                 "category": "Colleges & Higher Education",
                 "source_portal": "https://dashboard.aishe.gov.in/hedirectory/"
+            },
+            "vci_veterinary_colleges": {
+                "authority": "Veterinary Council of India (VCI) / DAHD",
+                "regulator_code": "VCI",
+                "category": "Veterinary Sciences",
+                "source_portal": "https://vci.dahd.gov.in/"
             }
         }
         completed = []

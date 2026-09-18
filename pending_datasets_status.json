@@ -36,12 +36,12 @@
     "id": "vci",
     "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
     "authority": "Veterinary Council of India (VCI)",
-    "status": "NOT STARTED",
+    "status": "COMPLETED",
     "priority": "MEDIUM",
-    "estimated_institutions": "Count not established",
-    "collected_count": 0,
-    "notes": "Recognized veterinary colleges and institutions under the Indian Veterinary Council Act.",
-    "action_plan": "Extract official accredited colleges from vci.dahd.gov.in."
+    "estimated_institutions": "96",
+    "collected_count": 96,
+    "notes": "Full national universe of 96 canonical physical veterinary institutions (72 Recognized, 24 Provisionally Recognized) extracted, deduplicated, and validated from official VCI/DAHD gazette lists.",
+    "action_plan": "Validated and integrated into Institutes List (VCI Veterinary Colleges.xlsx) with 100% canonical verification."
   },
   {
     "id": "icar",

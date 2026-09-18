@@ -57,3 +57,5 @@ ENV/
 .DS_Store
 Thumbs.db
 scratch/
+data/vci_raw/
+data/logs/
