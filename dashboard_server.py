@@ -5,6 +5,7 @@ import time
 import math
 import re
 import pickle
+import gzip
 import hashlib
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -242,20 +243,20 @@ class DataRegistry:
                         try:
                             st = fp.stat()
                             rel = str(fp.relative_to(FINAL_DIR)).replace("\\", "/")
-                            items.append(f"{rel}:{st.st_size}:{st.st_mtime_ns}")
+                            items.append(f"{rel}:{st.st_size}")
                         except OSError:
                             pass
         if PENDING_FILE.exists():
             try:
                 st = PENDING_FILE.stat()
-                items.append(f"pending:{st.st_size}:{st.st_mtime_ns}")
+                items.append(f"pending:{st.st_size}")
             except OSError:
                 pass
         dict_json = DATA_DIR / "data_dictionary.json"
         if dict_json.exists():
             try:
                 st = dict_json.stat()
-                items.append(f"dictionary:{st.st_size}:{st.st_mtime_ns}")
+                items.append(f"dictionary:{st.st_size}")
             except OSError:
                 pass
         
@@ -275,27 +276,37 @@ class DataRegistry:
                 "pending_datasets": self.pending_datasets,
                 "data_dictionary": self.data_dictionary,
                 "fingerprint": current_fp,
-                "version": 4
+                "version": 5
             }
+            gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
+            with gzip.open(gz_file, "wb", compresslevel=6) as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+            # Also keep uncompressed if needed
             with open(cache_file, "wb") as f:
                 pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
             self.current_fingerprint = current_fp
-            print(f"[Dashboard] Saved binary cache to {cache_file.name} ({cache_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
+            print(f"[Dashboard] Saved binary cache to {gz_file.name} ({gz_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
         except Exception as e:
             print(f"[Dashboard] Warning: Could not save binary cache: {e}")
 
     def load_all(self, force_recompute: bool = False):
         print("[Dashboard] Loading and analyzing datasets...")
         t0 = time.time()
+        gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
         cache_file = DATA_DIR / ".dashboard_cache.pkl"
         current_fp = self._compute_fingerprint()
 
-        if not force_recompute and cache_file.exists():
+        target_cache = gz_file if gz_file.exists() else (cache_file if cache_file.exists() else None)
+        if not force_recompute and target_cache:
             try:
-                with open(cache_file, "rb") as f:
-                    data = pickle.load(f)
+                if target_cache.suffix == ".gz":
+                    with gzip.open(target_cache, "rb") as f:
+                        data = pickle.load(f)
+                else:
+                    with open(target_cache, "rb") as f:
+                        data = pickle.load(f)
                 if (isinstance(data, dict) 
-                    and data.get("version") == 4 
+                    and data.get("version") == 5 
                     and data.get("fingerprint") == current_fp):
                     self.final_lists = data.get("final_lists", {})
                     self.final_dfs = data.get("final_dfs", {})
@@ -307,7 +318,7 @@ class DataRegistry:
                     self.current_fingerprint = current_fp
                     self.last_load_time = time.time()
                     self._last_fingerprint_check = time.time()
-                    print(f"[Dashboard] Fast startup: Loaded from cache in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities, fp: {current_fp[:8]}).")
+                    print(f"[Dashboard] Fast startup: Loaded from {target_cache.name} in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities, fp: {current_fp[:8]}).")
                     return
                 else:
                     cached_fp = data.get("fingerprint", "none")[:8] if isinstance(data, dict) else "unknown"

@@ -143,7 +143,7 @@ The dashboard includes a live collection tracker for the remaining regulatory se
 |---|---|---|---|---|
 | **Higher Ed & Colleges** | AISHE / MoE | 45,000+ Colleges | `IN PROGRESS` | Universities captured; college-level API requires browser session persistence. |
 | **Technical & Engineering**| AICTE | 9,000+ Institutes | `IN PROGRESS` | Telangana slice complete; national directory requires automated ASP.NET table scraper. |
-| **Teacher Education** | NCTE | 18,000+ Institutes | `IN PROGRESS` | Angular web app requires REST probe extraction per state. |
+| **Teacher Education** | NCTE | 18,000+ Institutes | `COMPLETED` | 17,556 institutions & 28,372 course offerings extracted into `NCTE Teacher Education Colleges.xlsx`. |
 | **Pharmacy** | PCI | 4,500+ Colleges | `NOT STARTED` | Dynamic portal inspection; crawler with session cookies needed. |
 | **Legal Education & Law** | Bar Council of India (BCI) | 1,800+ Colleges | `IN PROGRESS` | Telangana slice complete; national PDF directory published periodically. |
 | **Homoeopathy** | NCH | 280+ Colleges | `NOT STARTED` | Static approval tables available on nch.org.in. |
