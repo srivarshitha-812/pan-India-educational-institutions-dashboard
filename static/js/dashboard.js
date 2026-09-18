@@ -490,7 +490,7 @@ class DashboardApp {
                       const value = data.datasets[0].data[i] || 0;
                       const fill = data.datasets[0].backgroundColor[i];
                       return {
-                        text: `${label} (${value.toLocaleString('en-IN')})`,
+                        text: label,
                         fillStyle: fill,
                         strokeStyle: fill,
                         lineWidth: 0,
