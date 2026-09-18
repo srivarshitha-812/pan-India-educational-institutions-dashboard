@@ -7,9 +7,10 @@ import re
 import pickle
 import gzip
 import hashlib
+import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 import pandas as pd
 import numpy as np
 from fastapi import FastAPI, Query, HTTPException, Request
@@ -227,14 +228,18 @@ class DataRegistry:
         self.state_aggregates: Dict[str, Dict[str, Any]] = {}
         self.pending_datasets: List[Dict[str, Any]] = []
         self.data_dictionary: Dict[str, Any] = {"overview": [], "records": [], "total_fields": 0}
+        self.file_fingerprints: Dict[str, str] = {}
         self.last_load_time = 0
+        self.start_time = time.time()
         self.current_fingerprint = ""
         self._last_fingerprint_check = 0.0
+        self._reload_lock = threading.Lock()
+        self.is_ready = False
+        self.is_loading = False
 
-    def _compute_fingerprint(self) -> str:
-        """Calculates lightweight SHA256 digest of all files in FINAL_DIR, pending status, and dictionary.
-        Detects additions, removals, replacements, and modifications in under 1ms without reading file contents."""
-        items = []
+    def _get_final_files_map(self) -> Dict[str, Tuple[Path, str]]:
+        """Scans FINAL_DIR and returns a map of list_id -> (Path, fingerprint)."""
+        files_map = {}
         if FINAL_DIR.exists():
             for root, _, files in os.walk(FINAL_DIR):
                 for f in sorted(files):
@@ -243,9 +248,20 @@ class DataRegistry:
                         try:
                             st = fp.stat()
                             rel = str(fp.relative_to(FINAL_DIR)).replace("\\", "/")
-                            items.append(f"{rel}:{st.st_size}")
+                            list_id = re.sub(r'[^a-zA-Z0-9_]', '_', fp.stem.lower()).strip('_')
+                            files_map[list_id] = (fp, f"{rel}:{st.st_size}")
                         except OSError:
                             pass
+        return files_map
+
+    def _compute_fingerprint(self) -> str:
+        """Calculates lightweight SHA256 digest of all files in FINAL_DIR, pending status, and dictionary.
+        Detects additions, removals, replacements, and modifications in under 1ms without reading file contents."""
+        items = []
+        files_map = self._get_final_files_map()
+        for list_id, (fp, item_str) in files_map.items():
+            items.append(item_str)
+
         if PENDING_FILE.exists():
             try:
                 st = PENDING_FILE.stat()
@@ -263,93 +279,210 @@ class DataRegistry:
         raw = "|".join(sorted(items))
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
-    def _save_cache(self, cache_file: Path):
+    def _write_cache_worker(self, cache_data: dict, current_fp: str):
         try:
-            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
+            cache_file = DATA_DIR / ".dashboard_cache.pkl"
+            gz_tmp = DATA_DIR / ".dashboard_cache.pkl.gz.tmp"
+            cache_tmp = DATA_DIR / ".dashboard_cache.pkl.tmp"
+            gz_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            with gzip.open(gz_tmp, "wb", compresslevel=1) as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+            if gz_tmp.exists():
+                os.replace(gz_tmp, gz_file)
+
+            with open(cache_tmp, "wb") as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+            if cache_tmp.exists():
+                os.replace(cache_tmp, cache_file)
+
+            print(f"[Dashboard] Saved binary cache to {gz_file.name} ({gz_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
+        except Exception as e:
+            print(f"[Dashboard] Warning: Background cache save failed: {e}")
+
+    def _save_cache(self, cache_file: Path, async_save: bool = True):
+        try:
             current_fp = self._compute_fingerprint()
             cache_data = {
                 "final_lists": self.final_lists,
                 "final_dfs": self.final_dfs,
                 "source_datasets": self.source_datasets,
                 "search_index": self.search_index,
+                "search_index_by_list": getattr(self, "search_index_by_list", {}),
                 "state_aggregates": self.state_aggregates,
                 "pending_datasets": self.pending_datasets,
                 "data_dictionary": self.data_dictionary,
+                "file_fingerprints": self.file_fingerprints,
                 "fingerprint": current_fp,
-                "version": 5
+                "version": 6
             }
-            gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
-            with gzip.open(gz_file, "wb", compresslevel=6) as f:
-                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
-            # Also keep uncompressed if needed
-            with open(cache_file, "wb") as f:
-                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
             self.current_fingerprint = current_fp
-            print(f"[Dashboard] Saved binary cache to {gz_file.name} ({gz_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
+            if async_save:
+                t = threading.Thread(target=self._write_cache_worker, args=(cache_data, current_fp), daemon=True)
+                t.start()
+            else:
+                self._write_cache_worker(cache_data, current_fp)
         except Exception as e:
             print(f"[Dashboard] Warning: Could not save binary cache: {e}")
 
     def load_all(self, force_recompute: bool = False):
         print("[Dashboard] Loading and analyzing datasets...")
         t0 = time.time()
+        self.is_loading = True
         gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
         cache_file = DATA_DIR / ".dashboard_cache.pkl"
         current_fp = self._compute_fingerprint()
+        current_files = self._get_final_files_map()
 
-        target_cache = gz_file if gz_file.exists() else (cache_file if cache_file.exists() else None)
-        if not force_recompute and target_cache:
+        cached_data = None
+        # Try gzip cache first
+        if gz_file.exists() and not force_recompute:
             try:
-                if target_cache.suffix == ".gz":
-                    with gzip.open(target_cache, "rb") as f:
-                        data = pickle.load(f)
-                else:
-                    with open(target_cache, "rb") as f:
-                        data = pickle.load(f)
-                if (isinstance(data, dict) 
-                    and data.get("version") == 5 
-                    and data.get("fingerprint") == current_fp):
-                    self.final_lists = data.get("final_lists", {})
-                    self.final_dfs = data.get("final_dfs", {})
-                    self.source_datasets = data.get("source_datasets", [])
-                    self.search_index = data.get("search_index", [])
-                    self.state_aggregates = data.get("state_aggregates", {})
-                    self.pending_datasets = data.get("pending_datasets", [])
-                    self.data_dictionary = data.get("data_dictionary", {})
-                    self.current_fingerprint = current_fp
-                    self.last_load_time = time.time()
-                    self._last_fingerprint_check = time.time()
-                    print(f"[Dashboard] Fast startup: Loaded from {target_cache.name} in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities, fp: {current_fp[:8]}).")
-                    return
-                else:
-                    cached_fp = data.get("fingerprint", "none")[:8] if isinstance(data, dict) else "unknown"
-                    print(f"[Dashboard] Cache invalid or fingerprint mismatch (cached: {cached_fp} vs current: {current_fp[:8]}). Recomputing from source files...")
+                with gzip.open(gz_file, "rb") as f:
+                    cached_data = pickle.load(f)
             except Exception as e:
-                print(f"[Dashboard] Cache load failed ({e}), recomputing from source files...")
+                print(f"[Dashboard] Gzip cache load failed ({e}), checking uncompressed fallback...")
+                cached_data = None
 
+        # Fallback to uncompressed cache if gzip cache was corrupt or missing
+        if cached_data is None and cache_file.exists() and not force_recompute:
+            try:
+                with open(cache_file, "rb") as f:
+                    cached_data = pickle.load(f)
+            except Exception as e:
+                print(f"[Dashboard] Secondary cache load failed ({e})")
+                cached_data = None
+
+        # Scenario 1: Exact cache match (Warm instant start)
+        if (not force_recompute 
+            and isinstance(cached_data, dict) 
+            and cached_data.get("version") in (5, 6) 
+            and cached_data.get("fingerprint") == current_fp):
+            self.final_lists = cached_data.get("final_lists", {})
+            self.final_dfs = cached_data.get("final_dfs", {})
+            self.source_datasets = cached_data.get("source_datasets", [])
+            self.search_index = cached_data.get("search_index", [])
+            self.search_index_by_list = cached_data.get("search_index_by_list", {})
+            if not self.search_index_by_list and self.search_index:
+                self.search_index_by_list = {}
+                for item in self.search_index:
+                    lid = item.get("list_id")
+                    if lid:
+                        self.search_index_by_list.setdefault(lid, []).append(item)
+            self.state_aggregates = cached_data.get("state_aggregates", {})
+            # Sanity check: if search_index or state_aggregates are empty despite having final_lists, populate them
+            if (not self.search_index or not any(v.get("total_institutions", 0) > 0 for v in self.state_aggregates.values())) and self.final_dfs:
+                self._build_search_index()
+                self._compute_state_aggregates()
+                self._save_cache(cache_file)
+            self.pending_datasets = cached_data.get("pending_datasets", [])
+            self.data_dictionary = cached_data.get("data_dictionary", {})
+            self.file_fingerprints = cached_data.get("file_fingerprints", {lid: fp for lid, (_, fp) in current_files.items()})
+            self.current_fingerprint = current_fp
+            self.last_load_time = time.time()
+            self._last_fingerprint_check = time.time()
+            self.is_ready = True
+            self.is_loading = False
+            source_name = gz_file.name if gz_file.exists() else cache_file.name
+            print(f"[Dashboard] Fast startup: Loaded from {source_name} in {time.time() - t0:.2f}s ({len(self.final_lists)} lists, {len(self.search_index)} indexed entities, fp: {current_fp[:8]}).")
+            return
+
+        # Scenario 2: Incremental recompute (Cache exists, but some dataset was added, modified, or removed)
+        if (not force_recompute 
+            and isinstance(cached_data, dict) 
+            and cached_data.get("version") in (5, 6) 
+            and cached_data.get("final_lists")):
+            print(f"[Dashboard] Incremental update detected (fp: {cached_data.get('fingerprint', '')[:8]} -> {current_fp[:8]}). Preserving unchanged datasets...")
+            self.final_lists = dict(cached_data.get("final_lists", {}))
+            self.final_dfs = dict(cached_data.get("final_dfs", {}))
+            self.source_datasets = cached_data.get("source_datasets", [])
+            self.search_index_by_list = cached_data.get("search_index_by_list", {})
+            if not self.search_index_by_list and cached_data.get("search_index"):
+                self.search_index_by_list = {}
+                for item in cached_data.get("search_index", []):
+                    lid = item.get("list_id")
+                    if lid:
+                        self.search_index_by_list.setdefault(lid, []).append(item)
+            cached_fps = dict(cached_data.get("file_fingerprints", {}))
+            if not cached_fps and self.final_lists and self.final_dfs:
+                cached_fps = {lid: fp for lid, (_, fp) in current_files.items() if lid in self.final_lists and lid in self.final_dfs}
+            
+            # Find what changed
+            to_process = {}
+            for lid, (fp_path, f_fp) in current_files.items():
+                if lid not in cached_fps or cached_fps.get(lid) != f_fp or lid not in self.final_dfs:
+                    to_process[lid] = fp_path
+            
+            to_remove = [lid for lid in list(self.final_lists.keys()) if lid not in current_files]
+            
+            for lid in to_remove:
+                print(f"  [Removed List] {lid}")
+                self.final_lists.pop(lid, None)
+                self.final_dfs.pop(lid, None)
+                cached_fps.pop(lid, None)
+                
+            for lid, path in to_process.items():
+                try:
+                    df = self._read_final_file(path)
+                    if df is not None and len(df) > 0:
+                        category = self._infer_category(path.name, df)
+                        stats = self._analyze_dataframe(df, path.name, category, path)
+                        self.final_lists[lid] = stats
+                        self.final_dfs[lid] = df
+                        print(f"  [Incrementally Analyzed] {path.name}: {len(df):,} records ({category})")
+                except Exception as e:
+                    print(f"  [Error incrementally loading] {path.name}: {e}")
+
+            self._load_pending_status()
+            self._load_data_dictionary()
+            if not self.source_datasets:
+                self._discover_source_datasets()
+            self._build_search_index(specific_lists=list(to_process.keys()))
+            self._compute_state_aggregates()
+            self.file_fingerprints = {lid: fp for lid, (_, fp) in current_files.items()}
+            self.last_load_time = time.time()
+            self._last_fingerprint_check = time.time()
+            self._save_cache(cache_file)
+            self.is_ready = True
+            self.is_loading = False
+            print(f"[Dashboard] Incremental dataset update completed in {time.time() - t0:.2f} seconds ({len(to_process)} updated, {len(self.final_lists)} total).")
+            return
+
+        # Scenario 3: Cold build (no valid cache available)
+        print("[Dashboard] Cold startup: Building full dataset registry...")
         self._load_pending_status()
         self._load_data_dictionary()
         self._discover_final_lists()
         self._discover_source_datasets()
         self._build_search_index()
         self._compute_state_aggregates()
+        self.file_fingerprints = {lid: fp for lid, (_, fp) in current_files.items()}
         self.last_load_time = time.time()
         self._last_fingerprint_check = time.time()
         self._save_cache(cache_file)
-        print(f"[Dashboard] Finished dataset analysis in {time.time() - t0:.2f} seconds.")
+        self.is_ready = True
+        self.is_loading = False
+        print(f"[Dashboard] Finished full dataset analysis in {time.time() - t0:.2f} seconds.")
 
     def check_and_reload_if_changed(self) -> bool:
-        """Lightweight runtime verification (throttled to at most once per 3s).
-        Automatically recomputes registry if any file was added, removed, replaced, or modified."""
+        """Lightweight non-blocking runtime check (throttled to at most once per 3s).
+        Automatically performs fast incremental update if any file was added, removed, replaced, or modified."""
         now = time.time()
         if now - self._last_fingerprint_check < 3.0:
             return False
-        self._last_fingerprint_check = now
-        current_fp = self._compute_fingerprint()
-        if current_fp != getattr(self, "current_fingerprint", ""):
-            print(f"[Dashboard] Auto-detected dataset directory change (fp: {self.current_fingerprint[:8]} -> {current_fp[:8]}). Reloading registry...")
-            self.load_all(force_recompute=True)
-            return True
-        return False
+        if not self._reload_lock.acquire(blocking=False):
+            return False
+        try:
+            self._last_fingerprint_check = time.time()
+            current_fp = self._compute_fingerprint()
+            if current_fp != getattr(self, "current_fingerprint", ""):
+                print(f"[Dashboard] Auto-detected dataset directory change (fp: {self.current_fingerprint[:8]} -> {current_fp[:8]}). Performing fast incremental reload...")
+                self.load_all(force_recompute=False)
+                return True
+            return False
+        finally:
+            self._reload_lock.release()
 
     def _load_data_dictionary(self):
         dict_json = DATA_DIR / "data_dictionary.json"
@@ -1198,78 +1331,118 @@ class DataRegistry:
             }
         ]
 
-    def _build_search_index(self):
-        """Indexes all 7,335 final institute rows for comprehensive multi-attribute search"""
-        self.search_index = []
-        for list_id, stats in self.final_lists.items():
-            df = self.final_dfs.get(list_id)
-            if df is None:
-                continue
+    def _index_single_dataframe(self, list_id: str, stats: dict, df: pd.DataFrame) -> List[Dict[str, Any]]:
+        id_col = stats.get("id_column")
+        name_col = stats.get("name_column")
+        state_col = stats.get("state_column")
+        dist_col = stats.get("district_column")
+        addr_col = stats.get("address_column")
+        pin_col = stats.get("pin_column")
+        univ_col = stats.get("university_column")
+        category = stats.get("category")
+        dataset_name = stats.get("file_name", "")
+
+        records = df.to_dict('records')
+        indexed_items = []
+        for idx, row in enumerate(records):
+            inst_id_val = row.get(id_col) if id_col else None
+            inst_id = str(inst_id_val).strip() if inst_id_val is not None and not pd.isna(inst_id_val) else "—"
             
-            id_col = stats.get("id_column")
-            name_col = stats.get("name_column")
-            state_col = stats.get("state_column")
-            dist_col = stats.get("district_column")
-            addr_col = stats.get("address_column")
-            pin_col = stats.get("pin_column")
-            univ_col = stats.get("university_column")
-            category = stats.get("category")
+            name_val = row.get(name_col) if name_col else None
+            name = str(name_val).strip() if name_val is not None and not pd.isna(name_val) else "Unknown Institution"
+            
+            state_val = row.get(state_col) if state_col else None
+            state_raw = state_val if state_val is not None and not pd.isna(state_val) else "Unknown"
+            state = normalize_state_name(state_raw)
 
-            for idx, row in df.iterrows():
-                inst_id = str(row[id_col]).strip() if id_col and not pd.isna(row[id_col]) else "—"
-                name = str(row[name_col]).strip() if name_col and not pd.isna(row[name_col]) else "Unknown Institution"
-                state_raw = row[state_col] if state_col and not pd.isna(row[state_col]) else "Unknown"
-                state = normalize_state_name(state_raw)
+            dist_val = row.get(dist_col) if dist_col else None
+            raw_dist = str(dist_val).strip() if dist_val is not None and not pd.isna(dist_val) and str(dist_val).strip().lower() not in ['nan', 'none', ''] else ""
+
+            addr_val = row.get(addr_col) if addr_col else None
+            addr = str(addr_val).strip() if addr_val is not None and not pd.isna(addr_val) and str(addr_val).strip().lower() not in ['nan', 'none', ''] else ""
+
+            pin_val = row.get(pin_col) if pin_col else None
+            pin = str(pin_val).strip().split('.')[0] if pin_val is not None and not pd.isna(pin_val) and str(pin_val).strip().lower() not in ['nan', 'none', ''] else ""
+
+            univ_val = row.get(univ_col) if univ_col else None
+            univ = str(univ_val).strip() if univ_val is not None and not pd.isna(univ_val) and str(univ_val).strip().lower() not in ['nan', 'none', ''] else ""
+
+            inferred_dist = raw_dist
+            if not inferred_dist or inferred_dist.lower() in ["not specified", "nan", "none"]:
+                inferred_dist = extract_district_from_address(addr)
+
+            display_dist = inferred_dist if inferred_dist != "Not Specified" else (raw_dist or "Not Specified")
+
+            search_components = [
+                name,
+                state,
+                raw_dist,
+                inferred_dist if inferred_dist != "Not Specified" else "",
+                addr,
+                pin,
+                inst_id if inst_id != '—' else '',
+                univ,
+                category
+            ]
+
+            blob_lower = " ".join(search_components).lower()
+            if "kukatpally" in blob_lower or "500085" in blob_lower or "jntu" in blob_lower:
+                search_components.extend(["kphb", "kphb colony", "kukatpally housing board"])
+            if "gachibowli" in blob_lower or "iiit" in blob_lower:
+                search_components.extend(["gachibowli", "iiit hyderabad", "iiith", "iiit-h"])
+
+            search_blob = " ".join(filter(None, search_components)).lower()
+
+            indexed_items.append({
+                "list_id": list_id,
+                "dataset_name": dataset_name,
+                "category": category,
+                "institution_name": name,
+                "official_id": inst_id,
+                "state": state,
+                "district": display_dist,
+                "address": addr,
+                "pincode": pin,
+                "university": univ,
+                "row_index": int(idx),
+                "_search": search_blob
+            })
+        return indexed_items
+
+    def _build_search_index(self, specific_lists: Optional[List[str]] = None):
+        """Indexes all final institute rows using fast granular per-dataset slices"""
+        if not hasattr(self, "search_index_by_list") or not self.search_index_by_list:
+            self.search_index_by_list = {}
+            if self.search_index:
+                for item in self.search_index:
+                    lid = item.get("list_id")
+                    if lid:
+                        self.search_index_by_list.setdefault(lid, []).append(item)
+        
+        target_lists = specific_lists if specific_lists is not None else list(self.final_lists.keys())
+        for list_id in target_lists:
+            stats = self.final_lists.get(list_id)
+            df = self.final_dfs.get(list_id)
+            if stats and df is not None:
+                self.search_index_by_list[list_id] = self._index_single_dataframe(list_id, stats, df)
+            elif list_id in self.search_index_by_list:
+                del self.search_index_by_list[list_id]
                 
-                # Raw district from dataset
-                raw_dist = str(row[dist_col]).strip() if dist_col and not pd.isna(row[dist_col]) and str(row[dist_col]).strip().lower() not in ['nan', 'none', ''] else ""
-                addr = str(row[addr_col]).strip() if addr_col and not pd.isna(row[addr_col]) and str(row[addr_col]).strip().lower() not in ['nan', 'none', ''] else ""
-                pin = str(row[pin_col]).strip().split('.')[0] if pin_col and not pd.isna(row[pin_col]) and str(row[pin_col]).strip().lower() not in ['nan', 'none', ''] else ""
-                univ = str(row[univ_col]).strip() if univ_col and not pd.isna(row[univ_col]) and str(row[univ_col]).strip().lower() not in ['nan', 'none', ''] else ""
+        # Clean up any removed lists
+        current_lids = set(self.final_lists.keys())
+        for lid in list(self.search_index_by_list.keys()):
+            if lid not in current_lids:
+                del self.search_index_by_list[lid]
 
-                # If raw district is missing, extract district from address if present
-                inferred_dist = raw_dist
-                if not inferred_dist or inferred_dist.lower() in ["not specified", "nan", "none"]:
-                    inferred_dist = extract_district_from_address(addr)
+        # Ensure any missing lists from final_lists are also indexed
+        for lid in current_lids:
+            if lid not in self.search_index_by_list:
+                stats = self.final_lists.get(lid)
+                df = self.final_dfs.get(lid)
+                if stats and df is not None:
+                    self.search_index_by_list[lid] = self._index_single_dataframe(lid, stats, df)
 
-                display_dist = inferred_dist if inferred_dist != "Not Specified" else (raw_dist or "Not Specified")
-
-                # Combine all searchable attributes across the dataset
-                search_components = [
-                    name,
-                    state,
-                    raw_dist,
-                    inferred_dist if inferred_dist != "Not Specified" else "",
-                    addr,
-                    pin,
-                    inst_id if inst_id != '—' else '',
-                    univ,
-                    category
-                ]
-
-                # Expand common institutional locality and campus abbreviations
-                blob_lower = " ".join(search_components).lower()
-                if "kukatpally" in blob_lower or "500085" in blob_lower or "jntu" in blob_lower:
-                    search_components.extend(["kphb", "kphb colony", "kukatpally housing board"])
-                if "gachibowli" in blob_lower or "iiit" in blob_lower:
-                    search_components.extend(["gachibowli", "iiit hyderabad", "iiith", "iiit-h"])
-
-                search_blob = " ".join(filter(None, search_components)).lower()
-
-                self.search_index.append({
-                    "list_id": list_id,
-                    "dataset_name": stats["file_name"],
-                    "category": category,
-                    "institution_name": name,
-                    "official_id": inst_id,
-                    "state": state,
-                    "district": display_dist,
-                    "address": addr,
-                    "pincode": pin,
-                    "university": univ,
-                    "row_index": int(idx),
-                    "_search": search_blob
-                })
+        self.search_index = [item for items in self.search_index_by_list.values() for item in items]
 
     def _get_all_final_categories(self) -> List[str]:
         """Returns sorted list of unique categories dynamically discovered from final institute lists"""
@@ -1949,9 +2122,11 @@ app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 def health():
     return {
         "status": "healthy",
-        "ready": registry.last_load_time > 0,
+        "ready": registry.is_ready,
+        "loading": registry.is_loading,
         "datasets_loaded": len(registry.final_lists),
-        "indexed_institutions": len(registry.search_index)
+        "indexed_institutions": len(registry.search_index),
+        "uptime_seconds": round(time.time() - getattr(registry, "start_time", time.time()), 2)
     }
 
 @app.api_route("/api/refresh", methods=["GET", "POST"])

@@ -55,4 +55,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
   CMD python -c "import os, urllib.request; urllib.request.urlopen('http://127.0.0.1:' + str(os.environ.get('PORT', 8000)) + '/health')" || exit 1
 
 # Production server start: Gunicorn with single Uvicorn worker
-CMD ["sh", "-c", "gunicorn dashboard_server:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind ${HOST}:${PORT} --access-logfile - --error-logfile -"]
+CMD ["sh", "-c", "gunicorn dashboard_server:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind ${HOST}:${PORT} --timeout 300 --graceful-timeout 30 --keep-alive 5 --access-logfile - --error-logfile -"]

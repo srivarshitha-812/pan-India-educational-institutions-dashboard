@@ -176,12 +176,26 @@ class DashboardApp {
 
     // Refresh Data
     document.getElementById('btn-refresh')?.addEventListener('click', async () => {
+      const btn = document.getElementById('btn-refresh');
+      const origHtml = btn ? btn.innerHTML : '';
       try {
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" style="width: 0.85rem; height: 0.85rem; border-width: 2px; display: inline-block; vertical-align: middle; margin-right: 4px;"></span> Refreshing dataset metadata...';
+        }
         await fetch('/api/refresh', { method: 'POST' });
       } catch (e) {
         console.warn('Refresh endpoint call:', e);
+      } finally {
+        await this.loadAllData();
+        if (btn) {
+          btn.innerHTML = '<span style="color: #10b981; font-weight: 600;">✓ Refreshed</span>';
+          setTimeout(() => {
+            btn.innerHTML = origHtml;
+            btn.disabled = false;
+          }, 1800);
+        }
       }
-      this.loadAllData();
     });
     document.getElementById('btn-retry-connection')?.addEventListener('click', () => this.loadAllData());
 
@@ -268,11 +282,17 @@ class DashboardApp {
     document.getElementById('btn-save-pending')?.addEventListener('click', () => this.savePendingStatusUpdate());
   }
 
-  async loadAllData() {
+  async loadAllData(retryCount = 0) {
     try {
       const [summaryRes, finalRes, statesRes, pendingRes, dictRes, priorityRes] = await Promise.all([
-        fetch('/api/summary').then(r => r.json()),
-        fetch('/api/datasets/final').then(r => r.json()),
+        fetch('/api/summary').then(r => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        }),
+        fetch('/api/datasets/final').then(r => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        }),
         fetch('/api/states').then(r => r.json()),
         fetch('/api/pending').then(r => r.json()),
         fetch('/api/dictionary?page=1&page_size=500').then(r => r.json()).catch(() => null),
@@ -320,6 +340,11 @@ class DashboardApp {
 
     } catch (err) {
       console.error('[DashboardApp] Error loading data:', err);
+      if (retryCount < 2) {
+        console.log(`[DashboardApp] Retrying connection in 2.5s (attempt ${retryCount + 1}/2)...`);
+        setTimeout(() => this.loadAllData(retryCount + 1), 2500);
+        return;
+      }
       const banner = document.getElementById('connection-error-banner');
       if (banner) {
         banner.style.display = 'block';
