@@ -234,6 +234,7 @@ class DataRegistry:
         self.current_fingerprint = ""
         self._last_fingerprint_check = 0.0
         self._reload_lock = threading.Lock()
+        self._cache_write_lock = threading.Lock()
         self.is_ready = False
         self.is_loading = False
 
@@ -280,28 +281,41 @@ class DataRegistry:
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
     def _write_cache_worker(self, cache_data: dict, current_fp: str):
-        try:
+        with self._cache_write_lock:
             gz_file = DATA_DIR / ".dashboard_cache.pkl.gz"
-            cache_file = DATA_DIR / ".dashboard_cache.pkl"
-            gz_tmp = DATA_DIR / ".dashboard_cache.pkl.gz.tmp"
-            cache_tmp = DATA_DIR / ".dashboard_cache.pkl.tmp"
+            unique_id = f"{os.getpid()}_{threading.get_ident()}_{int(time.time() * 1000)}"
+            gz_tmp = DATA_DIR / f".dashboard_cache.pkl.gz.tmp.{unique_id}"
             gz_file.parent.mkdir(parents=True, exist_ok=True)
-            
-            with gzip.open(gz_tmp, "wb", compresslevel=1) as f:
-                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
-            if gz_tmp.exists():
-                os.replace(gz_tmp, gz_file)
+            try:
+                with gzip.open(gz_tmp, "wb", compresslevel=1) as f:
+                    pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+                
+                # Resilient atomic replace with retries for Windows file locks
+                replaced = False
+                for _ in range(10):
+                    try:
+                        if gz_tmp.exists():
+                            os.replace(gz_tmp, gz_file)
+                            replaced = True
+                            break
+                    except OSError:
+                        time.sleep(0.05)
 
-            with open(cache_tmp, "wb") as f:
-                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
-            if cache_tmp.exists():
-                os.replace(cache_tmp, cache_file)
+                if not replaced and gz_tmp.exists():
+                    import shutil
+                    shutil.move(str(gz_tmp), str(gz_file))
 
-            print(f"[Dashboard] Saved binary cache to {gz_file.name} ({gz_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
-        except Exception as e:
-            print(f"[Dashboard] Warning: Background cache save failed: {e}")
+                print(f"[Dashboard] Saved binary cache to {gz_file.name} ({gz_file.stat().st_size / (1024*1024):.1f} MB, fp: {current_fp[:8]})")
+            except Exception as e:
+                print(f"[Dashboard] Warning: Cache save failed: {e}")
+            finally:
+                if gz_tmp.exists():
+                    try:
+                        gz_tmp.unlink()
+                    except OSError:
+                        pass
 
-    def _save_cache(self, cache_file: Path, async_save: bool = True):
+    def _save_cache(self, cache_file: Optional[Path] = None, async_save: bool = False):
         try:
             current_fp = self._compute_fingerprint()
             cache_data = {

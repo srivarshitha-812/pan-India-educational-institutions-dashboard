@@ -60,3 +60,4 @@ scratch/
 data/vci_raw/
 data/icar_raw/
 data/logs/
+data/.dashboard_cache*tmp*
