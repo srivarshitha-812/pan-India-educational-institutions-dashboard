@@ -47,11 +47,11 @@
     "id": "icar",
     "sector": "Agricultural & Allied Sciences",
     "authority": "Indian Council of Agricultural Research (ICAR)",
-    "status": "NOT STARTED",
+    "status": "COMPLETED",
     "priority": "MEDIUM",
-    "estimated_institutions": "Count not established",
-    "collected_count": 0,
-    "notes": "Accredited agricultural universities, deemed universities, and ICAR institutions.",
-    "action_plan": "Extract accredited agricultural colleges and universities from icar.org.in."
+    "estimated_institutions": "159",
+    "collected_count": 159,
+    "notes": "Full national universe of 159 canonical ICAR-accredited agricultural institutions (86 SAU/DU/CAU constituent colleges, 62 affiliated colleges, 10 general university public colleges, 1 constituent college/faculty) extracted across 4 official ICAR circular lists with 1,347 accredited degree programmes.",
+    "action_plan": "Validated and integrated into Institutes List (ICAR Agricultural & Allied Institutions.xlsx) with 100% official accreditation traceability."
   }
 ]

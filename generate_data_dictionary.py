@@ -2876,6 +2876,32 @@ DATASET_OVERVIEW_META: List[Dict[str, Any]] = [
         "notes": "100% complete national census of recognized teacher education institutions across India under NCTE Act, 1993. Multi-course offerings mapped to dedicated Programmes & Courses catalog (28,372 entries), and 1,274 withdrawn/de-recognized institutions isolated in dedicated audit registry."
     },
     {
+        "dataset_name": "VCI National Veterinary Colleges Register",
+        "source_authority": "Veterinary Council of India (VCI) / DAHD",
+        "sector": "Veterinary Sciences (B.V.Sc & A.H.)",
+        "academic_year": "2026-27",
+        "as_of_date": "2026-09-17",
+        "total_records": "96",
+        "states_covered": "26 / 36 (72%)",
+        "official_id_field": "Registration / VCI Code (VCI Canonical ID)",
+        "fields_documented": 8,
+        "schema_reference": "Indian Veterinary Council Act, 1984 Gazette Rosters",
+        "notes": "100% complete national census of 96 canonical physical veterinary institutions (72 Recognized, 24 Provisionally Recognized) across India."
+    },
+    {
+        "dataset_name": "ICAR Agricultural & Allied Institutions Register",
+        "source_authority": "Indian Council of Agricultural Research (ICAR)",
+        "sector": "Agricultural & Allied Sciences",
+        "academic_year": "2024-26",
+        "as_of_date": "2026-09-18",
+        "total_records": "159",
+        "states_covered": "23 / 36 (64%)",
+        "official_id_field": "ICAR_Serial",
+        "fields_documented": 23,
+        "schema_reference": "ICAR National Agricultural Education Accreditation Board (NAEAB) Official Circular Lists (List 1, 1A, 2, 3)",
+        "notes": "100% complete national census of 159 canonical ICAR-accredited agricultural institutions and 1,347 accredited degree programmes across India."
+    },
+    {
         "dataset_name": "Dashboard Common Architecture",
         "source_authority": "National Census Dashboard Engine",
         "sector": "Cross-Cutting Metadata & Search",
