@@ -669,6 +669,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "icar" in fname or "agricultural" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -700,6 +708,8 @@ class DataRegistry:
             return "Colleges & Higher Education"
         elif "vci" in fn or "veterinary" in fn:
             return "Veterinary Sciences"
+        elif "icar" in fn or "agricultural" in fn:
+            return "Agricultural & Allied Sciences"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -735,6 +745,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["aishe code", "aishe_code", "aishecode", "official id"])
         elif "vci" in fn_lower or "veterinary" in fn_lower:
             return self._find_matching_col(cols, ["vci canonical id", "canonical_id", "registration / vci code", "vci_code"])
+        elif "icar" in fn_lower or "agricultural" in fn_lower:
+            return self._find_matching_col(cols, ["icar_serial", "icar code", "official id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -1258,6 +1270,30 @@ class DataRegistry:
                 "data_type": "FINAL_INSTITUTE_LIST"
             },
             {
+                "id": "icar_agricultural_institutions",
+                "name": "ICAR Agricultural & Allied Institutions",
+                "category": "Agricultural & Allied Sciences",
+                "total_records": 159,
+                "unique_records": 159,
+                "duplicate_records": 0,
+                "states_covered": 23,
+                "districts_covered": 118,
+                "academic_year": "AY 2024-26",
+                "source": "Indian Council of Agricultural Research (ICAR) Official Accreditation Lists",
+                "file_name": "ICAR Agricultural & Allied Institutions.xlsx",
+                "file_path": "Final Institute Lists/ICAR Agricultural & Allied Institutions.xlsx",
+                "file_size_mb": 0.10,
+                "important_columns": ["ICAR_Serial", "Institution_Name", "University_Name", "State", "Institution_Category", "Accreditation_Grade", "Accreditation_Period", "UG_Programmes", "PG_Programmes", "PhD_Programmes"],
+                "has_official_id": True,
+                "official_id_name": "ICAR Serial Number",
+                "duplicate_ids": 0,
+                "missing_important_fields": "All 159 institutions have verified names, states, categories, and accreditation statuses.",
+                "quality_status": "PASS",
+                "review_priority": "LOW",
+                "notes": "Full national universe of 159 canonical ICAR-accredited agricultural institutions (86 SAU/DU/CAU constituent colleges, 62 affiliated colleges, 10 general university public colleges, 1 constituent college/faculty) extracted across 4 official ICAR circular lists with 1,347 accredited programmes.",
+                "data_type": "FINAL_INSTITUTE_LIST"
+            },
+            {
                 "id": "cbse_saras",
                 "name": "CBSE SARAS National Affiliation Directory",
                 "category": "School Education (CBSE Board)",
@@ -1593,6 +1629,18 @@ class DataRegistry:
                 "regulator_code": "VCI",
                 "category": "Veterinary Sciences",
                 "source_portal": "https://vci.dahd.gov.in/"
+            },
+            "icar_agricultural___allied_institutions": {
+                "authority": "Indian Council of Agricultural Research (ICAR)",
+                "regulator_code": "ICAR",
+                "category": "Agricultural & Allied Sciences",
+                "source_portal": "https://icar.org.in/"
+            },
+            "icar_agricultural_allied_institutions": {
+                "authority": "Indian Council of Agricultural Research (ICAR)",
+                "regulator_code": "ICAR",
+                "category": "Agricultural & Allied Sciences",
+                "source_portal": "https://icar.org.in/"
             }
         }
         completed = []
@@ -1693,9 +1741,9 @@ class DataRegistry:
         for p in self.pending_datasets:
             pid = p.get("id", "").lower()
             auth = p.get("authority", "").lower()
-            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe"]:
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe", "vci", "icar"]:
                 continue
-            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe"]):
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe", "veterinary", "agricultural", "icar"]):
                 continue
             item = dict(p)
             val = str(item.get("estimated_institutions", ""))
