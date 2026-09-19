@@ -1,0 +1,693 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><link href="../../App_Themes/Blue/Blue.css" type="text/css" rel="stylesheet"><link href="../../App_Themes/Blue/BlueDatepicker.css" type="text/css" rel="stylesheet"><title>
+	ITI Search
+</title><meta name="description" content="NCVT MIS"><meta name="keywords" content="NCVT,ITI,SPIU,NPIU,DGET,MOLE,DGT,State Directorate,Trade,Seat,CTS,COE,VTIP,CFI,ATI,AITT,NCVT,CITS"><meta name="author" content="Directorate General of Training, Ministry of Skill Development And Entrepreneurship, Government of India|DGT"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=EDGE"><meta http-equiv="PRAGMA" content="NO-CACHE"><link href="/Styles/Main.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <link href="/Styles/IECompatFix.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="shortcut icon" href="/Images/favicon.ico">
+    
+    <script src="/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="/Scripts/Datepicker.js"></script>
+    <script src="/Scripts/Common.js"></script>
+    <script src="/Scripts/Main.js"></script>
+
+    <link href="../../Content/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        html, body {
+            min-width: 1200px;
+        }
+    </style>
+</head>
+<body id="pageBody" class="desktop" style="font-size: 13px;">
+    <form method="post" action="./Search.aspx" id="frmMain">
+<div class="aspNetHidden">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['frmMain'];
+if (!theForm) {
+    theForm = document.frmMain;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=zQoiTf-a8dSjZDmxKIl0UM41B5v0EM7-DrQgBMD5yZmynAAXItYgQNGgEx03DCllzJomGJ3lqzngFeeHhOyO7_qFb541&amp;t=638568802745067788" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=mRqouWvBSKQbnXoSKkbcVsTKjIKzuzCSeMYkb_RzPncNkP_lXysUHmNh6-5UM5571hNFbai3DsxLsmrqJ7ixTzGSeoXADXnr0XOqPCJANVFRe-e2i79aruD-MdhERPQmChTi2A2&amp;t=7266186d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=XyimCuv1hfeW9ZRALaAUsjjVgAnsWmbGeekOTz52NdmN8VhFDBNLLYlt5F-xyjj-C1UztHHLJYi-2XlBuXCryB_K_r43D9svXf9KmFZqepQKzMZw0&amp;t=ffffffffe4ec58b9" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Nv58jh9dmoYjW3Ts9euJFKBrISLJjzrNDrwkZehcvQU0P5vnQy75XZChEXtugolkLNqQYSsMAKHp67mNSDmUjUE5LJuFwyM1hho854kpApoY5CP5DACjW5wQUpyiWQVJ9yP1bg2&amp;t=ffffffffe4ec58b9" type="text/javascript"></script>
+<script src="/WebResource.axd?d=Z06QPT5jRcDBN2KVt222avkyh5jxrQhhtSwUSqXJD41fceIGaJsLctB5Hk4R4ZWaJPzhr53X0QMAuNqMBG37zZ17wvE1&amp;t=638568802745067788" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1C1DC544">
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0">
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl12', 'frmMain', ['tctl00$cphBody$ctl00','cphBody_ctl00','tctl00$contentOverlay$ctl00','contentOverlay_ctl00'], ['ctl00$cphBody$lbState','cphBody_lbState'], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="upLoading" style="display:none;" role="status" aria-hidden="true">
+	
+                <div id="dvAjaxBG" class="layer unselectable">
+                    <span></span>
+                </div>
+            
+</div>
+        <div id="header">
+            <table>
+                <tbody><tr>
+                    <td style="width: 50px" rowspan="2">
+                        <a href="/Pages/Home.aspx">
+                            <img src="/Images/img_logo.png" alt="NCVT MIS" style="height: 50px"></a>
+                    </td>
+                    <td class="sitename" style="vertical-align: middle; width: 640px;" rowspan="2">Ministry of
+                        Skill Development
+                        And Entrepreneurship
+                    </td>
+                    <td style="text-align: right; vertical-align: top; padding-top: 2px; padding-right: 10px">
+                        <a id="lbtnFontSizeInc" class="linkblock" href="javascript:__doPostBack('ctl00$lbtnFontSizeInc','')">+A</a>
+                        <a id="lbtnFontSizeRst" class="linkblock" href="javascript:__doPostBack('ctl00$lbtnFontSizeRst','')">A</a>
+                        <a id="lbtnFontSizeDec" class="linkblock" href="javascript:__doPostBack('ctl00$lbtnFontSizeDec','')">-A</a>
+                        &nbsp;
+                        &nbsp;
+                        <a href="/Pages/Terms.aspx">Terms &amp; Conditions</a> |
+                        <a href="/Pages/PrivacyPolicy.aspx">Privacy Policy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; vertical-align: bottom; padding-bottom: 2px;">
+                        <ul class="sitelink" style="text-align: right">
+                            <li><span class="icon mail"></span>
+                                <a id="hlnkSupport" href="mailto:ncvtmis-msde@gov.in" target="_blank">Support</a></li>
+                            
+                            <li><span class="icon popup"></span><a href="https://login.ncvtmis.gov.in/MIS/PreLog/UserLogin.aspx" target="_blank">Login</a></li>
+                            <li><span class="icon help"></span>
+                                <a id="hlnkFAQ" href="/Material/NCVT_MIS_FAQ.pdf" target="_blank">FAQ</a>
+                            </li>
+                            <li><span class="icon help"></span>
+                                <a id="hlnkHelp" href="/Help/DGET-Public_ITI_User_Manual.pdf" target="_blank">Help</a>
+                            </li>
+                            <li><span class="icon help"></span>
+                                <a id="hlkSiteMap" href="../SiteMap.aspx">SiteMap</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody></table>
+            <a href="#mnuMain_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=neKVXsLFonQdba5rR_gySzgAohlDneTZn5bz9bxLoje4QRAaD8wtK6VJmvbXy-1Z1ZI6IFMcQpDTc0usKizSy5Zc2us1&amp;t=638568802745067788" width="0" height="0" style="border-width:0px;"></a><div class="menu" id="mnuMain" style="float: left;">
+	<ul class="level1 static" tabindex="0" role="menubar" style="position: relative; width: auto; float: left;">
+		<li role="menuitem" class="static" style="position: relative; float: left;"><a title="DGT Home Page" class="level1 static" href="/Pages/Home.aspx" tabindex="-1">Home</a></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:3" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">ITI</a><ul class="level2 dynamic" id="mnuMain:submenu:3" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search for ITIs." class="level2 selected dynamic" href="/Pages/ITI/Search.aspx" tabindex="-1">ITI Search</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search for ITIs and provide Feedback." class="level2 dynamic" href="/Pages/ITI/Search.aspx?feedback" tabindex="-1">Grading</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page provides Tradewise count of avaiable, occupied seats and count of ITIs." class="level2 dynamic" href="/Pages/ITI/TradeStats.aspx" tabindex="-1">Trade Statistics</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:8" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Trainee</a><ul class="level2 dynamic" id="mnuMain:submenu:8" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search for Trainees." class="level2 dynamic" href="/Pages/Trainee/Search.aspx" tabindex="-1">Trainee Search</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Trainee to verify their own profile." class="level2 dynamic" href="/Pages/Trainee/PreTrainee_Authentication.aspx" tabindex="-1">Trainee Verification</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search for Trainees." class="level2 dynamic" href="/Pages/Trainee/TraineeGrievanceAuthenticatec_BeforeHT.aspx" tabindex="-1">Trainee Verification Before HT</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Trainee to view their own profile." class="level2 dynamic" href="/Pages/Trainee/MyProfile.aspx" tabindex="-1">Trainee Profile</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to download NAC Certificate." class="level2 dynamic" href="/Pages/Trainee/NACCertificate.aspx" tabindex="-1">NAC Legacy Certificate</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to download COE Certificate." class="level2 dynamic" href="/Pages/Trainee/COECertificate.aspx" tabindex="-1">COE Certificate Download</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Trainee to view their Flexi MoU Marksheet and Certificate." class="level2 dynamic" href="/Pages/FlexiMoU/FlexiMoUMarksheetCertificate.aspx" tabindex="-1">Flexi Marksheet Certificate</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Trainee to view their Flexi MoU Semester Marksheet and Certificate." class="level2 dynamic" href="/Pages/FlexiMoU/FlexiMoUMarksheetCertificateSemesterWise.aspx" tabindex="-1">Flexi Semester Marksheet Certificate</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to download Marksheet." class="level2 dynamic" href="/Pages/Marksheet/DSTMarksheet.aspx" tabindex="-1">DST Marksheet Before 2019</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to download Certificate." class="level2 dynamic" href="/Pages/Marksheet/DSTCertificate.aspx" tabindex="-1">DST Certificate Before 2019</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to download NCIC Certificate." class="level2 dynamic" href="/Pages/Trainee/NCICCertificate.aspx" tabindex="-1">NCIC Legacy Certificate</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Trainee to view their NTC Certificate." class="level2 dynamic" href="/Pages/Trainee/NTCCertificate.aspx" tabindex="-1">NTC Legacy Certificate</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:22" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Verification</a><ul class="level2 dynamic" id="mnuMain:submenu:22" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to validate e-Certificate." class="level2 dynamic" href="/Pages/Certification/Validate.aspx" tabindex="-1">e-Certificate Verification</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search certified Trainee." class="level2 dynamic" href="/Pages/Certification/CertifiedTraineeSearch.aspx" tabindex="-1">Certified Trainee Search</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to verify Marksheet." class="level2 dynamic" href="/Pages/Marksheet/Validate.aspx" tabindex="-1">Marksheet Verification</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:27" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Instructor</a><ul class="level2 dynamic" id="mnuMain:submenu:27" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to search for Instructors." class="level2 dynamic" href="/Pages/Instructor/Search.aspx" tabindex="-1">Instructor Search</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:30" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Examiner</a><ul class="level2 dynamic" id="mnuMain:submenu:30" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page for Examiner's Registration." class="level2 dynamic" href="/Pages/Examiner/ExaminerApplicationForm.aspx" tabindex="-1">Examiner Registration</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page to activate Examiner and approve/reject Mapping." class="level2 dynamic" href="/Pages/Examiner/Validate.aspx" tabindex="-1">Examiner Activation</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page for Examiner's Login." class="level2 dynamic" href="/Pages/Examiner/ExaminerLogin.aspx" tabindex="-1">Examiner Login</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:35" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Calendar</a><ul class="level2 dynamic" id="mnuMain:submenu:35" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page provides activities with deadline of Academic Calender." class="level2 dynamic" href="/Pages/Calendar/Academic.aspx" tabindex="-1">Academic Calendar</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page provides examination schedule for different semesters and Academic Calender." class="level2 dynamic" href="/Pages/Calendar/Exam.aspx" tabindex="-1">Examination Calendar</a></li>
+		</ul></li><li role="menuitem" class="static" style="position: relative; float: left;"><a title="CFI Home" class="level1 static" href="/Pages/CFI/Home.aspx" tabindex="-1">CFI</a></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:40" role="menuitem" style="position: relative; float: left;"><a title="Help" class="popout level1 static" href="#" tabindex="-1">Help</a><ul class="level2 dynamic" id="mnuMain:submenu:40" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li class="has-popup dynamic" aria-haspopup="mnuMain:submenu:41" role="menuitem" style="position: relative;"><a title="User Manual" class="popout level2 dynamic" href="#" tabindex="-1">User Manual</a><ul class="level3 dynamic" id="mnuMain:submenu:41" style="display: none; position: absolute; top: 0px; left: 100%;">
+				<li role="menuitem" class="dynamic" style="position: relative;"><a title="Trainee Upload" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVTMIS_Trainee_Upload_UserManual(MIS-SPIU)_June2020.docx" tabindex="-1">Trainee Upload</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="ITI Dashboard" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVTMIS_ITI_Dashboard_UserManual_Apr2020_V1.0.docx" tabindex="-1">ITI Dashboard</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Trainee Verification" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVTMIS_ITI_Trainee_Verification_User%20Manual_Dec2019_V1.0.docx" tabindex="-1">Trainee Verification</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Trainee Discharge" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVTMIS_SPIU_Trainee_Discharge_User%20Manual_MAR2020_V1.1.docx" tabindex="-1">Trainee Discharge</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Forget Password" class="level3 dynamic" href="/MISFiles/UserManuals/USER_MANUAL_FORGOT_PASSWORD.docx" tabindex="-1">Forget Password</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Instructor" class="level3 dynamic" href="/MISFiles/UserManuals/DGT_Instructor(MIS)_UserManual_June2020.docx" tabindex="-1">Instructor</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="MIS-Nodal Marks Create" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVT_ITI(MIS-Nodal%20Marks%20Create)_UserManual_Jan2021.docx" tabindex="-1">MIS-Nodal Marks Create</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="MIS-Nodal Marks Edit" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVT_ITI(MIS-Nodal%20Marks%20Edit)_UserManual_Jan2021.docx" tabindex="-1">MIS-Nodal Marks Edit</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="MIS-Nodal Marks Approve" class="level3 dynamic" href="/MISFiles/UserManuals/DGET_NCVT_ITI(MIS-Nodal%20Marks%20Approve)_UserManual_Jan2021.docx" tabindex="-1">MIS-Nodal Marks Approve</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Examiner User Maunal" class="level3 dynamic" href="/MISFiles/UserManuals/NCVT_MIS_Examiner_UserManual.docx" tabindex="-1">Examiner User Maunal</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Grievance User Maunal" class="level3 dynamic" href="/MISFiles/UserManuals/Grievance(Public).docx" tabindex="-1">Grievance User Maunal</a></li>
+			</ul></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:55" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Dashboard</a><ul class="level2 dynamic" id="mnuMain:submenu:55" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="DGT Reporting Dashboard" class="level2 dynamic" href="/Pages/Dashboard/DashboardMain.aspx" tabindex="-1">DGT Reporting Dashboard</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Admitted Trainee Dashboard" class="level2 dynamic" href="/Pages/Dashboard/AdmittedTraineeDashboard.aspx" tabindex="-1">Admitted Trainee Dashboard</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Instructor Dashboard" class="level2 dynamic" href="/Pages/Dashboard/InstructorDashboard.aspx" tabindex="-1">Instructor Dashboard</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Annual Result Dashboard" class="level2 dynamic" href="/Pages/Dashboard/AnnualResultDashboard.aspx" tabindex="-1">Annual Result Dashboard</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Semester Result Dashboard" class="level2 dynamic" href="/Pages/Dashboard/SemesterResultDashboard.aspx" tabindex="-1">Semester Result Dashboard</a></li>
+		</ul></li><li class="has-popup static" aria-haspopup="mnuMain:submenu:62" role="menuitem" style="position: relative; float: left;"><a class="popout level1 static" href="#" tabindex="-1">Complaint Tool</a><ul class="level2 dynamic" id="mnuMain:submenu:62" style="display: none; position: absolute; top: 100%; left: 0px;">
+			<li role="menuitem" class="dynamic" style="position: relative;"><a title="Complaint Tool" class="level2 dynamic" href="http://help.ncvtmis.gov.in/sm/ess.do" tabindex="-1">Complaint Tool</a></li><li class="has-popup dynamic" aria-haspopup="mnuMain:submenu:64" role="menuitem" style="position: relative;"><a title="Helpdesk" class="popout level2 dynamic" href="#" tabindex="-1">Helpdesk</a><ul class="level3 dynamic" id="mnuMain:submenu:64" style="display: none; position: absolute; top: 0px; left: 100%;">
+				<li role="menuitem" class="dynamic" style="position: relative;"><a title="DGET SOP HelpDesk" class="level3 dynamic" href="/MISFiles/Helpdesk/DGET_SOP_HelpDesk%20Ticket_V3.0.docx" tabindex="-1">DGET SOP HelpDesk</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="FAQs" class="level3 dynamic" href="/MISFiles/Helpdesk/FAQs.docx" tabindex="-1">FAQs</a></li>
+			</ul></li><li class="has-popup dynamic" aria-haspopup="mnuMain:submenu:68" role="menuitem" style="position: relative;"><a class="popout level2 dynamic" href="#" tabindex="-1">Grievance</a><ul class="level3 dynamic" id="mnuMain:submenu:68" style="display: none; position: absolute; top: 0px; left: 100%;">
+				<li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows Authenticate Trainee Details." class="level3 dynamic" href="/Pages/Trainee/traineeGrievanceAuthenticate.aspx" tabindex="-1">Log Grievance</a></li><li role="menuitem" class="dynamic" style="position: relative;"><a title="Page allows View Trainee Grievance Details." class="level3 dynamic" href="/Pages/Trainee/ViewGrievance.aspx" tabindex="-1">Grievance View</a></li>
+			</ul></li>
+		</ul></li>
+	</ul>
+</div><div style="clear: left;"></div><a id="mnuMain_SkipLink"></a>
+        </div>
+        <div id="body">
+            
+ <style>
+        .blank {
+     background-image: url(/Images/Nothing.png); 
+     background-position: bottom; 
+     border-color: #a9a9a9;  
+}
+    </style>
+
+    <span id="name" class="hidden">used for storing state/distrinct name</span>
+    <h1>ITI Search</h1>
+    <div class="accordian">
+        <h2>Enter Search Criteria</h2>
+        <div>
+
+            <table class="form">
+                <tbody><tr>
+                    <td></td>
+                    <th>Exam System<span class="req_span">*</span></th>
+
+                    <td style="text-align: left">
+                       
+
+                                <select name="ctl00$cphBody$ddlScheme" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cphBody$ddlScheme\',\'\')', 0)" id="cphBody_ddlScheme" title="Exam System" class="required">
+	<option selected="selected" value="-1">-Select-</option>
+	<option value="1">Annual</option>
+	<option value="0">Semester</option>
+
+</select>
+                           
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!--Added by Arun for Annual-->
+                <tr>
+                    <td style="width: 5%"></td>
+                    <th style="width: 20%">State</th>
+                    <td style="width: 25%">
+                        <select size="4" name="ctl00$cphBody$lbState" multiple="multiple" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cphBody$lbState\',\'\')', 0)" id="cphBody_lbState" title="State" class="search">
+	<option value="-1" title="-Select-">-Select-</option>
+	<option value="35" title="ANDAMAN AND NICOBAR ISLANDS">ANDAMAN AND NICOBAR ISLANDS</option>
+	<option value="28" title="ANDHRA PRADESH">ANDHRA PRADESH</option>
+	<option value="12" title="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+	<option value="18" title="ASSAM">ASSAM</option>
+	<option value="10" title="BIHAR">BIHAR</option>
+	<option value="4" title="CHANDIGARH">CHANDIGARH</option>
+	<option value="22" title="CHHATTISGARH">CHHATTISGARH</option>
+	<option value="26" title="DADRA AND NAGAR HAVELI">DADRA AND NAGAR HAVELI</option>
+	<option value="25" title="DAMAN AND DIU">DAMAN AND DIU</option>
+	<option value="7" title="DELHI">DELHI</option>
+	<option value="30" title="GOA">GOA</option>
+	<option value="24" title="GUJARAT">GUJARAT</option>
+	<option value="6" title="HARYANA">HARYANA</option>
+	<option value="2" title="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+	<option value="1" title="JAMMU AND KASHMIR">JAMMU AND KASHMIR</option>
+	<option value="20" title="JHARKHAND">JHARKHAND</option>
+	<option value="29" title="KARNATAKA">KARNATAKA</option>
+	<option value="32" title="KERALA">KERALA</option>
+	<option value="38" title="LADAKH">LADAKH</option>
+	<option value="31" title="LAKSHADWEEP">LAKSHADWEEP</option>
+	<option value="23" title="MADHYA PRADESH">MADHYA PRADESH</option>
+	<option value="27" title="MAHARASHTRA">MAHARASHTRA</option>
+	<option value="14" title="MANIPUR">MANIPUR</option>
+	<option value="17" title="MEGHALAYA">MEGHALAYA</option>
+	<option value="15" title="MIZORAM">MIZORAM</option>
+	<option value="13" title="NAGALAND">NAGALAND</option>
+	<option value="21" title="ODISHA">ODISHA</option>
+	<option value="34" title="PUDUCHERRY">PUDUCHERRY</option>
+	<option value="3" title="PUNJAB">PUNJAB</option>
+	<option value="8" title="RAJASTHAN">RAJASTHAN</option>
+	<option value="11" title="SIKKIM">SIKKIM</option>
+	<option value="33" title="TAMIL NADU">TAMIL NADU</option>
+	<option value="36" title="TELANGANA">TELANGANA</option>
+	<option value="39" title="THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU">THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU</option>
+	<option value="16" title="TRIPURA">TRIPURA</option>
+	<option value="9" title="UTTAR PRADESH">UTTAR PRADESH</option>
+	<option value="5" title="UTTARAKHAND">UTTARAKHAND</option>
+	<option value="19" title="WEST BENGAL">WEST BENGAL</option>
+
+</select>
+                    </td>
+                    <th style="width: 15%">District</th>
+                    <td>
+                        <div id="cphBody_ctl00">
+	
+                                <select size="4" name="ctl00$cphBody$lbDistrict" multiple="multiple" id="cphBody_lbDistrict" title="District" class="search">
+		<option value="-1">-Select State-</option>
+
+	</select>
+                            
+</div>
+                    </td>
+                    <td style="width: 5%"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th>ITI Name</th>
+                    <td>
+                        <input name="ctl00$cphBody$txtITI" type="text" id="cphBody_txtITI" title="ITI Name" class="search"><sub>Use wild card(*) for partial search</sub>
+                    </td>
+                    <th rowspan="2">Trade</th>
+                    <td rowspan="2">
+                        <select size="5" name="ctl00$cphBody$lbTrade" multiple="multiple" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cphBody$lbTrade\',\'\')', 0)" id="cphBody_lbTrade" title="Trade" class="search" maxlength="50" style="width:300px;">
+	<option value="-1">-Select Exam System-</option>
+
+</select>
+                    </td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th>Women/Minority Category</th>
+                    <td>
+                        <select name="ctl00$cphBody$ddlOtherCategory" id="cphBody_ddlOtherCategory" class="search">
+	<option value="-1" title="-Select-">-Select-</option>
+	<option value="P">Partial Women ITI</option>
+	<option value="F">Full Women ITI</option>
+	<option value="PWD">Person With Disability</option>
+	<option value="1" title="Buddhist">Buddhist</option>
+	<option value="2" title="Christian">Christian</option>
+	<option value="3" title="Jain">Jain</option>
+	<option value="4" title="Muslim">Muslim</option>
+	<option value="7" title="NA">NA</option>
+	<option value="8" title="Others">Others</option>
+	<option value="5" title="Parsi">Parsi</option>
+	<option value="6" title="Sikh">Sikh</option>
+	<option value="9" title="To Be Filled">To Be Filled</option>
+
+</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th>ITI Type
+                    </th>
+                    <td>
+                        <span class="search checkbox"><input id="cphBody_chkGov" type="checkbox" name="ctl00$cphBody$chkGov"><label for="cphBody_chkGov">Government</label></span>
+                        <span class="search checkbox"><input id="cphBody_chkPriv" type="checkbox" name="ctl00$cphBody$chkPriv"><label for="cphBody_chkPriv">Private</label></span>
+                    </td>
+                    <th>ITI Location
+                    </th>
+                    <td>
+                        <span class="search checkbox"><input id="cphBody_chkRural" type="checkbox" name="ctl00$cphBody$chkRural"><label for="cphBody_chkRural">Rural</label></span>
+                        <span class="search checkbox"><input id="cphBody_chkUrban" type="checkbox" name="ctl00$cphBody$chkUrban"><label for="cphBody_chkUrban">Urban</label></span>
+                    </td>
+
+
+
+
+
+                   
+                  
+
+
+
+
+                </tr>
+
+                <tr>
+                    <td></td>
+
+                     <th>Status
+                    </th>
+                    <td>
+                       
+                        <span class="search checkbox"><input id="cphBody_ChkInactive" type="checkbox" name="ctl00$cphBody$ChkInactive"><label for="cphBody_ChkInactive">Inactive</label></span>
+                    </td>
+
+                    </tr>
+
+
+
+                <tr>
+                    <td></td>
+                    <th>MIS ITI Code</th>
+                    <td>
+                        <input name="ctl00$cphBody$txtCode" type="text" maxlength="11" id="cphBody_txtCode" class="search"></td>
+
+                    <th>Css Scheme</th>
+
+                    <td>
+                        <select name="ctl00$cphBody$ddlITIScheme" id="cphBody_ddlITIScheme" title="Css Scheme" class="search">
+	<option value="-1" title="-Select-">-Select-</option>
+	<option value="1" title="Covered Under VTIP">Covered Under VTIP</option>
+	<option value="2" title="ESDI">ESDI</option>
+	<option value="3" title="Model ITI">Model ITI</option>
+	<option value="4" title="PPPP">PPPP</option>
+	<option value="5" title="LWE">LWE</option>
+	<option value="6" title="Strive">Strive</option>
+
+</select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="center">
+                        <span id="cphBody_errormsg" class="req_span">All fields marked with * are mandatory.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="center">
+                        <input type="submit" name="ctl00$cphBody$btnSearch" value="Search" onclick="return OnSearch();" id="cphBody_btnSearch" title="Search">
+                        <input type="button" name="ctl00$cphBody$btnCancel" value="Clear" onclick="return RefreshPage(true);__doPostBack('ctl00$cphBody$btnCancel','')" id="cphBody_btnCancel" title="Clear">
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        AddToolTip("#" + "cphBody_ddlScheme", "Select Exam System in which you want to search ITIs.");
+        AddToolTip("#" + "cphBody_lbState", "Select State in which you want to search ITIs.");
+        AddToolTip("#" + "cphBody_lbDistrict", "Select District in which you want to search ITIs.");
+        AddToolTip("#" + "cphBody_lbTrade", "Select Trade for which you want to search ITIs.");
+        AddToolTip("#" + "cphBody_txtITI", "Enter partial ITI name for search. You can use wild cards (*) as well.");
+        AddToolTip("#" + "cphBody_chkGov", "Check to search for Government ITIs only.");
+        AddToolTip("#" + "cphBody_chkPriv", "Check to search for Private ITIs only.");
+        AddToolTip("#" + "cphBody_chkRural", "Check to search for Rural ITIs only.");
+        AddToolTip("#" + "cphBody_chkUrban", "Check to search for Urban ITIs only.");
+        AddToolTip("#" + "cphBody_ddlOtherCategory", "Select Women/Minority Category to search for ITIs.");
+        AddToolTip("#" + "cphBody_txtCode", "Enter MIS ITI Code.");
+
+        AddToolTip("#" + "cphBody_btnSearch", "Click to search for ITI.");
+        AddToolTip("#" + "cphBody_btnCancel", "Click to reset page.");
+        function OnSearch() {
+            CheckMandatory("");
+            
+            var txtITICode = "#" + "cphBody_txtCode";
+            if (!Validator.IsValidITICode($(txtITICode).val())) {
+                AddMessage("Please enter valid ITI Code.");
+                MarkBad(txtITICode);
+            }
+            else if (!Validator.IsBlank($(txtITICode).val()) > 0) {
+                /*Added By Ravi Start(13-04-2020)*/
+                document.getElementById("cphBody_ddlScheme").className = 'blank';
+                /*Added By Ravi End(13-04-2020)*/
+                window.location.href = "/Pages/ITI/Detail.aspx?code=" + $(txtITICode).val();
+                return false;
+            }
+            if (HasError()) {
+                ShowBanner(bannerError);
+                return false;
+            }
+            return CheckOneMandatoryWithRequired("search");  //Added by Arun
+            //return CheckOneMandatory("search"); commented by Arun
+        }
+
+        function ShowTradePopup(itiID, name, IsAnnual) {
+            var properties = "height=500,width=800,left=100px,top=100px,location=no,menubar=no,resizable=0,scrollbars=yes,status=no,titlebar=no";
+            var url = "/Pages/ITI/TradeDetails.aspx" + "?iti=" + itiID.toString() + "&IsAnnual=" + IsAnnual;
+            OpenPopup(url, properties);
+            $("#name").text(name);
+            return false;
+        }
+
+    </script>
+
+    <style type="text/css">
+        @-moz-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .blink-image {
+            -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
+            -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+            -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
+            animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+        }
+    </style>
+
+        </div>
+        <table class="frame">
+            <tbody><tr>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody></table>
+        <div id="footer">
+            <table class="frame">
+
+                <tbody><tr>
+                    <th style="width: auto; padding-left: 10px">© 2015 Ministry of Skill Development And Entrepreneurship, Government of India.</th>
+                    <td style="padding-right: 5px; text-align: right">
+                        <span id="tooltip"></span>
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class="frame">
+                <tbody><tr>
+                   
+                    <td style="width: auto; padding-left: 10px"> Suggested browser Microsoft Edge, Chrome or Safari only.</td>
+                  
+                    <td style="padding-right: 5px; text-align: right">
+                        <span id="lblHits">Total Hits : 5,850,536 | Yearly Hits : 4,039,454 | Monthly Hits : 135,191</span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div id="banner" class="warn" onclick="HideBanner();" title="Click/Press Esc to close">
+        </div>
+        <div id="overlay_bg">
+        </div>
+        <div id="confirm" class="round-corner unselectable hidden">
+            <table class="frame">
+                <tbody><tr>
+                    <td style="height: 40px; vertical-align: top; text-align: center">
+                        <h4></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <input id="btnYes" type="button" class="button" value="Yes">
+                        <input id="btnNo" type="button" class="button" value="No" onclick="return HideConfirm();">
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div id="overlay" class="round-corner">
+            <table>
+                <tbody><tr>
+                    <td style="text-align: right">
+                        <a href="#" class="close" onclick="HideOverlay(); return false;">x</a>
+                        <div id="overlay-content" style="text-align: left">
+                            
+    <div id="contentOverlay_ctl00">
+	
+            <div class="panel">
+                <h2>
+                    <span id="contentOverlay_lblheading"></span>
+                </h2>
+
+                <table class="form">
+                    <tbody><tr id="contentOverlay_trRating" style="display: none">
+		<td style="width: 40%;">
+                            <span class="icon check"></span>
+                            <a id="contentOverlay_hlnkFeedback">Click here to submit ratings for ITI</a>
+                        </td>
+		<td style="text-align: right">
+                            
+                            <a id="contentOverlay_hlnkViewFeedback">Click here to view detailed ratings for ITI</a>
+                        </td>
+	</tr>
+	
+                    
+
+                    
+
+                    <tr id="contentOverlay_trRatingPanel">
+		<th class="panel">
+                            
+                            <div id="contentOverlay_ucFinalRating_pnlRating" class="rating shadow readonly" title="0 star">
+			
+    <table>
+        <tbody><tr>
+            <td style="padding-left: 5%">
+                <input type="hidden" name="ctl00$contentOverlay$ucFinalRating$hdnRating" id="contentOverlay_ucFinalRating_hdnRating" value="0">
+                <input type="hidden" name="ctl00$contentOverlay$ucFinalRating$hdnStarsAllowed" id="contentOverlay_ucFinalRating_hdnStarsAllowed" value="0">
+                <input type="hidden" name="ctl00$contentOverlay$ucFinalRating$hdnWeightage" id="contentOverlay_ucFinalRating_hdnWeightage" value="0">
+            </td>
+            <td style="width: 10%">
+                <span id="contentOverlay_ucFinalRating_lblDisplayOrder" class="text" style="font-weight:bold;"></span>
+                Parameter:
+            </td> 
+            <td style="width: 85%" colspan="3">
+                <span id="contentOverlay_ucFinalRating_lblDescription" class="text">Final Rating of ITI</span>
+                <a id="contentOverlay_ucFinalRating_ahelp">
+                    <span class="icon help"></span>
+                </a>
+            </td>
+          
+        </tr>
+        
+        <tr>
+            <td></td>
+            <th id="contentOverlay_ucFinalRating_thStar" style="width:10%">Select Star:</th>
+			
+                <td id="contentOverlay_ucFinalRating_trRate" style="text-align: left; width: 50%"><span class="blocked unrated">1</span><span class="blocked unrated">2</span><span class="blocked unrated">3</span><span class="blocked unrated">4</span><span class="blocked unrated">5</span><span class="blocked unrated">6</span><span class="blocked unrated">7</span><span class="blocked unrated">8</span><span class="blocked unrated">9</span><span class="blocked unrated">10</span></td>
+			
+            <td style="padding-left: 5%"></td>
+          <td></td>
+        </tr>
+        
+    </tbody></table>
+
+		</div>
+
+
+                        </th>
+	</tr>
+	
+                    
+                </tbody></table>
+            </div>
+        
+</div>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        
+        
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+OnEachCallBack();ResetScrollPosition();//]]>
+</script>
+<script type="text/javascript">new Sys.WebForms.Menu({ element: 'mnuMain', disappearAfter: 1000, orientation: 'horizontal', tabIndex: 0, disabled: false });</script>
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+WebForm_AutoFocus('cphBody_lbState');Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("upLoading"));
+});
+//]]>
+</script>
+</form>
+    <script type="text/javascript">
+    document.onkeypress = function (event) {
+
+        event = (event || window.event);
+
+        if (event.keyCode == 123) {
+
+            return false;
+
+        }
+
+    }
+
+    document.onmousedown = function (event) {
+
+        event = (event || window.event);
+
+        if (event.keyCode == 123) {
+
+            return false;
+
+        }
+
+    }
+
+    document.onkeydown = function (event) {
+
+        event = (event || window.event);
+
+        if (event.keyCode == 123) {
+
+            return false;
+
+        }
+
+    }
+
+    window.oncontextmenu = function () {
+
+        return false;
+
+    }
+
+    $(document).keydown(function (event) {
+
+        if (event.keyCode == 123) {
+
+            return false;
+
+        }
+
+        else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)
+
+            || (event.ctrlKey && event.shiftKey && event.keyCode == 67)) {
+
+            return false;
+
+        }
+
+    });
+    </script>
+
+<script type="text/javascript">
+    $("body").fadeIn(500);
+</script>
+
+</body></html>

@@ -25,12 +25,12 @@
     "id": "ncvet",
     "sector": "Vocational, Skill & ITIs",
     "authority": "NCVET / DGT MIS",
-    "status": "NOT STARTED",
+    "status": "COMPLETED",
     "priority": "HIGH",
-    "estimated_institutions": "Count not established",
-    "collected_count": 0,
-    "notes": "DGT MIS uses ASP.NET ViewState forms without public REST endpoints.",
-    "action_plan": "Automate state/district dropdown traversal using Playwright."
+    "estimated_institutions": "9,437",
+    "collected_count": 9437,
+    "notes": "Full national roster of 9,437 canonical physical Industrial Training Institutes (2,654 Government, 6,783 Private) extracted, deduplicated, and validated from the official NCVT MIS portal across 32 States/UTs and 553 districts.",
+    "action_plan": "Validated and integrated into Institutes List (NCVET DGT Vocational & ITI Institutions.xlsx) with 100% official DGT MIS ITI codes."
   },
   {
     "id": "vci",

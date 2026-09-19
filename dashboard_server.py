@@ -691,6 +691,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "ncvet" in fname or "dgt" in fname or "iti" in fname or "vocational" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -724,6 +732,8 @@ class DataRegistry:
             return "Veterinary Sciences"
         elif "icar" in fn or "agricultural" in fn:
             return "Agricultural & Allied Sciences"
+        elif "ncvet" in fn or "dgt" in fn or "iti" in fn or "vocational" in fn:
+            return "Vocational, Skill & ITIs"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -761,6 +771,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["vci canonical id", "canonical_id", "registration / vci code", "vci_code"])
         elif "icar" in fn_lower or "agricultural" in fn_lower:
             return self._find_matching_col(cols, ["icar_serial", "icar code", "official id"])
+        elif "ncvet" in fn_lower or "dgt" in fn_lower or "iti" in fn_lower or "vocational" in fn_lower:
+            return self._find_matching_col(cols, ["iti_code", "iti code", "official_code", "institute_code"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -1655,6 +1667,18 @@ class DataRegistry:
                 "regulator_code": "ICAR",
                 "category": "Agricultural & Allied Sciences",
                 "source_portal": "https://icar.org.in/"
+            },
+            "ncvet_dgt_vocational___iti_institutions": {
+                "authority": "NCVET / DGT (Ministry of Skill Development & Entrepreneurship)",
+                "regulator_code": "NCVET/DGT",
+                "category": "Vocational, Skill & ITIs",
+                "source_portal": "https://ncvtmis.gov.in/"
+            },
+            "ncvet_dgt_vocational_iti_institutions": {
+                "authority": "NCVET / DGT (Ministry of Skill Development & Entrepreneurship)",
+                "regulator_code": "NCVET/DGT",
+                "category": "Vocational, Skill & ITIs",
+                "source_portal": "https://ncvtmis.gov.in/"
             }
         }
         completed = []
@@ -1755,9 +1779,9 @@ class DataRegistry:
         for p in self.pending_datasets:
             pid = p.get("id", "").lower()
             auth = p.get("authority", "").lower()
-            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe", "vci", "icar"]:
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe", "vci", "icar", "ncvet", "dgt"]:
                 continue
-            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe", "veterinary", "agricultural", "icar"]):
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe", "veterinary", "agricultural", "icar", "ncvet", "dgt", "vocational", "skill"]):
                 continue
             item = dict(p)
             val = str(item.get("estimated_institutions", ""))

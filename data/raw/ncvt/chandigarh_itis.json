@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "iti_code": "GU04000001",
+    "name": "Government Industrial Training Institute for Women",
+    "management_type": "Govt.",
+    "location": "Urban",
+    "address": "Sector 11-C Chandigarh",
+    "district": "CHANDIGARH",
+    "state": "CHANDIGARH",
+    "trades": "10",
+    "seats": "496",
+    "trainees": "0",
+    "scheme": "PPPP",
+    "file_ref_no": "DGET-6/0/0/0 - TC",
+    "final_grading": "Grading",
+    "instructor_count": "23",
+    "source_url": "https://ncvtmis.gov.in/Pages/ITI/Search.aspx",
+    "extraction_date": "2026-09-18"
+  }
+]

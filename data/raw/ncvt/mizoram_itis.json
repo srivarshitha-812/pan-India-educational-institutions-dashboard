@@ -1,0 +1,40 @@
+[
+  {
+    "id": "85",
+    "iti_code": "GU15000001",
+    "name": "Govt Industrial Training Institute, Aizawl",
+    "management_type": "Govt.",
+    "location": "Urban",
+    "address": "ITI Veng, Aizawl, Mizoram",
+    "district": "AIZAWL",
+    "state": "MIZORAM",
+    "trades": "17",
+    "seats": "524",
+    "trainees": "0",
+    "scheme": "Covered Under VTIP,ESDI,Strive",
+    "file_ref_no": "DGET-6/0/28/83 - TC",
+    "final_grading": "Grading",
+    "instructor_count": "22",
+    "source_url": "https://ncvtmis.gov.in/Pages/ITI/Search.aspx",
+    "extraction_date": "2026-09-18"
+  },
+  {
+    "id": "86",
+    "iti_code": "GU15000002",
+    "name": "Govt Industrial Training Institute, Lunglei",
+    "management_type": "Govt.",
+    "location": "Urban",
+    "address": "Lunglei",
+    "district": "LUNGLEI",
+    "state": "MIZORAM",
+    "trades": "6",
+    "seats": "136",
+    "trainees": "0",
+    "scheme": "ESDI,PPPP",
+    "file_ref_no": "",
+    "final_grading": "Grading",
+    "instructor_count": "5",
+    "source_url": "https://ncvtmis.gov.in/Pages/ITI/Search.aspx",
+    "extraction_date": "2026-09-18"
+  }
+]
