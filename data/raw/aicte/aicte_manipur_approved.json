@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "aicte_id": "1-43661059133",
+    "name": "CENTRAL INSTITUTE OF PETROCHEMICALS ENGINEERING & TECHNOLOGY (CIPET)",
+    "address": "INDUSTRIAL ESTATE TAKYELPAT",
+    "district": "IMPHAL WEST",
+    "institution_type": "Government",
+    "women_only": "N",
+    "minority": "N",
+    "permanent_id": "1-500930171",
+    "state": "Manipur",
+    "academic_year": "2024-2025",
+    "source_url": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php",
+    "collection_date": "2026-09-19",
+    "verification_status": "Verified Official Record - AICTE Portal"
+  },
+  {
+    "aicte_id": "1-43661032170",
+    "name": "NATIONAL INSTITUTE OF ELECTRONICS AND INFORMATION TECHNOLOGY IMPHAL",
+    "address": "AKAMPAT,IMPHAL (E)-795001",
+    "district": "IMPHAL EAST",
+    "institution_type": "Government",
+    "women_only": "N",
+    "minority": "N",
+    "permanent_id": "1-2863798081",
+    "state": "Manipur",
+    "academic_year": "2024-2025",
+    "source_url": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php",
+    "collection_date": "2026-09-19",
+    "verification_status": "Verified Official Record - AICTE Portal"
+  },
+  {
+    "aicte_id": "1-43663308586",
+    "name": "GOVERNMENT POLYTECHNIC",
+    "address": "TAKYELPAT, IMPHAL",
+    "district": "IMPHAL WEST",
+    "institution_type": "Government",
+    "women_only": "N",
+    "minority": "N",
+    "permanent_id": "1-848846411",
+    "state": "Manipur",
+    "academic_year": "2024-2025",
+    "source_url": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php",
+    "collection_date": "2026-09-19",
+    "verification_status": "Verified Official Record - AICTE Portal"
+  },
+  {
+    "aicte_id": "1-43655015203",
+    "name": "MANIPUR INSTITUTE OF TECHNOLOGY",
+    "address": "TAKYELPAT, IMPHAL",
+    "district": "IMPHAL WEST",
+    "institution_type": "Government",
+    "women_only": "N",
+    "minority": "N",
+    "permanent_id": "1-480586901",
+    "state": "Manipur",
+    "academic_year": "2024-2025",
+    "source_url": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php",
+    "collection_date": "2026-09-19",
+    "verification_status": "Verified Official Record - AICTE Portal"
+  }
+]

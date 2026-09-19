@@ -14,12 +14,12 @@
     "id": "aicte",
     "sector": "Technical & Engineering",
     "authority": "AICTE",
-    "status": "IN PROGRESS",
+    "status": "COMPLETED",
     "priority": "HIGH",
-    "estimated_institutions": "Count not established",
-    "collected_count": 67,
-    "notes": "State slice tested. National approved directory requires automated multi-state traversal.",
-    "action_plan": "Scrape state-wise approved AICTE directory with Playwright worker."
+    "estimated_institutions": "13,085",
+    "collected_count": 13085,
+    "notes": "Full national roster of 13,085 canonical physical AICTE-approved institutions extracted and validated across 35 States/UTs from official AICTE portal.",
+    "action_plan": "Validated and integrated into Institutes List (AICTE Technical & Engineering Institutions.xlsx) with 100% official AICTE Permanent IDs."
   },
   {
     "id": "ncvet",

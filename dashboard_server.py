@@ -699,6 +699,14 @@ class DataRegistry:
             except Exception:
                 pass
             return pd.read_excel(file_path)
+        elif "aicte" in fname or "technical" in fname or "engineering" in fname:
+            try:
+                xls = pd.ExcelFile(file_path)
+                if "Institutions Roster" in xls.sheet_names:
+                    return pd.read_excel(file_path, sheet_name="Institutions Roster")
+            except Exception:
+                pass
+            return pd.read_excel(file_path)
         else:
             return pd.read_excel(file_path)
 
@@ -734,6 +742,8 @@ class DataRegistry:
             return "Agricultural & Allied Sciences"
         elif "ncvet" in fn or "dgt" in fn or "iti" in fn or "vocational" in fn:
             return "Vocational, Skill & ITIs"
+        elif "aicte" in fn or "technical" in fn or "engineering" in fn:
+            return "Technical & Engineering"
         elif "school" in fn or "udise" in fn:
             return "School Education"
         elif "cbse" in fn:
@@ -773,6 +783,8 @@ class DataRegistry:
             return self._find_matching_col(cols, ["icar_serial", "icar code", "official id"])
         elif "ncvet" in fn_lower or "dgt" in fn_lower or "iti" in fn_lower or "vocational" in fn_lower:
             return self._find_matching_col(cols, ["iti_code", "iti code", "official_code", "institute_code"])
+        elif "aicte" in fn_lower or "technical" in fn_lower or "engineering" in fn_lower:
+            return self._find_matching_col(cols, ["permanent_id", "permanent id", "aicte_id", "aicte id", "official id"])
         elif "nursing" in fn_lower or "inc" in fn_lower:
             # Nursing source dataset does NOT contain an official regulatory INC institution code
             # inc_institution_key is a deduplication composite key, NOT an official regulatory ID
@@ -1679,6 +1691,18 @@ class DataRegistry:
                 "regulator_code": "NCVET/DGT",
                 "category": "Vocational, Skill & ITIs",
                 "source_portal": "https://ncvtmis.gov.in/"
+            },
+            "aicte_technical___engineering_institutions": {
+                "authority": "All India Council for Technical Education (AICTE)",
+                "regulator_code": "AICTE",
+                "category": "Technical & Engineering",
+                "source_portal": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php"
+            },
+            "aicte_technical_engineering_institutions": {
+                "authority": "All India Council for Technical Education (AICTE)",
+                "regulator_code": "AICTE",
+                "category": "Technical & Engineering",
+                "source_portal": "https://facilities.aicte-india.org/dashboard/pages/approvedinstitutes.php"
             }
         }
         completed = []
@@ -1779,9 +1803,9 @@ class DataRegistry:
         for p in self.pending_datasets:
             pid = p.get("id", "").lower()
             auth = p.get("authority", "").lower()
-            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe", "vci", "icar", "ncvet", "dgt"]:
+            if pid in completed_codes or pid in completed_ids or pid in ["pci", "bci", "nch", "inc", "nmc", "ugc", "coa", "rci", "ncism", "dental", "dci", "ndc", "ncte", "aishe", "vci", "icar", "ncvet", "dgt", "aicte"]:
                 continue
-            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe", "veterinary", "agricultural", "icar", "ncvet", "dgt", "vocational", "skill"]):
+            if any(code in auth for code in ["pharmacy council", "bar council", "homoeopathy", "nursing council", "medical commission", "ugc", "architecture", "rehabilitation", "dental", "teacher education", "ncte", "aishe", "veterinary", "agricultural", "icar", "ncvet", "dgt", "vocational", "skill", "aicte", "technical education"]):
                 continue
             item = dict(p)
             val = str(item.get("estimated_institutions", ""))
