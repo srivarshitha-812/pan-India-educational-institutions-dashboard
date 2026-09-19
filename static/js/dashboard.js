@@ -476,32 +476,7 @@ class DashboardApp {
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              position: window.innerWidth < 768 ? 'bottom' : 'right',
-              labels: {
-                color: '#cbd5e1',
-                boxWidth: 12,
-                boxHeight: 12,
-                padding: 12,
-                font: { size: 11, family: 'Inter', weight: '500' },
-                generateLabels: (chart) => {
-                  const data = chart.data;
-                  if (data.labels.length && data.datasets.length) {
-                    return data.labels.map((label, i) => {
-                      const value = data.datasets[0].data[i] || 0;
-                      const fill = data.datasets[0].backgroundColor[i];
-                      return {
-                        text: label,
-                        fillStyle: fill,
-                        strokeStyle: fill,
-                        lineWidth: 0,
-                        hidden: isNaN(value) || chart.getDatasetMeta(0).data[i].hidden,
-                        index: i
-                      };
-                    });
-                  }
-                  return [];
-                }
-              }
+              display: false // Dedicated responsive HTML legend
             },
             tooltip: {
               callbacks: {
@@ -512,6 +487,47 @@ class DashboardApp {
           cutout: '66%'
         }
       });
+
+      // Render custom responsive HTML legend for all 16 categories
+      const legendContainer = document.getElementById('categoryChartLegend');
+      if (legendContainer) {
+        legendContainer.innerHTML = catLabels.map((cat, i) => {
+          const color = catColors[i];
+          const val = catValues[i] || 0;
+          return `
+            <div class="cat-legend-item" data-index="${i}" title="${cat}: ${val.toLocaleString('en-IN')} institutions">
+              <span class="cat-legend-dot" style="background-color: ${color};"></span>
+              <span class="cat-legend-label">${cat}</span>
+            </div>
+          `;
+        }).join('');
+
+        // Interactive slice highlighting and toggle visibility
+        legendContainer.querySelectorAll('.cat-legend-item').forEach(item => {
+          const idx = parseInt(item.getAttribute('data-index'), 10);
+          
+          item.addEventListener('click', () => {
+            const isVisible = this.categoryChart.getDataVisibility(idx);
+            this.categoryChart.toggleDataVisibility(idx);
+            this.categoryChart.update();
+            item.classList.toggle('hidden', isVisible);
+          });
+
+          item.addEventListener('mouseenter', () => {
+            if (this.categoryChart && this.categoryChart.getDataVisibility(idx)) {
+              this.categoryChart.setActiveElements([{ datasetIndex: 0, index: idx }]);
+              this.categoryChart.update();
+            }
+          });
+
+          item.addEventListener('mouseleave', () => {
+            if (this.categoryChart) {
+              this.categoryChart.setActiveElements([]);
+              this.categoryChart.update();
+            }
+          });
+        });
+      }
     }
 
     // Top 10 States Horizontal Bar Chart

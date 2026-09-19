@@ -654,6 +654,113 @@ body.sidebar-drawer-open {
 }
 
 /* --------------------------------------------------------------------------
+   Category Donut Chart & Legend Component
+   -------------------------------------------------------------------------- */
+.category-chart-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-chart-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  width: 100%;
+  min-height: 280px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.category-chart-canvas-box {
+  flex: 0 0 170px;
+  width: 170px;
+  height: 240px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-chart-legend {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 10px;
+  padding: 4px 0;
+  box-sizing: border-box;
+}
+
+.cat-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 3px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.cat-legend-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cat-legend-item.hidden {
+  opacity: 0.32;
+  text-decoration: line-through;
+}
+
+.cat-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.cat-legend-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.70rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  line-height: 1.25;
+  word-break: normal;
+  overflow-wrap: break-word;
+  transition: color 0.15s ease;
+}
+
+.cat-legend-item:hover .cat-legend-label {
+  color: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .category-chart-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: auto;
+  }
+  .category-chart-canvas-box {
+    flex: none;
+    width: 200px;
+    height: 200px;
+  }
+  .category-chart-legend {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-chart-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Data Tables & Grids
    -------------------------------------------------------------------------- */
 .section-header {
